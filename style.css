@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*==================================================
 
   VARIABLES
@@ -30,54 +31,137 @@ body {
 
   GRID
 
+* Modify gutter width in variables.scss
+* Modify contained width in variables.scss
+* For general purposes, use "col-x" class, 1 ≤ x ≤ 12
+* To target tablet screens, use "col-m-x" class, 1 ≤ x ≤ 12
+* To target mobile screens, use "col-s-x" class, 1 ≤ x ≤ 12
+
 ==================================================*/
 .row {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 1.5rem;
   margin-left: -1.5rem;
   margin-right: -1.5rem; }
-  .row div[class^='cell'] {
+  .row div[class^='col'] {
     padding: 0 1.5rem 3rem; }
   .row.no-gutter {
     margin-left: 0;
     margin-right: 0; }
-    .row.no-gutter div[class^='cell'] {
+    .row.no-gutter div[class^='col'] {
       padding: 0; }
   .row.contained {
     width: 100%;
     max-width: 140rem;
-    background: red;
     margin: 0 auto; }
-  .row .cell-1 {
+  .row .col-1 {
     flex-basis: 8.3333%; }
-  .row .cell-2 {
+  .row .col-2 {
     flex-basis: 16.6666%; }
-  .row .cell-3 {
+  .row .col-3 {
     flex-basis: 25%; }
-  .row .cell-4 {
+  .row .col-4 {
     flex-basis: 33.3333%; }
-  .row .cell-1 {
+  .row .col-5 {
     flex-basis: 41.6666%; }
-  .row .cell-6 {
+  .row .col-6 {
     flex-basis: 50%; }
-  .row .cell-7 {
+  .row .col-7 {
     flex-basis: 58.3333%; }
-  .row .cell-8 {
+  .row .col-8 {
     flex-basis: 66.6666%; }
-  .row .cell-9 {
+  .row .col-9 {
     flex-basis: 75%; }
-  .row .cell-10 {
+  .row .col-10 {
     flex-basis: 83.3333%; }
-  .row .cell-11 {
+  .row .col-11 {
     flex-basis: 91.6666%; }
-  .row .cell-12 {
+  .row .col-12 {
     flex-basis: 100%; }
 
+@media screen and (max-width: 1024px) {
+  .col-m-1 {
+    flex-basis: 8.3333% !important; }
+
+  .col-m-2 {
+    flex-basis: 16.6666% !important; }
+
+  .col-m-3 {
+    flex-basis: 25% !important; }
+
+  .col-m-4 {
+    flex-basis: 33.3333% !important; }
+
+  .col-m-5 {
+    flex-basis: 41.6666% !important; }
+
+  .col-m-6 {
+    flex-basis: 50% !important; }
+
+  .col-m-7 {
+    flex-basis: 58.3333% !important; }
+
+  .col-m-8 {
+    flex-basis: 66.6666% !important; }
+
+  .col-m-9 {
+    flex-basis: 75% !important; }
+
+  .col-m-10 {
+    flex-basis: 83.3333% !important; }
+
+  .col-m-11 {
+    flex-basis: 91.6666% !important; }
+
+  .col-m-12 {
+    flex-basis: 100% !important; } }
+@media screen and (max-width: 767px) {
+  .col-s-1 {
+    flex-basis: 8.3333% !important; }
+
+  .col-s-2 {
+    flex-basis: 16.6666% !important; }
+
+  .col-s-3 {
+    flex-basis: 25% !important; }
+
+  .col-s-4 {
+    flex-basis: 33.3333% !important; }
+
+  .col-s-5 {
+    flex-basis: 41.6666% !important; }
+
+  .col-s-6 {
+    flex-basis: 50% !important; }
+
+  .col-s-7 {
+    flex-basis: 58.3333% !important; }
+
+  .col-s-8 {
+    flex-basis: 66.6666% !important; }
+
+  .col-s-9 {
+    flex-basis: 75% !important; }
+
+  .col-s-10 {
+    flex-basis: 83.3333% !important; }
+
+  .col-s-11 {
+    flex-basis: 91.6666% !important; }
+
+  .col-s-12 {
+    flex-basis: 100% !important; } }
 p {
+  font-size: 2rem;
   background: grey;
-  padding: 0;
+  color: white;
+  font-weight: bold;
   margin: 0;
-  font-size: 2rem; }
+  padding: 1rem 0;
+  text-align: center; }
+
+h1 {
+  font-size: 3rem;
+  margin: 4rem 0 2rem; }
 
 /*# sourceMappingURL=style.css.map */

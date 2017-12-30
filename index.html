@@ -7,6 +7,7 @@ sass --watch style.scss:style.css
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
@@ -15,36 +16,119 @@ sass --watch style.scss:style.css
 <header></header>
 
 <main>
+
+    <h1>Normal grid</h1>
     <div class="row">
-        <div class="cell-3"><p>3</p></div>
-        <div class="cell-3"><p>3</p></div>
-        <div class="cell-3"><p>3</p></div>
-        <div class="cell-3"><p>3</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
     </div>
     <div class="row">
-        <div class="cell-4"><p>4</p></div>
-        <div class="cell-4"><p>4</p></div>
-        <div class="cell-4"><p>4</p></div>
-    </div>
-    <div class="row contained">
-        <div class="cell-6"><p>6</p></div>
-        <div class="cell-6"><p>6</p></div>
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
     </div>
     <div class="row">
-        <div class="cell-12"><p>12</p></div>
+        <div class="col-4"><p>4</p></div>
+        <div class="col-4"><p>4</p></div>
+        <div class="col-4"><p>4</p></div>
     </div>
     <div class="row">
-        <div class="cell-6"><p>6</p></div>
-        <div class="cell-3"><p>3</p></div>
-        <div class="cell-3"><p>3</p></div>
-        <div class="cell-2"><p>2</p></div>
+        <div class="col-6"><p>6</p></div>
+        <div class="col-6"><p>6</p></div>
+    </div>
+    <div class="row">
+        <div class="col-12"><p>12</p></div>
+    </div>
+
+    <h1>No-gutter grid</h1>
+    <div class="row no-gutter">
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
     </div>
     <div class="row no-gutter">
-        <div class="cell-3"><p>3</p></div>
-        <div class="cell-3"><p>3</p></div>
-        <div class="cell-3"><p>3</p></div>
-        <div class="cell-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
     </div>
+    <div class="row no-gutter">
+        <div class="col-4"><p>4</p></div>
+        <div class="col-4"><p>4</p></div>
+        <div class="col-4"><p>4</p></div>
+    </div>
+    <div class="row no-gutter">
+        <div class="col-6"><p>6</p></div>
+        <div class="col-6"><p>6</p></div>
+    </div>
+    <div class="row no-gutter">
+        <div class="col-12"><p>12</p></div>
+    </div>
+
+    <h1>Contained grid</h1>
+    <div class="row contained">
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+    </div>
+    <div class="row contained">
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+    </div>
+    <div class="row contained">
+        <div class="col-4"><p>4</p></div>
+        <div class="col-4"><p>4</p></div>
+        <div class="col-4"><p>4</p></div>
+    </div>
+    <div class="row contained">
+        <div class="col-6"><p>6</p></div>
+        <div class="col-6"><p>6</p></div>
+    </div>
+    <div class="row contained">
+        <div class="col-12"><p>12</p></div>
+    </div>
+
+    <h1>No-gutter and contained grid</h1>
+    <div class="row contained no-gutter">
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+        <div class="col-2"><p>2</p></div>
+    </div>
+    <div class="row contained no-gutter">
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+        <div class="col-3"><p>3</p></div>
+    </div>
+    <div class="row contained no-gutter">
+        <div class="col-4"><p>4</p></div>
+        <div class="col-4"><p>4</p></div>
+        <div class="col-4"><p>4</p></div>
+    </div>
+    <div class="row contained no-gutter">
+        <div class="col-6"><p>6</p></div>
+        <div class="col-6"><p>6</p></div>
+    </div>
+    <div class="row contained no-gutter">
+        <div class="col-12"><p>12</p></div>
+    </div>
+
 </main>
 
 <footer></footer>
