@@ -1,16 +1,21 @@
-@charset "UTF-8";
+/*==================================================
+
+  ESSENTIALS
+
+==================================================*/
 /*==================================================
 
   VARIABLES
 
-* Edit these to your preferences
+* Edit, add, remove these as you wish
+* Remember to remove them in other files if your remove them here
 
 ==================================================*/
 /*==================================================
 
   VARIABLE HELPERS
 
-* DO NOT CHANGE them unless you know what you're doing
+* Zeus will smite you if you change anything here
 
 ==================================================*/
 /*==================================================
@@ -29,81 +34,93 @@ body {
   padding: 0;
   overflow-x: hidden; }
 
-feFlood {
-  flood-color: red; }
+/*==================================================
 
+  FONTS
+
+==================================================*/
+@font-face {
+  font-family: 'PTB';
+  src: url("./style/assets/fonts/PT_Sans-Web-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: 'PTR';
+  src: url("./style/assets/fonts/PT_Sans-Web-Regular.ttf") format("truetype"); }
 /*==================================================
 
   TYPOGRAPHY
 
+* $min_width, $max_width, $el-min, and $el-max must all use the same unit (px, em, rem, vw, etc.)
+
+*/
+/*
+
 ==================================================*/
+p {
+  font-size: 1.6rem; }
+  @media screen and (min-width: 60rem) {
+    p {
+      font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
+    p {
+      font-size: 2rem; } }
+
 h1 {
-  font-size: 36px; }
-  @media screen and (min-width: 600px) {
+  font-size: 3.6rem; }
+  @media screen and (min-width: 60rem) {
     h1 {
-      font-size: calc(36px + 4 * ((100vw - 600px) / 1000)); } }
-  @media screen and (min-width: 1600px) {
+      font-size: calc(3.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
     h1 {
-      font-size: 40px; } }
+      font-size: 4rem; } }
 
 h2 {
-  font-size: 32px; }
-  @media screen and (min-width: 600px) {
+  font-size: 3.2rem; }
+  @media screen and (min-width: 60rem) {
     h2 {
-      font-size: calc(32px + 4 * ((100vw - 600px) / 1000)); } }
-  @media screen and (min-width: 1600px) {
+      font-size: calc(3.2rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
     h2 {
-      font-size: 36px; } }
+      font-size: 3.6rem; } }
 
 h3 {
-  font-size: 28px; }
-  @media screen and (min-width: 600px) {
+  font-size: 2.8rem; }
+  @media screen and (min-width: 60rem) {
     h3 {
-      font-size: calc(28px + 4 * ((100vw - 600px) / 1000)); } }
-  @media screen and (min-width: 1600px) {
+      font-size: calc(2.8rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
     h3 {
-      font-size: 32px; } }
+      font-size: 3.2rem; } }
 
 h4 {
-  font-size: 24px; }
-  @media screen and (min-width: 600px) {
+  font-size: 2.4rem; }
+  @media screen and (min-width: 60rem) {
     h4 {
-      font-size: calc(24px + 4 * ((100vw - 600px) / 1000)); } }
-  @media screen and (min-width: 1600px) {
+      font-size: calc(2.4rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
     h4 {
-      font-size: 28px; } }
+      font-size: 2.8rem; } }
 
 h5 {
-  font-size: 20px; }
-  @media screen and (min-width: 600px) {
+  font-size: 2rem; }
+  @media screen and (min-width: 60rem) {
     h5 {
-      font-size: calc(20px + 4 * ((100vw - 600px) / 1000)); } }
-  @media screen and (min-width: 1600px) {
+      font-size: calc(2rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
     h5 {
-      font-size: 24px; } }
+      font-size: 2.4rem; } }
 
 h6 {
-  font-size: 16px; }
-  @media screen and (min-width: 600px) {
+  font-size: 1.6rem; }
+  @media screen and (min-width: 60rem) {
     h6 {
-      font-size: calc(16px + 4 * ((100vw - 600px) / 1000)); } }
-  @media screen and (min-width: 1600px) {
+      font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
     h6 {
-      font-size: 20px; } }
-
-p {
-  font-size: 16px; }
-  @media screen and (min-width: 600px) {
-    p {
-      font-size: calc(16px + 4 * ((100vw - 600px) / 1000)); } }
-  @media screen and (min-width: 1600px) {
-    p {
-      font-size: 20px; } }
+      font-size: 2rem; } }
 
 a {
-  font-size: inherit;
   text-decoration-skip: ink;
-  color: blue; }
+  color: #0000ee; }
   a:visited {
     color: #551a8b; }
 
@@ -111,11 +128,10 @@ a {
 
   GRID
 
-* Modify gutter width in variables.scss
-* Modify contained width in variables.scss
-* For general purposes, use "col-x" class, 1 ≤ x ≤ 12
-* To target tablet screens, use "col-m-x" class, 1 ≤ x ≤ 12
-* To target mobile screens, use "col-s-x" class, 1 ≤ x ≤ 12
+* Modify $gutter and $contained-width to your preferences
+
+*/
+/*
 
 ==================================================*/
 .row {
@@ -236,5 +252,34 @@ a {
 
   .col-s-12 {
     flex-basis: 100% !important; } }
+/*==================================================
+
+  COMPONENTS
+
+* Add your own styled components here
+* Added buttons.scss as an example
+
+==================================================*/
+/*==================================================
+
+  BUTTONS
+
+==================================================*/
+button {
+  padding: 2rem 6rem;
+  margin: 0;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  font-family: "PTB";
+  color: white;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  cursor: pointer;
+  background: steelblue;
+  transition: all 0.25s ease; }
+  button:hover, button:focus {
+    background: #598fbc; }
 
 /*# sourceMappingURL=style.css.map */

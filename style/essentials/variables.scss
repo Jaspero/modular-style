@@ -2,33 +2,32 @@
 
   VARIABLES
 
-* Edit these to your preferences
+* Edit, add, remove these as you wish
+* Remember to remove them in other files if your remove them here
 
 ==================================================*/
 
-// Grid
-$gutter: 3rem;
-$contained-width: 120rem;
+// Fonts
+$font-text: 'PTR'; // TODO: remove
+$font-buttons: 'PTB'; // TODO: used in buttons.scss, remove there if removing here
+
+// Colors
+$color-bg-button: steelblue; // TODO: used in buttons.scss, remove there if removing here
+$color-text-button: white; // TODO: used in buttons.scss, remove there if removing here
+
+// Other
+$transition: all .25s ease; // TODO: used in buttons.scss, remove there if removing here
+
 
 /*==================================================
 
   VARIABLE HELPERS
 
-* DO NOT CHANGE them unless you know what you're doing
+* Zeus will smite you if you change anything here
 
 ==================================================*/
 
-//
-// Grid
-//
-$gutter-half: $gutter / 2;
-
-//
 // Fluid typography
-//
-$min_width: 600px;
-$max_width: 1600px;
-
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
@@ -50,4 +49,13 @@ $max_width: 1600px;
       }
     }
   }
+}
+
+// Lighten & Darken
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function darken($color, $percentage) {
+  @return mix(black, $color, $percentage);
 }

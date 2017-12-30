@@ -1,0 +1,86 @@
+/*==================================================
+
+  FONTS
+
+==================================================*/
+
+@font-face {
+  font-family: 'PTB';
+  src: url('./style/assets/fonts/PT_Sans-Web-Bold.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'PTR';
+  src: url('./style/assets/fonts/PT_Sans-Web-Regular.ttf')  format('truetype');
+}
+
+
+/*==================================================
+
+  TYPOGRAPHY
+
+* $min_width, $max_width, $el-min, and $el-max must all use the same unit (px, em, rem, vw, etc.)
+
+*/
+
+$min_width: 60rem; // Font-size won't be reduced from this screen-size and lower
+$max_width: 160rem; // Font-size won't be increased from this screen-size and above
+
+/*
+
+==================================================*/
+
+$p-min: 1.6rem; // Smallest font size
+$p-max: 2rem; // Largest font size
+p {
+  @include fluid-type($min_width, $max_width, $p-min, $p-max);
+  //
+}
+
+$h1-min: 3.6rem;
+$h1-max: 4rem;
+h1 {
+  @include fluid-type($min_width, $max_width, $h1-min, $h1-max);
+  //
+}
+
+$h2-min: 3.2rem;
+$h2-max: 3.6rem;
+h2 {
+  @include fluid-type($min_width, $max_width, $h2-min, $h2-max);
+  //
+}
+
+$h3-min: 2.8rem;
+$h3-max: 3.2rem;
+h3 {
+  @include fluid-type($min_width, $max_width, $h3-min, $h3-max);
+  //
+}
+
+$h4-min: 2.4rem;
+$h4-max: 2.8rem;
+h4 {
+  @include fluid-type($min_width, $max_width, $h4-min, $h4-max);
+  //
+}
+
+$h5-min: 2rem;
+$h5-max: 2.4rem;
+h5 {
+  @include fluid-type($min_width, $max_width, $h5-min, $h5-max);
+  //
+}
+
+$h6-min: 1.6rem;
+$h6-max: 2.0rem;
+h6 {
+  @include fluid-type($min_width, $max_width, $h6-min, $h6-max);
+  //
+}
+
+a {
+  text-decoration-skip: ink;
+  color: #0000ee;
+  &:visited { color: #551a8b; }
+}

@@ -1,0 +1,38 @@
+/*==================================================
+
+  BUTTONS
+
+==================================================*/
+
+button {
+
+  // Box attributes
+  padding: 2rem 6rem;
+  margin: 0;
+  outline: none;
+  border: none;
+  border-radius: 0;
+
+  // Font
+  font-family: $font-buttons;
+  color: $color-text-button;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+
+  // Style
+  cursor: pointer;
+  background: $color-bg-button;
+  transition: $transition;
+
+  // Hover & Focus
+  &:hover, &:focus {
+    background: lighten(steelblue, 10%);
+  }
+
+  // Disabled
+
+  // Active
+
+
+}

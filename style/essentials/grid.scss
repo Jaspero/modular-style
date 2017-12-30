@@ -2,11 +2,16 @@
 
   GRID
 
-* Modify gutter width in variables.scss
-* Modify contained width in variables.scss
-* For general purposes, use "col-x" class, 1 ≤ x ≤ 12
-* To target tablet screens, use "col-m-x" class, 1 ≤ x ≤ 12
-* To target mobile screens, use "col-s-x" class, 1 ≤ x ≤ 12
+* Modify $gutter and $contained-width to your preferences
+
+*/
+
+$gutter: 3rem;
+$contained-width: 120rem;
+
+$gutter-half: $gutter/2; // Don't change this
+
+/*
 
 ==================================================*/
 
@@ -43,8 +48,7 @@
   .col-11 { flex-basis: 91.6666%; }
   .col-12 { flex-basis: 100%; }
 
-  // For presentation purposes
-  p { text-align: center; background: lightgreen; margin: 0; padding: 2rem 0; }
+  p { text-align: center; background: lightgreen; margin: 0; padding: 2rem 0; } // TODO: (presentation purpose) remove later
 
 }
 
