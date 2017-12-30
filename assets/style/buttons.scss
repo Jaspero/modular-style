@@ -31,8 +31,9 @@ button {
   }
 
   // Disabled
+  &:disabled {}
 
   // Active
-
+  &:active {}
 
 }

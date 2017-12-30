@@ -1,0 +1,116 @@
+/*==================================================
+
+  FIELD & LABEL
+
+==================================================*/
+
+$input-min: 1.6rem; // Smallest font size
+$input-max: 2rem; // Largest font size
+
+$label-min: 1.4rem; // Smallest font size
+$label-max: 1.6rem; // Largest font size
+.field {
+
+  label {
+
+    // Box attributes
+    display: block;
+    margin-bottom: .5rem;
+
+    // Font
+    @include fluid-type($min_width, $max_width, $label-min, $label-max);
+    font-family: $font-bold;
+  
+  }
+}
+
+/*==================================================
+
+  TEXT, EMAIL, TEL, URL, PASSWORD, SEARCH
+
+==================================================*/
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=password],
+input[type=search] {
+
+  // Box attributes
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid;
+  border-left: none;
+  
+  // Font
+  @include fluid-type($min_width, $max_width, $input-min, $input-max);
+  font-family: $font-regular;
+  line-height: 1.4;
+
+  // Style
+
+  // Focus
+  &:focus {}
+
+  // Valid
+  &:valid {}
+
+  // Invalid
+  &:invalid {}
+
+  // Placeholder
+  &::Placeholder {}
+
+}
+
+/*==================================================
+
+  RADIO
+
+==================================================*/
+
+/*==================================================
+
+  CHECKBOX
+
+==================================================*/
+
+/*==================================================
+
+  BUTTON, SUBMIT, RESET, IMAGE
+
+==================================================*/
+
+/*==================================================
+
+  FILE
+
+==================================================*/
+
+/*==================================================
+
+  NUMBER
+
+==================================================*/
+
+/*==================================================
+
+  RANGE
+
+==================================================*/
+
+/*==================================================
+
+  COLOR
+
+==================================================*/
+
+/*==================================================
+
+  DATE, DATETIME-LOCAL, MONTH, WEEK, TIME
+
+==================================================*/
