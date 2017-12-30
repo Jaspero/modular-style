@@ -1,19 +1,4 @@
 @import 'style/variables.scss';
-@import 'style/global.scss';
+@import 'style/general.scss';
+@import 'style/typography.scss';
 @import 'style/grid.scss';
-
-
-p {
-  font-size: 2rem;
-  background: grey;
-  color: white;
-  font-weight: bold;
-  margin: 0;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-h1 {
-  font-size: 3rem;
-  margin: 4rem 0 2rem;
-}

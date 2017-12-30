@@ -3,17 +3,19 @@
 
   VARIABLES
 
+* Edit these to your preferences
+
 ==================================================*/
 /*==================================================
 
   VARIABLE HELPERS
 
-* These are used in other components, we suggest you do not change them unless you know what you're doing
+* DO NOT CHANGE them unless you know what you're doing
 
 ==================================================*/
 /*==================================================
 
-  GLOBAL
+  GENERAL
 
 ==================================================*/
 * {
@@ -26,6 +28,84 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; }
+
+feFlood {
+  flood-color: red; }
+
+/*==================================================
+
+  TYPOGRAPHY
+
+==================================================*/
+h1 {
+  font-size: 36px; }
+  @media screen and (min-width: 600px) {
+    h1 {
+      font-size: calc(36px + 4 * ((100vw - 600px) / 1000)); } }
+  @media screen and (min-width: 1600px) {
+    h1 {
+      font-size: 40px; } }
+
+h2 {
+  font-size: 32px; }
+  @media screen and (min-width: 600px) {
+    h2 {
+      font-size: calc(32px + 4 * ((100vw - 600px) / 1000)); } }
+  @media screen and (min-width: 1600px) {
+    h2 {
+      font-size: 36px; } }
+
+h3 {
+  font-size: 28px; }
+  @media screen and (min-width: 600px) {
+    h3 {
+      font-size: calc(28px + 4 * ((100vw - 600px) / 1000)); } }
+  @media screen and (min-width: 1600px) {
+    h3 {
+      font-size: 32px; } }
+
+h4 {
+  font-size: 24px; }
+  @media screen and (min-width: 600px) {
+    h4 {
+      font-size: calc(24px + 4 * ((100vw - 600px) / 1000)); } }
+  @media screen and (min-width: 1600px) {
+    h4 {
+      font-size: 28px; } }
+
+h5 {
+  font-size: 20px; }
+  @media screen and (min-width: 600px) {
+    h5 {
+      font-size: calc(20px + 4 * ((100vw - 600px) / 1000)); } }
+  @media screen and (min-width: 1600px) {
+    h5 {
+      font-size: 24px; } }
+
+h6 {
+  font-size: 16px; }
+  @media screen and (min-width: 600px) {
+    h6 {
+      font-size: calc(16px + 4 * ((100vw - 600px) / 1000)); } }
+  @media screen and (min-width: 1600px) {
+    h6 {
+      font-size: 20px; } }
+
+p {
+  font-size: 16px; }
+  @media screen and (min-width: 600px) {
+    p {
+      font-size: calc(16px + 4 * ((100vw - 600px) / 1000)); } }
+  @media screen and (min-width: 1600px) {
+    p {
+      font-size: 20px; } }
+
+a {
+  font-size: inherit;
+  text-decoration-skip: ink;
+  color: blue; }
+  a:visited {
+    color: #551a8b; }
 
 /*==================================================
 
@@ -52,7 +132,7 @@ body {
       padding: 0; }
   .row.contained {
     width: 100%;
-    max-width: 140rem;
+    max-width: 120rem;
     margin: 0 auto; }
   .row .col-1 {
     flex-basis: 8.3333%; }
@@ -78,6 +158,11 @@ body {
     flex-basis: 91.6666%; }
   .row .col-12 {
     flex-basis: 100%; }
+  .row p {
+    text-align: center;
+    background: lightgreen;
+    margin: 0;
+    padding: 2rem 0; }
 
 @media screen and (max-width: 1024px) {
   .col-m-1 {
@@ -151,17 +236,5 @@ body {
 
   .col-s-12 {
     flex-basis: 100% !important; } }
-p {
-  font-size: 2rem;
-  background: grey;
-  color: white;
-  font-weight: bold;
-  margin: 0;
-  padding: 1rem 0;
-  text-align: center; }
-
-h1 {
-  font-size: 3rem;
-  margin: 4rem 0 2rem; }
 
 /*# sourceMappingURL=style.css.map */

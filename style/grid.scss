@@ -43,6 +43,9 @@
   .col-11 { flex-basis: 91.6666%; }
   .col-12 { flex-basis: 100%; }
 
+  // For presentation purposes
+  p { text-align: center; background: lightgreen; margin: 0; padding: 2rem 0; }
+
 }
 
 @media screen and (max-width: 1024px) {
