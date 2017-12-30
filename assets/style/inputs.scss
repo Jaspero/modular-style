@@ -1,3 +1,5 @@
+form h3 {margin: 4rem 0 0;} // TODO: REMOVE
+
 /*==================================================
 
   FIELD & LABEL
@@ -9,6 +11,7 @@ $input-max: 2rem; // Largest font size
 
 $label-min: 1.4rem; // Smallest font size
 $label-max: 1.6rem; // Largest font size
+
 .field {
 
   label {
@@ -23,6 +26,7 @@ $label-max: 1.6rem; // Largest font size
   
   }
 }
+
 
 /*==================================================
 
@@ -54,7 +58,7 @@ input[type=search] {
   // Style
 
   // Focus
-  &:focus {}
+  &:focus { background: #eee; }
 
   // Valid
   &:valid {}
@@ -63,9 +67,16 @@ input[type=search] {
   &:invalid {}
 
   // Placeholder
-  &::Placeholder {}
+  &::Placeholder {
 
+    // Font
+    @include fluid-type($min_width, $max_width, $input-min, $input-max);
+    font-family: $font-regular;
+    line-height: 1.4;
+
+  }
 }
+
 
 /*==================================================
 
@@ -73,11 +84,45 @@ input[type=search] {
 
 ==================================================*/
 
+.radio {
+
+  background: salmon;
+
+  label {
+
+    // Font
+    @include fluid-type($min_width, $max_width, $input-min, $input-max);
+    font-family: $font-regular;
+    line-height: 1.4;
+
+  }
+
+  input[type=radio] {}
+}
+
+
 /*==================================================
 
   CHECKBOX
 
 ==================================================*/
+
+.checkbox {
+  
+    background: salmon;
+  
+    label {
+  
+      // Font
+      @include fluid-type($min_width, $max_width, $input-min, $input-max);
+      font-family: $font-regular;
+      line-height: 1.4;
+  
+    }
+  
+    input[type=checkbox] {}
+  }
+
 
 /*==================================================
 

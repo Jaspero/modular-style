@@ -16,96 +16,126 @@ sass --watch style.scss:style.css
 <header></header>
 
 <form action="">
-    <div class="row contained">
-        <div class="col-6">
+
+    <div class="row contained center">
+        <div class="col-8 col-s-10">
+            <h3>Fields</h3>
+        </div>
+    </div>
+    <div class="row contained center">
+        <div class="col-4 col-s-10">
             <div class="field">
                 <label for="id_text">Text</label>
-                <input id="id_text" type="text">
+                <input id="id_text" type="text" placeholder="Text placeholder">
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-4 col-s-10">
             <div class="field">
                 <label for="id_email">Email</label>
-                <input id="id_email" type="email">
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="field">
-                <label for="id_tel">Tel</label>
-                <input id="id_tel" type="tel">
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="field">
-                <label for="id_url">URL</label>
-                <input id="id_url" type="url">
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="field">
-                <label for="id_password">Password</label>
-                <input id="id_password" type="password">
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="field">
-                <label for="id_search">Search</label>
-                <input id="id_search" type="search">
+                <input id="id_email" type="email" placeholder="Email placeholder">
             </div>
         </div>
     </div>
+    <div class="row contained center">
+        <div class="col-4 col-s-10">
+            <div class="field">
+                <label for="id_tel">Tel</label>
+                <input id="id_tel" type="tel" placeholder="Tel placeholder">
+            </div>
+        </div>
+        <div class="col-4 col-s-10">
+            <div class="field">
+                <label for="id_url">URL</label>
+                <input id="id_url" type="url" placeholder="URL placeholder">
+            </div>
+        </div>
+    </div>
+    <div class="row contained center">
+        <div class="col-4 col-s-10">
+            <div class="field">
+                <label for="id_password">Password</label>
+                <input id="id_password" type="password" placeholder="Password placeholder">
+            </div>
+        </div>
+        <div class="col-4 col-s-10">
+            <div class="field">
+                <label for="id_search">Search</label>
+                <input id="id_search" type="search" placeholder="Search placeholder">
+            </div>
+        </div>
+    </div>
+
+    <div class="row contained center">
+        <div class="col-8 col-s-10">
+            <h3>Radio</h3>
+        </div>
+    </div>
+    <div class="row contained center">
+        <div class="col-8 col-s-10">
+            <div class="field radio">
+                <label for="id_radio-1"><input id="id_radio-1" name="radio" type="radio">Radio option 1</label>
+            </div>
+            <div class="field radio">
+                <label for="id_radio-2"><input id="id_radio-2" name="radio" type="radio">Radio option 2</label>
+            </div>
+            <div class="field radio">
+                <label for="id_radio-3"><input id="id_radio-3" name="radio" type="radio">Radio option 3</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row contained center">
+        <div class="col-8 col-s-10">
+            <h3>Checkbox</h3>
+        </div>
+    </div>
+    <div class="row contained center">
+        <div class="col-8 col-s-10">
+            <div class="field checkbox">
+                <label for="id_checkbox-1"><input id="id_checkbox-1" name="checkbox" type="checkbox">Checkbox option 1</label>
+            </div>
+            <div class="field checkbox">
+                <label for="id_checkbox-2"><input id="id_checkbox-2" name="checkbox" type="checkbox">Checkbox option 2</label>
+            </div>
+            <div class="field checkbox">
+                <label for="id_checkbox-3"><input id="id_checkbox-3" name="checkbox" type="checkbox">Checkbox option 3</label>
+            </div>
+        </div>
+    </div>
+
 </form>
 
 
 <inputs>
 
-    <h2>radio</h2>
-    <input type="radio">radio
-    
-    <h2>checkbox</h2>
-    <input type="checkbox">checkbox
-
     <h2>button-like</h2>
-    <input type="button" value="button">button
-    <input type="reset">reset
-    <input type="submit">submit
-    <input type="image">image (button with background)
+    <input type="button" value="button">
+    <input type="reset">
+    <input type="submit">
+    <input type="image">
     
     <h2>file</h2>
-    <input type="file">file
+    <input type="file">
 
     <h2>number</h2>
-    <input type="number">number
+    <input type="number">
     
     <h2>range</h2>
-    <input type="range">range
+    <input type="range">
 
     <h2>color</h2>
-    <input type="color">color
+    <input type="color">
 
     <h2>date/time</h2>
-    <input type="date">date
-    <input type="datetime-local">datetime-local
-    <input type="month">month
-    <input type="week">week
-    <input type="time">time
+    <input type="date">
+    <input type="datetime-local">
+    <input type="month">
+    <input type="week">
+    <input type="time">
     
 </inputs>
 
 <main>
-
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-    <p><a class="underline" href="http://www.google.com" target="_blank">Tricky Handgloves</a></p>
-
-    <button>Are you awesome?</button>
 
     <h1>Normal grid</h1>
     <div class="row">
@@ -218,6 +248,19 @@ sass --watch style.scss:style.css
     <div class="row contained no-gutter">
         <div class="col-12"><p>12</p></div>
     </div>
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <p><a class="underline" href="http://www.google.com" target="_blank">Tricky Handgloves</a></p>
+
+    <button>Are you awesome?</button>
 
 </main>
 

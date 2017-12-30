@@ -35,6 +35,8 @@ $gutter-half: $gutter/2; // Don't change this
     margin: 0 auto;
   }
 
+  &.center { justify-content: center; }
+
   .col-1 { flex-basis: 8.3333%; }
   .col-2 { flex-basis: 16.6666%; }
   .col-3 { flex-basis: 25%; }
