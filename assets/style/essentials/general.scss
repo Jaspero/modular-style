@@ -1,27 +1,19 @@
 /*==================================================
 
-  VARIABLES
-
-* Edit, add, remove these as you wish
-* Remember to remove them in other files if your remove them here
+  GENERAL
 
 ==================================================*/
 
-// Fonts
-$font-text: 'PTR'; // TODO: remove
-$font-buttons: 'PTB'; // TODO: used in buttons.scss, remove there if removing here
+* { box-sizing: border-box; }
 
-// Colors
-$color-bg-button: steelblue; // TODO: used in buttons.scss, remove there if removing here
-$color-text-button: white; // TODO: used in buttons.scss, remove there if removing here
+html { font-size: 62.5%; }
 
-// Other
-$transition: all .25s ease; // TODO: used in buttons.scss, remove there if removing here
+body { margin: 0; padding: 0; overflow-x: hidden; }
 
 
 /*==================================================
 
-  VARIABLE HELPERS
+  HELPERS
 
 * Zeus will smite you if you change anything here
 

@@ -2,16 +2,18 @@
 
   FONTS
 
+* Added two fonts as an example
+
 ==================================================*/
 
 @font-face {
   font-family: 'PTB';
-  src: url('./style/assets/fonts/PT_Sans-Web-Bold.ttf')  format('truetype');
+  src: url('./assets/fonts/PT_Sans-Web-Bold.ttf')  format('truetype');
 }
 
 @font-face {
   font-family: 'PTR';
-  src: url('./style/assets/fonts/PT_Sans-Web-Regular.ttf')  format('truetype');
+  src: url('./assets/fonts/PT_Sans-Web-Regular.ttf')  format('truetype');
 }
 
 
@@ -19,7 +21,9 @@
 
   TYPOGRAPHY
 
-* $min_width, $max_width, $el-min, and $el-max must all use the same unit (px, em, rem, vw, etc.)
+* You can edit $min_width, $max_width, $el-min, and $el-max
+* They must all use the same unit (px, em, rem, vw, etc.)
+* Do not modify @include fluid-type($min_width, $max_width, $p-min, $p-max);
 
 */
 

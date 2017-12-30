@@ -1,22 +1,4 @@
-/*==================================================
+@import 'assets/style/essentials';
 
-  ESSENTIALS
-
-==================================================*/
-
-@import 'style/essentials/variables';
-@import 'style/essentials/general';
-@import 'style/essentials/typography';
-@import 'style/essentials/grid';
-
-
-/*==================================================
-
-  COMPONENTS
-
-* Add your own styled components here
-* Added buttons.scss as an example
-
-==================================================*/
-
-@import 'style/buttons.scss';
+// Other used components
+@import 'assets/style/buttons.scss';

@@ -13,13 +13,6 @@
 ==================================================*/
 /*==================================================
 
-  VARIABLE HELPERS
-
-* Zeus will smite you if you change anything here
-
-==================================================*/
-/*==================================================
-
   GENERAL
 
 ==================================================*/
@@ -36,94 +29,11 @@ body {
 
 /*==================================================
 
-  FONTS
+  HELPERS
+
+* Zeus will smite you if you change anything here
 
 ==================================================*/
-@font-face {
-  font-family: 'PTB';
-  src: url("./style/assets/fonts/PT_Sans-Web-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: 'PTR';
-  src: url("./style/assets/fonts/PT_Sans-Web-Regular.ttf") format("truetype"); }
-/*==================================================
-
-  TYPOGRAPHY
-
-* $min_width, $max_width, $el-min, and $el-max must all use the same unit (px, em, rem, vw, etc.)
-
-*/
-/*
-
-==================================================*/
-p {
-  font-size: 1.6rem; }
-  @media screen and (min-width: 60rem) {
-    p {
-      font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    p {
-      font-size: 2rem; } }
-
-h1 {
-  font-size: 3.6rem; }
-  @media screen and (min-width: 60rem) {
-    h1 {
-      font-size: calc(3.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h1 {
-      font-size: 4rem; } }
-
-h2 {
-  font-size: 3.2rem; }
-  @media screen and (min-width: 60rem) {
-    h2 {
-      font-size: calc(3.2rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h2 {
-      font-size: 3.6rem; } }
-
-h3 {
-  font-size: 2.8rem; }
-  @media screen and (min-width: 60rem) {
-    h3 {
-      font-size: calc(2.8rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h3 {
-      font-size: 3.2rem; } }
-
-h4 {
-  font-size: 2.4rem; }
-  @media screen and (min-width: 60rem) {
-    h4 {
-      font-size: calc(2.4rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h4 {
-      font-size: 2.8rem; } }
-
-h5 {
-  font-size: 2rem; }
-  @media screen and (min-width: 60rem) {
-    h5 {
-      font-size: calc(2rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h5 {
-      font-size: 2.4rem; } }
-
-h6 {
-  font-size: 1.6rem; }
-  @media screen and (min-width: 60rem) {
-    h6 {
-      font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h6 {
-      font-size: 2rem; } }
-
-a {
-  text-decoration-skip: ink;
-  color: #0000ee; }
-  a:visited {
-    color: #551a8b; }
-
 /*==================================================
 
   GRID
@@ -179,6 +89,8 @@ a {
     background: lightgreen;
     margin: 0;
     padding: 2rem 0; }
+    .row p:hover {
+      background: #acf2ac; }
 
 @media screen and (max-width: 1024px) {
   .col-m-1 {
@@ -254,12 +166,98 @@ a {
     flex-basis: 100% !important; } }
 /*==================================================
 
-  COMPONENTS
+  FONTS
 
-* Add your own styled components here
-* Added buttons.scss as an example
+* Added two fonts as an example
 
 ==================================================*/
+@font-face {
+  font-family: 'PTB';
+  src: url("./assets/fonts/PT_Sans-Web-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: 'PTR';
+  src: url("./assets/fonts/PT_Sans-Web-Regular.ttf") format("truetype"); }
+/*==================================================
+
+  TYPOGRAPHY
+
+* You can edit $min_width, $max_width, $el-min, and $el-max
+* They must all use the same unit (px, em, rem, vw, etc.)
+* Do not modify @include fluid-type($min_width, $max_width, $p-min, $p-max);
+
+*/
+/*
+
+==================================================*/
+p {
+  font-size: 1.6rem; }
+  @media screen and (min-width: 60rem) {
+    p {
+      font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
+    p {
+      font-size: 2rem; } }
+
+h1 {
+  font-size: 3.6rem; }
+  @media screen and (min-width: 60rem) {
+    h1 {
+      font-size: calc(3.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
+    h1 {
+      font-size: 4rem; } }
+
+h2 {
+  font-size: 3.2rem; }
+  @media screen and (min-width: 60rem) {
+    h2 {
+      font-size: calc(3.2rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
+    h2 {
+      font-size: 3.6rem; } }
+
+h3 {
+  font-size: 2.8rem; }
+  @media screen and (min-width: 60rem) {
+    h3 {
+      font-size: calc(2.8rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
+    h3 {
+      font-size: 3.2rem; } }
+
+h4 {
+  font-size: 2.4rem; }
+  @media screen and (min-width: 60rem) {
+    h4 {
+      font-size: calc(2.4rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
+    h4 {
+      font-size: 2.8rem; } }
+
+h5 {
+  font-size: 2rem; }
+  @media screen and (min-width: 60rem) {
+    h5 {
+      font-size: calc(2rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
+    h5 {
+      font-size: 2.4rem; } }
+
+h6 {
+  font-size: 1.6rem; }
+  @media screen and (min-width: 60rem) {
+    h6 {
+      font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
+  @media screen and (min-width: 160rem) {
+    h6 {
+      font-size: 2rem; } }
+
+a {
+  text-decoration-skip: ink;
+  color: #0000ee; }
+  a:visited {
+    color: #551a8b; }
+
 /*==================================================
 
   BUTTONS
