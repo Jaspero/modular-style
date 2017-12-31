@@ -33,6 +33,19 @@ $label-max: 1.6rem; // Largest font size
     @include fluid-type($min_width, $max_width, $label-min, $label-max);
     font-family: $font-bold;
   
+    svg {
+
+      // Box attributes
+      margin-right: .5rem;
+      height: 1.8rem;
+      width: 1.8rem;
+      position: relative;
+      top: .3rem;
+
+      // Style
+      fill: white;
+
+    }
   }
 }
 
@@ -248,11 +261,42 @@ input[type=search] {
   }
 }
 
+
 /*==================================================
 
   FILE
 
 ==================================================*/
+
+.file {
+
+  // Remove default input
+  input[type="file"] { display: none; }
+
+  label {
+
+    // Box attributes
+    display: inline-block;
+    padding: 2rem 6rem;
+
+    // Font
+    font-family: $font-bold;
+    color: $color-text-light;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+
+    // Style
+    cursor: pointer;
+    background: $color-bg;
+    transition: $transition;
+
+    // Hover & Focus
+    &:hover, &:focus { background: lighten($color-bg, 10%); }
+
+  }
+}
+
 
 /*==================================================
 
@@ -260,17 +304,20 @@ input[type=search] {
 
 ==================================================*/
 
+
 /*==================================================
 
   RANGE
 
 ==================================================*/
 
+
 /*==================================================
 
   COLOR
 
 ==================================================*/
+
 
 /*==================================================
 
