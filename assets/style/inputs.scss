@@ -52,7 +52,7 @@ $label-max: 1.6rem; // Largest font size
 
 /*==================================================
 
-  TEXT, EMAIL, TEL, URL, PASSWORD, SEARCH
+  TEXT, EMAIL, TEL, URL, PASSWORD, SEARCH, NUMBER
 
 ==================================================*/
 
@@ -61,7 +61,8 @@ input[type=email],
 input[type=tel],
 input[type=url],
 input[type=password],
-input[type=search] {
+input[type=search],
+input[type=number] {
 
   // Box attributes
   display: block;
