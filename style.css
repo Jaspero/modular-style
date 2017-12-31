@@ -278,7 +278,7 @@ button {
   letter-spacing: .2rem;
   cursor: pointer;
   background: steelblue;
-  transition: all 0.25s ease; }
+  transition: all 0.2s ease; }
   button:hover, button:focus {
     background: #598fbc; }
 
@@ -322,7 +322,9 @@ input[type=search] {
   border-bottom: 2px solid;
   border-left: none;
   font-family: "PTR";
-  line-height: 1.4; }
+  line-height: 1.4;
+  background: white;
+  transition: all 0.2s ease; }
   input[type=text],
   input[type=email],
   input[type=tel],
@@ -352,7 +354,7 @@ input[type=search] {
   input[type=url]:focus,
   input[type=password]:focus,
   input[type=search]:focus {
-    background: #eee; }
+    background: #f2f2f2; }
   input[type=text]::Placeholder,
   input[type=email]::Placeholder,
   input[type=tel]::Placeholder,
@@ -390,38 +392,70 @@ input[type=search] {
   RADIO
 
 ==================================================*/
-.radio {
-  background: salmon; }
+.radio label {
+  position: relative;
+  padding-left: 3rem;
+  font-family: "PTR";
+  line-height: 1.4;
+  cursor: pointer; }
   .radio label {
-    font-family: "PTR";
-    line-height: 1.4; }
-    .radio label {
-      font-size: 1.6rem; }
-      @media screen and (min-width: 60rem) {
-        .radio label {
-          font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-      @media screen and (min-width: 160rem) {
-        .radio label {
-          font-size: 2rem; } }
+    font-size: 1.6rem; }
+    @media screen and (min-width: 60rem) {
+      .radio label {
+        font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
+    @media screen and (min-width: 160rem) {
+      .radio label {
+        font-size: 2rem; } }
+  .radio label input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1; }
+    .radio label input[type=radio]:focus ~ .control, .radio label input[type=radio]:hover ~ .control {
+      background: #d6d6d6; }
+    .radio label input[type=radio]:checked ~ .control:after {
+      transform: translate(-50%, -50%) scale(1); }
+    .radio label input[type=radio]:disabled ~ .control {
+      background: #d6d6d6; }
+.radio .control {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #eee;
+  transition: all 0.2s ease; }
+  .radio .control:after {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #333;
+    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease; }
 
 /*==================================================
 
   CHECKBOX
 
 ==================================================*/
-.checkbox {
-  background: salmon; }
+.checkbox label {
+  font-family: "PTR";
+  line-height: 1.4; }
   .checkbox label {
-    font-family: "PTR";
-    line-height: 1.4; }
-    .checkbox label {
-      font-size: 1.6rem; }
-      @media screen and (min-width: 60rem) {
-        .checkbox label {
-          font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-      @media screen and (min-width: 160rem) {
-        .checkbox label {
-          font-size: 2rem; } }
+    font-size: 1.6rem; }
+    @media screen and (min-width: 60rem) {
+      .checkbox label {
+        font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
+    @media screen and (min-width: 160rem) {
+      .checkbox label {
+        font-size: 2rem; } }
 
 /*==================================================
 
