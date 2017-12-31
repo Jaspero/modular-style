@@ -102,7 +102,6 @@ input[type=search] {
     // Style
     cursor: pointer;
 
-    // Input control style (checked, disabled, etc.)
     input[type=radio] {
 
       // Hiding default
@@ -136,7 +135,7 @@ input[type=search] {
     background: #eee;
     transition: $transition;
 
-    // Control checked initial state
+    // Custom input checked initial state 
     &:after { 
 
       // Box attributes
@@ -171,8 +170,10 @@ input[type=search] {
 .checkbox {
   
     label {
-
+  
       // Box attributes
+      position: relative;
+      padding-left: 3rem;
   
       // Font
       @include fluid-type($min_width, $max_width, $input-min, $input-max);
@@ -180,10 +181,62 @@ input[type=search] {
       line-height: 1.4;
   
       // Style
-
+      cursor: pointer;
+  
+      input[type=checkbox] {
+  
+        // Hiding default
+        position: absolute; opacity: 0; z-index: -1;
+  
+        // Hover & Focus
+        &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
+  
+        // Checked
+        &:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
+  
+        // Disabled
+        &:disabled ~ .control { background: darken(#eee,10%); }
+      }
     }
   
-    input[type=checkbox] {}
+    .control {
+  
+      // Box attributes
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      left: 0;
+      top: 50%;
+  
+      // Transform
+      transform: translateY(-50%);
+  
+      // Style
+      background: #eee;
+      transition: $transition;
+  
+      // Custom input checked initial state 
+      &:after { 
+  
+        // Box attributes
+        content: '';
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+  
+        // Transform
+        transform: translate(-50%,-50%) scale(0);
+      
+        // Style
+        background: #333;
+        box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.2);
+        transition: $transition;
+  
+      }
+    }
   }
 
 

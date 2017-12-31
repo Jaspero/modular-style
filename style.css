@@ -446,8 +446,11 @@ input[type=search] {
 
 ==================================================*/
 .checkbox label {
+  position: relative;
+  padding-left: 3rem;
   font-family: "PTR";
-  line-height: 1.4; }
+  line-height: 1.4;
+  cursor: pointer; }
   .checkbox label {
     font-size: 1.6rem; }
     @media screen and (min-width: 60rem) {
@@ -456,6 +459,37 @@ input[type=search] {
     @media screen and (min-width: 160rem) {
       .checkbox label {
         font-size: 2rem; } }
+  .checkbox label input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1; }
+    .checkbox label input[type=checkbox]:focus ~ .control, .checkbox label input[type=checkbox]:hover ~ .control {
+      background: #d6d6d6; }
+    .checkbox label input[type=checkbox]:checked ~ .control:after {
+      transform: translate(-50%, -50%) scale(1); }
+    .checkbox label input[type=checkbox]:disabled ~ .control {
+      background: #d6d6d6; }
+.checkbox .control {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #eee;
+  transition: all 0.2s ease; }
+  .checkbox .control:after {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #333;
+    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease; }
 
 /*==================================================
 
