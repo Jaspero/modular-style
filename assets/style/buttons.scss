@@ -4,7 +4,10 @@
 
 ==================================================*/
 
-button {
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
 
   // Box attributes
   padding: 2rem 6rem;
@@ -37,3 +40,11 @@ button {
   &:active {}
 
 }
+
+/*==================================================
+
+  INPUT[TYPE=IMAGE]
+
+* TODO: Style separately because it needs some hacks
+
+==================================================*/

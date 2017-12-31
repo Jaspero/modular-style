@@ -265,7 +265,10 @@ a {
   BUTTONS
 
 ==================================================*/
-button {
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
   padding: 2rem 6rem;
   margin: 0;
   outline: none;
@@ -279,12 +282,30 @@ button {
   cursor: pointer;
   background: steelblue;
   transition: all 0.2s ease; }
-  button:hover, button:focus {
+  button:hover, button:focus,
+  input[type=button]:hover,
+  input[type=button]:focus,
+  input[type=submit]:hover,
+  input[type=submit]:focus,
+  input[type=reset]:hover,
+  input[type=reset]:focus {
     background: #598fbc; }
 
+/*==================================================
+
+  INPUT[TYPE=IMAGE]
+
+* TODO: Style separately because it needs some hacks
+
+==================================================*/
 form h3 {
   margin: 4rem 0 0; }
 
+/*==================================================
+
+  INPUT VARIABLES
+
+==================================================*/
 /*==================================================
 
   FIELD & LABEL
@@ -491,11 +512,6 @@ input[type=search] {
     box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease; }
 
-/*==================================================
-
-  BUTTON, SUBMIT, RESET, IMAGE
-
-==================================================*/
 /*==================================================
 
   FILE
