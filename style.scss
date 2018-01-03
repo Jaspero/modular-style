@@ -2,6 +2,9 @@
 
 // Other used components
 @import 'assets/style/buttons.scss';
-@import 'assets/style/inputs.scss';
+@import 'assets/style/forms.scss';
 
 form h3 {margin: 4rem 0 0;} // TODO: REMOVE
+.row {
+  p { text-align: center; background: lightgreen; margin: 0; padding: 2rem 0; &:hover { background: lighten(lightgreen,25%); }} // TODO: (presentation purpose) remove later
+}

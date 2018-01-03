@@ -1,5 +1,3 @@
-// Comment out elements you won't use to reduce css
-
 /*==================================================
 
   INPUT VARIABLES
@@ -62,7 +60,7 @@ input[type=tel],
 input[type=url],
 input[type=password],
 input[type=search],
-input[type=number] {
+input[type=number], {
 
   // Box attributes
   display: block;
@@ -260,6 +258,40 @@ input[type=number] {
 
     }
   }
+}
+
+
+/*==================================================
+
+  SELECT
+
+==================================================*/
+
+select {
+  
+  @extend input[type=text];
+
+  // TODO: remove default arrow cross-browser
+
+  // Custom SVG arrow
+
+}
+
+
+/*==================================================
+
+  TEXTAREA
+
+==================================================*/
+
+textarea {
+  
+  @extend input[type=text];
+
+  // Style
+  resize: vertical;
+  overflow: auto;
+
 }
 
 

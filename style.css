@@ -62,6 +62,8 @@ body {
     margin: 0 auto; }
   .row.center {
     justify-content: center; }
+  .row.right {
+    justify-content: right; }
   .row .col-1 {
     flex-basis: 8.3333%; }
   .row .col-2 {
@@ -86,13 +88,6 @@ body {
     flex-basis: 91.6666%; }
   .row .col-12 {
     flex-basis: 100%; }
-  .row p {
-    text-align: center;
-    background: lightgreen;
-    margin: 0;
-    padding: 2rem 0; }
-    .row p:hover {
-      background: #acf2ac; }
 
 @media screen and (max-width: 1024px) {
   .col-m-1 {
@@ -333,7 +328,7 @@ input[type=reset] {
   TEXT, EMAIL, TEL, URL, PASSWORD, SEARCH, NUMBER
 
 ==================================================*/
-input[type=text],
+input[type=text], select, textarea,
 input[type=email],
 input[type=tel],
 input[type=url],
@@ -351,7 +346,7 @@ input[type=number] {
   line-height: 1.4;
   background: white;
   transition: all 0.2s ease; }
-  input[type=text],
+  input[type=text], select, textarea,
   input[type=email],
   input[type=tel],
   input[type=url],
@@ -360,7 +355,7 @@ input[type=number] {
   input[type=number] {
     font-size: 1.6rem; }
     @media screen and (min-width: 60rem) {
-      input[type=text],
+      input[type=text], select, textarea,
       input[type=email],
       input[type=tel],
       input[type=url],
@@ -369,7 +364,7 @@ input[type=number] {
       input[type=number] {
         font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
     @media screen and (min-width: 160rem) {
-      input[type=text],
+      input[type=text], select, textarea,
       input[type=email],
       input[type=tel],
       input[type=url],
@@ -377,7 +372,7 @@ input[type=number] {
       input[type=search],
       input[type=number] {
         font-size: 2rem; } }
-  input[type=text]:focus,
+  input[type=text]:focus, select:focus, textarea:focus,
   input[type=email]:focus,
   input[type=tel]:focus,
   input[type=url]:focus,
@@ -385,7 +380,7 @@ input[type=number] {
   input[type=search]:focus,
   input[type=number]:focus {
     background: #f2f2f2; }
-  input[type=text]::Placeholder,
+  input[type=text]::Placeholder, select::Placeholder, textarea::Placeholder,
   input[type=email]::Placeholder,
   input[type=tel]::Placeholder,
   input[type=url]::Placeholder,
@@ -394,7 +389,7 @@ input[type=number] {
   input[type=number]::Placeholder {
     font-family: "PTR";
     line-height: 1.4; }
-    input[type=text]::Placeholder,
+    input[type=text]::Placeholder, select::Placeholder, textarea::Placeholder,
     input[type=email]::Placeholder,
     input[type=tel]::Placeholder,
     input[type=url]::Placeholder,
@@ -403,7 +398,7 @@ input[type=number] {
     input[type=number]::Placeholder {
       font-size: 1.6rem; }
       @media screen and (min-width: 60rem) {
-        input[type=text]::Placeholder,
+        input[type=text]::Placeholder, select::Placeholder, textarea::Placeholder,
         input[type=email]::Placeholder,
         input[type=tel]::Placeholder,
         input[type=url]::Placeholder,
@@ -412,7 +407,7 @@ input[type=number] {
         input[type=number]::Placeholder {
           font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
       @media screen and (min-width: 160rem) {
-        input[type=text]::Placeholder,
+        input[type=text]::Placeholder, select::Placeholder, textarea::Placeholder,
         input[type=email]::Placeholder,
         input[type=tel]::Placeholder,
         input[type=url]::Placeholder,
@@ -527,6 +522,20 @@ input[type=number] {
 
 /*==================================================
 
+  SELECT
+
+==================================================*/
+/*==================================================
+
+  TEXTAREA
+
+==================================================*/
+textarea {
+  resize: vertical;
+  overflow: auto; }
+
+/*==================================================
+
   FILE
 
 ==================================================*/
@@ -563,5 +572,13 @@ input[type=number] {
 ==================================================*/
 form h3 {
   margin: 4rem 0 0; }
+
+.row p {
+  text-align: center;
+  background: lightgreen;
+  margin: 0;
+  padding: 2rem 0; }
+  .row p:hover {
+    background: #acf2ac; }
 
 /*# sourceMappingURL=style.css.map */

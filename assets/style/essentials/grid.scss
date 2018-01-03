@@ -51,9 +51,7 @@ $gutter-half: $gutter/2; // Don't change this
   .col-10 { flex-basis: 83.3333%; }
   .col-11 { flex-basis: 91.6666%; }
   .col-12 { flex-basis: 100%; }
-
-  p { text-align: center; background: lightgreen; margin: 0; padding: 2rem 0; &:hover { background: lighten(lightgreen,25%); }} // TODO: (presentation purpose) remove later
-
+  
 }
 
 @media screen and (max-width: 1024px) {
