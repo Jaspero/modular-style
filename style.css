@@ -7,32 +7,31 @@
 
   VARIABLES
 
-* Edit, add, remove these as you wish
-* Remember to remove them in other files if your remove them here
+==================================================*/
+/*==================================================
+
+  HELPERS & VARIABLES
+  
+==================================================*/
+/*==================================================
+
+  FLUID TYPOGRAPHY
 
 ==================================================*/
 /*==================================================
 
-  GENERAL
-
+  FLUID PADDING
+  
 ==================================================*/
-* {
-  box-sizing: border-box; }
-
-html {
-  font-size: 62.5%; }
-
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; }
-
 /*==================================================
 
-  HELPERS
+  SCROLL ANIMATIONS
 
-* Zeus will smite you if you change anything here
+==================================================*/
+/*==================================================
 
+  LIGHTEN & DARKEN
+  
 ==================================================*/
 /*==================================================
 
@@ -163,92 +162,9 @@ body {
     flex-basis: 100% !important; } }
 /*==================================================
 
-  FONTS
-
-* Added two fonts as an example
-
-==================================================*/
-@font-face {
-  font-family: 'PTB';
-  src: url("./assets/fonts/PT_Sans-Web-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: 'PTR';
-  src: url("./assets/fonts/PT_Sans-Web-Regular.ttf") format("truetype"); }
-/*==================================================
-
   TYPOGRAPHY
 
-* You can edit $min_width, $max_width, $el-min, and $el-max
-* They must all use the same unit (px, em, rem, vw, etc.)
-* Do not modify @include fluid-type($min_width, $max_width, $p-min, $p-max);
-
-*/
-/*
-
 ==================================================*/
-p {
-  font-size: 1.6rem; }
-  @media screen and (min-width: 60rem) {
-    p {
-      font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    p {
-      font-size: 2rem; } }
-
-h1 {
-  font-size: 3.6rem; }
-  @media screen and (min-width: 60rem) {
-    h1 {
-      font-size: calc(3.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h1 {
-      font-size: 4rem; } }
-
-h2 {
-  font-size: 3.2rem; }
-  @media screen and (min-width: 60rem) {
-    h2 {
-      font-size: calc(3.2rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h2 {
-      font-size: 3.6rem; } }
-
-h3 {
-  font-size: 2.8rem; }
-  @media screen and (min-width: 60rem) {
-    h3 {
-      font-size: calc(2.8rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h3 {
-      font-size: 3.2rem; } }
-
-h4 {
-  font-size: 2.4rem; }
-  @media screen and (min-width: 60rem) {
-    h4 {
-      font-size: calc(2.4rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h4 {
-      font-size: 2.8rem; } }
-
-h5 {
-  font-size: 2rem; }
-  @media screen and (min-width: 60rem) {
-    h5 {
-      font-size: calc(2rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h5 {
-      font-size: 2.4rem; } }
-
-h6 {
-  font-size: 1.6rem; }
-  @media screen and (min-width: 60rem) {
-    h6 {
-      font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-  @media screen and (min-width: 160rem) {
-    h6 {
-      font-size: 2rem; } }
-
 a {
   text-decoration-skip: ink;
   color: #0000ee; }
@@ -270,13 +186,13 @@ input[type=reset] {
   border: none;
   border-radius: 0;
   font-family: "PTB";
-  color: white;
+  color: black;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
   cursor: pointer;
-  background: steelblue;
-  transition: all 0.2s ease; }
+  background: yellow;
+  transition: all 0.25s ease; }
   button:hover, button:focus,
   input[type=button]:hover,
   input[type=button]:focus,
@@ -284,18 +200,13 @@ input[type=reset] {
   input[type=submit]:focus,
   input[type=reset]:hover,
   input[type=reset]:focus {
-    background: #598fbc; }
+    background: #ffff1a; }
 
 /*==================================================
 
   INPUT[TYPE=IMAGE]
 
 * TODO: Style separately because it needs some hacks
-
-==================================================*/
-/*==================================================
-
-  INPUT VARIABLES
 
 ==================================================*/
 /*==================================================
@@ -307,14 +218,6 @@ input[type=reset] {
   display: block;
   margin-bottom: .5rem;
   font-family: "PTB"; }
-  .field label {
-    font-size: 1.4rem; }
-    @media screen and (min-width: 60rem) {
-      .field label {
-        font-size: calc(1.4rem + 0.2 * ((100vw - 60rem) / 100)); } }
-    @media screen and (min-width: 160rem) {
-      .field label {
-        font-size: 1.6rem; } }
   .field label svg {
     margin-right: .5rem;
     height: 1.8rem;
@@ -345,33 +248,7 @@ input[type=number] {
   font-family: "PTR";
   line-height: 1.4;
   background: white;
-  transition: all 0.2s ease; }
-  input[type=text], select, textarea,
-  input[type=email],
-  input[type=tel],
-  input[type=url],
-  input[type=password],
-  input[type=search],
-  input[type=number] {
-    font-size: 1.6rem; }
-    @media screen and (min-width: 60rem) {
-      input[type=text], select, textarea,
-      input[type=email],
-      input[type=tel],
-      input[type=url],
-      input[type=password],
-      input[type=search],
-      input[type=number] {
-        font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-    @media screen and (min-width: 160rem) {
-      input[type=text], select, textarea,
-      input[type=email],
-      input[type=tel],
-      input[type=url],
-      input[type=password],
-      input[type=search],
-      input[type=number] {
-        font-size: 2rem; } }
+  transition: all 0.25s ease; }
   input[type=text]:focus, select:focus, textarea:focus,
   input[type=email]:focus,
   input[type=tel]:focus,
@@ -389,32 +266,6 @@ input[type=number] {
   input[type=number]::Placeholder {
     font-family: "PTR";
     line-height: 1.4; }
-    input[type=text]::Placeholder, select::Placeholder, textarea::Placeholder,
-    input[type=email]::Placeholder,
-    input[type=tel]::Placeholder,
-    input[type=url]::Placeholder,
-    input[type=password]::Placeholder,
-    input[type=search]::Placeholder,
-    input[type=number]::Placeholder {
-      font-size: 1.6rem; }
-      @media screen and (min-width: 60rem) {
-        input[type=text]::Placeholder, select::Placeholder, textarea::Placeholder,
-        input[type=email]::Placeholder,
-        input[type=tel]::Placeholder,
-        input[type=url]::Placeholder,
-        input[type=password]::Placeholder,
-        input[type=search]::Placeholder,
-        input[type=number]::Placeholder {
-          font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-      @media screen and (min-width: 160rem) {
-        input[type=text]::Placeholder, select::Placeholder, textarea::Placeholder,
-        input[type=email]::Placeholder,
-        input[type=tel]::Placeholder,
-        input[type=url]::Placeholder,
-        input[type=password]::Placeholder,
-        input[type=search]::Placeholder,
-        input[type=number]::Placeholder {
-          font-size: 2rem; } }
 
 /*==================================================
 
@@ -427,14 +278,6 @@ input[type=number] {
   font-family: "PTR";
   line-height: 1.4;
   cursor: pointer; }
-  .radio label {
-    font-size: 1.6rem; }
-    @media screen and (min-width: 60rem) {
-      .radio label {
-        font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-    @media screen and (min-width: 160rem) {
-      .radio label {
-        font-size: 2rem; } }
   .radio label input[type=radio] {
     position: absolute;
     opacity: 0;
@@ -454,7 +297,7 @@ input[type=number] {
   top: 50%;
   transform: translateY(-50%);
   background: #eee;
-  transition: all 0.2s ease; }
+  transition: all 0.25s ease; }
   .radio .control:after {
     content: '';
     display: block;
@@ -467,7 +310,7 @@ input[type=number] {
     transform: translate(-50%, -50%) scale(0);
     background: #333;
     box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease; }
+    transition: all 0.25s ease; }
 
 /*==================================================
 
@@ -480,14 +323,6 @@ input[type=number] {
   font-family: "PTR";
   line-height: 1.4;
   cursor: pointer; }
-  .checkbox label {
-    font-size: 1.6rem; }
-    @media screen and (min-width: 60rem) {
-      .checkbox label {
-        font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
-    @media screen and (min-width: 160rem) {
-      .checkbox label {
-        font-size: 2rem; } }
   .checkbox label input[type=checkbox] {
     position: absolute;
     opacity: 0;
@@ -506,7 +341,7 @@ input[type=number] {
   top: 50%;
   transform: translateY(-50%);
   background: #eee;
-  transition: all 0.2s ease; }
+  transition: all 0.25s ease; }
   .checkbox .control:after {
     content: '';
     display: block;
@@ -518,7 +353,7 @@ input[type=number] {
     transform: translate(-50%, -50%) scale(0);
     background: #333;
     box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease; }
+    transition: all 0.25s ease; }
 
 /*==================================================
 
@@ -545,15 +380,15 @@ textarea {
   display: inline-block;
   padding: 2rem 6rem;
   font-family: "PTB";
-  color: white;
+  color: black;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
   cursor: pointer;
-  background: steelblue;
-  transition: all 0.2s ease; }
+  background: yellow;
+  transition: all 0.25s ease; }
   .file label:hover, .file label:focus {
-    background: #598fbc; }
+    background: #ffff1a; }
 
 /*==================================================
 
@@ -570,15 +405,55 @@ textarea {
   DATE, DATETIME-LOCAL, MONTH, WEEK, TIME
 
 ==================================================*/
-form h3 {
-  margin: 4rem 0 0; }
+/*==================================================
 
-.row p {
-  text-align: center;
-  background: lightgreen;
+  GENERAL
+
+==================================================*/
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
   margin: 0;
-  padding: 2rem 0; }
-  .row p:hover {
-    background: #acf2ac; }
+  padding: 0;
+  overflow-x: hidden; }
+
+/*==================================================
+
+  FONTS
+
+==================================================*/
+@font-face {
+  font-family: 'PTB';
+  src: url("./assets/fonts/PT_Sans-Web-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: 'PTR';
+  src: url("./assets/fonts/PT_Sans-Web-Regular.ttf") format("truetype"); }
+/*==================================================
+
+  GLOBAL
+
+==================================================*/
+p {
+  border: 1px solid red; }
+  p {
+    font-size: 1.6rem; }
+    @media screen and (min-width: 60rem) {
+      p {
+        font-size: calc(1.6rem + 0.4 * ((100vw - 60rem) / 100)); } }
+    @media screen and (min-width: 160rem) {
+      p {
+        font-size: 2rem; } }
+  p {
+    padding: 2rem; }
+    @media screen and (min-width: 60rem) {
+      p {
+        padding: calc(2rem + 8 * ((100vw - 60rem) / 100)); } }
+    @media screen and (min-width: 160rem) {
+      p {
+        padding: 10rem; } }
 
 /*# sourceMappingURL=style.css.map */

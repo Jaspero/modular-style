@@ -1,0 +1,118 @@
+/*==================================================
+
+  HELPERS & VARIABLES
+  
+==================================================*/
+
+// FLUID – min & max screen sizes
+$min-vw: 60rem;
+$max-vw: 160rem;
+
+// Fluid helper
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+
+/*==================================================
+
+  FLUID TYPOGRAPHY
+
+==================================================*/
+
+@mixin font-size($max, $min) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min);
+  $u4: unit($max);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max;
+      }
+    }
+  }
+}
+
+
+/*==================================================
+
+  FLUID PADDING
+  
+==================================================*/
+
+@mixin test($max-pad, $min-pad) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-pad);
+  $u4: unit($max-pad);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      padding: $min-pad;
+      @media screen and (min-width: $min-vw) {
+        padding: calc(#{$min-pad} + #{strip-unit($max-pad - $min-pad)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        padding: $max-pad;
+      }
+    }
+  }
+}
+
+
+
+/*==================================================
+
+  SCROLL ANIMATIONS
+
+==================================================*/
+
+@mixin scroll-animation-left() {
+  transform: translateX(-50%);
+  transition: $scroll-transition;
+  &.enter { opacity: 1 !important; transform: translateX(0); }
+}
+
+@mixin scroll-animation-right() {
+  transform: translateX(50%);
+  transition: $scroll-transition;
+  &.enter { opacity: 1 !important; transform: translateX(0); }
+}
+
+@mixin scroll-animation-top() {
+  transform: translateY(-50%);
+  transition: $scroll-transition;
+  &.enter { opacity: 1 !important; transform: translateY(0); }
+}
+
+@mixin scroll-animation-bottom() {
+  transform: translateY(50%);
+  transition: $scroll-transition;
+  &.enter { opacity: 1 !important; transform: translateY(0); }
+}
+
+@mixin scroll-animation-fade-in() {
+  transition: $scroll-transition;
+  &.enter { opacity: 1 !important; }
+}
+
+
+/*==================================================
+
+  LIGHTEN & DARKEN
+  
+==================================================*/
+
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function darken($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}

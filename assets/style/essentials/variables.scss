@@ -2,18 +2,11 @@
 
   VARIABLES
 
-* Edit, add, remove these as you wish
-* Remember to remove them in other files if your remove them here
-
 ==================================================*/
 
 // Fonts
 $font-regular: 'PTR'; // inputs.scss
 $font-bold: 'PTB'; // buttons.scss, inputs.scss
 
-// Colors
-$color-bg: steelblue; // buttons.scss
-$color-text-light: white; // buttons.scss
-
-// Other
-$transition: all .2s ease; // buttons.scss, inputs.scss
+// Transitions
+$transition: all .25s ease; // buttons.scss, inputs.scss

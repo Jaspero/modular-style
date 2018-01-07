@@ -1,20 +1,5 @@
 /*==================================================
 
-  INPUT VARIABLES
-
-==================================================*/
-
-// Text of an input
-$input-min: 1.6rem; // Smallest font size
-$input-max: 2rem; // Largest font size
-
-// Special labels (e.g. text above fields)
-$label-min: 1.4rem; // Smallest font size
-$label-max: 1.6rem; // Largest font size
-
-
-/*==================================================
-
   FIELD & LABEL
 
 ==================================================*/
@@ -28,7 +13,6 @@ $label-max: 1.6rem; // Largest font size
     margin-bottom: .5rem;
 
     // Font
-    @include fluid-type($min_width, $max_width, $label-min, $label-max);
     font-family: $font-bold;
   
     svg {
@@ -72,7 +56,6 @@ input[type=number] {
   border-left: none;
   
   // Font
-  @include fluid-type($min_width, $max_width, $input-min, $input-max);
   font-family: $font-regular;
   line-height: 1.4;
 
@@ -92,8 +75,7 @@ input[type=number] {
   // Placeholder
   &::Placeholder {
 
-    // Font
-    @include fluid-type($min_width, $max_width, $input-min, $input-max);
+    // FonT
     font-family: $font-regular;
     line-height: 1.4;
 
@@ -116,7 +98,6 @@ input[type=number] {
     padding-left: 3rem;
 
     // Font
-    @include fluid-type($min_width, $max_width, $input-min, $input-max);
     font-family: $font-regular;
     line-height: 1.4;
 
@@ -197,7 +178,6 @@ input[type=number] {
     padding-left: 3rem;
 
     // Font
-    @include fluid-type($min_width, $max_width, $input-min, $input-max);
     font-family: $font-regular;
     line-height: 1.4;
 
@@ -314,18 +294,18 @@ textarea {
 
     // Font
     font-family: $font-bold;
-    color: $color-text-light;
+    color: black;
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: .2rem;
 
     // Style
     cursor: pointer;
-    background: $color-bg;
+    background: yellow;
     transition: $transition;
 
     // Hover & Focus
-    &:hover, &:focus { background: lighten($color-bg, 10%); }
+    &:hover, &:focus { background: lighten(yellow, 10%); }
 
   }
 }

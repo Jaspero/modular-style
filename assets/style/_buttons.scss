@@ -18,19 +18,19 @@ input[type=reset] {
 
   // Font
   font-family: $font-bold;
-  color: $color-text-light;
+  color: black;;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
 
   // Style
   cursor: pointer;
-  background: $color-bg;
+  background: yellow;
   transition: $transition;
 
   // Hover & Focus
   &:hover, &:focus {
-    background: lighten($color-bg, 10%);
+    background: lighten(yellow, 10%);
   }
 
   // Disabled
