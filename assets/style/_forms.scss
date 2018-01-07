@@ -5,29 +5,16 @@
 ==================================================*/
 
 .field {
-
   label {
-
+    
     // Box attributes
     display: block;
     margin-bottom: .5rem;
 
     // Font
+    @include font-size(1.4rem, 1.2rem);
     font-family: $font-bold;
-  
-    svg {
 
-      // Box attributes
-      margin-right: .5rem;
-      height: 1.8rem;
-      width: 1.8rem;
-      position: relative;
-      top: .3rem;
-
-      // Style
-      fill: white;
-
-    }
   }
 }
 
@@ -49,22 +36,21 @@ input[type=number] {
   // Box attributes
   display: block;
   width: 100%;
-  padding: .5rem;
-  border-top: none;
-  border-right: none;
-  border-bottom: 2px solid;
-  border-left: none;
-  
+  padding: 1rem 1.5rem;
+  border: .1rem solid $black;
+
   // Font
+  @include font-size(1.6rem, 1.4rem);
   font-family: $font-regular;
   line-height: 1.4;
+  color: $black;
 
   // Style
-  background: white;
+  background: $white;
   transition: $transition;
 
   // Focus
-  &:focus { background: darken(white,5%); }
+  &:focus { background: darken($white,2%); }
 
   // Valid
   &:valid {}
@@ -74,187 +60,11 @@ input[type=number] {
 
   // Placeholder
   &::Placeholder {
-
-    // FonT
     font-family: $font-regular;
     line-height: 1.4;
-
+    color: $black;
+    opacity: .5;
   }
-}
-
-
-/*==================================================
-
-  RADIO
-
-==================================================*/
-
-.radio {
-
-  label {
-
-    // Box attributes
-    position: relative;
-    padding-left: 3rem;
-
-    // Font
-    font-family: $font-regular;
-    line-height: 1.4;
-
-    // Style
-    cursor: pointer;
-
-    input[type=radio] {
-
-      // Hiding default
-      position: absolute; opacity: 0; z-index: -1;
-
-      // Hover & Focus
-      &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
-
-      // Checked
-      &:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
-
-      // Disabled
-      &:disabled ~ .control { background: darken(#eee,10%); }
-    }
-  }
-
-  .control {
-
-    // Box attributes
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    left: 0;
-    top: 50%;
-
-    // Transform
-    transform: translateY(-50%);
-
-    // Style
-    background: #eee;
-    transition: $transition;
-
-    // Custom input checked initial state 
-    &:after { 
-
-      // Box attributes
-      content: '';
-      display: block;
-      width: 1rem;
-      height: 1rem;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-
-      // Transform
-      transform: translate(-50%,-50%) scale(0);
-    
-      // Style
-      background: #333;
-      box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.2);
-      transition: $transition;
-
-    }
-  }
-}
-
-
-/*==================================================
-
-  CHECKBOX
-
-==================================================*/
-
-.checkbox {
-  
-  label {
-
-    // Box attributes
-    position: relative;
-    padding-left: 3rem;
-
-    // Font
-    font-family: $font-regular;
-    line-height: 1.4;
-
-    // Style
-    cursor: pointer;
-
-    input[type=checkbox] {
-
-      // Hiding default
-      position: absolute; opacity: 0; z-index: -1;
-
-      // Hover & Focus
-      &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
-
-      // Checked
-      &:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
-
-      // Disabled
-      &:disabled ~ .control { background: darken(#eee,10%); }
-    }
-  }
-
-  .control {
-
-    // Box attributes
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    left: 0;
-    top: 50%;
-
-    // Transform
-    transform: translateY(-50%);
-
-    // Style
-    background: #eee;
-    transition: $transition;
-
-    // Custom input checked initial state 
-    &:after { 
-
-      // Box attributes
-      content: '';
-      display: block;
-      width: 1rem;
-      height: 1rem;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-
-      // Transform
-      transform: translate(-50%,-50%) scale(0);
-    
-      // Style
-      background: #333;
-      box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.2);
-      transition: $transition;
-
-    }
-  }
-}
-
-
-/*==================================================
-
-  SELECT
-
-==================================================*/
-
-select {
-  
-  @extend input[type=text];
-
-  // TODO: remove default arrow cross-browser
-
-  // Custom SVG arrow
-
 }
 
 
@@ -272,6 +82,231 @@ textarea {
   resize: vertical;
   overflow: auto;
 
+}
+
+
+/*==================================================
+
+  SELECT
+
+==================================================*/
+
+.select {
+
+  // Box attributes
+  display: inline-block;
+  position: relative;
+  width: 100%;
+
+  select {
+
+    @extend input[type=text];
+
+    // Box attributes
+    padding-right: 5rem;
+    border-radius: 0;
+    &.short { width: auto; }
+
+    // Remove default arrow cross-browser
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    &::-ms-expand {
+      display: none;
+    }
+
+  }
+
+  // Custom SVG arrow
+  svg {
+
+    // Box attributes
+    pointer-events: none;
+    width: 1.2rem;
+    height: .8rem;
+    position: absolute;
+    bottom: 2.3rem;
+    right: 2rem;
+    transform: translateY(50%);
+
+    // Style
+    fill: #141414;
+
+  }
+}
+
+
+/*==================================================
+
+  RADIO
+
+==================================================*/
+
+.radio {
+
+  margin-bottom: 1.5rem;
+
+  // Text
+  label {
+
+    // Box attributes
+    position: relative;
+    padding-left: 3rem;
+    cursor: pointer;
+
+    // Font
+    @include font-size(1.6rem, 1.4rem);
+    font-family: $font-regular;
+    line-height: 1.4;
+
+  }
+
+  // Box
+  .control {
+
+    // Box attributes
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    // Transform
+    transform: translateY(-50%);
+
+    // Style
+    background: #eee;
+    transition: $transition;
+
+  }
+
+  // Indicator
+  .control:after { 
+
+    // Box attributes
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    // Transform
+    transform: translate(-50%,-50%) scale(0);
+    transition: $transition;
+  
+    // Style
+    background: #333;
+    box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.2);
+
+  }
+
+  // Indicator – states
+  label input[type=radio] {
+
+    // Hover & Focus
+    &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
+
+    // Checked
+    &:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
+
+    // Disabled
+    &:disabled ~ .control { background: darken(#eee,10%); }
+    
+  }
+
+  // Hiding default radio
+  label input[type=radio] { position: absolute; opacity: 0; z-index: -1; }
+}
+
+
+/*==================================================
+
+  CHECKBOX
+
+==================================================*/
+
+.checkbox {
+
+  margin-bottom: 1.5rem;
+
+  // Text
+  label {
+
+    // Box attributes
+    position: relative;
+    padding-left: 3rem;
+    cursor: pointer;
+
+    // Font
+    @include font-size(1.6rem, 1.4rem);
+    font-family: $font-regular;
+    line-height: 1.4;
+
+  }
+
+  // Box
+  .control {
+
+    // Box attributes
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    // Transform
+    transform: translateY(-50%);
+
+    // Style
+    background: #eee;
+    transition: $transition;
+
+  }
+
+  // Indicator
+  .control:after { 
+
+    // Box attributes
+    content: '';
+    display: block;
+    width: 1.2rem;
+    height: .5rem;
+    border-bottom: .4rem solid $black;
+    border-left: .4rem solid $black;
+    position: absolute;
+    top: calc(50% - .3rem);
+    left: 50%;
+
+    // Transform
+    transform: translate(-50%,-50%) rotate(-45deg) scale(0);
+    transition: $transition;
+  
+    // Style
+    box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.2);
+
+  }
+
+  // Indicator – states
+  label input[type=checkbox] {
+
+    // Hover & Focus
+    &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
+
+    // Checked
+    &:checked ~ .control:after { transform: translate(-50%,-50%) rotate(-45deg) scale(1); }
+
+    // Disabled
+    &:disabled ~ .control { background: darken(#eee,10%); }
+    
+  }
+
+  // Hiding default checkbox
+  label input[type=checkbox] { position: absolute; opacity: 0; z-index: -1; }
 }
 
 
@@ -317,13 +352,11 @@ textarea {
 
 ==================================================*/
 
-
 /*==================================================
 
   COLOR
 
 ==================================================*/
-
 
 /*==================================================
 

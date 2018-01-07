@@ -46,21 +46,23 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-left: -1.5rem;
-  margin-right: -1.5rem; }
+  margin-right: -1.5rem;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto; }
   .row div[class^='col'] {
     padding: 0 1.5rem 3rem; }
+  .row.full {
+    max-width: 100%; }
   .row.no-gutter {
     margin-left: 0;
     margin-right: 0; }
     .row.no-gutter div[class^='col'] {
       padding: 0; }
-  .row.contained {
-    width: 100%;
-    max-width: 120rem;
-    margin: 0 auto; }
-  .row.center {
-    justify-content: center; }
+  .row.left {
+    justify-content: left; }
   .row.right {
     justify-content: right; }
   .row .col-1 {
@@ -218,20 +220,21 @@ input[type=reset] {
   display: block;
   margin-bottom: .5rem;
   font-family: "PTB"; }
-  .field label svg {
-    margin-right: .5rem;
-    height: 1.8rem;
-    width: 1.8rem;
-    position: relative;
-    top: .3rem;
-    fill: white; }
+  .field label {
+    font-size: 1.2rem; }
+    @media screen and (min-width: 50rem) {
+      .field label {
+        font-size: calc(1.2rem + 0.2 * ((100vw - 50rem) / 100)); } }
+    @media screen and (min-width: 150rem) {
+      .field label {
+        font-size: 1.4rem; } }
 
 /*==================================================
 
   TEXT, EMAIL, TEL, URL, PASSWORD, SEARCH, NUMBER
 
 ==================================================*/
-input[type=text], select, textarea,
+input[type=text], textarea, .select select,
 input[type=email],
 input[type=tel],
 input[type=url],
@@ -240,24 +243,48 @@ input[type=search],
 input[type=number] {
   display: block;
   width: 100%;
-  padding: .5rem;
-  border-top: none;
-  border-right: none;
-  border-bottom: 2px solid;
-  border-left: none;
+  padding: 1rem 1.5rem;
+  border: 0.1rem solid #464646;
   font-family: "PTR";
   line-height: 1.4;
-  background: white;
+  color: #464646;
+  background: #ffffff;
   transition: all 0.25s ease; }
-  input[type=text]:focus, select:focus, textarea:focus,
+  input[type=text], textarea, .select select,
+  input[type=email],
+  input[type=tel],
+  input[type=url],
+  input[type=password],
+  input[type=search],
+  input[type=number] {
+    font-size: 1.4rem; }
+    @media screen and (min-width: 50rem) {
+      input[type=text], textarea, .select select,
+      input[type=email],
+      input[type=tel],
+      input[type=url],
+      input[type=password],
+      input[type=search],
+      input[type=number] {
+        font-size: calc(1.4rem + 0.2 * ((100vw - 50rem) / 100)); } }
+    @media screen and (min-width: 150rem) {
+      input[type=text], textarea, .select select,
+      input[type=email],
+      input[type=tel],
+      input[type=url],
+      input[type=password],
+      input[type=search],
+      input[type=number] {
+        font-size: 1.6rem; } }
+  input[type=text]:focus, textarea:focus, .select select:focus,
   input[type=email]:focus,
   input[type=tel]:focus,
   input[type=url]:focus,
   input[type=password]:focus,
   input[type=search]:focus,
   input[type=number]:focus {
-    background: #f2f2f2; }
-  input[type=text]::Placeholder, select::Placeholder, textarea::Placeholder,
+    background: #fafafa; }
+  input[type=text]::Placeholder, textarea::Placeholder, .select select::Placeholder,
   input[type=email]::Placeholder,
   input[type=tel]::Placeholder,
   input[type=url]::Placeholder,
@@ -265,39 +292,79 @@ input[type=number] {
   input[type=search]::Placeholder,
   input[type=number]::Placeholder {
     font-family: "PTR";
-    line-height: 1.4; }
+    line-height: 1.4;
+    color: #464646;
+    opacity: .5; }
+
+/*==================================================
+
+  TEXTAREA
+
+==================================================*/
+textarea {
+  resize: vertical;
+  overflow: auto; }
+
+/*==================================================
+
+  SELECT
+
+==================================================*/
+.select {
+  display: inline-block;
+  position: relative;
+  width: 100%; }
+  .select select {
+    padding-right: 5rem;
+    border-radius: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none; }
+    .select select.short {
+      width: auto; }
+    .select select::-ms-expand {
+      display: none; }
+  .select svg {
+    pointer-events: none;
+    width: 1.2rem;
+    height: .8rem;
+    position: absolute;
+    bottom: 2.3rem;
+    right: 2rem;
+    transform: translateY(50%);
+    fill: #141414; }
 
 /*==================================================
 
   RADIO
 
 ==================================================*/
-.radio label {
-  position: relative;
-  padding-left: 3rem;
-  font-family: "PTR";
-  line-height: 1.4;
-  cursor: pointer; }
-  .radio label input[type=radio] {
+.radio {
+  margin-bottom: 1.5rem; }
+  .radio label {
+    position: relative;
+    padding-left: 3rem;
+    cursor: pointer;
+    font-family: "PTR";
+    line-height: 1.4; }
+    .radio label {
+      font-size: 1.4rem; }
+      @media screen and (min-width: 50rem) {
+        .radio label {
+          font-size: calc(1.4rem + 0.2 * ((100vw - 50rem) / 100)); } }
+      @media screen and (min-width: 150rem) {
+        .radio label {
+          font-size: 1.6rem; } }
+  .radio .control {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
-    opacity: 0;
-    z-index: -1; }
-    .radio label input[type=radio]:focus ~ .control, .radio label input[type=radio]:hover ~ .control {
-      background: #d6d6d6; }
-    .radio label input[type=radio]:checked ~ .control:after {
-      transform: translate(-50%, -50%) scale(1); }
-    .radio label input[type=radio]:disabled ~ .control {
-      background: #d6d6d6; }
-.radio .control {
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #eee;
-  transition: all 0.25s ease; }
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #eee;
+    transition: all 0.25s ease; }
   .radio .control:after {
     content: '';
     display: block;
@@ -308,66 +375,73 @@ input[type=number] {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
+    transition: all 0.25s ease;
     background: #333;
-    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
-    transition: all 0.25s ease; }
+    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
+  .radio label input[type=radio]:focus ~ .control, .radio label input[type=radio]:hover ~ .control {
+    background: #d6d6d6; }
+  .radio label input[type=radio]:checked ~ .control:after {
+    transform: translate(-50%, -50%) scale(1); }
+  .radio label input[type=radio]:disabled ~ .control {
+    background: #d6d6d6; }
+  .radio label input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1; }
 
 /*==================================================
 
   CHECKBOX
 
 ==================================================*/
-.checkbox label {
-  position: relative;
-  padding-left: 3rem;
-  font-family: "PTR";
-  line-height: 1.4;
-  cursor: pointer; }
+.checkbox {
+  margin-bottom: 1.5rem; }
+  .checkbox label {
+    position: relative;
+    padding-left: 3rem;
+    cursor: pointer;
+    font-family: "PTR";
+    line-height: 1.4; }
+    .checkbox label {
+      font-size: 1.4rem; }
+      @media screen and (min-width: 50rem) {
+        .checkbox label {
+          font-size: calc(1.4rem + 0.2 * ((100vw - 50rem) / 100)); } }
+      @media screen and (min-width: 150rem) {
+        .checkbox label {
+          font-size: 1.6rem; } }
+  .checkbox .control {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #eee;
+    transition: all 0.25s ease; }
+  .checkbox .control:after {
+    content: '';
+    display: block;
+    width: 1.2rem;
+    height: .5rem;
+    border-bottom: 0.4rem solid #464646;
+    border-left: 0.4rem solid #464646;
+    position: absolute;
+    top: calc(50% - .3rem);
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg) scale(0);
+    transition: all 0.25s ease;
+    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
+  .checkbox label input[type=checkbox]:focus ~ .control, .checkbox label input[type=checkbox]:hover ~ .control {
+    background: #d6d6d6; }
+  .checkbox label input[type=checkbox]:checked ~ .control:after {
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1); }
+  .checkbox label input[type=checkbox]:disabled ~ .control {
+    background: #d6d6d6; }
   .checkbox label input[type=checkbox] {
     position: absolute;
     opacity: 0;
     z-index: -1; }
-    .checkbox label input[type=checkbox]:focus ~ .control, .checkbox label input[type=checkbox]:hover ~ .control {
-      background: #d6d6d6; }
-    .checkbox label input[type=checkbox]:checked ~ .control:after {
-      transform: translate(-50%, -50%) scale(1); }
-    .checkbox label input[type=checkbox]:disabled ~ .control {
-      background: #d6d6d6; }
-.checkbox .control {
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #eee;
-  transition: all 0.25s ease; }
-  .checkbox .control:after {
-    content: '';
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    background: #333;
-    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
-    transition: all 0.25s ease; }
-
-/*==================================================
-
-  SELECT
-
-==================================================*/
-/*==================================================
-
-  TEXTAREA
-
-==================================================*/
-textarea {
-  resize: vertical;
-  overflow: auto; }
 
 /*==================================================
 
@@ -464,5 +538,11 @@ p {
         padding-right: 4rem;
         padding-bottom: 10rem;
         padding-left: 4rem; } }
+
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  margin: 1rem 0; }
 
 /*# sourceMappingURL=style.css.map */

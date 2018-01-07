@@ -43,3 +43,10 @@ p {
   @include fluid(10rem 4rem, 4rem 1rem, padding);
   border: 1px solid red;
 }
+
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  margin: 1rem 0;
+}
