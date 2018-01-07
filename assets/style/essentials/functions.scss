@@ -16,64 +16,6 @@ $max-vw: 150rem;
 
 /*==================================================
 
-  FLUID
-  
-==================================================*/
-
-@mixin test($values) {
-
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-
-  @if length($values) == 1 {
-    $u3: unit($values);
-    $u4: unit($values);
-
-  }
-  @if length($values) == 2 {
-    $u3: unit(nth($values, 1));
-    $u4: unit(nth($values, 2));
-  }
-  @if length($values) == 3 {
-
-  }
-  @if length($values) == 4 {
-
-  }
-
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-    & {
-      font-size: $min;
-      @media screen and (min-width: $min-vw) {
-        font-size: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-      }
-      @media screen and (min-width: $max-vw) {
-        font-size: $max;
-      }
-    }
-  }
-}
-
-@mixin fluid($max, $min, $prop) {
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-  $u3: unit($min);
-  $u4: unit($max);
-
-  & {
-    #{$prop}: $min;
-    @media screen and (min-width: $min-vw) {
-      #{$prop}: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-    }
-    @media screen and (min-width: $max-vw) {
-      #{$prop}: $max;
-    }
-  }
-}
-
-
-/*==================================================
-
   SCROLL ANIMATIONS
 
 ==================================================*/
@@ -120,4 +62,113 @@ $max-vw: 150rem;
 
 @function darken($color, $percentage) {
   @return mix(black, $color, $percentage);
+}
+
+
+/*==================================================
+
+  FLUID MARGIN & PADDING
+  
+==================================================*/
+
+@mixin fluid($max, $min, $prop) {
+
+  $maxTop: 0;
+  $maxRight: 0;
+  $maxBottom: 0;
+  $maxLeft: 0;
+
+  $minTop: 0;
+  $minRight: 0;
+  $minBottom: 0;
+  $minLeft: 0;
+
+  @if length($max) == 1 {
+    $maxTop: $max;
+    $maxRight: $max;
+    $maxBottom: $max;
+    $maxLeft: $max;
+  }
+  @if length($max) == 2 {
+    $maxTop: nth($max, 1);
+    $maxRight: nth($max, 2);
+    $maxBottom: nth($max, 1);
+    $maxLeft: nth($max, 2);
+  }
+  @if length($max) == 3 {
+    $maxTop: nth($max, 1);
+    $maxRight: nth($max, 2);
+    $maxBottom: nth($max, 3);
+    $maxLeft: nth($max, 2);
+  }
+  @if length($max) == 4 {
+    $maxTop: nth($max, 1);
+    $maxRight: nth($max, 2);
+    $maxBottom: nth($max, 3);
+    $maxLeft: nth($max, 4);
+  }
+
+  @if length($min) == 1 {
+    $minTop: $min;
+    $minRight: $min;
+    $minBottom: $min;
+    $minLeft: $min;
+  }
+  @if length($min) == 2 {
+    $minTop: nth($min, 1);
+    $minRight: nth($min, 2);
+    $minBottom: nth($min, 1);
+    $minLeft: nth($min, 2);
+  }
+  @if length($min) == 3 {
+    $minTop: nth($min, 1);
+    $minRight: nth($min, 2);
+    $minBottom: nth($min, 3);
+    $minLeft: nth($min, 2);
+  }
+  @if length($min) == 4 {
+    $minTop: nth($min, 1);
+    $minRight: nth($min, 2);
+    $minBottom: nth($min, 3);
+    $minLeft: nth($min, 4);
+  }
+
+  & {
+    #{$prop}-top: $minTop;
+    #{$prop}-right: $minRight;
+    #{$prop}-bottom: $minBottom;
+    #{$prop}-left: $minLeft;
+
+    @media screen and (min-width: $min-vw) {
+      #{$prop}-top: calc(#{$minTop} + #{strip-unit($maxTop - $minTop)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      #{$prop}-right: calc(#{$minRight} + #{strip-unit($maxRight - $minRight)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      #{$prop}-bottom: calc(#{$minBottom} + #{strip-unit($maxBottom - $minBottom)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      #{$prop}-left: calc(#{$minLeft} + #{strip-unit($maxLeft - $minLeft)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+    }
+    @media screen and (min-width: $max-vw) {
+      #{$prop}-top: $maxTop;
+      #{$prop}-right: $maxRight;
+      #{$prop}-bottom: $maxBottom;
+      #{$prop}-left: $maxLeft;
+    }
+  }
+}
+
+
+/*==================================================
+
+  FLUID FONT-SIZE
+
+==================================================*/
+
+@mixin font-size($max, $min) {
+  & {
+    font-size: $min;
+    @media screen and (min-width: $min-vw) {
+      font-size: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+    }
+    @media screen and (min-width: $max-vw) {
+      font-size: $max;
+    }
+  }
 }

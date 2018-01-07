@@ -15,11 +15,6 @@
 ==================================================*/
 /*==================================================
 
-  FLUID
-  
-==================================================*/
-/*==================================================
-
   SCROLL ANIMATIONS
 
 ==================================================*/
@@ -27,6 +22,16 @@
 
   LIGHTEN & DARKEN
   
+==================================================*/
+/*==================================================
+
+  FLUID MARGIN & PADDING
+  
+==================================================*/
+/*==================================================
+
+  FLUID FONT-SIZE
+
 ==================================================*/
 /*==================================================
 
@@ -435,12 +440,29 @@ body {
 p {
   border: 1px solid red; }
   p {
-    font-size: 2rem; }
+    font-size: 1.6rem; }
     @media screen and (min-width: 50rem) {
       p {
-        font-size: calc(2rem + 2 * ((100vw - 50rem) / 100)); } }
+        font-size: calc(1.6rem + 0.4 * ((100vw - 50rem) / 100)); } }
     @media screen and (min-width: 150rem) {
       p {
-        font-size: 4rem; } }
+        font-size: 2rem; } }
+  p {
+    padding-top: 4rem;
+    padding-right: 1rem;
+    padding-bottom: 4rem;
+    padding-left: 1rem; }
+    @media screen and (min-width: 50rem) {
+      p {
+        padding-top: calc(4rem + 6 * ((100vw - 50rem) / 100));
+        padding-right: calc(1rem + 3 * ((100vw - 50rem) / 100));
+        padding-bottom: calc(4rem + 6 * ((100vw - 50rem) / 100));
+        padding-left: calc(1rem + 3 * ((100vw - 50rem) / 100)); } }
+    @media screen and (min-width: 150rem) {
+      p {
+        padding-top: 10rem;
+        padding-right: 4rem;
+        padding-bottom: 10rem;
+        padding-left: 4rem; } }
 
 /*# sourceMappingURL=style.css.map */
