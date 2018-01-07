@@ -60,15 +60,13 @@ $max-vw: 150rem;
   $u3: unit($min);
   $u4: unit($max);
 
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-    & {
-      #{$prop}: $min;
-      @media screen and (min-width: $min-vw) {
-        #{$prop}: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-      }
-      @media screen and (min-width: $max-vw) {
-        #{$prop}: $max;
-      }
+  & {
+    #{$prop}: $min;
+    @media screen and (min-width: $min-vw) {
+      #{$prop}: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+    }
+    @media screen and (min-width: $max-vw) {
+      #{$prop}: $max;
     }
   }
 }

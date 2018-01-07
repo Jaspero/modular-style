@@ -39,6 +39,6 @@ body { margin: 0; padding: 0; overflow-x: hidden; }
 ==================================================*/
 
 p {
-  @include fluid(4rem, 1.6rem, font-size);
+  @include fluid(4rem, 2rem, font-size);
   border: 1px solid red;
 }
