@@ -5,8 +5,8 @@
 ==================================================*/
 
 // FLUID – min & max screen sizes
-$min-vw: 60rem;
-$max-vw: 160rem;
+$min-vw: 50rem;
+$max-vw: 150rem;
 
 // Fluid helper
 @function strip-unit($value) {
@@ -46,25 +46,106 @@ $max-vw: 160rem;
   
 ==================================================*/
 
-@mixin test($max-pad, $min-pad) {
+@mixin test($values...) {    
+  @each $var in $values {
+      padding: #{$var};
+  }
+}
+
+@mixin padding($max, $min) {
   $u1: unit($min-vw);
   $u2: unit($max-vw);
-  $u3: unit($min-pad);
-  $u4: unit($max-pad);
+  $u3: unit($min);
+  $u4: unit($max);
 
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
     & {
-      padding: $min-pad;
+      padding: $min;
       @media screen and (min-width: $min-vw) {
-        padding: calc(#{$min-pad} + #{strip-unit($max-pad - $min-pad)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        padding: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
       }
       @media screen and (min-width: $max-vw) {
-        padding: $max-pad;
+        padding: $max;
       }
     }
   }
 }
 
+@mixin padding-top($max, $min) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min);
+  $u4: unit($max);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      padding-top: $min;
+      @media screen and (min-width: $min-vw) {
+        padding-top: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        padding-top: $max;
+      }
+    }
+  }
+}
+
+@mixin padding-right($max, $min) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min);
+  $u4: unit($max);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      padding-right: $min;
+      @media screen and (min-width: $min-vw) {
+        padding-right: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        padding-right: $max;
+      }
+    }
+  }
+}
+
+@mixin padding-bottom($max, $min) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min);
+  $u4: unit($max);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      padding-bottom: $min;
+      @media screen and (min-width: $min-vw) {
+        padding-bottom: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        padding-bottom: $max;
+      }
+    }
+  }
+}
+
+@mixin padding-left($max, $min) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min);
+  $u4: unit($max);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      padding-left: $min;
+      @media screen and (min-width: $min-vw) {
+        padding-left: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        padding-left: $max;
+      }
+    }
+  }
+}
 
 
 /*==================================================

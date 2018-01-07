@@ -40,6 +40,6 @@ body { margin: 0; padding: 0; overflow-x: hidden; }
 
 p {
   @include font-size(2rem, 1.6rem);
-  @include test(10rem, 2rem);
+  @include test(10rem 5rem);
   border: 1px solid red;
 }
