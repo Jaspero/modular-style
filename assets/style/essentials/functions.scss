@@ -46,9 +46,56 @@ $max-vw: 150rem;
   
 ==================================================*/
 
-@mixin test($values...) {    
-  @each $var in $values {
-      padding: #{$var};
+@mixin test($values) {
+
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+
+  @if length($values) == 1 {
+    $u3: unit($values);
+    $u4: unit($values);
+
+  }
+  @if length($values) == 2 {
+    $u3: unit(nth($values, 1));
+    $u4: unit(nth($values, 2));
+  }
+  @if length($values) == 3 {
+
+  }
+  @if length($values) == 4 {
+
+  }
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max;
+      }
+    }
+  }
+}
+
+@mixin dynamic($max, $min, $prop) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min);
+  $u4: unit($max);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      #{$prop}: $min;
+      @media screen and (min-width: $min-vw) {
+        #{$prop}: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        #{$prop}: $max;
+      }
+    }
   }
 }
 
