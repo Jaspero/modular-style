@@ -11,26 +11,36 @@ input[type=reset] {
 
   // Box attributes
   padding: 2rem 6rem;
-  margin: 0;
+  margin: 1rem;
   outline: none;
-  border: none;
+  border: .1rem solid $black;
   border-radius: 0;
 
   // Font
   font-family: $font-bold;
-  color: black;;
+  color: $black;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
 
   // Style
   cursor: pointer;
-  background: yellow;
+  background: $white;
   transition: $transition;
+
+  // SVG
+  svg {
+    position: relative;
+    top: .1rem;
+    margin-left: .5rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    fill: $black;
+  }
 
   // Hover & Focus
   &:hover, &:focus {
-    background: lighten(yellow, 10%);
+    background: darken($white, 10%);
   }
 
   // Disabled
@@ -39,12 +49,62 @@ input[type=reset] {
   // Active
   &:active {}
 
+  // States
+  &.progress, &.success, &.error {
+    color: transparent !important;
+    pointer-events: none;
+    user-select: none;
+    position: relative;
+    svg {display: none;}
+  }
+  &.progress {
+    cursor: wait;
+    &:after {
+      content: '';
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      top: calc(50% - 1rem);
+      left: calc(50% - 1rem);
+      height: 1.8rem;
+      width: 1.8rem;
+      border-top: .3rem solid $black;
+      border-right: .3rem solid $black;
+      border-bottom: .3rem solid transparent;
+      border-left: .3rem solid transparent;
+      animation: progress-animation .75s linear infinite;
+    }
+  }
+  &.success {
+    &:after {
+      content: '';
+      display: block;
+      width: .8rem;
+      height: 1.8rem;
+      border-top: none;
+      border-right: .2rem solid $black;
+      border-bottom: .2rem solid $black;
+      border-left: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+  }
+  &.error {
+    &:after {
+      content: 'error';
+      display: block;
+      color: $black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
 }
 
-/*==================================================
-
-  INPUT[TYPE=IMAGE]
-
-* TODO: Style separately because it needs some hacks
-
-==================================================*/
+@keyframes progress-animation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

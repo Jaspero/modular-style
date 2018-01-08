@@ -16,18 +16,17 @@ sass --watch style.scss:style.css
 <header></header>
 
 <form action="">
-
     <div class="row">
         <div class="col-4 col-s-10">
             <div class="field">
                 <label for="id_text">Text</label>
-                <input id="id_text" type="text" placeholder="Text placeholder">
+                <input id="id_text" type="text" placeholder="Text placeholder" autocomplete="on" autofocus>
             </div>
         </div>
         <div class="col-4 col-s-10">
             <div class="field">
                 <label for="id_email">Email</label>
-                <input id="id_email" type="email" placeholder="Email placeholder">
+                <input id="id_email" type="email" placeholder="Email placeholder" autocomplete="email">
             </div>
         </div>
     </div>
@@ -35,13 +34,13 @@ sass --watch style.scss:style.css
         <div class="col-4 col-s-10">
             <div class="field">
                 <label for="id_tel">Tel</label>
-                <input id="id_tel" type="tel" placeholder="Tel placeholder">
+                <input id="id_tel" type="tel" placeholder="Tel placeholder" autocomplete="tel">
             </div>
         </div>
         <div class="col-4 col-s-10">
             <div class="field">
                 <label for="id_url">URL</label>
-                <input id="id_url" type="url" placeholder="URL placeholder">
+                <input id="id_url" type="url" placeholder="URL placeholder" autocomplete="url">
             </div>
         </div>
     </div>
@@ -55,7 +54,7 @@ sass --watch style.scss:style.css
         <div class="col-4 col-s-10">
             <div class="field">
                 <label for="id_search">Search</label>
-                <input id="id_search" type="search" placeholder="Search placeholder">
+                <input id="id_search" type="search" placeholder="Search placeholder" autocomplete="on">
             </div>
         </div>
     </div>
@@ -63,7 +62,7 @@ sass --watch style.scss:style.css
         <div class="col-4 col-s-10">
             <div class="field">
                 <label for="id_number">Number</label>
-                <input id="id_number" type="number" placeholder="Number placeholder">
+                <input id="id_number" type="number" placeholder="Number placeholder" autocomplete="num">
             </div>
         </div>
         <div class="col-4 col-s-10">
@@ -144,7 +143,10 @@ sass --watch style.scss:style.css
         </div>
     </div>
     <div class="row">
-        <button>Button</button>
+        <button>
+            Button
+            <svg viewBox="1221 2035 18 12"><path d="M1221 2042h14.17l-3.58 3.59 1.41 1.41 6-6-6-6-1.41 1.41 3.58 3.59H1221z"/></svg>
+        </button>
     </div>
     <div class="row">
         <input type="button" value="input">
@@ -156,78 +158,12 @@ sass --watch style.scss:style.css
         <input type="submit" value="submit">
     </div>
     <div class="row">
-        <div class="col-8 col-s-10">
-            <div class="field file">
-                <label for="file">
-                    <svg viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
-                    File
-                </label>
-                <input id="file" type="file">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8 col-s-10">
-            <div class="field range">
-                <input type="range">
-            </div>
-        </div>
-    </div>
-</form>    
-
-<form action="">
-    <div class="row">
-        <div class="col-8 col-s-10">
-            <h3>TODO:</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8 col-s-10">
-            <div class="field">
-                <input type="image" value="image">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8 col-s-10">
-            <div class="field">
-                <input type="color">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8 col-s-10">
-            <div class="field">
-                <input type="date">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8 col-s-10">
-            <div class="field">
-                <input type="datetime-local">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8 col-s-10">
-            <div class="field">
-                <input type="month">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8 col-s-10">
-            <div class="field">
-                <input type="week">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8 col-s-10">
-            <div class="field">
-                <input type="time">
-            </div>
+        <div class="field file">
+            <label for="file">
+                <svg viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+                File
+            </label>
+            <input id="file" type="file">
         </div>
     </div>
 </form>

@@ -1,6 +1,7 @@
 @import 'assets/style/essentials';
-@import 'assets/style/buttons.scss';
-@import 'assets/style/forms.scss';
+@import 'assets/style/buttons';
+@import 'assets/style/forms';
+@import 'assets/style/tables';
 
 /*==================================================
 
@@ -37,16 +38,3 @@ body { margin: 0; padding: 0; overflow-x: hidden; }
   GLOBAL
 
 ==================================================*/
-
-p {
-  @include font-size(2rem, 1.6rem);
-  @include fluid(10rem 4rem, 4rem 1rem, padding);
-  border: 1px solid red;
-}
-
-button,
-input[type=button],
-input[type=submit],
-input[type=reset] {
-  margin: 1rem 0;
-}

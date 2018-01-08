@@ -1,21 +1,13 @@
 /*==================================================
 
-  FIELD & LABEL
+  FIELD
 
 ==================================================*/
 
 .field {
-  label {
-    
-    // Box attributes
-    display: block;
-    margin-bottom: .5rem;
-
-    // Font
-    @include font-size(1.4rem, 1.2rem);
-    font-family: $font-bold;
-
-  }
+  display: inline-block;
+  width: 100%;
+  &.short { width: auto; }
 }
 
 
@@ -25,6 +17,19 @@
 
 ==================================================*/
 
+// Text
+.field label {
+
+  // Box attributes
+  display: block;
+
+  // Font
+  @include font-size(1.4rem, 1.2rem);
+  font-family: $font-bold;
+
+}
+
+// Custom field
 input[type=text],
 input[type=email],
 input[type=tel],
@@ -34,8 +39,10 @@ input[type=search],
 input[type=number] {
 
   // Box attributes
+  -webkit-appearance: textfield;
   display: block;
   width: 100%;
+  margin-top: .5rem;
   padding: 1rem 1.5rem;
   border: .1rem solid $black;
 
@@ -65,22 +72,6 @@ input[type=number] {
     color: $black;
     opacity: .5;
   }
-}
-
-
-/*==================================================
-
-  TEXTAREA
-
-==================================================*/
-
-textarea {
-  
-  @extend input[type=text];
-
-  // Style
-  resize: vertical;
-  overflow: auto;
 
 }
 
@@ -95,8 +86,8 @@ textarea {
 
   // Box attributes
   display: inline-block;
-  position: relative;
   width: 100%;
+  position: relative;
 
   select {
 
@@ -105,10 +96,8 @@ textarea {
     // Box attributes
     padding-right: 5rem;
     border-radius: 0;
-    &.short { width: auto; }
 
     // Remove default arrow cross-browser
-
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
@@ -312,54 +301,73 @@ textarea {
 
 /*==================================================
 
+  TEXTAREA
+
+==================================================*/
+
+textarea {
+
+  @extend input[type=text];
+
+  // Style
+  resize: vertical;
+  overflow: auto;
+
+}
+
+
+/*==================================================
+
   FILE
 
 ==================================================*/
 
 .file {
 
-  // Remove default input
-  input[type="file"] { display: none; }
+  width: auto;
 
+  // Custom file
   label {
 
     // Box attributes
     display: inline-block;
     padding: 2rem 6rem;
+    margin: 1rem;
+    border: .1rem solid $black;
 
     // Font
     font-family: $font-bold;
-    color: black;
+    color: $black;
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: .2rem;
 
     // Style
     cursor: pointer;
-    background: yellow;
+    background: $white;
     transition: $transition;
 
     // Hover & Focus
-    &:hover, &:focus { background: lighten(yellow, 10%); }
+    &:hover, &:focus { background: darken($white, 10%); }
+
+    // Custom SVG arrow
+    svg {
+
+      // Box attributes
+      pointer-events: none;
+      width: 1.6rem;
+      height: 1.6rem;
+      position: relative;
+      top: .4rem;
+      margin-right: .4rem;
+
+      // Style
+      fill: $black;
+    }
 
   }
+
+  // Hiding default input
+  input[type="file"] { display: none; }
+
 }
-
-
-/*==================================================
-
-  RANGE
-
-==================================================*/
-
-/*==================================================
-
-  COLOR
-
-==================================================*/
-
-/*==================================================
-
-  DATE, DATETIME-LOCAL, MONTH, WEEK, TIME
-
-==================================================*/
