@@ -16,42 +16,6 @@ $max-vw: 150rem;
 
 /*==================================================
 
-  SCROLL ANIMATIONS
-
-==================================================*/
-
-@mixin scroll-animation-left() {
-  transform: translateX(-50%);
-  transition: $scroll-transition;
-  &.enter { opacity: 1 !important; transform: translateX(0); }
-}
-
-@mixin scroll-animation-right() {
-  transform: translateX(50%);
-  transition: $scroll-transition;
-  &.enter { opacity: 1 !important; transform: translateX(0); }
-}
-
-@mixin scroll-animation-top() {
-  transform: translateY(-50%);
-  transition: $scroll-transition;
-  &.enter { opacity: 1 !important; transform: translateY(0); }
-}
-
-@mixin scroll-animation-bottom() {
-  transform: translateY(50%);
-  transition: $scroll-transition;
-  &.enter { opacity: 1 !important; transform: translateY(0); }
-}
-
-@mixin scroll-animation-fade-in() {
-  transition: $scroll-transition;
-  &.enter { opacity: 1 !important; }
-}
-
-
-/*==================================================
-
   LIGHTEN & DARKEN
   
 ==================================================*/

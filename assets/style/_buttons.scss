@@ -51,7 +51,7 @@ input[type=reset] {
 
   // States
   &.progress, &.success, &.error {
-    color: transparent !important;
+    color: transparent;
     pointer-events: none;
     user-select: none;
     position: relative;
