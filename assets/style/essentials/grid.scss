@@ -20,8 +20,6 @@ $gutter-half: $gutter/2; // Don't change this
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: -$gutter-half;
-  margin-right: -$gutter-half;
   div[class^='col'] { padding: 0 $gutter-half $gutter; }
 
   // Container
@@ -31,7 +29,7 @@ $gutter-half: $gutter/2; // Don't change this
 
   &.full { max-width: 100%; }
 
-  &.no-gutter { margin-left: 0; margin-right: 0; div[class^='col'] { padding: 0; } }
+  &.no-gutter { div[class^='col'] { padding: 0; } }
 
   &.left { justify-content: left; }
 

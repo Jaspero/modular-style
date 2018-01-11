@@ -15,11 +15,6 @@
 ==================================================*/
 /*==================================================
 
-  SCROLL ANIMATIONS
-
-==================================================*/
-/*==================================================
-
   LIGHTEN & DARKEN
   
 ==================================================*/
@@ -47,8 +42,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
   width: 100%;
   max-width: 120rem;
   margin: 0 auto; }
@@ -56,11 +49,8 @@
     padding: 0 1.5rem 3rem; }
   .row.full {
     max-width: 100%; }
-  .row.no-gutter {
-    margin-left: 0;
-    margin-right: 0; }
-    .row.no-gutter div[class^='col'] {
-      padding: 0; }
+  .row.no-gutter div[class^='col'] {
+    padding: 0; }
   .row.left {
     justify-content: left; }
   .row.right {
@@ -92,76 +82,76 @@
 
 @media screen and (max-width: 1024px) {
   .col-m-1 {
-    flex-basis: 8.3333% !important; }
+    flex-basis: 8.3333%; }
 
   .col-m-2 {
-    flex-basis: 16.6666% !important; }
+    flex-basis: 16.6666%; }
 
   .col-m-3 {
-    flex-basis: 25% !important; }
+    flex-basis: 25%; }
 
   .col-m-4 {
-    flex-basis: 33.3333% !important; }
+    flex-basis: 33.3333%; }
 
   .col-m-5 {
-    flex-basis: 41.6666% !important; }
+    flex-basis: 41.6666%; }
 
   .col-m-6 {
-    flex-basis: 50% !important; }
+    flex-basis: 50%; }
 
   .col-m-7 {
-    flex-basis: 58.3333% !important; }
+    flex-basis: 58.3333%; }
 
   .col-m-8 {
-    flex-basis: 66.6666% !important; }
+    flex-basis: 66.6666%; }
 
   .col-m-9 {
-    flex-basis: 75% !important; }
+    flex-basis: 75%; }
 
   .col-m-10 {
-    flex-basis: 83.3333% !important; }
+    flex-basis: 83.3333%; }
 
   .col-m-11 {
-    flex-basis: 91.6666% !important; }
+    flex-basis: 91.6666%; }
 
   .col-m-12 {
-    flex-basis: 100% !important; } }
+    flex-basis: 100%; } }
 @media screen and (max-width: 767px) {
   .col-s-1 {
-    flex-basis: 8.3333% !important; }
+    flex-basis: 8.3333%; }
 
   .col-s-2 {
-    flex-basis: 16.6666% !important; }
+    flex-basis: 16.6666%; }
 
   .col-s-3 {
-    flex-basis: 25% !important; }
+    flex-basis: 25%; }
 
   .col-s-4 {
-    flex-basis: 33.3333% !important; }
+    flex-basis: 33.3333%; }
 
   .col-s-5 {
-    flex-basis: 41.6666% !important; }
+    flex-basis: 41.6666%; }
 
   .col-s-6 {
-    flex-basis: 50% !important; }
+    flex-basis: 50%; }
 
   .col-s-7 {
-    flex-basis: 58.3333% !important; }
+    flex-basis: 58.3333%; }
 
   .col-s-8 {
-    flex-basis: 66.6666% !important; }
+    flex-basis: 66.6666%; }
 
   .col-s-9 {
-    flex-basis: 75% !important; }
+    flex-basis: 75%; }
 
   .col-s-10 {
-    flex-basis: 83.3333% !important; }
+    flex-basis: 83.3333%; }
 
   .col-s-11 {
-    flex-basis: 91.6666% !important; }
+    flex-basis: 91.6666%; }
 
   .col-s-12 {
-    flex-basis: 100% !important; } }
+    flex-basis: 100%; } }
 /*==================================================
 
   TYPOGRAPHY
@@ -223,7 +213,7 @@ input[type=reset] {
   input[type=reset].progress,
   input[type=reset].success,
   input[type=reset].error {
-    color: transparent !important;
+    color: transparent;
     pointer-events: none;
     user-select: none;
     position: relative; }
