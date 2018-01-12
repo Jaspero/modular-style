@@ -19,13 +19,10 @@
 
 // Text
 .field label {
-
-  // Box attributes
+  // Box
   display: block;
-
   // Font
   @include font-size(1.4rem, 1.2rem);
-
 }
 
 // Custom field
@@ -36,40 +33,35 @@ input[type=url],
 input[type=password],
 input[type=search],
 input[type=number] {
-
-  // Box attributes
+  // Box
   -webkit-appearance: textfield;
   display: block;
   width: 100%;
   margin-top: .5rem;
   padding: 1rem 1.5rem;
   border: .1rem solid black;
-
   // Font
   @include font-size(1.6rem, 1.4rem);
   line-height: 1.4;
   color: black;
-
   // Style
   background: white;
   transition: $transition;
 
   // Focus
   &:focus { background: darken(white,2%); }
-
   // Valid
   &:valid {}
-
   // Invalid
   &:invalid {}
 
   // Placeholder
   &::Placeholder {
+    font-family: sans-serif;
     line-height: 1.4;
     color: black;
     opacity: .5;
   }
-
 }
 
 
@@ -80,17 +72,14 @@ input[type=number] {
 ==================================================*/
 
 .select {
-
-  // Box attributes
+  // Box
   display: inline-block;
   width: 100%;
   position: relative;
 
   select {
-
     @extend input[type=text];
-
-    // Box attributes
+    // Box
     padding-right: 5rem;
     border-radius: 0;
 
@@ -98,16 +87,12 @@ input[type=number] {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    &::-ms-expand {
-      display: none;
-    }
-
+    &::-ms-expand { display: none; }
   }
 
   // Custom SVG arrow
   svg {
-
-    // Box attributes
+    // Box
     pointer-events: none;
     width: 1.2rem;
     height: .8rem;
@@ -115,10 +100,8 @@ input[type=number] {
     bottom: 2.3rem;
     right: 2rem;
     transform: translateY(50%);
-
     // Style
     fill: #141414;
-
   }
 }
 
@@ -130,47 +113,39 @@ input[type=number] {
 ==================================================*/
 
 .radio {
-
+  // Box
   margin-bottom: 1.5rem;
 
   // Text
   label {
-
-    // Box attributes
+    // Box
     position: relative;
     padding-left: 3rem;
     cursor: pointer;
-
     // Font
     @include font-size(1.6rem, 1.4rem);
     line-height: 1.4;
-
   }
 
-  // Box
+  // Control box
   .control {
-
-    // Box attributes
+    // Box
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
     position: absolute;
     left: 0;
     top: 50%;
-
     // Transform
     transform: translateY(-50%);
-
+    transition: $transition;
     // Style
     background: #eee;
-    transition: $transition;
-
   }
 
   // Indicator
   .control:after { 
-
-    // Box attributes
+    // Box
     content: '';
     display: block;
     width: 1rem;
@@ -179,29 +154,22 @@ input[type=number] {
     position: absolute;
     top: 50%;
     left: 50%;
-
     // Transform
     transform: translate(-50%,-50%) scale(0);
     transition: $transition;
-  
     // Style
     background: #333;
     box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.2);
-
   }
 
   // Indicator – states
   label input[type=radio] {
-
     // Hover & Focus
     &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
-
     // Checked
     &:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
-
     // Disabled
     &:disabled ~ .control { background: darken(#eee,10%); }
-    
   }
 
   // Hiding default radio
@@ -216,46 +184,39 @@ input[type=number] {
 ==================================================*/
 
 .checkbox {
-
+  // Box
   margin-bottom: 1.5rem;
 
   // Text
   label {
-
-    // Box attributes
+    // Box
     position: relative;
     padding-left: 3rem;
     cursor: pointer;
-
     // Font
     @include font-size(1.6rem, 1.4rem);
     line-height: 1.4;
 
   }
 
-  // Box
+  // Control box
   .control {
-
-    // Box attributes
+    // Box
     width: 2rem;
     height: 2rem;
     position: absolute;
     left: 0;
     top: 50%;
-
     // Transform
     transform: translateY(-50%);
-
+    transition: $transition;
     // Style
     background: #eee;
-    transition: $transition;
-
   }
 
   // Indicator
   .control:after { 
-
-    // Box attributes
+    // Box
     content: '';
     display: block;
     width: 1.2rem;
@@ -265,28 +226,21 @@ input[type=number] {
     position: absolute;
     top: calc(50% - .3rem);
     left: 50%;
-
     // Transform
     transform: translate(-50%,-50%) rotate(-45deg) scale(0);
     transition: $transition;
-  
     // Style
     box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.2);
-
   }
 
   // Indicator – states
   label input[type=checkbox] {
-
     // Hover & Focus
     &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
-
     // Checked
     &:checked ~ .control:after { transform: translate(-50%,-50%) rotate(-45deg) scale(1); }
-
     // Disabled
     &:disabled ~ .control { background: darken(#eee,10%); }
-    
   }
 
   // Hiding default checkbox
@@ -301,9 +255,7 @@ input[type=number] {
 ==================================================*/
 
 textarea {
-
   @extend input[type=text];
-
   // Style
   resize: vertical;
   overflow: auto;
@@ -318,24 +270,21 @@ textarea {
 ==================================================*/
 
 .file {
-
+  // Box
   width: auto;
 
   // Custom file
   label {
-
-    // Box attributes
+    // Box
     display: inline-block;
     padding: 2rem 6rem;
     margin: 1rem;
     border: .1rem solid black;
-
     // Font
     color: black;
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: .2rem;
-
     // Style
     cursor: pointer;
     background: white;
@@ -346,22 +295,18 @@ textarea {
 
     // Custom SVG arrow
     svg {
-
-      // Box attributes
+      // Box
       pointer-events: none;
       width: 1.6rem;
       height: 1.6rem;
       position: relative;
       top: .4rem;
       margin-right: .4rem;
-
       // Style
       fill: black;
     }
-
   }
 
   // Hiding default input
   input[type="file"] { display: none; }
-
 }

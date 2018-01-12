@@ -4,7 +4,9 @@
 
 ==================================================*/
 
-p, h1, h2, h3, h4, h5, h6 {}
+html { font-family: sans-serif; }
+
+p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 h1 {}
 h2 {}
@@ -15,9 +17,16 @@ h6 {}
 
 p {}
 
-a {
+a.link {
   text-decoration-skip: ink;
   color: #0000ee;
   &:visited { color: #551a8b; }
+}
+
+ul.inline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li { display: inline; }
 }
 

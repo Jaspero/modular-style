@@ -8,19 +8,16 @@ button,
 input[type=button],
 input[type=submit],
 input[type=reset] {
-
-  // Box attributes
+  // Box
   padding: 2rem 6rem;
   margin: 1rem;
   outline: none;
   border: .1rem solid black;
   border-radius: 0;
-
   // Font
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
-
   // Style
   cursor: pointer;
   background: white;
@@ -37,16 +34,11 @@ input[type=reset] {
   }
 
   // Hover & Focus
-  &:hover, &:focus {
-    background: darken(white, 10%);
-  }
-
+  &:hover, &:focus { background: darken(white, 10%); }
   // Disabled
   &:disabled {}
-
   // Active
   &:active {}
-
   // States
   &.progress, &.success, &.error {
     color: transparent;
@@ -71,6 +63,10 @@ input[type=reset] {
       border-bottom: .3rem solid transparent;
       border-left: .3rem solid transparent;
       animation: progress-animation .75s linear infinite;
+      @keyframes progress-animation {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
     }
   }
   &.success {
@@ -100,9 +96,4 @@ input[type=reset] {
       transform: translate(-50%,-50%);
     }
   }
-}
-
-@keyframes progress-animation {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }

@@ -157,11 +157,24 @@
   TYPOGRAPHY
 
 ==================================================*/
-a {
+html {
+  font-family: sans-serif; }
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+a.link {
   text-decoration-skip: ink;
   color: #0000ee; }
-  a:visited {
+  a.link:visited {
     color: #551a8b; }
+
+ul.inline {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  ul.inline li {
+    display: inline; }
 
 /*==================================================
 
@@ -248,6 +261,11 @@ input[type=reset] {
       border-bottom: .3rem solid transparent;
       border-left: .3rem solid transparent;
       animation: progress-animation .75s linear infinite; }
+@keyframes progress-animation {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
   button.success:after,
   input[type=button].success:after,
   input[type=submit].success:after,
@@ -276,11 +294,6 @@ input[type=reset] {
     left: 50%;
     transform: translate(-50%, -50%); }
 
-@keyframes progress-animation {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
 /*==================================================
 
   FIELD
@@ -366,6 +379,7 @@ input[type=number] {
   input[type=password]::Placeholder,
   input[type=search]::Placeholder,
   input[type=number]::Placeholder {
+    font-family: sans-serif;
     line-height: 1.4;
     color: black;
     opacity: .5; }
@@ -425,8 +439,8 @@ input[type=number] {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    background: #eee;
-    transition: all 0.35s ease; }
+    transition: all 0.35s ease;
+    background: #eee; }
   .radio .control:after {
     content: '';
     display: block;
@@ -478,8 +492,8 @@ input[type=number] {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    background: #eee;
-    transition: all 0.35s ease; }
+    transition: all 0.35s ease;
+    background: #eee; }
   .checkbox .control:after {
     content: '';
     display: block;
