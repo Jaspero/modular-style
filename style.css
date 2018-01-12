@@ -175,16 +175,14 @@ input[type=reset] {
   padding: 2rem 6rem;
   margin: 1rem;
   outline: none;
-  border: 0.1rem solid #464646;
+  border: .1rem solid black;
   border-radius: 0;
-  font-family: "PTB";
-  color: #464646;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
   cursor: pointer;
-  background: #ffffff;
-  transition: all 0.25s ease; }
+  background: white;
+  transition: all 0.35s ease; }
   button svg,
   input[type=button] svg,
   input[type=submit] svg,
@@ -194,7 +192,7 @@ input[type=reset] {
     margin-left: .5rem;
     height: 1.2rem;
     width: 1.2rem;
-    fill: #464646; }
+    fill: black; }
   button:hover, button:focus,
   input[type=button]:hover,
   input[type=button]:focus,
@@ -245,8 +243,8 @@ input[type=reset] {
       left: calc(50% - 1rem);
       height: 1.8rem;
       width: 1.8rem;
-      border-top: 0.3rem solid #464646;
-      border-right: 0.3rem solid #464646;
+      border-top: .3rem solid black;
+      border-right: .3rem solid black;
       border-bottom: .3rem solid transparent;
       border-left: .3rem solid transparent;
       animation: progress-animation .75s linear infinite; }
@@ -259,8 +257,8 @@ input[type=reset] {
     width: .8rem;
     height: 1.8rem;
     border-top: none;
-    border-right: 0.2rem solid #464646;
-    border-bottom: 0.2rem solid #464646;
+    border-right: .2rem solid black;
+    border-bottom: .2rem solid black;
     border-left: none;
     position: absolute;
     top: 50%;
@@ -272,7 +270,7 @@ input[type=reset] {
   input[type=reset].error:after {
     content: 'error';
     display: block;
-    color: #464646;
+    color: black;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -291,7 +289,7 @@ input[type=reset] {
 .field {
   display: inline-block;
   width: 100%; }
-  .field.short {
+  .field.auto {
     width: auto; }
 
 /*==================================================
@@ -300,8 +298,7 @@ input[type=reset] {
 
 ==================================================*/
 .field label {
-  display: block;
-  font-family: "PTB"; }
+  display: block; }
   .field label {
     font-size: 1.2rem; }
     @media screen and (min-width: 50rem) {
@@ -323,12 +320,11 @@ input[type=number] {
   width: 100%;
   margin-top: .5rem;
   padding: 1rem 1.5rem;
-  border: 0.1rem solid #464646;
-  font-family: "PTR";
+  border: .1rem solid black;
   line-height: 1.4;
-  color: #464646;
-  background: #ffffff;
-  transition: all 0.25s ease; }
+  color: black;
+  background: white;
+  transition: all 0.35s ease; }
   input[type=text], .select select, textarea,
   input[type=email],
   input[type=tel],
@@ -370,9 +366,8 @@ input[type=number] {
   input[type=password]::Placeholder,
   input[type=search]::Placeholder,
   input[type=number]::Placeholder {
-    font-family: "PTR";
     line-height: 1.4;
-    color: #464646;
+    color: black;
     opacity: .5; }
 
 /*==================================================
@@ -413,7 +408,6 @@ input[type=number] {
     position: relative;
     padding-left: 3rem;
     cursor: pointer;
-    font-family: "PTR";
     line-height: 1.4; }
     .radio label {
       font-size: 1.4rem; }
@@ -432,7 +426,7 @@ input[type=number] {
     top: 50%;
     transform: translateY(-50%);
     background: #eee;
-    transition: all 0.25s ease; }
+    transition: all 0.35s ease; }
   .radio .control:after {
     content: '';
     display: block;
@@ -443,7 +437,7 @@ input[type=number] {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: all 0.25s ease;
+    transition: all 0.35s ease;
     background: #333;
     box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
   .radio label input[type=radio]:focus ~ .control, .radio label input[type=radio]:hover ~ .control {
@@ -468,7 +462,6 @@ input[type=number] {
     position: relative;
     padding-left: 3rem;
     cursor: pointer;
-    font-family: "PTR";
     line-height: 1.4; }
     .checkbox label {
       font-size: 1.4rem; }
@@ -486,19 +479,19 @@ input[type=number] {
     top: 50%;
     transform: translateY(-50%);
     background: #eee;
-    transition: all 0.25s ease; }
+    transition: all 0.35s ease; }
   .checkbox .control:after {
     content: '';
     display: block;
     width: 1.2rem;
     height: .5rem;
-    border-bottom: 0.4rem solid #464646;
-    border-left: 0.4rem solid #464646;
+    border-bottom: .4rem solid black;
+    border-left: .4rem solid black;
     position: absolute;
     top: calc(50% - .3rem);
     left: 50%;
     transform: translate(-50%, -50%) rotate(-45deg) scale(0);
-    transition: all 0.25s ease;
+    transition: all 0.35s ease;
     box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
   .checkbox label input[type=checkbox]:focus ~ .control, .checkbox label input[type=checkbox]:hover ~ .control {
     background: #d6d6d6; }
@@ -531,15 +524,14 @@ textarea {
     display: inline-block;
     padding: 2rem 6rem;
     margin: 1rem;
-    border: 0.1rem solid #464646;
-    font-family: "PTB";
-    color: #464646;
+    border: .1rem solid black;
+    color: black;
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: .2rem;
     cursor: pointer;
-    background: #ffffff;
-    transition: all 0.25s ease; }
+    background: white;
+    transition: all 0.35s ease; }
     .file label:hover, .file label:focus {
       background: #e6e6e6; }
     .file label svg {
@@ -549,7 +541,7 @@ textarea {
       position: relative;
       top: .4rem;
       margin-right: .4rem;
-      fill: #464646; }
+      fill: black; }
   .file input[type="file"] {
     display: none; }
 

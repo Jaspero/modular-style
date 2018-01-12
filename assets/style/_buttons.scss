@@ -13,19 +13,17 @@ input[type=reset] {
   padding: 2rem 6rem;
   margin: 1rem;
   outline: none;
-  border: .1rem solid $black;
+  border: .1rem solid black;
   border-radius: 0;
 
   // Font
-  font-family: $font-bold;
-  color: $black;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
 
   // Style
   cursor: pointer;
-  background: $white;
+  background: white;
   transition: $transition;
 
   // SVG
@@ -35,12 +33,12 @@ input[type=reset] {
     margin-left: .5rem;
     height: 1.2rem;
     width: 1.2rem;
-    fill: $black;
+    fill: black;
   }
 
   // Hover & Focus
   &:hover, &:focus {
-    background: darken($white, 10%);
+    background: darken(white, 10%);
   }
 
   // Disabled
@@ -68,8 +66,8 @@ input[type=reset] {
       left: calc(50% - 1rem);
       height: 1.8rem;
       width: 1.8rem;
-      border-top: .3rem solid $black;
-      border-right: .3rem solid $black;
+      border-top: .3rem solid black;
+      border-right: .3rem solid black;
       border-bottom: .3rem solid transparent;
       border-left: .3rem solid transparent;
       animation: progress-animation .75s linear infinite;
@@ -82,8 +80,8 @@ input[type=reset] {
       width: .8rem;
       height: 1.8rem;
       border-top: none;
-      border-right: .2rem solid $black;
-      border-bottom: .2rem solid $black;
+      border-right: .2rem solid black;
+      border-bottom: .2rem solid black;
       border-left: none;
       position: absolute;
       top: 50%;
@@ -95,7 +93,7 @@ input[type=reset] {
     &:after {
       content: 'error';
       display: block;
-      color: $black;
+      color: black;
       position: absolute;
       top: 50%;
       left: 50%;

@@ -7,7 +7,7 @@
 .field {
   display: inline-block;
   width: 100%;
-  &.short { width: auto; }
+  &.auto { width: auto; }
 }
 
 
@@ -25,7 +25,6 @@
 
   // Font
   @include font-size(1.4rem, 1.2rem);
-  font-family: $font-bold;
 
 }
 
@@ -44,20 +43,19 @@ input[type=number] {
   width: 100%;
   margin-top: .5rem;
   padding: 1rem 1.5rem;
-  border: .1rem solid $black;
+  border: .1rem solid black;
 
   // Font
   @include font-size(1.6rem, 1.4rem);
-  font-family: $font-regular;
   line-height: 1.4;
-  color: $black;
+  color: black;
 
   // Style
-  background: $white;
+  background: white;
   transition: $transition;
 
   // Focus
-  &:focus { background: darken($white,2%); }
+  &:focus { background: darken(white,2%); }
 
   // Valid
   &:valid {}
@@ -67,9 +65,8 @@ input[type=number] {
 
   // Placeholder
   &::Placeholder {
-    font-family: $font-regular;
     line-height: 1.4;
-    color: $black;
+    color: black;
     opacity: .5;
   }
 
@@ -146,7 +143,6 @@ input[type=number] {
 
     // Font
     @include font-size(1.6rem, 1.4rem);
-    font-family: $font-regular;
     line-height: 1.4;
 
   }
@@ -233,7 +229,6 @@ input[type=number] {
 
     // Font
     @include font-size(1.6rem, 1.4rem);
-    font-family: $font-regular;
     line-height: 1.4;
 
   }
@@ -265,8 +260,8 @@ input[type=number] {
     display: block;
     width: 1.2rem;
     height: .5rem;
-    border-bottom: .4rem solid $black;
-    border-left: .4rem solid $black;
+    border-bottom: .4rem solid black;
+    border-left: .4rem solid black;
     position: absolute;
     top: calc(50% - .3rem);
     left: 50%;
@@ -333,22 +328,21 @@ textarea {
     display: inline-block;
     padding: 2rem 6rem;
     margin: 1rem;
-    border: .1rem solid $black;
+    border: .1rem solid black;
 
     // Font
-    font-family: $font-bold;
-    color: $black;
+    color: black;
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: .2rem;
 
     // Style
     cursor: pointer;
-    background: $white;
+    background: white;
     transition: $transition;
 
     // Hover & Focus
-    &:hover, &:focus { background: darken($white, 10%); }
+    &:hover, &:focus { background: darken(white, 10%); }
 
     // Custom SVG arrow
     svg {
@@ -362,7 +356,7 @@ textarea {
       margin-right: .4rem;
 
       // Style
-      fill: $black;
+      fill: black;
     }
 
   }
