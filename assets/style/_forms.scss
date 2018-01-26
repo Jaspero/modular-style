@@ -1,13 +1,45 @@
 /*==================================================
 
-  FIELD
+  GENERAL FORM LAYOUT
 
 ==================================================*/
 
 .field {
-  display: inline-block;
+  label {
+    border: 1px solid;
+    margin-bottom: 3rem;
+    display: block;
+    position: relative;
+    span {
+      display: inline;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+%shared {
+  // Box
+  display: block;
   width: 100%;
-  &.auto { width: auto; }
+  -webkit-appearance: textfield;
+  border: none;
+  outline: none;
+  // Font
+  font-size: 1.4rem;
+  line-height: 1.4;
+  // Style
+  background: #eee;
+  // Focus
+  &:focus, &:hover {}
+  // Valid
+  &:valid {}
+  // Invalid
+  &:invalid {}
+  // Placeholder
+  &::placeholder {
+    font-family: sans-serif;
+    line-height: 1.4;
+  }
 }
 
 
@@ -17,50 +49,15 @@
 
 ==================================================*/
 
-// Text
-.field label {
-  // Box
-  display: block;
-  // Font
-  @include font-size(1.4rem, 1.2rem);
-}
-
-// Custom field
-input[type=text],
-input[type=email],
-input[type=tel],
-input[type=url],
-input[type=password],
-input[type=search],
-input[type=number] {
-  // Box
-  -webkit-appearance: textfield;
-  display: block;
-  width: 100%;
-  margin-top: .5rem;
-  padding: 1rem 1.5rem;
-  border: .1rem solid black;
-  // Font
-  @include font-size(1.6rem, 1.4rem);
-  line-height: 1.4;
-  color: black;
-  // Style
-  background: white;
-  transition: $transition;
-
-  // Focus
-  &:focus { background: darken(white,2%); }
-  // Valid
-  &:valid {}
-  // Invalid
-  &:invalid {}
-
-  // Placeholder
-  &::Placeholder {
-    font-family: sans-serif;
-    line-height: 1.4;
-    color: black;
-    opacity: .5;
+.input {
+  input[type=text],
+  input[type=email],
+  input[type=tel],
+  input[type=url],
+  input[type=password],
+  input[type=search],
+  input[type=number] {
+    @extend %shared;
   }
 }
 
@@ -72,16 +69,8 @@ input[type=number] {
 ==================================================*/
 
 .select {
-  // Box
-  display: inline-block;
-  width: 100%;
-  position: relative;
-
   select {
-    @extend input[type=text];
-    // Box
-    padding-right: 5rem;
-    border-radius: 0;
+    @extend %shared;
 
     // Remove default arrow cross-browser
     -moz-appearance: none;
@@ -97,12 +86,26 @@ input[type=number] {
     width: 1.2rem;
     height: .8rem;
     position: absolute;
-    bottom: 2.3rem;
-    right: 2rem;
-    transform: translateY(50%);
+    bottom: 0;
+    right: 0;
     // Style
     fill: #141414;
   }
+}
+
+
+/*==================================================
+
+  TEXTAREA
+
+==================================================*/
+
+textarea {
+  @extend %shared;
+
+  // Resizing options
+  resize: vertical;
+  overflow: auto;
 }
 
 
@@ -245,68 +248,4 @@ input[type=number] {
 
   // Hiding default checkbox
   label input[type=checkbox] { position: absolute; opacity: 0; z-index: -1; }
-}
-
-
-/*==================================================
-
-  TEXTAREA
-
-==================================================*/
-
-textarea {
-  @extend input[type=text];
-  // Style
-  resize: vertical;
-  overflow: auto;
-
-}
-
-
-/*==================================================
-
-  FILE
-
-==================================================*/
-
-.file {
-  // Box
-  width: auto;
-
-  // Custom file
-  label {
-    // Box
-    display: inline-block;
-    padding: 2rem 6rem;
-    margin: 1rem;
-    border: .1rem solid black;
-    // Font
-    color: black;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    // Style
-    cursor: pointer;
-    background: white;
-    transition: $transition;
-
-    // Hover & Focus
-    &:hover, &:focus { background: darken(white, 10%); }
-
-    // Custom SVG arrow
-    svg {
-      // Box
-      pointer-events: none;
-      width: 1.6rem;
-      height: 1.6rem;
-      position: relative;
-      top: .4rem;
-      margin-right: .4rem;
-      // Style
-      fill: black;
-    }
-  }
-
-  // Hiding default input
-  input[type="file"] { display: none; }
 }

@@ -97,3 +97,52 @@ input[type=reset] {
     }
   }
 }
+
+
+/*==================================================
+
+  FILE
+
+==================================================*/
+
+.file {
+  // Box
+  width: auto;
+
+  // Custom file
+  label {
+    // Box
+    display: inline-block;
+    padding: 2rem 6rem;
+    margin: 1rem;
+    border: .1rem solid black;
+    // Font
+    color: black;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    // Style
+    cursor: pointer;
+    background: white;
+    transition: $transition;
+
+    // Hover & Focus
+    &:hover, &:focus { background: darken(white, 10%); }
+
+    // Custom SVG arrow
+    svg {
+      // Box
+      pointer-events: none;
+      width: 1.6rem;
+      height: 1.6rem;
+      position: relative;
+      top: .4rem;
+      margin-right: .4rem;
+      // Style
+      fill: black;
+    }
+  }
+
+  // Hiding default input
+  input[type="file"] { display: none; }
+}

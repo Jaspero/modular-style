@@ -31,10 +31,6 @@ $gutter-half: $gutter/2; // Don't change this
 
   &.no-gutter { div[class^='col'] { padding: 0; } }
 
-  &.left { justify-content: left; }
-
-  &.right { justify-content: right; }
-
   .col-1 { flex-basis: 8.3333%; }
   .col-2 { flex-basis: 16.6666%; }
   .col-3 { flex-basis: 25%; }
@@ -48,7 +44,7 @@ $gutter-half: $gutter/2; // Don't change this
   .col-11 { flex-basis: 91.6666%; }
   .col-12 { flex-basis: 100%; }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1200px) {
     .col-m-1 { flex-basis: 8.3333%; }
     .col-m-2 { flex-basis: 16.6666%; }
     .col-m-3 { flex-basis: 25%; }
@@ -63,7 +59,7 @@ $gutter-half: $gutter/2; // Don't change this
     .col-m-12 { flex-basis: 100%; }
   }
   
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 800px) {
     .col-s-1 { flex-basis: 8.3333%; }
     .col-s-2 { flex-basis: 16.6666%; }
     .col-s-3 { flex-basis: 25%; }

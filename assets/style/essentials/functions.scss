@@ -1,31 +1,16 @@
 /*==================================================
 
-  HELPERS & VARIABLES
+  FLUID VARIABLES
   
 ==================================================*/
 
 // FLUID – min & max screen sizes
-$min-vw: 50rem;
-$max-vw: 150rem;
+$min-vw: 60rem;
+$max-vw: 140rem;
 
 // Fluid helper
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
-}
-
-
-/*==================================================
-
-  LIGHTEN & DARKEN
-  
-==================================================*/
-
-@function lighten($color, $percentage) {
-  @return mix(white, $color, $percentage);
-}
-
-@function darken($color, $percentage) {
-  @return mix(black, $color, $percentage);
 }
 
 
@@ -135,4 +120,62 @@ $max-vw: 150rem;
       font-size: $max;
     }
   }
+}
+
+
+/*==================================================
+
+  SHORTHAND MARGIN & PADDING
+
+==================================================*/
+
+$spacer: 1rem;
+$spacer-x: $spacer;
+$spacer-y: $spacer;
+$spacers: ();
+
+@for $i from 0 through 5 {
+  $spacers: map-merge($spacers, (
+    $i: (
+      x: $spacer-x * $i,
+      y: $spacer-y * $i
+    )
+  ))
+}
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $lengths in $spacers {
+    $length-x:   map-get($lengths, x);
+    $length-y:   map-get($lengths, y);
+
+    .#{$abbrev}-a-#{$size} { #{$prop}:        $length-x}
+    .#{$abbrev}-t-#{$size} { #{$prop}-top:    $length-y}
+    .#{$abbrev}-r-#{$size} { #{$prop}-right:  $length-x}
+    .#{$abbrev}-b-#{$size} { #{$prop}-bottom: $length-y}
+    .#{$abbrev}-l-#{$size} { #{$prop}-left:   $length-x}
+
+    .#{$abbrev}-x-#{$size} {
+      #{$prop}-right:  $length-x;
+      #{$prop}-left:   $length-x;
+    }
+    .#{$abbrev}-y-#{$size} {
+      #{$prop}-top:    $length-y;
+      #{$prop}-bottom: $length-y;
+    }
+  }
+}
+
+
+/*==================================================
+
+  LIGHTEN & DARKEN
+
+==================================================*/
+
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function darken($color, $percentage) {
+  @return mix(black, $color, $percentage);
 }
