@@ -5,14 +5,14 @@
 ==================================================*/
 
 .field {
+  margin-bottom: 2rem;
   label {
     border: 1px solid;
-    margin-bottom: 3rem;
     display: block;
     position: relative;
     span {
-      display: inline;
       font-size: 1.4rem;
+      line-height: 1.4;
     }
   }
 }
@@ -71,14 +71,13 @@
 .select {
   select {
     @extend %shared;
-
+    cursor: pointer;
     // Remove default arrow cross-browser
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
     &::-ms-expand { display: none; }
   }
-
   // Custom SVG arrow
   svg {
     // Box
@@ -100,12 +99,13 @@
 
 ==================================================*/
 
-textarea {
-  @extend %shared;
-
-  // Resizing options
-  resize: vertical;
-  overflow: auto;
+.textarea {
+  textarea {
+    @extend %shared;
+    // Resizing options
+    resize: vertical;
+    overflow: auto;
+  }
 }
 
 
@@ -116,26 +116,16 @@ textarea {
 ==================================================*/
 
 .radio {
-  // Box
-  margin-bottom: 1.5rem;
-
+  cursor: pointer;
   // Text
-  label {
-    // Box
-    position: relative;
-    padding-left: 3rem;
-    cursor: pointer;
-    // Font
-    @include font-size(1.6rem, 1.4rem);
-    line-height: 1.4;
-  }
-
+  span { padding-left: 3rem; }
   // Control box
   .control {
     // Box
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
+    display: inline-block;
     position: absolute;
     left: 0;
     top: 50%;
@@ -166,7 +156,7 @@ textarea {
   }
 
   // Indicator – states
-  label input[type=radio] {
+  input[type=radio] {
     // Hover & Focus
     &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
     // Checked
@@ -176,7 +166,7 @@ textarea {
   }
 
   // Hiding default radio
-  label input[type=radio] { position: absolute; opacity: 0; z-index: -1; }
+  input[type=radio] { position: absolute; opacity: 0; z-index: -1; }
 }
 
 

@@ -613,14 +613,15 @@ input[type=reset] {
   GENERAL FORM LAYOUT
 
 ==================================================*/
-.field label {
-  border: 1px solid;
-  margin-bottom: 3rem;
-  display: block;
-  position: relative; }
-  .field label span {
-    display: inline;
-    font-size: 1.4rem; }
+.field {
+  margin-bottom: 2rem; }
+  .field label {
+    border: 1px solid;
+    display: block;
+    position: relative; }
+    .field label span {
+      font-size: 1.4rem;
+      line-height: 1.4; }
 
 .input input[type=text],
 .input input[type=email],
@@ -628,7 +629,7 @@ input[type=reset] {
 .input input[type=url],
 .input input[type=password],
 .input input[type=search],
-.input input[type=number], .select select, textarea {
+.input input[type=number], .select select, .textarea textarea {
   display: block;
   width: 100%;
   -webkit-appearance: textfield;
@@ -643,7 +644,7 @@ input[type=reset] {
   .input input[type=url]::placeholder,
   .input input[type=password]::placeholder,
   .input input[type=search]::placeholder,
-  .input input[type=number]::placeholder, .select select::placeholder, textarea::placeholder {
+  .input input[type=number]::placeholder, .select select::placeholder, .textarea textarea::placeholder {
     font-family: sans-serif;
     line-height: 1.4; }
 
@@ -658,6 +659,7 @@ input[type=reset] {
 
 ==================================================*/
 .select select {
+  cursor: pointer;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none; }
@@ -677,7 +679,7 @@ input[type=reset] {
   TEXTAREA
 
 ==================================================*/
-textarea {
+.textarea textarea {
   resize: vertical;
   overflow: auto; }
 
@@ -687,24 +689,14 @@ textarea {
 
 ==================================================*/
 .radio {
-  margin-bottom: 1.5rem; }
-  .radio label {
-    position: relative;
-    padding-left: 3rem;
-    cursor: pointer;
-    line-height: 1.4; }
-    .radio label {
-      font-size: 1.4rem; }
-      @media screen and (min-width: 60rem) {
-        .radio label {
-          font-size: calc(1.4rem + 0.2 * ((100vw - 60rem) / 80)); } }
-      @media screen and (min-width: 140rem) {
-        .radio label {
-          font-size: 1.6rem; } }
+  cursor: pointer; }
+  .radio span {
+    padding-left: 3rem; }
   .radio .control {
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
+    display: inline-block;
     position: absolute;
     left: 0;
     top: 50%;
@@ -724,13 +716,13 @@ textarea {
     transition: all 0.35s ease;
     background: #333;
     box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
-  .radio label input[type=radio]:focus ~ .control, .radio label input[type=radio]:hover ~ .control {
+  .radio input[type=radio]:focus ~ .control, .radio input[type=radio]:hover ~ .control {
     background: #d6d6d6; }
-  .radio label input[type=radio]:checked ~ .control:after {
+  .radio input[type=radio]:checked ~ .control:after {
     transform: translate(-50%, -50%) scale(1); }
-  .radio label input[type=radio]:disabled ~ .control {
+  .radio input[type=radio]:disabled ~ .control {
     background: #d6d6d6; }
-  .radio label input[type=radio] {
+  .radio input[type=radio] {
     position: absolute;
     opacity: 0;
     z-index: -1; }
