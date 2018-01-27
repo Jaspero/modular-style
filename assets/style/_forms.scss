@@ -5,7 +5,6 @@
 ==================================================*/
 
 .field {
-  margin-bottom: 2rem;
   label {
     border: 1px solid;
     display: block;
@@ -15,6 +14,7 @@
       line-height: 1.4;
     }
   }
+
 }
 
 %shared {
@@ -111,43 +111,39 @@
 
 /*==================================================
 
-  RADIO
+  RADIO & CHECKBOX SHARED
 
 ==================================================*/
 
-.radio {
+%radio-checkbox {
   cursor: pointer;
+
   // Text
   span { padding-left: 3rem; }
+
   // Control box
   .control {
-    // Box
-    border-radius: 50%;
     width: 2rem;
     height: 2rem;
     display: inline-block;
     position: absolute;
     left: 0;
     top: 50%;
-    // Transform
     transform: translateY(-50%);
     transition: $transition;
-    // Style
     background: #eee;
   }
 
   // Indicator
-  .control:after { 
+  .control:after {
     // Box
     content: '';
     display: block;
     width: 1rem;
     height: 1rem;
-    border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
-    // Transform
     transform: translate(-50%,-50%) scale(0);
     transition: $transition;
     // Style
@@ -159,15 +155,51 @@
   input[type=radio] {
     // Hover & Focus
     &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
-    // Checked
-    &:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
     // Disabled
     &:disabled ~ .control { background: darken(#eee,10%); }
   }
+}
 
+
+/*==================================================
+
+  RADIO & CHECKBOX SINGLE ROW
+
+==================================================*/
+
+.field.flex {
+  .radio, .checkbox {
+    flex: 1 1 auto;
+    text-align: center;
+    span {
+      display: block;
+      padding-left: 0;
+    }
+    .control {
+      position: static;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+/*==================================================
+
+  RADIO
+
+==================================================*/
+
+.radio {
+  @extend %radio-checkbox;
+  .control { border-radius: 50%; }
+  .control:after { border-radius: 50%; }
+  // Checked
+  input[type=radio]:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
   // Hiding default radio
   input[type=radio] { position: absolute; opacity: 0; z-index: -1; }
 }
+
+
 
 
 /*==================================================
@@ -177,65 +209,9 @@
 ==================================================*/
 
 .checkbox {
-  // Box
-  margin-bottom: 1.5rem;
-
-  // Text
-  label {
-    // Box
-    position: relative;
-    padding-left: 3rem;
-    cursor: pointer;
-    // Font
-    @include font-size(1.6rem, 1.4rem);
-    line-height: 1.4;
-
-  }
-
-  // Control box
-  .control {
-    // Box
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    // Transform
-    transform: translateY(-50%);
-    transition: $transition;
-    // Style
-    background: #eee;
-  }
-
-  // Indicator
-  .control:after { 
-    // Box
-    content: '';
-    display: block;
-    width: 1.2rem;
-    height: .5rem;
-    border-bottom: .4rem solid black;
-    border-left: .4rem solid black;
-    position: absolute;
-    top: calc(50% - .3rem);
-    left: 50%;
-    // Transform
-    transform: translate(-50%,-50%) rotate(-45deg) scale(0);
-    transition: $transition;
-    // Style
-    box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.2);
-  }
-
-  // Indicator – states
-  label input[type=checkbox] {
-    // Hover & Focus
-    &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
-    // Checked
-    &:checked ~ .control:after { transform: translate(-50%,-50%) rotate(-45deg) scale(1); }
-    // Disabled
-    &:disabled ~ .control { background: darken(#eee,10%); }
-  }
-
+  @extend %radio-checkbox;
+  // Checked
+  input[type=checkbox]:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
   // Hiding default checkbox
-  label input[type=checkbox] { position: absolute; opacity: 0; z-index: -1; }
+  input[type=checkbox] { position: absolute; opacity: 0; z-index: -1; }
 }

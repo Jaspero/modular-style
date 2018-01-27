@@ -613,15 +613,13 @@ input[type=reset] {
   GENERAL FORM LAYOUT
 
 ==================================================*/
-.field {
-  margin-bottom: 2rem; }
-  .field label {
-    border: 1px solid;
-    display: block;
-    position: relative; }
-    .field label span {
-      font-size: 1.4rem;
-      line-height: 1.4; }
+.field label {
+  border: 1px solid;
+  display: block;
+  position: relative; }
+  .field label span {
+    font-size: 1.4rem;
+    line-height: 1.4; }
 
 .input input[type=text],
 .input input[type=email],
@@ -685,15 +683,14 @@ input[type=reset] {
 
 /*==================================================
 
-  RADIO
+  RADIO & CHECKBOX SHARED
 
 ==================================================*/
-.radio {
+.radio, .checkbox {
   cursor: pointer; }
-  .radio span {
+  .radio span, .checkbox span {
     padding-left: 3rem; }
-  .radio .control {
-    border-radius: 50%;
+  .radio .control, .checkbox .control {
     width: 2rem;
     height: 2rem;
     display: inline-block;
@@ -703,12 +700,11 @@ input[type=reset] {
     transform: translateY(-50%);
     transition: all 0.35s ease;
     background: #eee; }
-  .radio .control:after {
+  .radio .control:after, .checkbox .control:after {
     content: '';
     display: block;
     width: 1rem;
     height: 1rem;
-    border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -716,69 +712,53 @@ input[type=reset] {
     transition: all 0.35s ease;
     background: #333;
     box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
-  .radio input[type=radio]:focus ~ .control, .radio input[type=radio]:hover ~ .control {
+  .radio input[type=radio]:focus ~ .control, .checkbox input[type=radio]:focus ~ .control, .radio input[type=radio]:hover ~ .control, .checkbox input[type=radio]:hover ~ .control {
     background: #d6d6d6; }
-  .radio input[type=radio]:checked ~ .control:after {
-    transform: translate(-50%, -50%) scale(1); }
-  .radio input[type=radio]:disabled ~ .control {
+  .radio input[type=radio]:disabled ~ .control, .checkbox input[type=radio]:disabled ~ .control {
     background: #d6d6d6; }
-  .radio input[type=radio] {
-    position: absolute;
-    opacity: 0;
-    z-index: -1; }
+
+/*==================================================
+
+  RADIO & CHECKBOX SINGLE ROW
+
+==================================================*/
+.field.flex .radio, .field.flex .checkbox {
+  flex: 1 1 auto;
+  text-align: center; }
+  .field.flex .radio span, .field.flex .checkbox span {
+    display: block;
+    padding-left: 0; }
+  .field.flex .radio .control, .field.flex .checkbox .control {
+    position: static;
+    transform: translateY(0); }
+
+/*==================================================
+
+  RADIO
+
+==================================================*/
+.radio .control {
+  border-radius: 50%; }
+.radio .control:after {
+  border-radius: 50%; }
+.radio input[type=radio]:checked ~ .control:after {
+  transform: translate(-50%, -50%) scale(1); }
+.radio input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; }
 
 /*==================================================
 
   CHECKBOX
 
 ==================================================*/
-.checkbox {
-  margin-bottom: 1.5rem; }
-  .checkbox label {
-    position: relative;
-    padding-left: 3rem;
-    cursor: pointer;
-    line-height: 1.4; }
-    .checkbox label {
-      font-size: 1.4rem; }
-      @media screen and (min-width: 60rem) {
-        .checkbox label {
-          font-size: calc(1.4rem + 0.2 * ((100vw - 60rem) / 80)); } }
-      @media screen and (min-width: 140rem) {
-        .checkbox label {
-          font-size: 1.6rem; } }
-  .checkbox .control {
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.35s ease;
-    background: #eee; }
-  .checkbox .control:after {
-    content: '';
-    display: block;
-    width: 1.2rem;
-    height: .5rem;
-    border-bottom: .4rem solid black;
-    border-left: .4rem solid black;
-    position: absolute;
-    top: calc(50% - .3rem);
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg) scale(0);
-    transition: all 0.35s ease;
-    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
-  .checkbox label input[type=checkbox]:focus ~ .control, .checkbox label input[type=checkbox]:hover ~ .control {
-    background: #d6d6d6; }
-  .checkbox label input[type=checkbox]:checked ~ .control:after {
-    transform: translate(-50%, -50%) rotate(-45deg) scale(1); }
-  .checkbox label input[type=checkbox]:disabled ~ .control {
-    background: #d6d6d6; }
-  .checkbox label input[type=checkbox] {
-    position: absolute;
-    opacity: 0;
-    z-index: -1; }
+.checkbox input[type=checkbox]:checked ~ .control:after {
+  transform: translate(-50%, -50%) scale(1); }
+.checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; }
 
 /*==================================================
 
@@ -818,6 +798,9 @@ body {
 
 .block {
   display: block; }
+
+.flex {
+  display: flex; }
 
 .text-center {
   text-align: center; }
