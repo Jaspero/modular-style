@@ -614,7 +614,7 @@ input[type=reset] {
 
 ==================================================*/
 .field label {
-  border: 1px solid;
+  border: .1rem solid;
   display: block;
   position: relative; }
   .field label span {
@@ -645,6 +645,54 @@ input[type=reset] {
   .input input[type=number]::placeholder, .select select::placeholder, .textarea textarea::placeholder {
     font-family: sans-serif;
     line-height: 1.4; }
+
+/*==================================================
+
+  RADIO & CHECKBOX SHARED
+
+==================================================*/
+.radio, .checkbox {
+  cursor: pointer; }
+  .radio span, .checkbox span {
+    padding-left: 3rem; }
+  .radio .control, .checkbox .control {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.35s ease;
+    background: #eee; }
+  .radio .control:after, .checkbox .control:after {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.35s ease;
+    background: #333;
+    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
+  .radio input[type=radio]:focus ~ .control, .checkbox input[type=radio]:focus ~ .control, .radio input[type=radio]:hover ~ .control, .checkbox input[type=radio]:hover ~ .control, .radio input[type=checkbox]:focus ~ .control, .checkbox input[type=checkbox]:focus ~ .control, .radio input[type=checkbox]:hover ~ .control, .checkbox input[type=checkbox]:hover ~ .control {
+    background: #d6d6d6; }
+  .radio input[type=radio]:disabled ~ .control, .checkbox input[type=radio]:disabled ~ .control, .radio input[type=checkbox]:disabled ~ .control, .checkbox input[type=checkbox]:disabled ~ .control {
+    background: #d6d6d6; }
+
+.field.in-a-row {
+  display: flex; }
+  .field.in-a-row .radio, .field.in-a-row .checkbox {
+    flex: 1 1 auto;
+    text-align: center; }
+    .field.in-a-row .radio span, .field.in-a-row .checkbox span {
+      display: block;
+      padding-left: 0; }
+    .field.in-a-row .radio .control, .field.in-a-row .checkbox .control {
+      position: static;
+      transform: translateY(0); }
 
 /*==================================================
 
@@ -680,57 +728,6 @@ input[type=reset] {
 .textarea textarea {
   resize: vertical;
   overflow: auto; }
-
-/*==================================================
-
-  RADIO & CHECKBOX SHARED
-
-==================================================*/
-.radio, .checkbox {
-  cursor: pointer; }
-  .radio span, .checkbox span {
-    padding-left: 3rem; }
-  .radio .control, .checkbox .control {
-    width: 2rem;
-    height: 2rem;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.35s ease;
-    background: #eee; }
-  .radio .control:after, .checkbox .control:after {
-    content: '';
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: all 0.35s ease;
-    background: #333;
-    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
-  .radio input[type=radio]:focus ~ .control, .checkbox input[type=radio]:focus ~ .control, .radio input[type=radio]:hover ~ .control, .checkbox input[type=radio]:hover ~ .control {
-    background: #d6d6d6; }
-  .radio input[type=radio]:disabled ~ .control, .checkbox input[type=radio]:disabled ~ .control {
-    background: #d6d6d6; }
-
-/*==================================================
-
-  RADIO & CHECKBOX SINGLE ROW
-
-==================================================*/
-.field.flex .radio, .field.flex .checkbox {
-  flex: 1 1 auto;
-  text-align: center; }
-  .field.flex .radio span, .field.flex .checkbox span {
-    display: block;
-    padding-left: 0; }
-  .field.flex .radio .control, .field.flex .checkbox .control {
-    position: static;
-    transform: translateY(0); }
 
 /*==================================================
 
@@ -822,7 +819,5 @@ body {
   TEMPORARY
 
 ==================================================*/
-section {
-  border: 1px solid; }
 
 /*# sourceMappingURL=style.css.map */
