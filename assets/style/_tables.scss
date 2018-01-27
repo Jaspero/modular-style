@@ -1,0 +1,46 @@
+/*==================================================
+
+  TABLES
+
+==================================================*/
+
+.table {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.4rem;
+    caption {
+      text-align: left;
+      padding: 3rem 1.5rem;
+    }
+    tr { border: 1px solid #eee; }
+    td, th {
+      text-align: left;
+      padding: 1.5rem;
+    }
+  }
+
+  // Responsive option 1
+  @media screen and (max-width: 800px) {
+    table {
+      tr {
+        display: block;
+        margin-bottom: 3rem;
+      }
+      td {
+        display: block;
+        text-align: right;
+      }
+      td:before {
+        content: attr(data-label);
+        float: left;
+      }
+      // Hiding thead
+      thead { position: absolute; opacity: 0; z-index: -1; }
+    }
+  }
+
+  // Responsive option 2
+  //overflow-x: auto;
+  //table { min-width: 100rem; }
+}

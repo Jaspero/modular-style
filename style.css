@@ -759,14 +759,39 @@ input[type=reset] {
 
 /*==================================================
 
+  TABLES
+
+==================================================*/
+.table table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.4rem; }
+  .table table caption {
+    text-align: left;
+    padding: 3rem 1.5rem; }
+  .table table tr {
+    border: 1px solid #eee; }
+  .table table td, .table table th {
+    text-align: left;
+    padding: 1.5rem; }
+@media screen and (max-width: 800px) {
+  .table table tr {
+    display: block;
+    margin-bottom: 3rem; }
+  .table table td {
+    display: block;
+    text-align: right; }
+  .table table td:before {
+    content: attr(data-label);
+    float: left; }
+  .table table thead {
+    position: absolute;
+    opacity: 0;
+    z-index: -1; } }
+
+/*==================================================
+
   Example of importing font from file
-
-====================================================
-
-@font-face {
-  font-family: 'PTR';
-  src: url('./assets/fonts/PT_Sans-Web-Regular.ttf')  format('truetype');
-}
 
 ==================================================*/
 /*==================================================
