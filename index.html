@@ -24,6 +24,242 @@ sass --watch style.scss:style.css
 <footer>
 </footer>
 
+<div hidden class="table">
+    <table>
+        <caption>Table caption</caption>
+        <thead>
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Buttons</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Index">123</td>
+            <td data-label="Name">John Doe</td>
+            <td data-label="Email">john@doe.kek</td>
+            <td data-label="Date">1.2.2003.</td>
+            <td data-label="Status">Online</td>
+            <td data-label="Buttons">lul</td>
+        </tr>
+        <tr>
+            <td data-label="Index">123</td>
+            <td data-label="Name">John Doe</td>
+            <td data-label="Email">john@doe.kek</td>
+            <td data-label="Date">1.2.2003.</td>
+            <td data-label="Status">Online</td>
+            <td data-label="Buttons">lul</td>
+        </tr>
+        <tr>
+            <td data-label="Index">123</td>
+            <td data-label="Name">John Doe</td>
+            <td data-label="Email">john@doe.kek</td>
+            <td data-label="Date">1.2.2003.</td>
+            <td data-label="Status">Online</td>
+            <td data-label="Buttons">lul</td>
+        </tr>
+        <tr>
+            <td data-label="Index">123</td>
+            <td data-label="Name">John Doe</td>
+            <td data-label="Email">john@doe.kek</td>
+            <td data-label="Date">1.2.2003.</td>
+            <td data-label="Status">Online</td>
+            <td data-label="Buttons">lul</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<form hidden action="">
+    <div class="row">
+        <div class="col-6">
+
+            <!-- INPUT -->
+            <div class="field">
+                <label class="input" for="id_text">
+                    <span>Text</span>
+                    <input id="id_text" name="id_text" type="text" placeholder="Text placeholder" autocomplete="on" autofocus>
+                </label>
+            </div>
+            <div class="field">
+                <label class="input" for="id_email">
+                    <span>Email</span>
+                    <input id="id_email" name="id_email" type="email" placeholder="Email placeholder" autocomplete="email">
+                </label>
+            </div>
+            <div class="field">
+                <label class="input" for="id_tel">
+                    <span>Tel</span>
+                    <input id="id_tel" name="id_tel" type="tel" placeholder="Tel placeholder" autocomplete="tel">
+                </label>
+            </div>
+            <div class="field">
+                <label class="input" for="id_url">
+                    <span>URL</span>
+                    <input id="id_url" name="id_url" type="url" placeholder="URL placeholder" autocomplete="url">
+                </label>
+            </div>
+            <div class="field">
+                <label class="input" for="id_password">
+                    <span>Password</span>
+                    <input id="id_password" name="id_password" type="password" placeholder="Password placeholder">
+                </label>
+            </div>
+            <div class="field">
+                <label class="input" for="id_search">
+                    <span>Search</span>
+                    <input id="id_search" name="id_search" type="search" placeholder="Search placeholder" autocomplete="on">
+                </label>
+            </div>
+            <div class="field">
+                <label class="input" for="id_number">
+                    <span>Number</span>
+                    <input id="id_number" name="id_number" type="number" placeholder="Number placeholder" autocomplete="num">
+                </label>
+            </div>
+
+            <!-- SELECT -->
+            <div class="field">
+                <label class="select" for="id_select">
+                    <span>Select</span>
+                    <select id="id_select" name="id_select">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                    </select>
+                    <svg viewBox="520 2957 10 5"><path d="M520 2957l5 5 5-5z"/></svg>
+                </label>
+            </div>
+
+            <!-- TEXTAREA -->
+            <div class="field">
+                <label class="textarea" for="id_textarea">
+                    <span>Textarea</span>
+                    <textarea name="" id="id_textarea" rows="3" placeholder="Textarea placeholder"></textarea>
+                </label>
+            </div>
+
+            <!-- RADIO -->
+            <div class="field">
+                <label class="radio" for="id_radio-1">
+                    <span>Radio option 1</span>
+                    <input id="id_radio-1" name="radio" type="radio">
+                    <div class="control"></div>
+                </label>
+                <label class="radio" for="id_radio-2">
+                    <span>Radio option 2</span>
+                    <input id="id_radio-2" name="radio" type="radio">
+                    <div class="control"></div>
+                </label>
+                <label class="radio" for="id_radio-3">
+                    <span>Radio option 3</span>
+                    <input id="id_radio-3" name="radio" type="radio">
+                    <div class="control"></div>
+                </label>
+                <label class="radio" for="id_radio-4">
+                    <span>Radio option disabled</span>
+                    <input id="id_radio-4" name="radio" type="radio" disabled>
+                    <div class="control"></div>
+                </label>
+            </div>
+
+            <!-- RADIO SINGLE ROW -->
+            <div class="field in-a-row">
+                <label class="radio" for="id_inline-radio-1">
+                    <span>Radio option 1</span>
+                    <input id="id_inline-radio-1" name="radio2" type="radio">
+                    <div class="control"></div>
+                </label>
+                <label class="radio" for="id_inline-radio-2">
+                    <span>Radio option 2</span>
+                    <input id="id_inline-radio-2" name="radio2" type="radio">
+                    <div class="control"></div>
+                </label>
+                <label class="radio" for="id_inline-radio-3">
+                    <span>Radio option 3</span>
+                    <input id="id_inline-radio-3" name="radio2" type="radio">
+                    <div class="control"></div>
+                </label>
+            </div>
+
+            <!-- CHECKBOX -->
+            <div class="field">
+                <label class="checkbox" for="id_checkbox-1">
+                    <span>Checkbox option 1</span>
+                    <input id="id_checkbox-1" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+                <label class="checkbox" for="id_checkbox-2">
+                    <span>Checkbox option 2</span>
+                    <input id="id_checkbox-2" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+                <label class="checkbox" for="id_checkbox-3">
+                    <span>Checkbox option 3</span>
+                    <input id="id_checkbox-3" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+                <label class="checkbox" for="id_checkbox-4">
+                    <span>Checkbox option disabled</span>
+                    <input id="id_checkbox-4" name="checkbox" type="checkbox" disabled>
+                    <div class="control"></div>
+                </label>
+            </div>
+
+            <!-- CHECKBOX SINGLE ROW -->
+            <div class="field in-a-row">
+                <label class="checkbox" for="id_inline-checkbox-1">
+                    <span>Checkbox option 1</span>
+                    <input id="id_inline-checkbox-1" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+                <label class="checkbox" for="id_inline-checkbox-2">
+                    <span>Checkbox option 2</span>
+                    <input id="id_inline-checkbox-2" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+                <label class="checkbox" for="id_inline-checkbox-3">
+                    <span>Checkbox option 3</span>
+                    <input id="id_inline-checkbox-3" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <button>
+            Button
+            <svg viewBox="1221 2035 18 12"><path d="M1221 2042h14.17l-3.58 3.59 1.41 1.41 6-6-6-6-1.41 1.41 3.58 3.59H1221z"/></svg>
+        </button>
+    </div>
+    <div class="row">
+        <input type="button" value="input">
+    </div>
+    <div class="row">
+        <input type="reset" value="reset">
+    </div>
+    <div class="row">
+        <input type="submit" value="submit">
+    </div>
+    <div class="row">
+        <div class="field file">
+            <label for="file">
+                <svg viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+                File
+            </label>
+            <input id="file" type="file">
+        </div>
+    </div>
+</form>
+
 </body>
 
 </html>
