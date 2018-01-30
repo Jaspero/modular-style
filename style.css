@@ -844,5 +844,30 @@ body {
   TEMPORARY
 
 ==================================================*/
+section {
+  border: 1px solid; }
+
+div[class^='col'] {
+  position: relative;
+  min-height: 30rem; }
+  div[class^='col']:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    background: slateblue; }
+
+.no-gutter div[class^='col']:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: slateblue; }
 
 /*# sourceMappingURL=style.css.map */
