@@ -1,5 +1,21 @@
 /*==================================================
 
+  GENERAL
+
+==================================================*/
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; }
+
+/*==================================================
+
   ESSENTIALS
 
 ==================================================*/
@@ -445,6 +461,35 @@ ul.horizontal {
 
 /*==================================================
 
+  HELPERS
+
+==================================================*/
+.inline-block {
+  display: inline-block; }
+
+.block {
+  display: block; }
+
+.flex {
+  display: flex; }
+
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.justify-left {
+  justify-content: left; }
+
+.justify-right {
+  justify-content: right; }
+
+/*==================================================
+
   HEADER
 
 ==================================================*/
@@ -796,78 +841,8 @@ input[type=reset] {
 ==================================================*/
 /*==================================================
 
-  GENERAL
-
-==================================================*/
-* {
-  box-sizing: border-box; }
-
-html {
-  font-size: 62.5%; }
-
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; }
-
-/*==================================================
-
-  HELPERS
-
-==================================================*/
-.inline-block {
-  display: inline-block; }
-
-.block {
-  display: block; }
-
-.flex {
-  display: flex; }
-
-.text-center {
-  text-align: center; }
-
-.text-left {
-  text-align: left; }
-
-.text-right {
-  text-align: right; }
-
-.justify-left {
-  justify-content: left; }
-
-.justify-right {
-  justify-content: right; }
-
-/*==================================================
-
   TEMPORARY
 
 ==================================================*/
-section {
-  border: 1px solid; }
-
-div[class^='col'] {
-  position: relative;
-  min-height: 30rem; }
-  div[class^='col']:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 1.5rem;
-    width: calc(100% - 3rem);
-    height: calc(100% - 3rem);
-    background: slateblue; }
-
-.no-gutter div[class^='col']:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: slateblue; }
 
 /*# sourceMappingURL=style.css.map */
