@@ -493,11 +493,6 @@ ul.horizontal {
   HEADER
 
 ==================================================*/
-header {
-  background: black;
-  height: 80px;
-  width: 100%; }
-
 /*==================================================
 
   MAIN
@@ -508,11 +503,6 @@ header {
   FOOTER
 
 ==================================================*/
-footer {
-  background: black;
-  height: 120px;
-  width: 100%; }
-
 /*==================================================
 
   BUTTONS
@@ -736,6 +726,13 @@ input[type=reset] {
     background: #d6d6d6; }
   .radio input[type=radio]:disabled ~ .control, .checkbox input[type=radio]:disabled ~ .control, .radio input[type=checkbox]:disabled ~ .control, .checkbox input[type=checkbox]:disabled ~ .control {
     background: #d6d6d6; }
+
+.field_name {
+  display: block;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  letter-spacing: .2rem;
+  text-transform: uppercase; }
 
 .field.in-a-row {
   display: flex; }

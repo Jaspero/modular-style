@@ -93,6 +93,14 @@
   }
 }
 
+.field_name {
+  display: block;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+}
+
 .field.in-a-row {
   display: flex;
   .radio, .checkbox {
