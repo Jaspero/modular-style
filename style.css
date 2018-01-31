@@ -584,7 +584,10 @@ footer {
   justify-content: center;
   flex-direction: column;
   font-size: 34px;
-  font-family: "Montserrat ExtraBold"; }
+  font-family: "Montserrat ExtraBold";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .price {
   background: #eeeeee;
