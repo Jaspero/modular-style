@@ -4,10 +4,8 @@
 
 ==================================================*/
 
-* { box-sizing: border-box; }
-
+*, *:before, *:after { box-sizing: border-box; }
 html { font-size: 62.5%; }
-
 body { margin: 0; padding: 0; overflow-x: hidden; }
 
 
@@ -29,18 +27,11 @@ body { margin: 0; padding: 0; overflow-x: hidden; }
 
 ==================================================*/
 
+// Block & Inline-block
 .inline-block { display: inline-block; }
-
 .block { display: block; }
 
-.flex { display: flex; }
-
-.text-center { text-align: center; }
-
+// Text align
 .text-left { text-align: left; }
-
+.text-center { text-align: center; }
 .text-right { text-align: right; }
-
-.justify-left { justify-content: left; }
-
-.justify-right { justify-content: right; }

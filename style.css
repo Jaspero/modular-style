@@ -3,7 +3,7 @@
   GENERAL
 
 ==================================================*/
-* {
+*, *:before, *:after {
   box-sizing: border-box; }
 
 html {
@@ -470,23 +470,14 @@ ul.horizontal {
 .block {
   display: block; }
 
-.flex {
-  display: flex; }
+.text-left {
+  text-align: left; }
 
 .text-center {
   text-align: center; }
 
-.text-left {
-  text-align: left; }
-
 .text-right {
   text-align: right; }
-
-.justify-left {
-  justify-content: left; }
-
-.justify-right {
-  justify-content: right; }
 
 /*==================================================
 
@@ -660,12 +651,19 @@ input[type=reset] {
 ==================================================*/
 .field label {
   border: .1rem solid;
-  display: block;
+  margin-bottom: 2rem;
+  display: flex;
   position: relative; }
   .field label span {
+    display: inline-block;
     font-size: 1.4rem;
     line-height: 1.4; }
 
+/*==================================================
+
+  SHARED
+
+==================================================*/
 .input input[type=text],
 .input input[type=email],
 .input input[type=tel],
@@ -674,12 +672,12 @@ input[type=reset] {
 .input input[type=search],
 .input input[type=number], .select select, .textarea textarea {
   display: block;
-  width: 100%;
   -webkit-appearance: textfield;
-  border: none;
-  outline: none;
+  width: 100%;
   font-size: 1.4rem;
   line-height: 1.4;
+  outline: none;
+  border: none;
   background: #eee; }
   .input input[type=text]::placeholder,
   .input input[type=email]::placeholder,
@@ -691,23 +689,16 @@ input[type=reset] {
     font-family: sans-serif;
     line-height: 1.4; }
 
-/*==================================================
-
-  RADIO & CHECKBOX SHARED
-
-==================================================*/
 .radio, .checkbox {
   cursor: pointer; }
   .radio span, .checkbox span {
-    padding-left: 3rem; }
+    order: 2; }
   .radio .control, .checkbox .control {
-    width: 2rem;
-    height: 2rem;
+    order: 1;
+    width: 5rem;
+    height: 5rem;
     display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
     transition: all 0.35s ease;
     background: #eee; }
   .radio .control:after, .checkbox .control:after {
@@ -722,9 +713,9 @@ input[type=reset] {
     transition: all 0.35s ease;
     background: #333;
     box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
-  .radio input[type=radio]:focus ~ .control, .checkbox input[type=radio]:focus ~ .control, .radio input[type=radio]:hover ~ .control, .checkbox input[type=radio]:hover ~ .control, .radio input[type=checkbox]:focus ~ .control, .checkbox input[type=checkbox]:focus ~ .control, .radio input[type=checkbox]:hover ~ .control, .checkbox input[type=checkbox]:hover ~ .control {
+  .radio input[type=radio]:focus ~ .control, .radio input[type=radio]:hover ~ .control, .radio input[type=checkbox]:focus ~ .control, .radio input[type=checkbox]:hover ~ .control, .checkbox input[type=radio]:focus ~ .control, .checkbox input[type=radio]:hover ~ .control, .checkbox input[type=checkbox]:focus ~ .control, .checkbox input[type=checkbox]:hover ~ .control {
     background: #d6d6d6; }
-  .radio input[type=radio]:disabled ~ .control, .checkbox input[type=radio]:disabled ~ .control, .radio input[type=checkbox]:disabled ~ .control, .checkbox input[type=checkbox]:disabled ~ .control {
+  .radio input[type=radio]:disabled ~ .control, .radio input[type=checkbox]:disabled ~ .control, .checkbox input[type=radio]:disabled ~ .control, .checkbox input[type=checkbox]:disabled ~ .control {
     background: #d6d6d6; }
 
 .field_name {

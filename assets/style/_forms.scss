@@ -5,28 +5,43 @@
 ==================================================*/
 
 .field {
+
   label {
+    // TEMPORARY
     border: .1rem solid;
-    display: block;
+    margin-bottom: 2rem;
+
+    // Display & Position
+    display: flex;
     position: relative;
     span {
+      // Position
+      display: inline-block;
+      // Font
       font-size: 1.4rem;
       line-height: 1.4;
     }
   }
 }
 
-%shared {
-  // Box
+
+/*==================================================
+
+  SHARED
+
+==================================================*/
+
+%input {
+  // Display & Position
   display: block;
-  width: 100%;
   -webkit-appearance: textfield;
-  border: none;
-  outline: none;
+  width: 100%;
   // Font
   font-size: 1.4rem;
   line-height: 1.4;
   // Style
+  outline: none;
+  border: none;
   background: #eee;
   // Focus
   &:focus, &:hover {}
@@ -42,27 +57,20 @@
 }
 
 
-/*==================================================
+%radio, %checkbox {
 
-  RADIO & CHECKBOX SHARED
-
-==================================================*/
-
-%radio-checkbox {
   cursor: pointer;
 
   // Text
-  span { padding-left: 3rem; }
+  span { order: 2; }
 
   // Control box
   .control {
-    width: 2rem;
-    height: 2rem;
+    order: 1;
+    width: 5rem;
+    height: 5rem;
     display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
     transition: $transition;
     background: #eee;
   }
@@ -125,6 +133,7 @@
 ==================================================*/
 
 .input {
+  // span { flex: 1 1 10rem; }
   input[type=text],
   input[type=email],
   input[type=tel],
@@ -132,7 +141,7 @@
   input[type=password],
   input[type=search],
   input[type=number] {
-    @extend %shared;
+    @extend %input;
   }
 }
 
@@ -145,7 +154,7 @@
 
 .select {
   select {
-    @extend %shared;
+    @extend %input;
     cursor: pointer;
     // Remove default arrow cross-browser
     -moz-appearance: none;
@@ -176,7 +185,7 @@
 
 .textarea {
   textarea {
-    @extend %shared;
+    @extend %input;
     // Resizing options
     resize: vertical;
     overflow: auto;
@@ -191,7 +200,7 @@
 ==================================================*/
 
 .radio {
-  @extend %radio-checkbox;
+  @extend %radio;
   .control { border-radius: 50%; }
   .control:after { border-radius: 50%; }
   // Checked
@@ -208,7 +217,7 @@
 ==================================================*/
 
 .checkbox {
-  @extend %radio-checkbox;
+  @extend %checkbox;
   // Checked
   input[type=checkbox]:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
   // Hiding default checkbox
