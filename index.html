@@ -76,7 +76,7 @@ sass --watch style.scss:style.css
 
 <form action="">
     <div class="row">
-        <div class="col-6">
+        <div class="col-6 col-m-9 col-s-12">
 
             <!-- INPUT -->
             <div class="field">
@@ -126,13 +126,15 @@ sass --watch style.scss:style.css
             <div class="field">
                 <label class="select" for="id_select">
                     <span>Select</span>
-                    <select id="id_select" name="id_select">
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                    </select>
-                    <svg viewBox="520 2957 10 5"><path d="M520 2957l5 5 5-5z"/></svg>
+                    <div class="relative">
+                        <select id="id_select" name="id_select">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                        </select>
+                        <svg viewBox="520 2957 10 5"><path d="M520 2957l5 5 5-5z"/></svg>
+                    </div>
                 </label>
             </div>
 
@@ -146,7 +148,7 @@ sass --watch style.scss:style.css
 
             <!-- RADIO -->
             <div class="field">
-                <span class="field_name">Field Name</span>
+                <span class="legend">Legend</span>
                 <label class="radio" for="id_radio-1">
                     <span>Radio option 1</span>
                     <input id="id_radio-1" name="radio" type="radio">
@@ -169,8 +171,9 @@ sass --watch style.scss:style.css
                 </label>
             </div>
 
-            <!-- RADIO SINGLE ROW -->
-            <div class="field">
+            <!-- RADIO INLINE -->
+            <div class="field collapse">
+                <span class="legend">Legend</span>
                 <label class="radio" for="id_inline-radio-1">
                     <span>Radio option 1</span>
                     <input id="id_inline-radio-1" name="radio2" type="radio">
@@ -190,7 +193,7 @@ sass --watch style.scss:style.css
 
             <!-- CHECKBOX -->
             <div class="field">
-                <span class="field_name">Field Name</span>
+                <span class="legend">Legend</span>
                 <label class="checkbox" for="id_checkbox-1">
                     <span>Checkbox option 1</span>
                     <input id="id_checkbox-1" name="checkbox" type="checkbox">
@@ -213,8 +216,9 @@ sass --watch style.scss:style.css
                 </label>
             </div>
 
-            <!-- CHECKBOX SINGLE ROW -->
-            <div class="field">
+            <!-- CHECKBOX INLINE -->
+            <div class="field collapse">
+                <span class="legend">Legend</span>
                 <label class="checkbox" for="id_inline-checkbox-1">
                     <span>Checkbox option 1</span>
                     <input id="id_inline-checkbox-1" name="checkbox" type="checkbox">
@@ -234,8 +238,9 @@ sass --watch style.scss:style.css
 
         </div>
     </div>
+</form>
 
-
+<div class="buttons">
     <div class="row">
         <button>
             Button
@@ -260,7 +265,7 @@ sass --watch style.scss:style.css
             <input id="file" type="file">
         </div>
     </div>
-</form>
+</div>
 
 </body>
 

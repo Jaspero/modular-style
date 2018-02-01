@@ -440,6 +440,10 @@ p, h1, h2, h3, h4, h5, h6 {
   .link:visited {
     color: #551a8b; }
 
+.tag {
+  text-transform: uppercase;
+  letter-spacing: .2rem; }
+
 /*==================================================
 
   LISTS
@@ -469,6 +473,9 @@ ul.horizontal {
 
 .block {
   display: block; }
+
+.relative {
+  position: relative; }
 
 .text-left {
   text-align: left; }
@@ -649,19 +656,25 @@ input[type=reset] {
   GENERAL FORM LAYOUT
 
 ==================================================*/
-.field label {
-  border: .1rem solid;
-  margin-bottom: 2rem;
-  display: flex;
-  position: relative; }
-  .field label span {
+.field {
+  background: #fafafa;
+  margin-bottom: 3rem; }
+  .field span {
     display: inline-block;
     font-size: 1.4rem;
     line-height: 1.4; }
+  .field label {
+    display: flex;
+    flex-direction: column;
+    position: relative; }
 
 /*==================================================
 
-  SHARED
+  TEXT, EMAIL, TEL, URL, PASSWORD, SEARCH, NUMBER
+  
+  SELECT
+
+  TEXTAREA
 
 ==================================================*/
 .input input[type=text],
@@ -677,8 +690,10 @@ input[type=reset] {
   font-size: 1.4rem;
   line-height: 1.4;
   outline: none;
-  border: none;
-  background: #eee; }
+  border: 1px solid;
+  background: none;
+  padding: 1rem;
+  margin-top: .5rem; }
   .input input[type=text]::placeholder,
   .input input[type=email]::placeholder,
   .input input[type=tel]::placeholder,
@@ -689,64 +704,6 @@ input[type=reset] {
     font-family: sans-serif;
     line-height: 1.4; }
 
-.radio, .checkbox {
-  cursor: pointer; }
-  .radio span, .checkbox span {
-    order: 2; }
-  .radio .control, .checkbox .control {
-    order: 1;
-    width: 5rem;
-    height: 5rem;
-    display: inline-block;
-    position: relative;
-    transition: all 0.35s ease;
-    background: #eee; }
-  .radio .control:after, .checkbox .control:after {
-    content: '';
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: all 0.35s ease;
-    background: #333;
-    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
-  .radio input[type=radio]:focus ~ .control, .radio input[type=radio]:hover ~ .control, .radio input[type=checkbox]:focus ~ .control, .radio input[type=checkbox]:hover ~ .control, .checkbox input[type=radio]:focus ~ .control, .checkbox input[type=radio]:hover ~ .control, .checkbox input[type=checkbox]:focus ~ .control, .checkbox input[type=checkbox]:hover ~ .control {
-    background: #d6d6d6; }
-  .radio input[type=radio]:disabled ~ .control, .radio input[type=checkbox]:disabled ~ .control, .checkbox input[type=radio]:disabled ~ .control, .checkbox input[type=checkbox]:disabled ~ .control {
-    background: #d6d6d6; }
-
-.field_name {
-  display: block;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  letter-spacing: .2rem;
-  text-transform: uppercase; }
-
-.field.in-a-row {
-  display: flex; }
-  .field.in-a-row .radio, .field.in-a-row .checkbox {
-    flex: 1 1 auto;
-    text-align: center; }
-    .field.in-a-row .radio span, .field.in-a-row .checkbox span {
-      display: block;
-      padding-left: 0; }
-    .field.in-a-row .radio .control, .field.in-a-row .checkbox .control {
-      position: static;
-      transform: translateY(0); }
-
-/*==================================================
-
-  TEXT, EMAIL, TEL, URL, PASSWORD, SEARCH, NUMBER
-
-==================================================*/
-/*==================================================
-
-  SELECT
-
-==================================================*/
 .select select {
   cursor: pointer;
   -moz-appearance: none;
@@ -759,15 +716,11 @@ input[type=reset] {
   width: 1.2rem;
   height: .8rem;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
   fill: #141414; }
 
-/*==================================================
-
-  TEXTAREA
-
-==================================================*/
 .textarea textarea {
   resize: vertical;
   overflow: auto; }
@@ -776,29 +729,72 @@ input[type=reset] {
 
   RADIO
 
-==================================================*/
-.radio .control {
-  border-radius: 50%; }
-.radio .control:after {
-  border-radius: 50%; }
-.radio input[type=radio]:checked ~ .control:after {
-  transform: translate(-50%, -50%) scale(1); }
-.radio input[type=radio] {
-  position: absolute;
-  opacity: 0;
-  z-index: -1; }
-
-/*==================================================
-
   CHECKBOX
 
 ==================================================*/
-.checkbox input[type=checkbox]:checked ~ .control:after {
+.legend {
+  display: inline-block;
+  margin-bottom: 1rem; }
+
+.field .radio, .field .checkbox {
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1rem; }
+  .field .radio span, .field .checkbox span {
+    order: 2; }
+  .field .radio .control, .field .checkbox .control {
+    order: 1;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    position: relative;
+    transition: all 0.35s ease;
+    margin-right: 1rem;
+    background: #eee; }
+  .field .radio .control:after, .field .checkbox .control:after {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.35s ease;
+    background: #333;
+    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
+  .field .radio input[type=radio]:focus ~ .control, .field .radio input[type=radio]:hover ~ .control, .field .radio input[type=checkbox]:focus ~ .control, .field .radio input[type=checkbox]:hover ~ .control, .field .checkbox input[type=radio]:focus ~ .control, .field .checkbox input[type=radio]:hover ~ .control, .field .checkbox input[type=checkbox]:focus ~ .control, .field .checkbox input[type=checkbox]:hover ~ .control {
+    background: #d6d6d6; }
+  .field .radio input[type=radio]:disabled ~ .control, .field .radio input[type=checkbox]:disabled ~ .control, .field .checkbox input[type=radio]:disabled ~ .control, .field .checkbox input[type=checkbox]:disabled ~ .control {
+    background: #d6d6d6; }
+
+.field .radio .control {
+  border-radius: 50%; }
+.field .radio .control:after {
+  border-radius: 50%; }
+.field .radio input[type=radio]:checked ~ .control:after {
   transform: translate(-50%, -50%) scale(1); }
-.checkbox input[type=checkbox] {
+.field .radio input[type=radio] {
   position: absolute;
   opacity: 0;
   z-index: -1; }
+
+.field .checkbox input[type=checkbox]:checked ~ .control:after {
+  transform: translate(-50%, -50%) scale(1); }
+.field .checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; }
+
+.field.collapse {
+  display: flex;
+  flex-wrap: wrap; }
+  .field.collapse .legend {
+    flex: 1 1 100%; }
+  .field.collapse .radio, .field.collapse .checkbox {
+    flex: 1 1 auto;
+    margin-right: 1rem; }
 
 /*==================================================
 

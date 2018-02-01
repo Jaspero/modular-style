@@ -5,29 +5,33 @@
 ==================================================*/
 
 .field {
+  background: #fafafa;
+  margin-bottom: 3rem;
+
+  span {
+    // Position
+    display: inline-block;
+    // Font
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
 
   label {
-    // TEMPORARY
-    border: .1rem solid;
-    margin-bottom: 2rem;
-
     // Display & Position
     display: flex;
+    flex-direction: column;
     position: relative;
-    span {
-      // Position
-      display: inline-block;
-      // Font
-      font-size: 1.4rem;
-      line-height: 1.4;
-    }
   }
 }
 
 
 /*==================================================
 
-  SHARED
+  TEXT, EMAIL, TEL, URL, PASSWORD, SEARCH, NUMBER
+  
+  SELECT
+
+  TEXTAREA
 
 ==================================================*/
 
@@ -41,8 +45,10 @@
   line-height: 1.4;
   // Style
   outline: none;
-  border: none;
-  background: #eee;
+  border: 1px solid;
+  background: none;
+  padding: 1rem;
+  margin-top: .5rem;
   // Focus
   &:focus, &:hover {}
   // Valid
@@ -56,84 +62,7 @@
   }
 }
 
-
-%radio, %checkbox {
-
-  cursor: pointer;
-
-  // Text
-  span { order: 2; }
-
-  // Control box
-  .control {
-    order: 1;
-    width: 5rem;
-    height: 5rem;
-    display: inline-block;
-    position: relative;
-    transition: $transition;
-    background: #eee;
-  }
-
-  // Indicator
-  .control:after {
-    // Box
-    content: '';
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0);
-    transition: $transition;
-    // Style
-    background: #333;
-    box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.2);
-  }
-
-  // Indicator – states
-  input[type=radio], input[type=checkbox] {
-    // Hover & Focus
-    &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
-    // Disabled
-    &:disabled ~ .control { background: darken(#eee,10%); }
-  }
-}
-
-.field_name {
-  display: block;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  letter-spacing: .2rem;
-  text-transform: uppercase;
-}
-
-.field.in-a-row {
-  display: flex;
-  .radio, .checkbox {
-    flex: 1 1 auto;
-    text-align: center;
-    span {
-      display: block;
-      padding-left: 0;
-    }
-    .control {
-      position: static;
-      transform: translateY(0);
-    }
-  }
-}
-
-
-/*==================================================
-
-  TEXT, EMAIL, TEL, URL, PASSWORD, SEARCH, NUMBER
-
-==================================================*/
-
 .input {
-  // span { flex: 1 1 10rem; }
   input[type=text],
   input[type=email],
   input[type=tel],
@@ -144,13 +73,6 @@
     @extend %input;
   }
 }
-
-
-/*==================================================
-
-  SELECT
-
-==================================================*/
 
 .select {
   select {
@@ -169,19 +91,13 @@
     width: 1.2rem;
     height: .8rem;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
     // Style
     fill: #141414;
   }
 }
-
-
-/*==================================================
-
-  TEXTAREA
-
-==================================================*/
 
 .textarea {
   textarea {
@@ -197,9 +113,54 @@
 
   RADIO
 
+  CHECKBOX
+
 ==================================================*/
 
-.radio {
+.legend { display: inline-block; margin-bottom: 1rem; }
+
+%radio, %checkbox {
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  // Text
+  span { order: 2; }
+  // Control box
+  .control {
+    order: 1;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    position: relative;
+    transition: $transition;
+    margin-right: 1rem;
+    background: #eee;
+  }
+  // Indicator
+  .control:after {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: $transition;
+    background: #333;
+    box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.2);
+  }
+  // Indicator – states
+  input[type=radio], input[type=checkbox] {
+    // Hover & Focus
+    &:focus ~ .control, &:hover ~ .control { background: darken(#eee,10%); }
+    // Disabled
+    &:disabled ~ .control { background: darken(#eee,10%); }
+  }
+}
+
+.field .radio {
   @extend %radio;
   .control { border-radius: 50%; }
   .control:after { border-radius: 50%; }
@@ -209,17 +170,17 @@
   input[type=radio] { position: absolute; opacity: 0; z-index: -1; }
 }
 
-
-/*==================================================
-
-  CHECKBOX
-
-==================================================*/
-
-.checkbox {
+.field .checkbox {
   @extend %checkbox;
   // Checked
   input[type=checkbox]:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
   // Hiding default checkbox
   input[type=checkbox] { position: absolute; opacity: 0; z-index: -1; }
+}
+
+.field.collapse {
+  display: flex;
+  flex-wrap: wrap;
+  .legend { flex: 1 1 100%; }
+  .radio, .checkbox { flex: 1 1 auto; margin-right: 1rem;}
 }

@@ -23,6 +23,11 @@ p {}
   &:visited { color: #551a8b; }
 }
 
+.tag {
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
 
 /*==================================================
 
