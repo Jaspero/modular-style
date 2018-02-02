@@ -524,7 +524,7 @@ input[type=reset] {
   letter-spacing: .2rem;
   cursor: pointer;
   background: white;
-  transition: all 0.35s ease; }
+  transition: 0.35s; }
   button svg,
   .file svg,
   input[type=button] svg,
@@ -735,7 +735,7 @@ input[type=reset] {
     height: 2rem;
     display: inline-block;
     position: relative;
-    transition: all 0.35s ease;
+    transition: 0.35s;
     margin-right: 1rem;
     background: #eee; }
   .field .radio .control:after, .field .checkbox .control:after {
@@ -747,7 +747,7 @@ input[type=reset] {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: all 0.35s ease;
+    transition: 0.35s;
     background: #333;
     box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
   .field .radio input[type=radio]:focus ~ .control, .field .radio input[type=radio]:hover ~ .control, .field .radio input[type=checkbox]:focus ~ .control, .field .radio input[type=checkbox]:hover ~ .control, .field .checkbox input[type=radio]:focus ~ .control, .field .checkbox input[type=radio]:hover ~ .control, .field .checkbox input[type=checkbox]:focus ~ .control, .field .checkbox input[type=checkbox]:hover ~ .control {
@@ -815,11 +815,6 @@ input[type=reset] {
     opacity: 0;
     z-index: -1; } }
 
-/*==================================================
-
-  Example of importing font from file
-
-==================================================*/
 /*==================================================
 
   TEMPORARY
