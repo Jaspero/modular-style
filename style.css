@@ -507,6 +507,7 @@ ul.horizontal {
 
 ==================================================*/
 button,
+.file,
 input[type=button],
 input[type=submit],
 input[type=reset] {
@@ -522,16 +523,18 @@ input[type=reset] {
   background: white;
   transition: all 0.35s ease; }
   button svg,
+  .file svg,
   input[type=button] svg,
   input[type=submit] svg,
   input[type=reset] svg {
     position: relative;
     top: .1rem;
-    margin-left: .5rem;
     height: 1.2rem;
     width: 1.2rem;
     fill: black; }
   button:hover, button:focus,
+  .file:hover,
+  .file:focus,
   input[type=button]:hover,
   input[type=button]:focus,
   input[type=submit]:hover,
@@ -540,6 +543,9 @@ input[type=reset] {
   input[type=reset]:focus {
     background: #e6e6e6; }
   button.progress, button.success, button.error,
+  .file.progress,
+  .file.success,
+  .file.error,
   input[type=button].progress,
   input[type=button].success,
   input[type=button].error,
@@ -554,6 +560,9 @@ input[type=reset] {
     user-select: none;
     position: relative; }
     button.progress svg, button.success svg, button.error svg,
+    .file.progress svg,
+    .file.success svg,
+    .file.error svg,
     input[type=button].progress svg,
     input[type=button].success svg,
     input[type=button].error svg,
@@ -565,11 +574,13 @@ input[type=reset] {
     input[type=reset].error svg {
       display: none; }
   button.progress,
+  .file.progress,
   input[type=button].progress,
   input[type=submit].progress,
   input[type=reset].progress {
     cursor: wait; }
     button.progress:after,
+    .file.progress:after,
     input[type=button].progress:after,
     input[type=submit].progress:after,
     input[type=reset].progress:after {
@@ -592,6 +603,7 @@ input[type=reset] {
   100% {
     transform: rotate(360deg); } }
   button.success:after,
+  .file.success:after,
   input[type=button].success:after,
   input[type=submit].success:after,
   input[type=reset].success:after {
@@ -608,6 +620,7 @@ input[type=reset] {
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg); }
   button.error:after,
+  .file.error:after,
   input[type=button].error:after,
   input[type=submit].error:after,
   input[type=reset].error:after {
@@ -619,37 +632,8 @@ input[type=reset] {
     left: 50%;
     transform: translate(-50%, -50%); }
 
-/*==================================================
-
-  FILE
-
-==================================================*/
-.file {
-  width: auto; }
-  .file label {
-    display: inline-block;
-    padding: 2rem 6rem;
-    margin: 1rem;
-    border: .1rem solid black;
-    color: black;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    cursor: pointer;
-    background: white;
-    transition: all 0.35s ease; }
-    .file label:hover, .file label:focus {
-      background: #e6e6e6; }
-    .file label svg {
-      pointer-events: none;
-      width: 1.6rem;
-      height: 1.6rem;
-      position: relative;
-      top: .4rem;
-      margin-right: .4rem;
-      fill: black; }
-  .file input[type="file"] {
-    display: none; }
+.file input[type="file"] {
+  display: none; }
 
 /*==================================================
 
