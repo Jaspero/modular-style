@@ -18,7 +18,7 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
 * CSS Grid
 * Other
 
-## Basic
+### Basic
 
 * `display`
 * `opacity`
@@ -30,7 +30,7 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
 * `overflow-y`
 * `overflow-wrap`
 
-## Positioning
+### Positioning
 
 * `position`
 * `top`
@@ -42,7 +42,7 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
 * `clear`
 * `vertical-align`
 
-## Box model
+### Box model
 
 * `width`
 * `min-width`
@@ -59,7 +59,7 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
 * `box-shadow`
 * `box-sizing`
 
-## Background
+### Background
 
 * `background`
   * `background-image`
@@ -72,7 +72,7 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
   * `background-color`
 * `background-blend-mode`
 
-## Typography
+### Typography
 
 * `color`
 * `font`
@@ -94,12 +94,12 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
 * `word-break`
 * `word-spacing`
 
-## Transform
+### Transform
 
 * `transform`
 * `transform-origin`
 
-## Transition
+### Transition
 
 * `transition`
   * `transition-property`
@@ -107,7 +107,7 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
   * `transition-timing-function`
   * `transition-delay`
 
-## Animation
+### Animation
 
 * `animation`
   * `**animation-name***`
@@ -119,9 +119,9 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
   * `animation-fill-mode`
   * `animation-play-state`
 
-## Flexbox
+### Flexbox
 
-### [Parent]
+#### [Parent]
 
 * `align-content`
 * `align-items`
@@ -130,7 +130,7 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
   * `flex-direction`
   * `flex-wrap`
 
-### [Child]
+##### [Child]
 
 * `order`
 * `flex`
@@ -139,11 +139,11 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
   * `flex-basis`
 * `align-self`
 
-# CSS Grid
+### CSS Grid
 
 This will be added after all browsers properly support it.
 
-# Other
+#### Other
 
 * `border-collapse`
 * `column-count`
@@ -155,3 +155,7 @@ This will be added after all browsers properly support it.
   * `list-style-position`
 * `mix-blend-mode`
 * `resize`
+
+# Example
+
+Will add this asap :)
