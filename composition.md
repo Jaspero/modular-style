@@ -121,7 +121,7 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
 
 ### Flexbox
 
-#### [Parent]
+#### Parent
 
 * `align-content`
 * `align-items`
@@ -130,7 +130,7 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
   * `flex-direction`
   * `flex-wrap`
 
-##### [Child]
+#### Child
 
 * `order`
 * `flex`
