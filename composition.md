@@ -2,146 +2,166 @@
 
 This file contains almost all commonly used CSS elements. They are grouped in meaningful sections. The goal of this is to help people organize their CSS (or SCSS) code according to some simple rules. If done properly, other developers should have it easy finding their way around your code.
 
-================================================================================
 
--{Basic}-
+# Contents
 
-display
-content
-cursor
-pointer-events
-opacity
-overflow-wrap
-overflow
-overflow-x
-overflow-y
+* Basic
+* Positioning
+* Box model
+* Background
+* Typography
+* Transform
+* Transition
+* Animation
+* Flexbox
+* CSS Grid
+* Other
 
-================================================================================
 
--{Positioning}-
+# Grouped elements
 
-position
-z-index
-top
-right
-bottom
-left
-float
-vertical-align
-clear
+## Basic
 
-================================================================================
+* display
+* content
+* cursor
+* pointer-events
+* opacity
+* overflow-wrap
+* overflow
+* overflow-x
+* overflow-y
 
--{Box model}-
 
-box-sizing
-box-shadow
-width
-min-width
-max-width
-height
-min-height
-max-height
-line-height
-margin
-padding
-border
-border-radius
-outline
+## Positioning
 
-================================================================================
+* position
+* z-index
+* top
+* right
+* bottom
+* left
+* float
+* vertical-align
+* clear
 
--{Background}-
 
-background: background-image background-position background-size background-repeat background-origin background-clip background-attachment background-color
-background-blend-mode
+## Box model
 
-================================================================================
+* width
+* min-width
+* max-width
+* height
+* min-height
+* max-height
+* line-height
+* margin
+* padding
+* border
+* border-radius
+* outline
+* box-shadow
+* box-sizing
 
--{Typography}-
 
-color
-font: font-style font-variant font-weight font-size line-height font-family
-letter-spacing
-line-height
-text-align
-text-decoration
-text-indent
-text-overflow
-text-shadow
-text-transform
-white-space
-word-break
-word-spacing
+## Background
 
-================================================================================
+* background
+  * background-image
+  * background-position
+  * background-size
+  * background-repeat
+  * background-origin
+  * background-clip
+  * background-attachment
+  * background-color
+* background-blend-mode
 
--{Transform}-
 
-transform
-transform-origin
+## Typography
 
-================================================================================
+* color
+* font
+  * font-style
+  * font-variant
+  * font-weight
+  * font-size
+  * line-height
+  * font-family
+* letter-spacing
+* line-height
+* text-align
+* text-decoration
+* text-indent
+* text-overflow
+* text-shadow
+* text-transform
+* white-space
+* word-break
+* word-spacing
 
--{Transitions}-
 
-transition: transition-property transition-duration transition-timing-function transition-delay
+## Transform
 
-[Required]
-transition-duration
+* transform
+* transform-origin
 
-================================================================================
 
--{Animation}-
+## Transition
 
-animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction animation-fill-mode animation-play-state
+* transition
+  * transition-property
+  * **transition-duration***
+  * transition-timing-function
+  * transition-delay
 
-[Required]
-animation-duration animation-name
 
-================================================================================
+## Animation
 
--{Flexbox}-
+* animation
+  * **animation-name***
+  * **animation-duration***
+  * animation-timing-function
+  * animation-delay
+  * animation-iteration-count
+  * animation-direction
+  * animation-fill-mode
+  * animation-play-state
+
+
+## Flexbox
 
 (parent)
-align-content
-align-items
-justify-content
-flex-flow: flex-direction flex-wrap
+* align-content
+* align-items
+* justify-content
+* flex-flow
+  * flex-direction
+  * flex-wrap
 
 (child)
-order
-flex: flex-grow flex-shrink flex-basis
-align-self
+* order
+* flex
+  * flex-grow
+  * flex-shrink
+  * flex-basis
+* align-self
 
-================================================================================
 
--{CSS Grid}-
+# CSS Grid
 
-TODO
+This will be added after all browsers properly support it.
 
-================================================================================
 
--{Other}-
+# Other
 
-border-collapse
-column-count
-column-gap
-column-width
-list-style: list-style-type list-style-image list-style-position
-mix-blend-mode
-resize
-
-================================================================================
-
-// Basic
-// Positioning
-// Box model
-// Background
-// Typography
-// Transform
-// Transition
-// Animation
-// Flexbox
-// CSS Grid
-// Other
+* border-collapse
+* column-count
+* column-gap
+* column-width
+* list-style
+  * list-style-type
+  * list-style-image
+  * list-style-position
+* mix-blend-mode
+* resize
