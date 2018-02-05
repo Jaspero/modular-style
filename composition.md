@@ -103,15 +103,15 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
 
 * `transition`
   * `transition-property`
-  * `transition-duration` [required]
+  * **`transition-duration`**
   * `transition-timing-function`
   * `transition-delay`
 
 ### Animation
 
 * `animation`
-  * `animation-name` [required]
-  * `animation-duration` [required]
+  * **`animation-name`**
+  * **`animation-duration`**
   * `animation-timing-function` 
   * `animation-delay`
   * `animation-iteration-count`
