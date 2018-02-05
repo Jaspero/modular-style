@@ -1,50 +1,74 @@
 /*==================================================
 
-  GENERAL
+  BASE
 
 ==================================================*/
-*, *:before, *:after {
+/*
+** Setting global box-sizing
+*/
+html {
   box-sizing: border-box; }
 
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*
+** 1. Always show vertical scrollbar to avoid screen flickering
+** 2. Document height always at least 100%
+*/
 html {
   overflow-y: scroll;
-  min-height: 100%; }
+  /* 1 */
+  min-height: 100%;
+  /* 2 */ }
 
+/*
+** 1. Removing default settings
+** 2. Removing the awkward horizontal scrollbar
+*/
 body {
   margin: 0;
+  /* 1 */
   padding: 0;
-  overflow-x: hidden; }
+  /* 1 */
+  overflow-x: hidden;
+  /* 2 */ }
 
-/*==================================================
-
-  ESSENTIALS
-
-==================================================*/
 /*==================================================
 
   VARIABLES
 
 ==================================================*/
+/*
+** Variables are good.
+** Use variables.
+** They make your project easy to maintain.
+*/
 /*==================================================
 
-  FLUID VARIABLES
-  
-==================================================*/
-/*==================================================
-
-  FLUID MARGIN & PADDING
-  
-==================================================*/
-/*==================================================
-
-  FLUID FONT-SIZE
+  LIGHTEN & DARKEN
 
 ==================================================*/
+/*
+** A lightweight function to darken or lighten a color.
+*/
 /*==================================================
 
   SHORTHAND MARGIN & PADDING
 
 ==================================================*/
+/*
+** Generating a set of classes that help with
+** shorthand class writing.
+**
+** The syntax is as follows:
+**
+** (m|p)-(a|x|y|t|r|b|l)-(0|1|2|3|4|5)
+**
+** e.g. m-t-5 = margin-top: 5rem;
+** e.g. p-x-2 = padding-left: 2rem; padding-right: 2rem;
+** e.g. m-a-4 = margin: 4rem;
+*/
 .m-a-0 {
   margin: 0rem; }
 
@@ -323,61 +347,68 @@ body {
 
 /*==================================================
 
-  LIGHTEN & DARKEN
+  FLUID - VARIABLES
 
 ==================================================*/
+/*
+** 1. Small screen size. Fluid functions won't scale
+**    below this threshold.
+** 2. Big screen size. Fluid functions won't scale
+**    above this threshold.
+*/
+/* 1 */
+/* 2 */
+/*
+** Helper function used for calculations. Don't change
+** this.
+*/
+/*==================================================
+
+  FLUID - MARGIN & PADDING
+
+==================================================*/
+/*
+** Say goodbye to media queries.
+**
+** e.g. @include fluid(20rem, 10rem, padding);
+** Padding will be 20rem on big screens, and scale
+** down to 10rem on small screens.
+*/
+/*==================================================
+
+  FLUID - FONT-SIZE
+
+==================================================*/
+/*
+** Say goodbye to media queries.
+**
+** e.g. @include font(2rem, 1.6rem);
+** Font-size will be 2rem on big screens, and scale
+** down to 1.6rem on small screens.
+*/
 /*==================================================
 
   OVERLAY
 
 ==================================================*/
-/*==================================================
-
-  TYPOGRAPHY
-
-==================================================*/
-html {
-  font-family: sans-serif;
-  font-size: 62.5%;
-  line-height: 1.5; }
-
-p, h1, h2, h3, h4, h5, h6 {
-  margin: 0; }
-
-.link {
-  text-decoration-skip: ink;
-  color: #0000ee; }
-  .link:visited {
-    color: #551a8b; }
-
-.tag {
-  text-transform: uppercase;
-  letter-spacing: .2rem; }
-
-/*==================================================
-
-  LISTS
-
-==================================================*/
-ul.vertical {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  ul.vertical li {
-    display: block; }
-
-ul.horizontal {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  ul.horizontal li {
-    display: inline-block; }
-
+/*
+** Overlay mixin. Make sure to use it after the CSS
+** "background" element.
+**
+** Use rgba() format to pass background color to it.
+** e.g. @include overlay(rgba(0,0,0,.5));
+** This passes a black overlay with 50% opacity.
+**
+** Contains IE and Edge fallback.
+*/
 /*==================================================
 
   HELPERS
 
 ==================================================*/
+/*
+** Simple classes to help build simple html.
+*/
 .inline-block {
   display: inline-block; }
 
@@ -398,162 +429,78 @@ ul.horizontal {
 
 /*==================================================
 
-  GRID
+  TYPOGRAPHY
 
-* Modify $gutter and $contained-width to your preferences
+==================================================*/
+/*
+** Base html typography
+*/
+html {
+  font-family: sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5; }
 
+/*
+** Shared
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; }
+
+/*
+** Headings
 */
 /*
+** Paragraph
+*/
+/*
+** Helper classes
+*/
+.link {
+  text-decoration-skip: ink;
+  color: #0000ee; }
+  .link:visited {
+    color: #551a8b; }
 
-==================================================*/
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  max-width: 120rem;
-  margin: 0 auto; }
-  .row div[class^='col'] {
-    padding: 0 1.5rem 3rem; }
-  .row.full {
-    max-width: 100%; }
-  .row.no-gutter div[class^='col'] {
-    padding: 0; }
-  .row .col-1 {
-    flex-basis: 8.3333%; }
-  .row .col-2 {
-    flex-basis: 16.6666%; }
-  .row .col-3 {
-    flex-basis: 25%; }
-  .row .col-4 {
-    flex-basis: 33.3333%; }
-  .row .col-5 {
-    flex-basis: 41.6666%; }
-  .row .col-6 {
-    flex-basis: 50%; }
-  .row .col-7 {
-    flex-basis: 58.3333%; }
-  .row .col-8 {
-    flex-basis: 66.6666%; }
-  .row .col-9 {
-    flex-basis: 75%; }
-  .row .col-10 {
-    flex-basis: 83.3333%; }
-  .row .col-11 {
-    flex-basis: 91.6666%; }
-  .row .col-12 {
-    flex-basis: 100%; }
-  @media screen and (max-width: 1200px) {
-    .row .col-m-1 {
-      flex-basis: 8.3333%; }
-    .row .col-m-2 {
-      flex-basis: 16.6666%; }
-    .row .col-m-3 {
-      flex-basis: 25%; }
-    .row .col-m-4 {
-      flex-basis: 33.3333%; }
-    .row .col-m-5 {
-      flex-basis: 41.6666%; }
-    .row .col-m-6 {
-      flex-basis: 50%; }
-    .row .col-m-7 {
-      flex-basis: 58.3333%; }
-    .row .col-m-8 {
-      flex-basis: 66.6666%; }
-    .row .col-m-9 {
-      flex-basis: 75%; }
-    .row .col-m-10 {
-      flex-basis: 83.3333%; }
-    .row .col-m-11 {
-      flex-basis: 91.6666%; }
-    .row .col-m-12 {
-      flex-basis: 100%; } }
-  @media screen and (max-width: 800px) {
-    .row .col-s-1 {
-      flex-basis: 8.3333%; }
-    .row .col-s-2 {
-      flex-basis: 16.6666%; }
-    .row .col-s-3 {
-      flex-basis: 25%; }
-    .row .col-s-4 {
-      flex-basis: 33.3333%; }
-    .row .col-s-5 {
-      flex-basis: 41.6666%; }
-    .row .col-s-6 {
-      flex-basis: 50%; }
-    .row .col-s-7 {
-      flex-basis: 58.3333%; }
-    .row .col-s-8 {
-      flex-basis: 66.6666%; }
-    .row .col-s-9 {
-      flex-basis: 75%; }
-    .row .col-s-10 {
-      flex-basis: 83.3333%; }
-    .row .col-s-11 {
-      flex-basis: 91.6666%; }
-    .row .col-s-12 {
-      flex-basis: 100%; } }
+.tag {
+  text-transform: uppercase;
+  letter-spacing: .2rem; }
 
-/*==================================================
-
-  HEADER
-
-==================================================*/
-/*==================================================
-
-  MAIN
-
-==================================================*/
-/*==================================================
-
-  FOOTER
-
-==================================================*/
 /*==================================================
 
   BUTTONS
 
 ==================================================*/
 button,
-.file,
 input[type=button],
 input[type=submit],
 input[type=reset] {
+  display: inline-block;
+  cursor: pointer;
   padding: 2rem 6rem;
   margin: 1rem;
   outline: none;
   border: .1rem solid black;
   border-radius: 0;
+  background: white;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
-  cursor: pointer;
-  background: white;
   transition: 0.35s; }
-  button svg,
-  .file svg,
+  button svg, button img,
   input[type=button] svg,
+  input[type=button] img,
   input[type=submit] svg,
-  input[type=reset] svg {
-    position: relative;
-    top: .1rem;
-    height: 1.2rem;
-    width: 1.2rem;
-    fill: black; }
-  button:hover, button:focus,
-  .file:hover,
-  .file:focus,
-  input[type=button]:hover,
-  input[type=button]:focus,
-  input[type=submit]:hover,
-  input[type=submit]:focus,
-  input[type=reset]:hover,
-  input[type=reset]:focus {
-    background: #e6e6e6; }
+  input[type=submit] img,
+  input[type=reset] svg,
+  input[type=reset] img {
+    vertical-align: middle; }
   button.progress, button.success, button.error,
-  .file.progress,
-  .file.success,
-  .file.error,
   input[type=button].progress,
   input[type=button].success,
   input[type=button].error,
@@ -567,28 +514,32 @@ input[type=reset] {
     pointer-events: none;
     user-select: none;
     position: relative; }
-    button.progress svg, button.success svg, button.error svg,
-    .file.progress svg,
-    .file.success svg,
-    .file.error svg,
+    button.progress svg, button.progress img, button.success svg, button.success img, button.error svg, button.error img,
     input[type=button].progress svg,
+    input[type=button].progress img,
     input[type=button].success svg,
+    input[type=button].success img,
     input[type=button].error svg,
+    input[type=button].error img,
     input[type=submit].progress svg,
+    input[type=submit].progress img,
     input[type=submit].success svg,
+    input[type=submit].success img,
     input[type=submit].error svg,
+    input[type=submit].error img,
     input[type=reset].progress svg,
+    input[type=reset].progress img,
     input[type=reset].success svg,
-    input[type=reset].error svg {
-      display: none; }
+    input[type=reset].success img,
+    input[type=reset].error svg,
+    input[type=reset].error img {
+      opacity: 0; }
   button.progress,
-  .file.progress,
   input[type=button].progress,
   input[type=submit].progress,
   input[type=reset].progress {
     cursor: wait; }
     button.progress:after,
-    .file.progress:after,
     input[type=button].progress:after,
     input[type=submit].progress:after,
     input[type=reset].progress:after {
@@ -611,7 +562,6 @@ input[type=reset] {
   100% {
     transform: rotate(360deg); } }
   button.success:after,
-  .file.success:after,
   input[type=button].success:after,
   input[type=submit].success:after,
   input[type=reset].success:after {
@@ -628,7 +578,6 @@ input[type=reset] {
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg); }
   button.error:after,
-  .file.error:after,
   input[type=button].error:after,
   input[type=submit].error:after,
   input[type=reset].error:after {
@@ -640,8 +589,77 @@ input[type=reset] {
     left: 50%;
     transform: translate(-50%, -50%); }
 
-.file input[type="file"] {
-  display: none; }
+/*==================================================
+
+  FILE
+
+==================================================*/
+.file {
+  display: inline-block;
+  cursor: pointer;
+  padding: 2rem 6rem;
+  margin: 1rem;
+  border: .1rem solid black;
+  border-radius: 0;
+  outline: none;
+  background: white;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  transition: 0.35s; }
+  .file svg, .file img {
+    vertical-align: middle; }
+  .file.progress, .file.success, .file.error {
+    color: transparent;
+    pointer-events: none;
+    user-select: none;
+    position: relative; }
+    .file.progress svg, .file.progress img, .file.success svg, .file.success img, .file.error svg, .file.error img {
+      opacity: 0; }
+  .file.progress {
+    cursor: wait; }
+    .file.progress:after {
+      content: '';
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      top: calc(50% - 1rem);
+      left: calc(50% - 1rem);
+      height: 1.8rem;
+      width: 1.8rem;
+      border-top: .3rem solid black;
+      border-right: .3rem solid black;
+      border-bottom: .3rem solid transparent;
+      border-left: .3rem solid transparent;
+      animation: progress-animation .75s linear infinite; }
+@keyframes progress-animation {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+  .file.success:after {
+    content: '';
+    display: block;
+    width: .8rem;
+    height: 1.8rem;
+    border-top: none;
+    border-right: .2rem solid black;
+    border-bottom: .2rem solid black;
+    border-left: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg); }
+  .file.error:after {
+    content: 'error';
+    display: block;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .file input[type="file"] {
+    display: none; }
 
 /*==================================================
 
@@ -790,6 +808,151 @@ input[type=reset] {
 
 /*==================================================
 
+  GRID
+
+==================================================*/
+/*
+** 1. Gutter width - spacing between grid columns
+** 2. Grid container width
+** 3. Helper variable. Don't change.
+*/
+/* 1 */
+/* 2 */
+/* 3 */
+.row {
+  /*
+  ** 1. Flex grid.
+  ** 2. Wrap content into next row.
+  ** 3. Center align columns. e.g. if there are
+  **    two divs that are 4 columns wide each,
+  **    there will be 2 empty columns on each
+  **    side of the grid.
+  ** 4. Grid is contained by default. (from
+  **    personal experience, I use it more often)
+  ** 5. Grid gutter done with padding.
+  ** 6. In case you need a full-width grid.
+  ** 7. In case you want to remove gutters.
+  */
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+  /* 2 */
+  justify-content: center;
+  /* 3 */
+  width: 100%;
+  /* 4 */
+  max-width: 120rem;
+  /* 4 */
+  margin: 0 auto;
+  /* 4 */
+  /* 5 */
+  /* 6 */
+  /* 7 */ }
+  .row div[class^='col'] {
+    padding: 1.5rem; }
+  .row.full {
+    max-width: 100%; }
+  .row.no-gutter div[class^='col'] {
+    padding: 0; }
+  .row .col-1 {
+    flex-basis: 8.3333%; }
+  .row .col-2 {
+    flex-basis: 16.6666%; }
+  .row .col-3 {
+    flex-basis: 25%; }
+  .row .col-4 {
+    flex-basis: 33.3333%; }
+  .row .col-5 {
+    flex-basis: 41.6666%; }
+  .row .col-6 {
+    flex-basis: 50%; }
+  .row .col-7 {
+    flex-basis: 58.3333%; }
+  .row .col-8 {
+    flex-basis: 66.6666%; }
+  .row .col-9 {
+    flex-basis: 75%; }
+  .row .col-10 {
+    flex-basis: 83.3333%; }
+  .row .col-11 {
+    flex-basis: 91.6666%; }
+  .row .col-12 {
+    flex-basis: 100%; }
+  @media screen and (max-width: 1200px) {
+    .row .col-m-1 {
+      flex-basis: 8.3333%; }
+    .row .col-m-2 {
+      flex-basis: 16.6666%; }
+    .row .col-m-3 {
+      flex-basis: 25%; }
+    .row .col-m-4 {
+      flex-basis: 33.3333%; }
+    .row .col-m-5 {
+      flex-basis: 41.6666%; }
+    .row .col-m-6 {
+      flex-basis: 50%; }
+    .row .col-m-7 {
+      flex-basis: 58.3333%; }
+    .row .col-m-8 {
+      flex-basis: 66.6666%; }
+    .row .col-m-9 {
+      flex-basis: 75%; }
+    .row .col-m-10 {
+      flex-basis: 83.3333%; }
+    .row .col-m-11 {
+      flex-basis: 91.6666%; }
+    .row .col-m-12 {
+      flex-basis: 100%; } }
+  @media screen and (max-width: 800px) {
+    .row .col-s-1 {
+      flex-basis: 8.3333%; }
+    .row .col-s-2 {
+      flex-basis: 16.6666%; }
+    .row .col-s-3 {
+      flex-basis: 25%; }
+    .row .col-s-4 {
+      flex-basis: 33.3333%; }
+    .row .col-s-5 {
+      flex-basis: 41.6666%; }
+    .row .col-s-6 {
+      flex-basis: 50%; }
+    .row .col-s-7 {
+      flex-basis: 58.3333%; }
+    .row .col-s-8 {
+      flex-basis: 66.6666%; }
+    .row .col-s-9 {
+      flex-basis: 75%; }
+    .row .col-s-10 {
+      flex-basis: 83.3333%; }
+    .row .col-s-11 {
+      flex-basis: 91.6666%; }
+    .row .col-s-12 {
+      flex-basis: 100%; } }
+
+/*==================================================
+
+  LISTS
+
+==================================================*/
+/*
+** Simple vertical and horizontal styles for lists.
+*/
+ul.vertical {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  ul.vertical li {
+    display: block; }
+
+ul.horizontal {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  ul.horizontal li {
+    display: inline-block; }
+
+/*==================================================
+
   TABLES
 
 ==================================================*/
@@ -820,10 +983,12 @@ input[type=reset] {
     opacity: 0;
     z-index: -1; } }
 
-/*==================================================
+div[class^='col'] {
+  padding: 0 1.5rem;
+  border: 1px solid; }
 
-  TEMPORARY
-
-==================================================*/
+.box {
+  background: #eee;
+  height: 30rem; }
 
 /*# sourceMappingURL=style.css.map */

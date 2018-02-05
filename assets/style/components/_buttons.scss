@@ -5,48 +5,47 @@
 ==================================================*/
 
 button,
-.file,
 input[type=button],
 input[type=submit],
 input[type=reset] {
-  // Box
+
+  // Basic
+  display: inline-block;
+  cursor: pointer;
+  // Box model
   padding: 2rem 6rem;
   margin: 1rem;
   outline: none;
   border: .1rem solid black;
   border-radius: 0;
-  // Font
+  // Background
+  background: white;
+  // Typography
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
-  // Style
-  cursor: pointer;
-  background: white;
+  // Transition
   transition: $transition;
 
-  // SVG
-  svg {
-    position: relative;
-    top: .1rem;
-    height: 1.2rem;
-    width: 1.2rem;
-    fill: black;
-  }
+  // Alignment fix
+  svg, img { vertical-align: middle; }
 
   // Hover & Focus
-  &:hover, &:focus { background: darken(white, 10%); }
+  &:hover, &:focus {}
   // Disabled
   &:disabled {}
   // Active
   &:active {}
 
   // States
+  // Only works on button.
+  // Doesn't work on input.
   &.progress, &.success, &.error {
     color: transparent;
     pointer-events: none;
     user-select: none;
     position: relative;
-    svg {display: none;}
+    svg, img { opacity: 0; }
   }
   &.progress {
     cursor: wait;
@@ -97,7 +96,5 @@ input[type=reset] {
       transform: translate(-50%,-50%);
     }
   }
-}
 
-// Hiding default file
-.file { input[type="file"] { display: none; } }
+}

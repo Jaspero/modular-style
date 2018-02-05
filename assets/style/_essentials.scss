@@ -1,39 +1,6 @@
-/*==================================================
-
-  GENERAL
-
-==================================================*/
-
-*, *:before, *:after { box-sizing: border-box; }
-html { overflow-y: scroll; min-height: 100%; }
-body { margin: 0; padding: 0; overflow-x: hidden; }
-
-
-/*==================================================
-
-  ESSENTIALS
-
-==================================================*/
-
-@import 'essentials/variables';
-@import 'essentials/functions';
-@import 'essentials/typography';
-
-
-/*==================================================
-
-  HELPERS
-
-==================================================*/
-
-// Block & Inline-block
-.inline-block { display: inline-block; }
-.block { display: block; }
-
-// Position
-.relative { position: relative; }
-
-// Text align
-.text-left { text-align: left; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
+@import "essentials/base";
+@import "essentials/variables";
+@import "essentials/functions";
+@import "essentials/mixins";
+@import "essentials/helpers";
+@import "essentials/typography";

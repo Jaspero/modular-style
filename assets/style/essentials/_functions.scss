@@ -1,0 +1,73 @@
+/*==================================================
+
+  LIGHTEN & DARKEN
+
+==================================================*/
+
+/*
+** A lightweight function to darken or lighten a color.
+*/
+
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function darken($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
+/*==================================================
+
+  SHORTHAND MARGIN & PADDING
+
+==================================================*/
+
+/*
+** Generating a set of classes that help with
+** shorthand class writing.
+**
+** The syntax is as follows:
+**
+** (m|p)-(a|x|y|t|r|b|l)-(0|1|2|3|4|5)
+**
+** e.g. m-t-5 = margin-top: 5rem;
+** e.g. p-x-2 = padding-left: 2rem; padding-right: 2rem;
+** e.g. m-a-4 = margin: 4rem;
+*/
+
+$spacer: 1rem;
+$spacer-x: $spacer;
+$spacer-y: $spacer;
+$spacers: ();
+
+@for $i from 0 through 5 {
+  $spacers: map-merge($spacers, (
+          $i: (
+                  x: $spacer-x * $i,
+                  y: $spacer-y * $i
+          )
+  ))
+}
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $lengths in $spacers {
+    $length-x:   map-get($lengths, x);
+    $length-y:   map-get($lengths, y);
+
+    .#{$abbrev}-a-#{$size} { #{$prop}:        $length-x}
+    .#{$abbrev}-t-#{$size} { #{$prop}-top:    $length-y}
+    .#{$abbrev}-r-#{$size} { #{$prop}-right:  $length-x}
+    .#{$abbrev}-b-#{$size} { #{$prop}-bottom: $length-y}
+    .#{$abbrev}-l-#{$size} { #{$prop}-left:   $length-x}
+
+    .#{$abbrev}-x-#{$size} {
+      #{$prop}-right:  $length-x;
+      #{$prop}-left:   $length-x;
+    }
+    .#{$abbrev}-y-#{$size} {
+      #{$prop}-top:    $length-y;
+      #{$prop}-bottom: $length-y;
+    }
+  }
+}

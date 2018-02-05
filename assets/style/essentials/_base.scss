@@ -1,0 +1,44 @@
+/*==================================================
+
+  BASE
+
+==================================================*/
+
+/*
+** Setting global box-sizing
+*/
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+
+/*
+** 1. Always show vertical scrollbar to avoid screen flickering
+** 2. Document height always at least 100%
+*/
+
+html {
+  overflow-y: scroll; /* 1 */
+  min-height: 100%; /* 2 */
+}
+
+
+/*
+** 1. Removing default settings
+** 2. Removing the awkward horizontal scrollbar
+*/
+
+body {
+  margin: 0; /* 1 */
+  padding: 0; /* 1 */
+  overflow-x: hidden; /* 2 */
+}

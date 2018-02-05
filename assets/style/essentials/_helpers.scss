@@ -1,0 +1,21 @@
+/*==================================================
+
+  HELPERS
+
+==================================================*/
+
+/*
+** Simple classes to help build simple html.
+*/
+
+// Block & Inline-block
+.inline-block { display: inline-block; }
+.block { display: block; }
+
+// Position
+.relative { position: relative; }
+
+// Text align
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }

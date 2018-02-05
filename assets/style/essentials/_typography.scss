@@ -1,0 +1,65 @@
+/*==================================================
+
+  TYPOGRAPHY
+
+==================================================*/
+
+/*
+** Base html typography
+*/
+
+html {
+  font-family: sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+
+
+/*
+** Shared
+*/
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+
+/*
+** Headings
+*/
+
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+
+/*
+** Paragraph
+*/
+
+p {}
+
+
+/*
+** Helper classes
+*/
+
+.link {
+  text-decoration-skip: ink;
+  color: #0000ee;
+  &:visited { color: #551a8b; }
+}
+
+.tag {
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}

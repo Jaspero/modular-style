@@ -1,12 +1,16 @@
-@import 'assets/style/essentials';
-@import 'assets/style/grid';
-@import 'assets/style/layout';
-@import 'assets/style/buttons';
-@import 'assets/style/forms';
-@import 'assets/style/tables';
+@import "assets/style/essentials";
+@import "assets/style/components/buttons";
+@import "assets/style/components/file";
+@import "assets/style/components/forms";
+@import "assets/style/components/grid";
+@import "assets/style/components/lists";
+@import "assets/style/components/tables";
 
-/*==================================================
-
-  TEMPORARY
-
-==================================================*/
+div[class^='col'] {
+  padding: 0 $gutter-half;
+  border: 1px solid;
+}
+.box {
+  background: #eee;
+  height: 30rem;
+}

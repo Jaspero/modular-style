@@ -1,34 +1,18 @@
--{Animation}-
+================================================================================
 
-animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction animation-fill-mode animation-play-state
+-{Basic}-
 
-[Required]
-animation-duration animation-name
+display
+content
+cursor
+pointer-events
+opacity
+overflow-wrap
+overflow
+overflow-x
+overflow-y
 
----
-
--{Background}-
-
-background: background-image background-position background-size background-repeat background-origin background-clip background-attachment background-color
-background-blend-mode
-
----
-
--{Box model}-
-
-box-sizing
-width
-min-width
-max-width
-height
-min-height
-max-height
-line-height
-margin
-border
-padding
-
----
+================================================================================
 
 -{Positioning}-
 
@@ -38,17 +22,37 @@ top
 right
 bottom
 left
+float
+vertical-align
+clear
 
----
+================================================================================
 
--{Transitions}-
+-{Box model}-
 
-transition: transition-property transition-duration transition-timing-function transition-delay
+box-sizing
+box-shadow
+width
+min-width
+max-width
+height
+min-height
+max-height
+line-height
+margin
+padding
+border
+border-radius
+outline
 
-[Required]
-transition-duration
+================================================================================
 
----
+-{Background}-
+
+background: background-image background-position background-size background-repeat background-origin background-clip background-attachment background-color
+background-blend-mode
+
+================================================================================
 
 -{Typography}-
 
@@ -66,7 +70,32 @@ white-space
 word-break
 word-spacing
 
----
+================================================================================
+
+-{Transform}-
+
+transform
+transform-origin
+
+================================================================================
+
+-{Transitions}-
+
+transition: transition-property transition-duration transition-timing-function transition-delay
+
+[Required]
+transition-duration
+
+================================================================================
+
+-{Animation}-
+
+animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction animation-fill-mode animation-play-state
+
+[Required]
+animation-duration animation-name
+
+================================================================================
 
 -{Flexbox}-
 
@@ -81,40 +110,34 @@ order
 flex: flex-grow flex-shrink flex-basis
 align-self
 
----
+================================================================================
 
 -{CSS Grid}-
 
 TODO
 
----
+================================================================================
 
 -{Other}-
 
-background-blend-mode
 border-collapse
-border-radius
-box-shadow
-clear
 column-count
 column-gap
 column-width
-content
-cursor
-display
-float
 list-style: list-style-type list-style-image list-style-position
 mix-blend-mode
-opacity
-outline
-overflow-wrap
-overflow
-overflow-x
-overflow-y
-pointer-events
 resize
-transform
-transform-origin
-vertical-align
 
----
+================================================================================
+
+// Basic
+// Positioning
+// Box model
+// Background
+// Typography
+// Transform
+// Transition
+// Animation
+// Flexbox
+// CSS Grid
+// Other
