@@ -21,26 +21,26 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
 ## Basic
 
 * `display`
-* `content`
-* `cursor`
-* `pointer-events`
 * `opacity`
-* `overflow-wrap`
+* `pointer-events`
+* `cursor`
+* `content`
 * `overflow`
 * `overflow-x`
 * `overflow-y`
+* `overflow-wrap`
 
 ## Positioning
 
 * `position`
-* `z-index`
 * `top`
 * `right`
 * `bottom`
 * `left`
+* `z-index`
 * `float`
-* `vertical-align`
 * `clear`
+* `vertical-align`
 
 ## Box model
 
@@ -121,7 +121,8 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
 
 ## Flexbox
 
-(parent)
+### [Parent]
+
 * `align-content`
 * `align-items`
 * `justify-content`
@@ -129,7 +130,8 @@ The goal of this is to help people organize their CSS (or SCSS) code according t
   * `flex-direction`
   * `flex-wrap`
 
-(child)
+### [Child]
+
 * `order`
 * `flex`
   * `flex-grow`
