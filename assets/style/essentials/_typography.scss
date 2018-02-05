@@ -5,19 +5,24 @@
 ==================================================*/
 
 /*
-** Base html typography
-*/
+ * Base html typography
+ * 
+ * 1. Sets a default global font-family.
+ * 2. Makes it so that 1rem = 10px.
+ *    Source: https://www.sitepoint.com/understanding-and-using-rem-units-in-css/
+ * 3. Personal preference for global line-height.
+ */
 
 html {
-  font-family: sans-serif;
-  font-size: 62.5%;
-  line-height: 1.5;
+  font-family: sans-serif; /* 1 */
+  font-size: 62.5%; /* 2 */
+  line-height: 1.5; /* 3 */
 }
 
 
 /*
-** Shared
-*/
+ * Shared style.
+ */
 
 p,
 h1,
@@ -31,8 +36,8 @@ h6 {
 
 
 /*
-** Headings
-*/
+ * Headings style.
+ */
 
 h1 {}
 h2 {}
@@ -43,23 +48,45 @@ h6 {}
 
 
 /*
-** Paragraph
-*/
+ * Paragraph style.
+ */
 
 p {}
 
 
 /*
-** Helper classes
-*/
+ * Removing default link style.
+ */
 
-.link {
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+
+/*
+ * Helper classes.
+ *
+ * Add helper classes here.
+ * 
+ * Two examples include:
+ * 1. Link class for links to be underlined and colored.
+ *    Visited links are colored differently. This is 
+ *    good practice for clickable links inside big
+ *    paragraphs.
+ * 2. Tag class for tag/label look. They are usually
+ *    smaller in font-size, with uppercase letters.
+ */
+
+.link /* 1 */ {
+  text-decoration: underline;
   text-decoration-skip: ink;
   color: #0000ee;
   &:visited { color: #551a8b; }
 }
 
-.tag {
+.tag /* 2 */ {
+  font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
 }

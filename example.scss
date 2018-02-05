@@ -1,0 +1,43 @@
+/*==================================================
+
+  EXAMPLE STYLE
+
+==================================================*/
+
+/*
+ * Modular style, by @jaspero
+ *
+ * https://github.com/Jaspero/modular-style/
+ *
+ * This is an example file.
+ */
+
+/*
+ * Modular style comes with a set of predefined basic
+ * (essential) files which should be included in every
+ * .scss file. You can view individual files inside
+ * /assets/style/essentials folder. 
+ *
+ * ESSENTIALS
+ *
+ * Base.................Base HTML settings.
+ * Variables............Project-wide variables such as colors, fonts, etc.
+ * Functions............Project-wide functions and their settings.
+ * Mixins...............Project-wide mixins and their settings.
+ * Helpers..............List of project-wide simple classes.
+ * Typography...........Everything related to typography.
+ *
+ */
+
+@import "assets/style/essentials";
+
+
+/*
+ * CUSTOM COMPONENTS
+ * 
+ * Import custom components here.
+ * 
+ * e.g. To style your layout, import _layout.scss. 
+ */
+
+@import "assets/style/components/layout";

@@ -1,43 +1,66 @@
 /*==================================================
 
-  FLUID - VARIABLES
+  MIXINS
 
 ==================================================*/
 
 /*
-** 1. Small screen size. Fluid functions won't scale
-**    below this threshold.
-** 2. Big screen size. Fluid functions won't scale
-**    above this threshold.
-*/
+ * List of custom made mixins. You can add your own
+ * mixins in this file.
+ */
+
+
+/*==================================================
+  FLUID
+==================================================*/
+
+/*
+ * Fluid mixins.
+ * They include fluid font, padding, and margin.
+ */
+
+/*
+ * Q: What does fluid mean?
+ * A: It means an element will smoothly scale from one
+ *    value to another. If you use ordinary media
+ *    queries, you get certain breakpoints where
+ *    values "jump". To avoid those "jumps", fluid
+ *    mixings create a "slope" for scaling values.
+ */
+
+/*
+ * Fluid variables
+ *
+ * Edit these to your own preference.
+ *
+ * 1. Small screen size. Fluid functions won't scale
+ *    below this threshold.
+ * 2. Big screen size. Fluid functions won't scale
+ *    above this threshold.
+ */
 
 $min-vw: 60rem; /* 1 */
 $max-vw: 140rem; /* 2 */
 
 
 /*
-** Helper function used for calculations. Don't change
-** this.
-*/
+ * Helper function used for calculations. Don't change
+ * this.
+ */
 
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
 
 
-/*==================================================
-
-  FLUID - MARGIN & PADDING
-
-==================================================*/
-
 /*
-** Say goodbye to media queries.
-**
-** e.g. @include fluid(20rem, 10rem, padding);
-** Padding will be 20rem on big screens, and scale
-** down to 10rem on small screens.
-*/
+ * Fluid margin and padding
+ *
+ * # Example #
+ * @include fluid(20rem, 10rem, padding);
+ * Padding will be 20rem on big screens, and scale
+ * down to 10rem on small screens.
+ */
 
 @mixin fluid($max, $min, $prop) {
 
@@ -123,19 +146,16 @@ $max-vw: 140rem; /* 2 */
 }
 
 
-/*==================================================
-
-  FLUID - FONT-SIZE
-
-==================================================*/
-
 /*
-** Say goodbye to media queries.
-**
-** e.g. @include font(2rem, 1.6rem);
-** Font-size will be 2rem on big screens, and scale
-** down to 1.6rem on small screens.
-*/
+ * Fluid font-size
+ *
+ * Source: https://css-tricks.com/snippets/css/fluid-typography/
+ *
+ * # Example #
+ * @include font-size(2rem, 1.6rem);
+ * Font-size will be 2rem on big screens, and scale
+ * down to 1.6rem on small screens.
+ */
 
 @mixin font-size($max, $min) {
   & {
@@ -151,21 +171,22 @@ $max-vw: 140rem; /* 2 */
 
 
 /*==================================================
-
   OVERLAY
-
 ==================================================*/
 
 /*
-** Overlay mixin. Make sure to use it after the CSS
-** "background" element.
-**
-** Use rgba() format to pass background color to it.
-** e.g. @include overlay(rgba(0,0,0,.5));
-** This passes a black overlay with 50% opacity.
-**
-** Contains IE and Edge fallback.
-*/
+ * Mixin for applying overlay to background images.
+ *
+ * # Example #
+ * @include overlay(rgba(0,0,0,.5));
+ * This passes a black overlay with 50% opacity.
+ *
+ * IMPORTANT:
+ * Make sure to use this mixin AFTER "background"
+ * attribute.
+ *
+ * Contains fallback code for IE and Edge.
+ */
 
 @mixin overlay($overlayColor) {
 

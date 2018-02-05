@@ -5,26 +5,30 @@
 ==================================================*/
 
 /*
-** Setting global box-sizing
-*/
+ * Base HTML settings.
+ */
+
+
+/*
+ * Setting global box-sizing.
+ * Source: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
 
 html {
   box-sizing: border-box;
 }
 
-* {
-  &,
-  &:before,
-  &:after {
-    box-sizing: inherit;
-  }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 
 /*
-** 1. Always show vertical scrollbar to avoid screen flickering
-** 2. Document height always at least 100%
-*/
+ * 1. Always show vertical scrollbar to avoid screen flickering.
+ * 2. Document height always at least 100%.
+ */
 
 html {
   overflow-y: scroll; /* 1 */
@@ -33,9 +37,9 @@ html {
 
 
 /*
-** 1. Removing default settings
-** 2. Removing the awkward horizontal scrollbar
-*/
+ * 1. Removing default body style.
+ * 2. Removing the awkward horizontal scrollbar.
+ */
 
 body {
   margin: 0; /* 1 */

@@ -5,17 +5,27 @@
 ==================================================*/
 
 /*
-** Simple classes to help build simple html.
-*/
+ * Simple classes for simple html.
+ *
+ * # Example #
+ * You want a button to be center aligned within a
+ * container? Add class "text-center" to that
+ * container.
+ */
 
-// Block & Inline-block
+/*
+ * Here are a few example classes. Feel free to
+ * edit these, and/or add your own.
+ */
+
+/* Display */
 .inline-block { display: inline-block; }
 .block { display: block; }
 
-// Position
+/* Position */
 .relative { position: relative; }
 
-// Text align
+/* Text align */
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
