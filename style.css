@@ -328,6 +328,76 @@ body {
 ==================================================*/
 /*==================================================
 
+  OVERLAY
+
+==================================================*/
+/*==================================================
+
+  TYPOGRAPHY
+
+==================================================*/
+html {
+  font-family: sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5; }
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+.link {
+  text-decoration-skip: ink;
+  color: #0000ee; }
+  .link:visited {
+    color: #551a8b; }
+
+.tag {
+  text-transform: uppercase;
+  letter-spacing: .2rem; }
+
+/*==================================================
+
+  LISTS
+
+==================================================*/
+ul.vertical {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  ul.vertical li {
+    display: block; }
+
+ul.horizontal {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  ul.horizontal li {
+    display: inline-block; }
+
+/*==================================================
+
+  HELPERS
+
+==================================================*/
+.inline-block {
+  display: inline-block; }
+
+.block {
+  display: block; }
+
+.relative {
+  position: relative; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+/*==================================================
+
   GRID
 
 * Modify $gutter and $contained-width to your preferences
@@ -423,71 +493,6 @@ body {
       flex-basis: 91.6666%; }
     .row .col-s-12 {
       flex-basis: 100%; } }
-
-/*==================================================
-
-  TYPOGRAPHY
-
-==================================================*/
-html {
-  font-family: sans-serif;
-  font-size: 62.5%;
-  line-height: 1.5; }
-
-p, h1, h2, h3, h4, h5, h6 {
-  margin: 0; }
-
-.link {
-  text-decoration-skip: ink;
-  color: #0000ee; }
-  .link:visited {
-    color: #551a8b; }
-
-.tag {
-  text-transform: uppercase;
-  letter-spacing: .2rem; }
-
-/*==================================================
-
-  LISTS
-
-==================================================*/
-ul.vertical {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  ul.vertical li {
-    display: block; }
-
-ul.horizontal {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  ul.horizontal li {
-    display: inline-block; }
-
-/*==================================================
-
-  HELPERS
-
-==================================================*/
-.inline-block {
-  display: inline-block; }
-
-.block {
-  display: block; }
-
-.relative {
-  position: relative; }
-
-.text-left {
-  text-align: left; }
-
-.text-center {
-  text-align: center; }
-
-.text-right {
-  text-align: right; }
 
 /*==================================================
 
