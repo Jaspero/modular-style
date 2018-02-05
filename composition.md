@@ -1,3 +1,7 @@
+# Composition
+
+This file contains almost all commonly used CSS elements. They are grouped in meaningful sections. The goal of this is to help people organize their CSS (or SCSS) code according to some simple rules. If done properly, other developers should have it easy finding their way around your code.
+
 ================================================================================
 
 -{Basic}-
