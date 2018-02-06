@@ -6,8 +6,6 @@
 
 /*
  * A lightweight grid that uses flex.
- * Use .row to declare flex parent, and .col-x to
- * declare children.
  */
 
 /*
@@ -96,3 +94,37 @@ $gutter-half: $gutter/2; /* 3 */
   }
 
 }
+
+/*
+ * # Example 1 #
+ * Four columns in a row, each taking 3 column spaces.
+ *
+ * <div class="row">
+ *   <div class="col-3"> ... </div>
+ *   <div class="col-3"> ... </div>
+ *   <div class="col-3"> ... </div>
+ *   <div class="col-3"> ... </div>
+ * </div>
+ *
+ * # Example 2 #
+ * Same as Example 1, but columns take 6 columns spaces on
+ * medium screens.
+ *
+ * <div class="row">
+ *   <div class="col-3 col-m-6"> ... </div>
+ *   <div class="col-3 col-m-6"> ... </div>
+ *   <div class="col-3 col-m-6"> ... </div>
+ *   <div class="col-3 col-m-6"> ... </div>
+ * </div>
+ *
+ * # Example 3 #
+ * Same as Example 1, but the entire grid is full-screen,
+ * and has no gutters.
+ *
+ * <div class="row full no-gutter">
+ *   <div class="col-3"> ... </div>
+ *   <div class="col-3"> ... </div>
+ *   <div class="col-3"> ... </div>
+ *   <div class="col-3"> ... </div>
+ * </div>
+ */

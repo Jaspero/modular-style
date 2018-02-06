@@ -1,6 +1,6 @@
 /*==================================================
 
-  BUTTONS
+  BUTTON STATES
 
 ==================================================*/
 
@@ -123,3 +123,12 @@ button {
     }
   }
 }
+
+/*
+ * # Example #
+ *
+ * <button>View more</button>
+ * <button class="loading">View more</button>
+ * <button class="error">View more</button>
+ * <button class="success">View more</button>
+ */

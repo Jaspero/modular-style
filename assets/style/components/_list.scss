@@ -28,3 +28,17 @@ ul.horizontal {
   padding: 0; /* 3 */
   li { display: inline-block; } /* 5 */
 }
+
+/*
+ * # Examples #
+ *
+ * <ul class="vertical">
+ *   <li> ... </li>
+ *   ...
+ * </ul>
+ *
+ * <ul class="horizontal">
+ *   <li> ... </li>
+ *   ...
+ * </ul>
+ */
