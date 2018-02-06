@@ -1,0 +1,45 @@
+/*==================================================
+
+  BUTTONS
+
+==================================================*/
+
+/*
+ * Preset style for buttons.
+ */
+
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+
+  /* Basic */
+  display: inline-block;
+  cursor: pointer;
+
+  /* Box model */
+  padding: 2rem 6rem;
+  margin: 1rem;
+  outline: none;
+  border: .1rem solid black;
+  border-radius: 0;
+
+  /* Background */
+  background: white;
+
+  /* Typography */
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+
+  /* Correct alignment inside buttons */
+  svg, img { vertical-align: middle; }
+
+  /* Hover & Focus */
+  &:hover, &:focus {}
+  /* Disabled */
+  &:disabled {}
+  /* Active */
+  &:active {}
+
+}

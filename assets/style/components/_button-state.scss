@@ -1,0 +1,125 @@
+/*==================================================
+
+  BUTTONS
+
+==================================================*/
+
+/*
+ * Button states.
+ *
+ * Supported states and classes:
+ * loading, error, success.
+ *
+ * Works by hiding button content, and showing a
+ * special state using :after
+ */
+
+button {
+
+  /* Shared */
+  &.loading,
+  &.success,
+  &.error {
+
+    /*
+     * 1. Hiding normal button content.
+     * 2. Makes button unclickable.
+     * 3. Required to style :after.
+     */
+
+    color: transparent; /* 1 */
+    svg, img { opacity: 0; } /* 1 */
+    pointer-events: none; /* 2 */
+    position: relative; /* 3 */
+
+  }
+
+  /* Loading */
+  &.loading {
+    &:after {
+
+      /* Basic */
+      content: '';
+      display: block;
+
+      /* Positioning */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      /* Box model */
+      height: 1.8rem;
+      width: 1.8rem;
+      border-radius: 50%;
+      border-top: .2rem solid black;
+      border-right: .2rem solid black;
+      border-bottom: .2rem solid transparent;
+      border-left: .2rem solid transparent;
+
+      /* Animation */
+      animation: progress-animation .75s linear infinite;
+      @keyframes progress-animation {
+        0% { transform: translate(-50%,-50%) rotate(0deg); }
+        100% { transform: translate(-50%,-50%) rotate(360deg); }
+      }
+
+    }
+  }
+
+  /* Success */
+  &.success {
+
+    /* Background */
+    background: rgba(0,200,0,.25);
+
+    &:after {
+
+      /* Basic */
+      content: '';
+      display: block;
+
+      /* Positioning */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      /* Box model */
+      width: .8rem;
+      height: 1.8rem;
+      border-top: none;
+      border-right: .2rem solid black;
+      border-bottom: .2rem solid black;
+      border-left: none;
+
+      /* Transform */
+      transform: translate(-50%,-50%) rotate(45deg);
+
+    }
+  }
+
+  /* Error */
+  &.error {
+
+    /* Background */
+    background: rgba(200,0,0,.5);
+
+    &:after {
+
+      /* Basic */
+      content: 'error';
+      display: block;
+
+      /* Positioning */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      /* Typography */
+      color: black;
+
+      /* Transform */
+      transform: translate(-50%,-50%);
+
+    }
+  }
+}
