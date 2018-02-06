@@ -5,30 +5,37 @@
 ==================================================*/
 
 /*
-** 1. Gutter width - spacing between grid columns
-** 2. Grid container width
-** 3. Helper variable. Don't change.
-*/
+ * A lightweight grid that uses flex.
+ * Use .row to declare flex parent, and .col-x to
+ * declare children.
+ */
+
+/*
+ * 1. Gutter width - spacing between grid columns
+ * 2. Grid container width
+ * 3. Helper variable. Don't change.
+ */
 
 $gutter: 3rem; /* 1 */
 $contained-width: 120rem; /* 2 */
 $gutter-half: $gutter/2; /* 3 */
 
+
 .row {
 
   /*
-  ** 1. Flex grid.
-  ** 2. Wrap content into next row.
-  ** 3. Center align columns. e.g. if there are
-  **    two divs that are 4 columns wide each,
-  **    there will be 2 empty columns on each
-  **    side of the grid.
-  ** 4. Grid is contained by default. (from
-  **    personal experience, I use it more often)
-  ** 5. Grid gutter done with padding.
-  ** 6. In case you need a full-width grid.
-  ** 7. In case you want to remove gutters.
-  */
+   * 1. Flex grid.
+   * 2. Wrap content into next row.
+   * 3. Center align columns. e.g. if there are
+   *    two divs that are 4 columns wide each,
+   *    there will be 2 empty columns on each
+   *    side of the grid.
+   * 4. Grid is contained by default. (from
+   *    personal experience, I use it more often)
+   * 5. Grid gutter done with padding.
+   * 6. In case you need a full-screen-width grid.
+   * 7. In case you want to remove gutters.
+   */
 
   display: flex; /* 1 */
   flex-wrap: wrap; /* 2 */
@@ -42,7 +49,7 @@ $gutter-half: $gutter/2; /* 3 */
 
   &.no-gutter { div[class^='col'] { padding: 0; } } /* 7 */
 
-  // Large screen sizes
+  /* Large screen sizes */
   .col-1 { flex-basis: 8.3333%; }
   .col-2 { flex-basis: 16.6666%; }
   .col-3 { flex-basis: 25%; }
@@ -56,7 +63,7 @@ $gutter-half: $gutter/2; /* 3 */
   .col-11 { flex-basis: 91.6666%; }
   .col-12 { flex-basis: 100%; }
 
-  // Medium screen sizes
+  /* Medium screen sizes */
   @media screen and (max-width: 1200px) {
     .col-m-1 { flex-basis: 8.3333%; }
     .col-m-2 { flex-basis: 16.6666%; }
@@ -72,7 +79,7 @@ $gutter-half: $gutter/2; /* 3 */
     .col-m-12 { flex-basis: 100%; }
   }
 
-  // Small screen sizes
+  /* Small screen sizes */
   @media screen and (max-width: 800px) {
     .col-s-1 { flex-basis: 8.3333%; }
     .col-s-2 { flex-basis: 16.6666%; }
