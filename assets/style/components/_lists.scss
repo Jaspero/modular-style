@@ -5,19 +5,26 @@
 ==================================================*/
 
 /*
-** Simple vertical and horizontal styles for lists.
-*/
+ * Simple vertical and horizontal styles for lists.
+ *
+ * 1. Removing the default 'disc' list-style.
+ * 2. Removing default list margin.
+ * 3. Removing default list padding (indent).
+ * 4. Each list element will fill one row.
+ * 5. Multiple list elements can fit into one row.
+ */
 
+/* Vertical list */
 ul.vertical {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  li { display: block; }
+  list-style: none; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+  li { display: block; } /* 4 */
 }
-
+/* Horizontal list */
 ul.horizontal {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  li { display: inline-block; }
+  list-style: none; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+  li { display: inline-block; } /* 5 */
 }
