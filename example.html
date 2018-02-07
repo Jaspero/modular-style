@@ -28,174 +28,175 @@ sass --watch example.scss:example.css
 </header>
 
 <main>
+    <section>
+        <form action="">
+
+            <!-- TEXT -->
+            <div class="field">
+                <label class="fe_text asd" for="id_text">
+                    <span>Text</span>
+                    <input id="id_text" name="id_text" type="text" placeholder="Text placeholder" autocomplete="on" autofocus>
+                </label>
+            </div>
+            <div class="field">
+                <label class="fe_text" for="id_email">
+                    <span>Email</span>
+                    <input id="id_email" name="id_email" type="email" placeholder="Email placeholder" autocomplete="email">
+                </label>
+            </div>
+            <div class="field">
+                <label class="fe_text" for="id_tel">
+                    <span>Tel</span>
+                    <input id="id_tel" name="id_tel" type="tel" placeholder="Tel placeholder" autocomplete="tel">
+                </label>
+            </div>
+            <div class="field">
+                <label class="fe_text" for="id_url">
+                    <span>URL</span>
+                    <input id="id_url" name="id_url" type="url" placeholder="URL placeholder" autocomplete="url">
+                </label>
+            </div>
+            <div class="field">
+                <label class="fe_text" for="id_password">
+                    <span>Password</span>
+                    <input id="id_password" name="id_password" type="password" placeholder="Password placeholder">
+                </label>
+            </div>
+            <div class="field">
+                <label class="fe_text" for="id_search">
+                    <span>Search</span>
+                    <input id="id_search" name="id_search" type="search" placeholder="Search placeholder" autocomplete="on">
+                </label>
+            </div>
+            <div class="field">
+                <label class="fe_text" for="id_number">
+                    <span>Number</span>
+                    <input id="id_number" name="id_number" type="number" placeholder="Number placeholder" autocomplete="num">
+                </label>
+            </div>
+            <div class="field">
+                <label class="fe_textarea" for="id_textarea">
+                    <span>Textarea</span>
+                    <textarea name="" id="id_textarea" rows="3" placeholder="Textarea placeholder"></textarea>
+                </label>
+            </div>
+            <div class="field">
+                <label class="fe_select" for="id_select">
+                    <span>Select</span>
+                    <div class="relative">
+                        <select id="id_select" name="id_select">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                        </select>
+                        <svg height="12" width="12" fill="#cccccc" viewBox="520 2957 10 5"><path d="M520 2957l5 5 5-5z"/></svg>
+                    </div>
+                </label>
+            </div>
+            <div class="field">
+                <label class="fe_toggle p-a-1" for="id_toggle">
+                    <span class="m-r-1">Toggle</span>
+                    <input id="id_toggle" name="toggle" type="checkbox">
+                    <div class="switch"></div>
+                </label>
+            </div>
+
+            <!-- RADIO -->
+            <div class="field">
+                <span class="legend">Legend</span>
+                <label class="radio" for="id_radio-1">
+                    <span>Radio option 1</span>
+                    <input id="id_radio-1" name="radio" type="radio">
+                    <div class="control"></div>
+                </label>
+                <label class="radio" for="id_radio-2">
+                    <span>Radio option 2</span>
+                    <input id="id_radio-2" name="radio" type="radio">
+                    <div class="control"></div>
+                </label>
+                <label class="radio" for="id_radio-3">
+                    <span>Radio option 3</span>
+                    <input id="id_radio-3" name="radio" type="radio">
+                    <div class="control"></div>
+                </label>
+                <label class="radio" for="id_radio-4">
+                    <span>Radio option disabled</span>
+                    <input id="id_radio-4" name="radio" type="radio" disabled>
+                    <div class="control"></div>
+                </label>
+            </div>
+
+            <!-- RADIO INLINE -->
+            <div class="field collapse">
+                <span class="legend">Legend</span>
+                <label class="radio" for="id_inline-radio-1">
+                    <span>Radio option 1</span>
+                    <input id="id_inline-radio-1" name="radio2" type="radio">
+                    <div class="control"></div>
+                </label>
+                <label class="radio" for="id_inline-radio-2">
+                    <span>Radio option 2</span>
+                    <input id="id_inline-radio-2" name="radio2" type="radio">
+                    <div class="control"></div>
+                </label>
+                <label class="radio" for="id_inline-radio-3">
+                    <span>Radio option 3</span>
+                    <input id="id_inline-radio-3" name="radio2" type="radio">
+                    <div class="control"></div>
+                </label>
+            </div>
+
+            <!-- CHECKBOX -->
+            <div class="field">
+                <span class="legend">Legend</span>
+                <label class="checkbox" for="id_checkbox-1">
+                    <span>Checkbox option 1</span>
+                    <input id="id_checkbox-1" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+                <label class="checkbox" for="id_checkbox-2">
+                    <span>Checkbox option 2</span>
+                    <input id="id_checkbox-2" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+                <label class="checkbox" for="id_checkbox-3">
+                    <span>Checkbox option 3</span>
+                    <input id="id_checkbox-3" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+                <label class="checkbox" for="id_checkbox-4">
+                    <span>Checkbox option disabled</span>
+                    <input id="id_checkbox-4" name="checkbox" type="checkbox" disabled>
+                    <div class="control"></div>
+                </label>
+            </div>
+
+            <!-- CHECKBOX INLINE -->
+            <div class="field collapse">
+                <span class="legend">Legend</span>
+                <label class="checkbox" for="id_inline-checkbox-1">
+                    <span>Checkbox option 1</span>
+                    <input id="id_inline-checkbox-1" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+                <label class="checkbox" for="id_inline-checkbox-2">
+                    <span>Checkbox option 2</span>
+                    <input id="id_inline-checkbox-2" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+                <label class="checkbox" for="id_inline-checkbox-3">
+                    <span>Checkbox option 3</span>
+                    <input id="id_inline-checkbox-3" name="checkbox" type="checkbox">
+                    <div class="control"></div>
+                </label>
+            </div>
+        </form>
+    </section>
 </main>
 
 <footer>
 </footer>
-
-<!--form-->
-<section hidden>
-    <form action="">
-        Form
-        <!-- INPUT -->
-        <div class="field">
-            <label class="input" for="id_text">
-                <span>Text</span>
-                <input id="id_text" name="id_text" type="text" placeholder="Text placeholder" autocomplete="on" autofocus>
-            </label>
-        </div>
-        <div class="field">
-            <label class="input" for="id_email">
-                <span>Email</span>
-                <input id="id_email" name="id_email" type="email" placeholder="Email placeholder" autocomplete="email">
-            </label>
-        </div>
-        <div class="field">
-            <label class="input" for="id_tel">
-                <span>Tel</span>
-                <input id="id_tel" name="id_tel" type="tel" placeholder="Tel placeholder" autocomplete="tel">
-            </label>
-        </div>
-        <div class="field">
-            <label class="input" for="id_url">
-                <span>URL</span>
-                <input id="id_url" name="id_url" type="url" placeholder="URL placeholder" autocomplete="url">
-            </label>
-        </div>
-        <div class="field">
-            <label class="input" for="id_password">
-                <span>Password</span>
-                <input id="id_password" name="id_password" type="password" placeholder="Password placeholder">
-            </label>
-        </div>
-        <div class="field">
-            <label class="input" for="id_search">
-                <span>Search</span>
-                <input id="id_search" name="id_search" type="search" placeholder="Search placeholder" autocomplete="on">
-            </label>
-        </div>
-        <div class="field">
-            <label class="input" for="id_number">
-                <span>Number</span>
-                <input id="id_number" name="id_number" type="number" placeholder="Number placeholder" autocomplete="num">
-            </label>
-        </div>
-
-        <!-- SELECT -->
-        <div class="field">
-            <label class="select" for="id_select">
-                <span>Select</span>
-                <div class="relative">
-                    <select id="id_select" name="id_select">
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                    </select>
-                    <svg viewBox="520 2957 10 5"><path d="M520 2957l5 5 5-5z"/></svg>
-                </div>
-            </label>
-        </div>
-
-        <!-- TEXTAREA -->
-        <div class="field">
-            <label class="textarea" for="id_textarea">
-                <span>Textarea</span>
-                <textarea name="" id="id_textarea" rows="3" placeholder="Textarea placeholder"></textarea>
-            </label>
-        </div>
-
-        <!-- RADIO -->
-        <div class="field">
-            <span class="legend">Legend</span>
-            <label class="radio" for="id_radio-1">
-                <span>Radio option 1</span>
-                <input id="id_radio-1" name="radio" type="radio">
-                <div class="control"></div>
-            </label>
-            <label class="radio" for="id_radio-2">
-                <span>Radio option 2</span>
-                <input id="id_radio-2" name="radio" type="radio">
-                <div class="control"></div>
-            </label>
-            <label class="radio" for="id_radio-3">
-                <span>Radio option 3</span>
-                <input id="id_radio-3" name="radio" type="radio">
-                <div class="control"></div>
-            </label>
-            <label class="radio" for="id_radio-4">
-                <span>Radio option disabled</span>
-                <input id="id_radio-4" name="radio" type="radio" disabled>
-                <div class="control"></div>
-            </label>
-        </div>
-
-        <!-- RADIO INLINE -->
-        <div class="field collapse">
-            <span class="legend">Legend</span>
-            <label class="radio" for="id_inline-radio-1">
-                <span>Radio option 1</span>
-                <input id="id_inline-radio-1" name="radio2" type="radio">
-                <div class="control"></div>
-            </label>
-            <label class="radio" for="id_inline-radio-2">
-                <span>Radio option 2</span>
-                <input id="id_inline-radio-2" name="radio2" type="radio">
-                <div class="control"></div>
-            </label>
-            <label class="radio" for="id_inline-radio-3">
-                <span>Radio option 3</span>
-                <input id="id_inline-radio-3" name="radio2" type="radio">
-                <div class="control"></div>
-            </label>
-        </div>
-
-        <!-- CHECKBOX -->
-        <div class="field">
-            <span class="legend">Legend</span>
-            <label class="checkbox" for="id_checkbox-1">
-                <span>Checkbox option 1</span>
-                <input id="id_checkbox-1" name="checkbox" type="checkbox">
-                <div class="control"></div>
-            </label>
-            <label class="checkbox" for="id_checkbox-2">
-                <span>Checkbox option 2</span>
-                <input id="id_checkbox-2" name="checkbox" type="checkbox">
-                <div class="control"></div>
-            </label>
-            <label class="checkbox" for="id_checkbox-3">
-                <span>Checkbox option 3</span>
-                <input id="id_checkbox-3" name="checkbox" type="checkbox">
-                <div class="control"></div>
-            </label>
-            <label class="checkbox" for="id_checkbox-4">
-                <span>Checkbox option disabled</span>
-                <input id="id_checkbox-4" name="checkbox" type="checkbox" disabled>
-                <div class="control"></div>
-            </label>
-        </div>
-
-        <!-- CHECKBOX INLINE -->
-        <div class="field collapse">
-            <span class="legend">Legend</span>
-            <label class="checkbox" for="id_inline-checkbox-1">
-                <span>Checkbox option 1</span>
-                <input id="id_inline-checkbox-1" name="checkbox" type="checkbox">
-                <div class="control"></div>
-            </label>
-            <label class="checkbox" for="id_inline-checkbox-2">
-                <span>Checkbox option 2</span>
-                <input id="id_inline-checkbox-2" name="checkbox" type="checkbox">
-                <div class="control"></div>
-            </label>
-            <label class="checkbox" for="id_inline-checkbox-3">
-                <span>Checkbox option 3</span>
-                <input id="id_inline-checkbox-3" name="checkbox" type="checkbox">
-                <div class="control"></div>
-            </label>
-        </div>
-    </form>
-</section>
 
 </body>
 

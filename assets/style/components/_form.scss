@@ -1,121 +1,201 @@
-// TODO: REFACTOR
+form {
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,.3);
+  width: 100%;
+  max-width: 100rem;
+  margin: 2rem auto;
+  padding: 2rem;
+}
 
 /*==================================================
 
-  GENERAL FORM LAYOUT
+  FORM ELEMENTS (FE)
 
 ==================================================*/
+
+/*
+ *
+ */
+
+/*
+ *
+ */
 
 .field {
-  margin-bottom: 3rem;
-  span {
-    // Position
-    display: inline-block;
-    // Font
-    font-size: 1.4rem;
-    line-height: 1.4;
-  }
-
-  label {
-    // Display & Position
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
+  margin-bottom: 1rem;
 }
 
 
-/*==================================================
+/*
+ *
+ */
 
-  TEXT, EMAIL, TEL, URL, PASSWORD, SEARCH, NUMBER
-  
-  SELECT
-
-  TEXTAREA
-
-==================================================*/
-
-%input {
-  // Display & Position
-  display: block;
+textarea {
   -webkit-appearance: textfield;
-  width: 100%;
-  // Font
-  font-size: 1.4rem;
-  line-height: 1.4;
-  // Style
-  outline: none;
-  border: 1px solid;
-  background: none;
-  padding: 1rem;
-  margin-top: .5rem;
+  resize: vertical;
+  overflow: auto;
+}
 
-  // Focus
-  &:focus, &:hover {}
-  // Valid
-  &:valid {}
-  // Invalid
-  &:invalid {}
+select {
+  cursor: pointer;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  &::-ms-expand { display: none; }
+}
 
-  // Placeholder
-  &::placeholder {
+input[type=checkbox],
+input[type=radio] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/*
+ *
+ */
+
+.fe_text,
+.fe_textarea,
+.fe_select {
+
+  span {
+
+    /* Basic */
+    display: block;
+
+    /* Typography */
     font-family: sans-serif;
-    line-height: 1.4;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #666;
   }
-}
 
-.input {
-  input[type=text],
-  input[type=email],
-  input[type=tel],
-  input[type=url],
-  input[type=password],
-  input[type=search],
-  input[type=number] {
-    @extend %input;
-  }
-}
-
-.select {
+  input,
+  textarea,
   select {
-    @extend %input;
-    cursor: pointer;
-    // Remove default arrow cross-browser
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    &::-ms-expand { display: none; }
-  }
-  // Custom SVG arrow
-  svg {
-    // Box
-    pointer-events: none;
-    width: 1.2rem;
-    height: .8rem;
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-    // Style
-    fill: #141414;
-  }
-}
 
-.textarea {
-  textarea {
-    @extend %input;
-    // Resizing options
-    resize: vertical;
+    /* Basic */
+    display: block;
     overflow: auto;
+    resize: vertical;
+    -webkit-appearance: textfield;
+
+    /* Box model */
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+    border: 1px solid #ccc;
+
+    /* Background */
+    background: white;
+
+    /* Typography */
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+
+    /* Focus */
+    &:focus, &:hover {}
+    /* Valid */
+    &:valid {}
+    /* Invalid */
+    &:invalid {}
+
+    /* Placeholder */
+    &::placeholder {
+      font-family: sans-serif;
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+
   }
 }
 
+
+/*
+ *
+ */
+
+.fe_select svg {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+
+
+/*
+ *
+ */
+
+.fe_toggle {
+
+  /* Basic */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+
+    /* Basic */
+    display: inline-block;
+
+    /* Typography */
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+
+  }
+
+  .switch {
+
+    /* Variables */
+    --width: 5rem;
+    --height: 3rem;
+
+    /* Basic */
+    display: inline-block;
+
+    /* Box model */
+    width: var(--width);
+    height: var(--height);
+    border-radius: calc(var(--width) / 2);
+
+    /* Position */
+    position: relative;
+
+    /* Background */
+    background: #ccc;
+
+    /* Transition */
+    transition: .35s;
+
+    &:after {
+      content: '';
+      display: block;
+      width: calc(var(--height) - 0.6rem);
+      height: calc(var(--height) - 0.6rem);
+      background: white;
+      position: absolute;
+      top: .3rem;
+      left: .3rem;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.24);
+      transition: .35s;
+    }
+  }
+
+  input[type=checkbox]:checked ~ .switch {
+    background: palegreen;
+    &:after { left: calc(var(--width) - var(--height) + .3rem); }
+  }
+
+}
 
 /*==================================================
 
-  RADIO
-
-  CHECKBOX
+  asd
 
 ==================================================*/
 
@@ -168,16 +248,12 @@
   .control:after { border-radius: 50%; }
   // Checked
   input[type=radio]:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
-  // Hiding default radio
-  input[type=radio] { position: absolute; opacity: 0; z-index: -1; }
 }
 
 .field .checkbox {
   @extend %checkbox;
   // Checked
   input[type=checkbox]:checked ~ .control:after { transform: translate(-50%,-50%) scale(1); }
-  // Hiding default checkbox
-  input[type=checkbox] { position: absolute; opacity: 0; z-index: -1; }
 }
 
 .field.collapse {
