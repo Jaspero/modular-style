@@ -4,28 +4,41 @@
 
 ==================================================*/
 
+/*
+ * A lightweight table preset.
+ */
+
 .table {
   table {
     border-collapse: collapse;
     width: 100%;
-    font-size: 1.4rem;
-    caption {
-      text-align: left;
-      padding: 3rem 1.5rem;
+    tr {
+      border: .1rem solid #eee;
     }
-    tr { border: 1px solid #eee; }
     td, th {
       text-align: left;
-      padding: 1.5rem;
+      padding: 1rem;
     }
   }
+}
 
-  // Responsive option 1
+
+/*
+ * Table responsiveness.
+ *
+ * 1. td is collapsed into individual rows.
+ * 2. Table contains minimum width, and is
+ *    scrollable on smaller screens.
+ */
+
+.table {
+
+  /* 1 - responsive collapse */
   @media screen and (max-width: 800px) {
     table {
       tr {
         display: block;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
       }
       td {
         display: block;
@@ -35,12 +48,56 @@
         content: attr(data-label);
         float: left;
       }
-      // Hiding thead
+      /* Hiding thead */
       thead { position: absolute; opacity: 0; z-index: -1; }
     }
   }
 
-  // Responsive option 2
+  /* 2 - responsive overflow */
   //overflow-x: auto;
   //table { min-width: 100rem; }
+
 }
+
+/*
+ * # Example #
+ *
+ * <div class="table">
+ *   <table>
+ *     <thead>
+ *     <tr>
+ *       <th>Index</th>
+ *       <th>Name</th>
+ *       <th>Email</th>
+ *       <th>Status</th>
+ *     </tr>
+ *     </thead>
+ *     <tbody>
+ *     <tr>
+ *       <td data-label="Index">1</td>
+ *       <td data-label="Name">Abraham Alpha</td>
+ *       <td data-label="Email">john@email.com</td>
+ *       <td data-label="Status">Online</td>
+ *     </tr>
+ *     <tr>
+ *       <td data-label="Index">2</td>
+ *       <td data-label="Name">Benjamin Beta</td>
+ *       <td data-label="Email">john@email.com</td>
+ *       <td data-label="Status">Offline</td>
+ *     </tr>
+ *     <tr>
+ *       <td data-label="Index">3</td>
+ *       <td data-label="Name">George Gamma</td>
+ *       <td data-label="Email">john@email.com</td>
+ *       <td data-label="Status">Offline</td>
+ *     </tr>
+ *     <tr>
+ *       <td data-label="Index">4</td>
+ *       <td data-label="Name">Daniel Delta</td>
+ *       <td data-label="Email">dan@email.com</td>
+ *       <td data-label="Status">Online</td>
+ *     </tr>
+ *     </tbody>
+ *   </table>
+ * </div>
+ */
