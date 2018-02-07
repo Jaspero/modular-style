@@ -14,14 +14,14 @@
  * 5. Multiple list elements can fit into one row.
  */
 
-/* Vertical list */
+/* -- Vertical list -- */
 ul.vertical {
   list-style: none; /* 1 */
   margin: 0; /* 2 */
   padding: 0; /* 3 */
   li { display: block; } /* 4 */
 }
-/* Horizontal list */
+/* -- Horizontal list v */
 ul.horizontal {
   list-style: none; /* 1 */
   margin: 0; /* 2 */

@@ -33,7 +33,7 @@
 
 .table {
 
-  /* 1 - responsive collapse */
+  /* 1 */
   @media screen and (max-width: 800px) {
     table {
       tr {
@@ -53,7 +53,7 @@
     }
   }
 
-  /* 2 - responsive overflow */
+  /* 2 */
   //overflow-x: auto;
   //table { min-width: 100rem; }
 

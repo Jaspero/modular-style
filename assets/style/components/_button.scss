@@ -39,7 +39,7 @@ input[type=reset],
   text-transform: uppercase;
   letter-spacing: .2rem;
 
-  /* Correct alignment inside buttons */
+  /* -- Correct alignment inside buttons -- */
   svg, img { vertical-align: middle; }
 
   /* Hover & Focus */
@@ -49,7 +49,7 @@ input[type=reset],
   /* Active */
   &:active {}
 
-  /* Hiding default input[type=file] */
+  /* -- Hiding default input[type=file] -- */
   input[type="file"] { display: none; }
 
 }
