@@ -4,16 +4,6 @@
 
 ==================================================*/
 
-/*
- * Button states.
- *
- * Supported states and classes:
- * loading, error, success.
- *
- * Works by hiding button content, and showing a
- * special state using :after
- */
-
 button {
 
   /* -- Shared -- */
@@ -21,21 +11,16 @@ button {
   &.success,
   &.error {
 
-    /*
-     * 1. Hiding normal button content.
-     * 2. Makes button unclickable.
-     * 3. Required to style :after.
-     */
-
-    color: transparent; /* 1 */
-    svg, img { opacity: 0; } /* 1 */
-    pointer-events: none; /* 2 */
-    position: relative; /* 3 */
+    color: transparent;
+    svg, img { opacity: 0; }
+    pointer-events: none;
+    position: relative;
 
   }
 
   /* -- Loading -- */
   &.loading {
+
     &:after {
 
       /* Basic */
@@ -64,6 +49,7 @@ button {
       }
 
     }
+
   }
 
   /* -- Success -- */
@@ -95,6 +81,7 @@ button {
       transform: translate(-50%,-50%) rotate(45deg);
 
     }
+
   }
 
   /* -- Error -- */
@@ -121,14 +108,19 @@ button {
       transform: translate(-50%,-50%);
 
     }
+
   }
+
 }
 
 /*
- * # Example #
- *
- * <button>View more</button>
- * <button class="loading">View more</button>
- * <button class="error">View more</button>
- * <button class="success">View more</button>
- */
+
+<button>View more</button>
+
+<button class="loading">View more</button>
+
+<button class="error">View more</button>
+
+<button class="success">View more</button>
+
+*/

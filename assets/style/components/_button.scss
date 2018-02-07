@@ -4,16 +4,6 @@
 
 ==================================================*/
 
-/*
- * Preset style for:
- *
- * button,
- * input[type=button],
- * input[type=submit],
- * input[type=reset],
- * .file (input[type=file])
- */
-
 button,
 input[type=button],
 input[type=submit],
@@ -42,11 +32,13 @@ input[type=reset],
   /* -- Correct alignment inside buttons -- */
   svg, img { vertical-align: middle; }
 
-  /* Hover & Focus */
+  /* -- Hover & Focus -- */
   &:hover, &:focus {}
-  /* Disabled */
+
+  /* -- Disabled -- */
   &:disabled {}
-  /* Active */
+
+  /* -- Active -- */
   &:active {}
 
   /* -- Hiding default input[type=file] -- */
@@ -55,32 +47,27 @@ input[type=reset],
 }
 
 /*
- * # Examples #
- *
- * Normal button:
- * <button>Button</button>
- *
- * Button with SVG:
- * <button>
- *   <span>Btn SVG</span>
- *   <svg width="16" height="16" viewBox="1221 2035 18 12"><path d="M1221 2042h14.17l-3.58 3.59 1.41 1.41 6-6-6-6-1.41 1.41 3.58 3.59H1221z"/></svg>
- * </button>
- *
- * Button with IMG:
- * <button>
- *   <img height="16" width="16" src="assets/img/zap.svg" alt="Zap">
- *   <span>Btn IMG</span>
- * </button>
- *
- * input[type=button], input[type=submit], input[type=reset]:
- * <input type="button" value="button">
- * <input type="reset" value="reset">
- * <input type="submit" value="submit">
- *
- * input[type=file]
- * <label class="file" for="file">
- *   <svg height="16" width="16" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
- *   <span>File</span>
- *   <input id="file" type="file">
- * </label>
- */
+
+<button>Button</button>
+
+<button>
+  <span>Btn SVG</span>
+  <svg width="16" height="16" viewBox="1221 2035 18 12"><path d="M1221 2042h14.17l-3.58 3.59 1.41 1.41 6-6-6-6-1.41 1.41 3.58 3.59H1221z"/></svg>
+</button>
+
+<button>
+  <img height="16" width="16" src="assets/img/zap.svg" alt="Zap">
+  <span>Btn IMG</span>
+</button>
+
+<input type="button" value="button">
+<input type="reset" value="reset">
+<input type="submit" value="submit">
+
+<label class="file" for="file">
+  <svg height="16" width="16" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+  <span>File</span>
+  <input id="file" type="file">
+</label>
+
+*/

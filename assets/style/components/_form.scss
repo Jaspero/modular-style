@@ -15,33 +15,10 @@
   GENERAL
 ==================================================*/
 
-/*
- * General form setup.
- */
-
-form {
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,.3);
-  width: 100%;
-  max-width: 100rem;
-  margin: 2rem auto;
-  padding: 2rem;
-}
-
-
-/*
- * 1. Proper alignment for form elements.
- */
-
 label[class^='fe_'] > * {
-  vertical-align: middle; /* 1 */
-  display: inline-block; /* 1 */
+  vertical-align: middle;
+  display: inline-block;
 }
-
-
-/*
- * Field style.
- * .field serves as a wrapper to form elements.
- */
 
 .field {
   margin-bottom: 1rem;
@@ -52,48 +29,30 @@ label[class^='fe_'] > * {
   Hiding default styles
 ==================================================*/
 
-/*
- * 1. Cross-browser fix to enable styling.
- * 2. Only allow vertical resizing.
- * 3. Allow scrolling in case someone decides to
- *    write an essay.
- */
-
 textarea {
-  -webkit-appearance: textfield; /* 1 */
-  resize: vertical; /* 2 */
-  overflow: auto; /* 3 */
+  -webkit-appearance: textfield;
+  resize: vertical;
+  overflow: auto;
 }
-
-
-/*
- * 1. Hovering over select should show a pointer.
- * 2. Removing the default dropdown arrow.
- */
 
 select {
-  cursor: pointer; /* 1 */
-  appearance: none; /* 2 */
-  -moz-appearance: none; /* 2 */
-  -webkit-appearance: none; /* 2 */
-  &::-ms-expand { display: none; } /* 2 */
+  cursor: pointer;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  &::-ms-expand { display: none; }
 }
-
-
-/*
- * 1. Hiding the default input.
- */
 
 input[type=checkbox],
 input[type=radio] {
-  position: absolute; /* 1 */
-  z-index: -1; /* 1 */
-  opacity: 0; /* 1 */
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
 }
 
 
 /*==================================================
-  TEXTUAL INPUTS, TEXTAREA, SELECT
+  TEXT, TEXTAREA, SELECT
 ==================================================*/
 
 .fe_text,
