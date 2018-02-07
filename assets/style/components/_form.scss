@@ -4,13 +4,6 @@
 
 ==================================================*/
 
-/*
- * Form elements preset.
- *
- * You can find examples at the end of this document.
- */
-
-
 /*==================================================
   GENERAL
 ==================================================*/
@@ -104,12 +97,7 @@ input[type=radio] {
   }
 }
 
-
-/*
- * Select needs additional style in order to
- * properly align the custom-made dropdown arrow.
- */
-
+/* -- Select custom dropdown arrow -- */
 .fe_select {
   &-container {
     width: 100%;
@@ -134,6 +122,7 @@ input[type=radio] {
   /* Basic */
   cursor: pointer;
 
+  /* -- Toggle text -- */
   span {
 
     /* Typography */
@@ -200,6 +189,7 @@ input[type=radio] {
 
 }
 
+
 /*==================================================
   RADIO & CHECKBOX
 ==================================================*/
@@ -214,6 +204,7 @@ input[type=radio] {
   /* Box model */
   padding: 1rem 0;
 
+  /* -- Control text -- */
   span {
 
     /* Typography */
@@ -280,163 +271,137 @@ input[type=radio] {
 
 }
 
-
-/*
- * Setting radio inputs to be round.
- */
-
+/* -- Round radio input -- */
 .fe_radio {
   .control { border-radius: 50%; }
   .control:after { border-radius: 50%; }
 }
 
-
 /*
- * # Example #
- *
- * .fe_text
- *
- * <div class="field">
- *   <label class="fe_text asd" for="id_text">
- *     <span>Text</span>
- *     <input id="id_text" name="id_text" type="text" placeholder="Text placeholder" autocomplete="on" autofocus>
- *   </label>
- * </div>
- * <div class="field">
- *   <label class="fe_text" for="id_email">
- *     <span>Email</span>
- *     <input id="id_email" name="id_email" type="email" placeholder="Email placeholder" autocomplete="email">
- *   </label>
- * </div>
- * <div class="field">
- *   <label class="fe_text" for="id_tel">
- *     <span>Tel</span>
- *     <input id="id_tel" name="id_tel" type="tel" placeholder="Tel placeholder" autocomplete="tel">
- *   </label>
- * </div>
- * <div class="field">
- *   <label class="fe_text" for="id_url">
- *     <span>URL</span>
- *     <input id="id_url" name="id_url" type="url" placeholder="URL placeholder" autocomplete="url">
- *   </label>
- * </div>
- * <div class="field">
- *   <label class="fe_text" for="id_password">
- *     <span>Password</span>
- *     <input id="id_password" name="id_password" type="password" placeholder="Password placeholder">
- *   </label>
- * </div>
- * <div class="field">
- *   <label class="fe_text" for="id_search">
- *     <span>Search</span>
- *     <input id="id_search" name="id_search" type="search" placeholder="Search placeholder" autocomplete="on">
- * </label>
- * </div>
- * <div class="field">
- *   <label class="fe_text" for="id_number">
- *     <span>Number</span>
- *     <input id="id_number" name="id_number" type="number" placeholder="Number placeholder" autocomplete="num">
- *   </label>
- * </div>
- *
- *
- * # Example #
- *
- * .fe_textarea
- *
- * <div class="field">
- *   <label class="fe_textarea" for="id_textarea">
- *     <span>Textarea</span>
- *     <textarea name="" id="id_textarea" rows="3" placeholder="Textarea placeholder"></textarea>
- *   </label>
- * </div>
- *
- *
- * # Example #
- *
- * fe_select
- *
- * <div class="field">
- *   <label class="fe_select" for="id_select">
- *     <span>Select</span>
- *     <div class="fe_select-container">
- *       <select id="id_select" name="id_select">
- *         <option value="">1</option>
- *         <option value="">2</option>
- *         <option value="">3</option>
- *         <option value="">4</option>
- *       </select>
- *       <svg height="12" width="12" fill="#cccccc" viewBox="520 2957 10 5"><path d="M520 2957l5 5 5-5z"/></svg>
- *     </div>
- *   </label>
- * </div>
- *
- *
- * # Example #
- *
- * fe_toggle
- *
- * <div class="field">
- *   <label class="fe_toggle p-a-1" for="id_toggle">
- *     <span class="m-r-1">Toggle</span>
- *     <input id="id_toggle" name="toggle" type="checkbox">
- *     <div class="switch"></div>
- *   </label>
- * </div>
- *
- *
- * # Example #
- *
- * fe_radio
- *
- * <div class="field">
- *   <label class="fe_radio" for="id_radio-1">
- *     <input id="id_radio-1" name="radio" type="radio">
- *     <div class="control"></div>
- *     <span>Radio option 1</span>
- *   </label>
- *   <label class="fe_radio" for="id_radio-2">
- *     <input id="id_radio-2" name="radio" type="radio">
- *     <div class="control"></div>
- *     <span>Radio option 2</span>
- *   </label>
- *   <label class="fe_radio" for="id_radio-3">
- *     <input id="id_radio-3" name="radio" type="radio">
- *     <div class="control"></div>
- *     <span>Radio option 3</span>
- *   </label>
- *   <label class="fe_radio" for="id_radio-4">
- *     <input id="id_radio-4" name="radio" type="radio" disabled>
- *     <div class="control"></div>
- *     <span>Radio option disabled</span>
- *   </label>
- * </div>
- *
- *
- * # Example #
- *
- * fe_checkbox
- *
- * <div class="field">
- *   <label class="fe_checkbox" for="id_checkbox-1">
- *     <input id="id_checkbox-1" name="checkbox" type="checkbox">
- *     <div class="control"></div>
- *     <span>Checkbox option 1</span>
- *   </label>
- *   <label class="fe_checkbox" for="id_checkbox-2">
- *     <input id="id_checkbox-2" name="checkbox" type="checkbox">
- *     <div class="control"></div>
- *     <span>Checkbox option 2</span>
- *   </label>
- *   <label class="fe_checkbox" for="id_checkbox-3">
- *     <input id="id_checkbox-3" name="checkbox" type="checkbox">
- *     <div class="control"></div>
- *     <span>Checkbox option 3</span>
- *   </label>
- *   <label class="fe_checkbox" for="id_checkbox-4">
- *     <input id="id_checkbox-4" name="checkbox" type="checkbox" disabled>
- *     <div class="control"></div>
- *     <span>Checkbox option disabled</span>
- *   </label>
- * </div>
- */
+
+<div class="field">
+  <label class="fe_text asd" for="id_text">
+    <span>Text</span>
+    <input id="id_text" name="id_text" type="text" placeholder="Text placeholder" autocomplete="on" autofocus>
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_text" for="id_email">
+    <span>Email</span>
+    <input id="id_email" name="id_email" type="email" placeholder="Email placeholder" autocomplete="email">
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_text" for="id_tel">
+    <span>Tel</span>
+    <input id="id_tel" name="id_tel" type="tel" placeholder="Tel placeholder" autocomplete="tel">
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_text" for="id_url">
+    <span>URL</span>
+    <input id="id_url" name="id_url" type="url" placeholder="URL placeholder" autocomplete="url">
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_text" for="id_password">
+    <span>Password</span>
+    <input id="id_password" name="id_password" type="password" placeholder="Password placeholder">
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_text" for="id_search">
+    <span>Search</span>
+    <input id="id_search" name="id_search" type="search" placeholder="Search placeholder" autocomplete="on">
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_text" for="id_number">
+    <span>Number</span>
+    <input id="id_number" name="id_number" type="number" placeholder="Number placeholder" autocomplete="num">
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_textarea" for="id_textarea">
+    <span>Textarea</span>
+    <textarea name="" id="id_textarea" rows="3" placeholder="Textarea placeholder"></textarea>
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_select" for="id_select">
+    <span>Select</span>
+    <div class="fe_select-container">
+      <select id="id_select" name="id_select">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+      </select>
+      <svg height="12" width="12" fill="#cccccc" viewBox="520 2957 10 5"><path d="M520 2957l5 5 5-5z"/></svg>
+    </div>
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_toggle p-a-1" for="id_toggle">
+    <span class="m-r-1">Toggle</span>
+    <input id="id_toggle" name="toggle" type="checkbox">
+    <div class="switch"></div>
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_radio" for="id_radio-1">
+    <input id="id_radio-1" name="radio" type="radio">
+    <div class="control"></div>
+    <span>Radio option 1</span>
+  </label>
+  <label class="fe_radio" for="id_radio-2">
+    <input id="id_radio-2" name="radio" type="radio">
+    <div class="control"></div>
+    <span>Radio option 2</span>
+  </label>
+  <label class="fe_radio" for="id_radio-3">
+    <input id="id_radio-3" name="radio" type="radio">
+    <div class="control"></div>
+    <span>Radio option 3</span>
+  </label>
+  <label class="fe_radio" for="id_radio-4">
+    <input id="id_radio-4" name="radio" type="radio" disabled>
+    <div class="control"></div>
+    <span>Radio option disabled</span>
+  </label>
+</div>
+
+<div class="field">
+  <label class="fe_checkbox" for="id_checkbox-1">
+    <input id="id_checkbox-1" name="checkbox" type="checkbox">
+    <div class="control"></div>
+    <span>Checkbox option 1</span>
+  </label>
+  <label class="fe_checkbox" for="id_checkbox-2">
+    <input id="id_checkbox-2" name="checkbox" type="checkbox">
+    <div class="control"></div>
+    <span>Checkbox option 2</span>
+  </label>
+  <label class="fe_checkbox" for="id_checkbox-3">
+    <input id="id_checkbox-3" name="checkbox" type="checkbox">
+    <div class="control"></div>
+    <span>Checkbox option 3</span>
+  </label>
+  <label class="fe_checkbox" for="id_checkbox-4">
+    <input id="id_checkbox-4" name="checkbox" type="checkbox" disabled>
+    <div class="control"></div>
+    <span>Checkbox option disabled</span>
+  </label>
+</div>
+
+*/

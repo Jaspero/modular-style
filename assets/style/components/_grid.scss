@@ -4,48 +4,28 @@
 
 ==================================================*/
 
-/*
- * A lightweight grid that uses flex.
- */
-
-/*
- * 1. Gutter width - spacing between grid columns
- * 2. Grid container width
- * 3. Helper variable. Don't change.
- */
-
-$gutter: 3rem; /* 1 */
-$contained-width: 120rem; /* 2 */
-$gutter-half: $gutter/2; /* 3 */
-
+$gutter: 3rem;
+$contained-width: 120rem;
+$gutter-half: $gutter/2;
 
 .row {
 
-  /*
-   * 1. Flex grid.
-   * 2. Wrap content into next row.
-   * 3. Center align columns. e.g. if there are
-   *    two divs that are 4 columns wide each,
-   *    there will be 2 empty columns on each
-   *    side of the grid.
-   * 4. Grid is contained by default. (from
-   *    personal experience, I use it more often)
-   * 5. Grid gutter done with padding.
-   * 6. In case you need a full-screen-width grid.
-   * 7. In case you want to remove gutters.
-   */
+  /* Flex */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-  display: flex; /* 1 */
-  flex-wrap: wrap; /* 2 */
-  justify-content: center; /* 3 */
-  width: 100%; /* 4 */
-  max-width: $contained-width; /* 4 */
-  margin: 0 auto; /* 4 */
-  div[class^='col'] { padding: $gutter-half; } /* 5 */
+  /* -- Container  -- */
+  width: 100%;
+  max-width: $contained-width;
+  margin: 0 auto;
 
-  &.full { max-width: 100%; } /* 6 */
+  /* -- Gutter -- */
+  div[class^='col'] { padding: $gutter-half; }
 
-  &.no-gutter { div[class^='col'] { padding: 0; } } /* 7 */
+  /* -- Helper classes -- */
+  &.full { max-width: 100%; }
+  &.no-gutter { div[class^='col'] { padding: 0; } }
 
   /* -- Large screen sizes -- */
   .col-1 { flex-basis: 8.3333%; }
@@ -96,35 +76,27 @@ $gutter-half: $gutter/2; /* 3 */
 }
 
 /*
- * # Example 1 #
- * Four columns in a row, each taking 3 column spaces.
- *
- * <div class="row">
- *   <div class="col-3"> ... </div>
- *   <div class="col-3"> ... </div>
- *   <div class="col-3"> ... </div>
- *   <div class="col-3"> ... </div>
- * </div>
- *
- * # Example 2 #
- * Same as Example 1, but columns take 6 columns spaces on
- * medium screens.
- *
- * <div class="row">
- *   <div class="col-3 col-m-6"> ... </div>
- *   <div class="col-3 col-m-6"> ... </div>
- *   <div class="col-3 col-m-6"> ... </div>
- *   <div class="col-3 col-m-6"> ... </div>
- * </div>
- *
- * # Example 3 #
- * Same as Example 1, but the entire grid is full-screen,
- * and has no gutters.
- *
- * <div class="row full no-gutter">
- *   <div class="col-3"> ... </div>
- *   <div class="col-3"> ... </div>
- *   <div class="col-3"> ... </div>
- *   <div class="col-3"> ... </div>
- * </div>
- */
+
+<div class="row">
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+</div>
+
+medium screens.
+<div class="row">
+  <div class="col-3 col-m-6"> ... </div>
+  <div class="col-3 col-m-6"> ... </div>
+  <div class="col-3 col-m-6"> ... </div>
+  <div class="col-3 col-m-6"> ... </div>
+</div>
+
+<div class="row full no-gutter">
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+</div>
+
+*/

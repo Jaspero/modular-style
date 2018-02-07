@@ -4,10 +4,6 @@
 
 ==================================================*/
 
-/*
- * A lightweight table preset.
- */
-
 .table {
   table {
     border-collapse: collapse;
@@ -22,18 +18,10 @@
   }
 }
 
-
-/*
- * Table responsiveness.
- *
- * 1. td is collapsed into individual rows.
- * 2. Table contains minimum width, and is
- *    scrollable on smaller screens.
- */
-
+/* -- Responsive -- */
 .table {
 
-  /* 1 */
+  /* -- Option #1 -- */
   @media screen and (max-width: 800px) {
     table {
       tr {
@@ -53,51 +41,51 @@
     }
   }
 
-  /* 2 */
+  /* -- Option #2 -- */
   //overflow-x: auto;
   //table { min-width: 100rem; }
 
 }
 
 /*
- * # Example #
- *
- * <div class="table">
- *   <table>
- *     <thead>
- *     <tr>
- *       <th>Index</th>
- *       <th>Name</th>
- *       <th>Email</th>
- *       <th>Status</th>
- *     </tr>
- *     </thead>
- *     <tbody>
- *     <tr>
- *       <td data-label="Index">1</td>
- *       <td data-label="Name">Abraham Alpha</td>
- *       <td data-label="Email">john@email.com</td>
- *       <td data-label="Status">Online</td>
- *     </tr>
- *     <tr>
- *       <td data-label="Index">2</td>
- *       <td data-label="Name">Benjamin Beta</td>
- *       <td data-label="Email">john@email.com</td>
- *       <td data-label="Status">Offline</td>
- *     </tr>
- *     <tr>
- *       <td data-label="Index">3</td>
- *       <td data-label="Name">George Gamma</td>
- *       <td data-label="Email">john@email.com</td>
- *       <td data-label="Status">Offline</td>
- *     </tr>
- *     <tr>
- *       <td data-label="Index">4</td>
- *       <td data-label="Name">Daniel Delta</td>
- *       <td data-label="Email">dan@email.com</td>
- *       <td data-label="Status">Online</td>
- *     </tr>
- *     </tbody>
- *   </table>
- * </div>
- */
+
+<div class="table">
+  <table>
+    <thead>
+    <tr>
+      <th>Index</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td data-label="Index">1</td>
+      <td data-label="Name">Abraham Alpha</td>
+      <td data-label="Email">john@email.com</td>
+      <td data-label="Status">Online</td>
+    </tr>
+    <tr>
+      <td data-label="Index">2</td>
+      <td data-label="Name">Benjamin Beta</td>
+      <td data-label="Email">john@email.com</td>
+      <td data-label="Status">Offline</td>
+    </tr>
+    <tr>
+      <td data-label="Index">3</td>
+      <td data-label="Name">George Gamma</td>
+      <td data-label="Email">john@email.com</td>
+      <td data-label="Status">Offline</td>
+    </tr>
+    <tr>
+      <td data-label="Index">4</td>
+      <td data-label="Name">Daniel Delta</td>
+      <td data-label="Email">dan@email.com</td>
+      <td data-label="Status">Online</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+*/
