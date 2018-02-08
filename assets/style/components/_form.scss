@@ -52,6 +52,7 @@ input[type=radio] {
 .fe_textarea,
 .fe_select {
 
+  /* -- Text -- */
   span {
 
     /* Typography */
@@ -62,6 +63,7 @@ input[type=radio] {
 
   }
 
+  /* -- Input area -- */
   input,
   textarea,
   select {
