@@ -1,0 +1,28 @@
+/*==================================================
+
+  SVGs
+
+==================================================*/
+
+/* -- Hide initial list of all SVGs -- */
+#svg-list {
+  display: none;
+}
+
+/* -- Custom SVG styles -- */
+
+
+/*
+
+<svg id="svg-list" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="iconID" viewBox="0 0 512 512">
+        <path d="..."/>
+    </symbol>
+    ...
+</svg>
+
+<svg>
+    <use xlink:href="#iconID" />
+</svg>
+
+*/
