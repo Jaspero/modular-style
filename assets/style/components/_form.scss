@@ -84,8 +84,10 @@ input[type=radio] {
 
     /* -- Focus -- */
     &:focus, &:hover {}
+
     /* -- Valid -- */
     &:valid {}
+
     /* -- Invalid -- */
     &:invalid {}
 
@@ -259,14 +261,14 @@ input[type=radio] {
       background: darken(#eee,10%);
     }
 
-    /* -- Disabled -- */
-    &:disabled ~ .control {
-      background: darken(#eee,10%);
-    }
-
     /* -- Checked -- */
     &:checked ~ .control:after {
       transform: translate3d(-50%,-50%,0) scale3d(1,1,1);
+    }
+
+    /* -- Disabled -- */
+    &:disabled ~ .control {
+      background: darken(#eee,10%);
     }
 
   }

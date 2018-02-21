@@ -35,11 +35,11 @@ input[type=reset],
   /* -- Hover & Focus -- */
   &:hover, &:focus {}
 
-  /* -- Disabled -- */
-  &:disabled {}
-
   /* -- Active -- */
   &:active {}
+
+  /* -- Disabled -- */
+  &:disabled {}
 
   /* -- Hiding default input[type=file] -- */
   input[type="file"] { display: none; }
