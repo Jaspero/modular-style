@@ -41,7 +41,7 @@ a {
 .link {
   text-decoration: underline;
   text-decoration-skip: ink;
-  color: #0000ee;
+  &:link { color: #0000ee; }
   &:visited { color: #551a8b; }
 }
 
