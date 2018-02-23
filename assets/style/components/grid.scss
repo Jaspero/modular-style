@@ -1,0 +1,101 @@
+/*==================================================
+
+  GRID
+
+==================================================*/
+
+.grid {
+
+  border: 1px solid;
+  div[class^="col"] {border: 1px solid red;}
+
+  /* Grid */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  /* -- Container  -- */
+  width: 100%;
+  max-width: 1200px;
+  margin: 5rem auto;
+
+  /* -- Gutter -- */
+  grid-gap: 3rem;
+  padding: 0 1.5rem;
+
+  /* -- Helper classes -- */
+  &.full-screen { max-width: 100%; }
+  &.no-gutter { padding: 0; grid-gap: 0; }
+
+  /* -- Large screen sizes -- */
+  .col-1 { grid-column: span 1; }
+  .col-2 { grid-column: span 2; }
+  .col-3 { grid-column: span 3; }
+  .col-4 { grid-column: span 4; }
+  .col-5 { grid-column: span 5; }
+  .col-6 { grid-column: span 6; }
+  .col-7 { grid-column: span 7; }
+  .col-8 { grid-column: span 8; }
+  .col-9 { grid-column: span 9; }
+  .col-10 { grid-column: span 10; }
+  .col-11 { grid-column: span 11; }
+  .col-12 { grid-column: span 12; }
+
+  /* -- Medium screen sizes -- */
+  @media screen and (max-width: 1200px) {
+    .col-m-1 { grid-column: span 1; }
+    .col-m-2 { grid-column: span 2; }
+    .col-m-3 { grid-column: span 3; }
+    .col-m-4 { grid-column: span 4; }
+    .col-m-5 { grid-column: span 5; }
+    .col-m-6 { grid-column: span 6;  }
+    .col-m-7 { grid-column: span 7; }
+    .col-m-8 { grid-column: span 8; }
+    .col-m-9 { grid-column: span 9; }
+    .col-m-10 { grid-column: span 10; }
+    .col-m-11{ grid-column: span 11; }
+    .col-m-12 { grid-column: span 12; }
+  }
+
+  /* -- Small screen sizes -- */
+  @media screen and (max-width: 800px) {
+    .col-s-1 { grid-column: span 1; }
+    .col-s-2 { grid-column: span 2; }
+    .col-s-3 { grid-column: span 3; }
+    .col-s-4 { grid-column: span 4; }
+    .col-s-5 { grid-column: span 5; }
+    .col-s-6 { grid-column: span 6; }
+    .col-s-7 { grid-column: span 7; }
+    .col-s-8 { grid-column: span 8; }
+    .col-s-9 { grid-column: span 9; }
+    .col-s-10 { grid-column: span 10; }
+    .col-s-11{ grid-column: span 11; }
+    .col-s-12 { grid-column: span 12; }
+  }
+
+}
+
+/*
+
+<div class="row">
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+</div>
+
+medium screens.
+<div class="row">
+  <div class="col-3 col-m-6"> ... </div>
+  <div class="col-3 col-m-6"> ... </div>
+  <div class="col-3 col-m-6"> ... </div>
+  <div class="col-3 col-m-6"> ... </div>
+</div>
+
+<div class="row full no-gutter">
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+</div>
+
+*/
