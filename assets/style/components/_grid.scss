@@ -4,28 +4,30 @@
 
 ==================================================*/
 
-$gutter: 3rem;
-$contained-width: 120rem;
-$gutter-half: $gutter/2;
+$grid-container: 120rem;
+$grid-gap: 3rem;
+$grid-gap-half: $grid-gap/2;
+$grid-gap-negative: -$grid-gap;
 
-.row {
+.grid {
 
-  /* Flex */
+  /* Basic */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
   /* -- Container  -- */
   width: 100%;
-  max-width: $contained-width;
+  max-width: $grid-container;
   margin: 0 auto;
 
   /* -- Gutter -- */
-  div[class^='col'] { padding: $gutter-half; }
+  div[class^='col-'] { padding: 0 $grid-gap-half $grid-gap; }
 
   /* -- Helper classes -- */
-  &.full { max-width: 100%; }
-  &.no-gutter { div[class^='col'] { padding: 0; } }
+  &.full-screen { max-width: 100%; }
+  &.no-gutter { div[class^='col-'] { padding: 0; } }
+  &.clip-end { margin-bottom: $grid-gap-negative;}
 
   /* -- Large screen sizes -- */
   .col-1 { flex-basis: 8.3333%; }
@@ -77,22 +79,32 @@ $gutter-half: $gutter/2;
 
 /*
 
-<div class="row">
+<div class="grid">
   <div class="col-3"> ... </div>
   <div class="col-3"> ... </div>
   <div class="col-3"> ... </div>
   <div class="col-3"> ... </div>
 </div>
 
-medium screens.
-<div class="row">
-  <div class="col-3 col-m-6"> ... </div>
-  <div class="col-3 col-m-6"> ... </div>
-  <div class="col-3 col-m-6"> ... </div>
-  <div class="col-3 col-m-6"> ... </div>
+<div class="grid">
+  <div class="col-3 col-m-6 col-s-9"> ... </div>
+  <div class="col-3 col-m-6 col-s-9"> ... </div>
+  <div class="col-3 col-m-6 col-s-9"> ... </div>
+  <div class="col-3 col-m-6 col-s-9"> ... </div>
 </div>
 
-<div class="row full no-gutter">
+<div class="grid clip-end">
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+</div>
+
+<div class="grid full-screen no-gutter">
   <div class="col-3"> ... </div>
   <div class="col-3"> ... </div>
   <div class="col-3"> ... </div>
