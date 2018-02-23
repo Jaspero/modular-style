@@ -8,14 +8,48 @@ html { font-family: sans-serif; }
 
 p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
-h1 {}
-h2 {}
-h3 {}
-h4 {}
-h5 {}
-h6 {}
+h1 {
+  text-align: center;
+  font-family: "open sans light";
+  font-size: 36px;
+}
+h2 {
+  text-align: center;
+  color: #333A42;
+  font-family: "open sans light";
+  font-size: 32px;
+}
+h3 {
+  text-align: center;
+  color: #333A42;
+  font-family: "open sans light";
+  font-size: 28px;
+}
+h4 {
+  text-align: center;
+  color: #333A42;
+  font-family: "open sans light";
+  font-size: 24px;
+}
+h5 {
+  text-align: center;
+  color: #333A42;
+  font-family: "open sans light";
+  font-size: 20px;
+}
+h6 {
+  text-align: center;
+  color: #333A42;
+  font-family: "open sans light";
+  font-size: 16px;
+}
 
-p {}
+p {
+  text-align: center;
+  color: #333A42;
+  font-family: "open sans light";
+  font-size: 14px;
+}
 
 .link {
   text-decoration-skip: ink;

@@ -16,7 +16,7 @@ $gutter-half: $gutter/2; // Don't change this
 ==================================================*/
 
 .row {
-
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

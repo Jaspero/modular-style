@@ -16,284 +16,97 @@ sass --watch style.scss:style.css
 <body>
 
 <header>
-    <div class="logo">
-        <img src="https://lh3.googleusercontent.com/CqCDpmJDKS8JttpgOxaEkkr1yTtn8XQuNE2DhvxyDL0pmTxeQNwlFBzwivgZmQu0BhI=w300">
-    </div>
-    <div class="navbar">
-    <p>About us</p>
-    <p>Properties</p>
-    <p>Investments</p>
-    <p>Concierge</p>
-    <p>Blog</p>
-    <p>Contact</p>
-    <p>Terms & Condition</p>
-    </div>
+    <section class="navbar">
+        <div class="row">
+            <div class="col-6">
+                <img src="./assets/imgs/logo.png" alt="">
+            </div>
+            <div class="col-6">
+                <p>Home</p>
+                <p>About us</p>
+                <p>Resources</p>
+                <p>Blog</p>
+                <button type="button">Contact us</button>
+            </div>
+        </div>
+    </section>
 </header>
+
 <main>
-    <section class="booking">
-        <div class="row">
-            <div class="col-12">
-                <p>BOOK YOUR APARTMENT OR VILLA</p>
-                <p class="spain">IN LONDON, NEW YORK, SPAIN, AND BEYOND</p>
-            </div>
-            <div class="inputs">
-            <div class="col-9">
-                <input type="text" name="first name">
-            </div>
-            </div>
-        </div>
+    <section class="gradient">
+        <h1>Full-stack Javascript agency</h1>
     </section>
-    <section class="amazing">
-        <div class="row">
-            <div class="col-12">
-                <p>AMAZING PROPERTIES</p>
-                <p class="spain">LOREM IPSUM DOLOR SIT AMET</p>
-            </div>
-        </div>
-    </section>
-    <section class="appartments">
+    <section class="boxes">
         <div class="row full">
-            <div class="col-3">
-                <p>HOUSE <br>ST JULIAN'S MALTA</br></p>
-                <div class="price">
-                    <p>$128</p>
-                </div>
-                <p class="gosti">Bedrooms: 2</p>
-                <p class="gosti">Max guest: 4</p>
+            <div class="col-5">
+                <h3>Open-source projects</h3>
+                <p>Javascript libraries, Typescript libraries, guidelines, Sass & Scss mixins, various boilerplates, project collaborations.</p>
             </div>
-            <div class="col-3" style="background-image: url('https://cdn.homedsgn.com/wp-content/uploads/2012/12/Eclectic-Apartment-Budapest-19-800x532.jpg')">
-                <p>APARTMENT<br>BUDAPEST, HUNGARY</br></p>
-                <div class="price">
-                    <p>$256</p>
-                </div>
-                <p class="gosti">Bedrooms: 3</p>
-                <p class="gosti">Max. guests: 6</p>
+            <div class="col-5">
+                <h3>UI & UX design</h3>
+                <p>User interace design, user experience design, wireframing and prototyping, responsive design, visual design.</p>
             </div>
-            <div class="col-3" style="background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/0f/1c/a1/86/mykonos-absolute-beachfront.jpg')">
-                <p>TOWN HOUSE<br>MYKONOS, GREECE</br></p>
-                <div class="price">
-                    <p>$512</p>
-                </div>
-                <p class="gosti">Bedrooms: 4</p>
-                <p class="gosti">Max. guests: 8</p>
+            <div class="col-5">
+                <h3>Back-end development</h3>
+                <p>SOLID development, RESTful API, scalable architecture, third-party integrations.</p>
             </div>
-            <div class="col-3" style="background-image: url('https://s-ec.bstatic.com/images/hotel/max1024x768/481/48188932.jpg')">
-                <p>APARTMENT<br>CHANIA, GREECE</br></p>
-                <div class="price">
-                    <p>$128</p>
-                </div>
-                <p class="gosti">Bedrooms: 2</p>
-                <p class="gosti">Max. guests: 5</p>
+            <div class="col-5">
+                <h3>Front-end development</h3>
+                <p>Modern JS frameworks, responsive layout, maintainable and scalable CSS, universal application development.</p>
             </div>
-            <div class="col-3" style="background-image: url('https://t-ec.bstatic.com/images/hotel/max1024x768/363/36375664.jpg')">
-                <p>TOWN HOUSE<br>MYKONOS, GREECE</br></p>
-                <div class="price">
-                    <p>$512</p>
-                </div>
-                <p class="gosti">Bedrooms: 4</p>
-                <p class="gosti">Max. guests: 8</p>
-            </div>
-            <div class="col-3" style="background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/0c/11/3b/96/maple-tree-apartments.jpg')">
-                <p>APARTMENT<br>CHANIA, GREECE</br></p>
-                <div class="price">
-                    <p>$128</p>
-                </div>
-                <p class="gosti">Bedrooms: 2</p>
-                <p class="gosti">Max. guests: 5</p>
-            </div>
-            <div class="col-3" style="background-image: url('http://budapest-central-apartments.com/wp-content/uploads/2017/01/Central-king-4-00013.jpg')">
-                <p>HOUSE <br>ST JULIAN'S MALTA</br></p>
-                <div class="price">
-                    <p>$128</p>
-                </div>
-                <p class="gosti">Bedrooms: 2</p>
-                <p class="gosti">Max guest: 4</p>
-            </div>
-            <div class="col-3" style="background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/0f/1c/a1/86/mykonos-absolute-beachfront.jpg')" </div>
-        <p>APARTMENT<br>BUDAPEST, HUNGARY</br></p>
-        <div class="price">
-            <p>$256</p>
-        </div>
-        <p class="gosti">Bedrooms: 3</p>
-        <p class="gosti">Max. guests: 6</p>
         </div>
     </section>
-    <section class="real">
-        <div class="row full">
+    <div class="row">
+        <div class="modern">
+        <div class="col-12">
+    <h3>We use modern technologies</h3>
+            <p>Out with the old, in with the new. As technologies advance, so do we. Keeping our code up</br>-to-date is what keeps us busy and excited. Same goes for design trends.</p>
+        </div>
+        </div>
+    </div>
+    <section class="programi">
+        <div class="row">
+            <div class="col-12"></div>
+        </div>
+    </section>
+    <section class="projekt">
+    <div class="row">
+        <div class="projects">
             <div class="col-12">
-                <p>REAL-TIME RESULTS</p>
-                <p class="spain">FROM MAJOR TRAVEL WEBSITES<span style="color: orange"> WORLDWIDE</span> </p>
+                <h3>Projects</h3>
+                <p>Some of our projects we’ve worked on. We take pride in what’s behind us, and look forward</br> to new challenges.</p>
             </div>
         </div>
+    </div>
     </section>
-    <section class="airbnb">
+    <section class="NG">
         <div class="row">
-            <div class="col-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2000px-Airbnb_Logo_B%C3%A9lo.svg.png" height="60px">
-            </div>
-            <div class="col-4">
-                <img src="https://starfishwp.com/wp-content/uploads/2014/06/tripadvisor-logo-gray.png" height="60px">
-            </div>
-            <div class="col-4">
-                <img src="http://digitalcaviar.net/wp-content/uploads/2015/07/nat-geo-logo.png" height="60px">
-            </div>
-        </div>
-    </section>
-    <section class="see-all">
-        <div class="row">
-            <div class="col-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-            <div class="col-6">
-                <div class="button">
-                <button type="button" style="background-color: rgba(249,199,47,0.93)">See all</button>
-                </div>
-        </div>
-        </div>
-    </section>
-    <section class="extreme">
-        <div class="row">
-            <div class="col-12">
-                <p>EXTREMLY POSITIVE REVIEWS</p>
-                <P class="spain">LOREM IPSUM DOLOR SIT AMET</P>
-            </div>
-        </div>
-    </section>
-    <section class="john">
-        <div class="row">
-            <div class="col-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 510 510">
-                <path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0z" fill="#76828a"/>
-            </svg><p>Josh Smith</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-            <div class="col-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 510 510">
-                    <path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0z" fill="#76828a"/>
-                </svg><p>Elizabeth swann</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-            <div class="col-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 510 510">
-                    <path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0z" fill="#76828a"/>
-                </svg><p>Jason McBell</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-        </div>
-    </section>
-    <section class="find">
-        <div class="row">
-            <div class="col-12">
-                <p>FIND OUT MORE</p>
-                <p class="spain">LOREM IPSUM DOLOR SIT AMET</p>
-            </div>
-        </div>
-    </section>
-    <section class="about">
-        <div class="row full">
-            <div class="col-3">
-                <div class="about-us">
-                    <p class="price"><span style="color: black"> ABOUT US</span></p>
-                </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div class="col-3">
-                <div class="about-us">
-                    <p>CURRATING</p>
-                </div>
+            <div class="col-8">
+                <div class="svgovi"><img src="./assets/imgs/group 223.png"></div>
+                <h4>NG Notifications</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-            <div class="col-3">
-                <div class="about-us">
-                    <p>INVESTMENTS</p>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.m</p>
-            </div>
-            <div class="col-3">
-                <div class="about-us">
-                    <p>MANAGEMENT</p>
-                </div>
+            <div class="col-8">
+                <h3>NG Alerts</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-        </div>
-    </section>
-    <section class="lorem">
-        <div class="row">
-            <div class="col-12">
-                <p>LOREM IPSUM</p>
-                <p class="spain">LOREM IPSUM DOLOR SIT AMET</p>
+            <div class="col-8">
+                <h3>Villa Jatica</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-        </div>
-    </section>
-    <section class="conierge">
-        <div class="row full">
-            <div class="col-3">
-                <div class="about-us">
-                    <p class="price"><span style="color: black"> CONCIERGE </span></p>
-                </div>
-                <p class="gosti">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="col-8">
+                <h3>Illustrations set</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-            <div class="col-3">
-                <div class="about-us">
-                    <p>AIRPORT</p>
-                </div>
-                <p class="gosti">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div class="col-3">
-                <div class="about-us">
-                    <p>MAID</p>
-                </div>
-                <p class="gosti">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div class="col-3">
-                <div class="about-us">
-                    <p>EVENTS</p>
-                </div>
-                <p class="gosti">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="col-8">
+                <h3>NG Form Builder</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
     </section>
 </main>
 
 <footer>
-    <div class="footer">
-        <p>About us</p>
-        <p>Properties</p>
-        <p>Investments</p>
-        <p>Concierge</p>
-        <p>Blog</p>
-        <p>Contact</p>
-        <p>Terms & condition</p>
-    </div>
-    <div class="svgeovi">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 291.319 291.319">
-            <path d="M145.659 0c80.45 0 145.66 65.219 145.66 145.66 0 80.45-65.21 145.659-145.66 145.659S0 226.109 0 145.66C0 65.219 65.21 0 145.659 0z" fill="#3b5998"/>
-            <path d="M163.394 100.277h18.772v-27.73h-22.067v.1c-26.738.947-32.218 15.977-32.701 31.763h-.055v13.847h-18.207v27.156h18.207v72.793h27.439v-72.793h22.477l4.342-27.156h-26.81v-8.366c0-5.335 3.55-9.614 8.603-9.614z" fill="#fff"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 291.319 291.319">
-            <path d="M145.659 0c80.45 0 145.66 65.219 145.66 145.66 0 80.45-65.21 145.659-145.66 145.659S0 226.109 0 145.66C0 65.219 65.21 0 145.659 0z" fill="#26a6d1"/>
-            <path d="M236.724 98.129c-6.363 2.749-13.21 4.597-20.392 5.435 7.338-4.27 12.964-11.016 15.613-19.072-6.864 3.96-14.457 6.828-22.55 8.366-6.473-6.691-15.695-10.87-25.909-10.87-19.591 0-35.486 15.413-35.486 34.439 0 2.704.31 5.335.919 7.857-29.496-1.438-55.66-15.158-73.157-35.996-3.059 5.089-4.807 10.997-4.807 17.315 0 11.944 6.263 22.504 15.786 28.668-5.826-.182-11.289-1.721-16.086-4.315v.437c0 16.696 12.235 30.616 28.476 33.784-2.977.783-6.109 1.211-9.35 1.211-2.285 0-4.506-.209-6.673-.619 4.515 13.692 17.625 23.651 33.165 23.925-12.153 9.249-27.457 14.748-44.089 14.748-2.868 0-5.69-.164-8.476-.482 15.722 9.777 34.367 15.485 54.422 15.485 65.292 0 100.997-52.51 100.997-98.029l-.1-4.461c6.918-4.844 12.936-10.907 17.697-17.826z" fill="#fff"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 240.634 240.634">
-            <path d="M209.724 41.092c77.461 87.911-6.508 224.727-119.628 195.531-.55-.138-.917-.458-1.192-.779-42.626-10.359-78.011-52.343-85.94-94.19C-6.707 91.052 17.723 38.067 63.236 13.729c48.769-26.08 110.049-13.934 146.488 27.363zm-3.942 70.448c-.55-.046-1.146-.046-1.742-.046-3.025 0-6.188.046-9.121-.733-1.421.642-3.3.046-3.758-1.65-1.008-3.621-.688-7.379-.596-11.092-3.438.229-7.013-.367-10.313-.642-1.421-.092-2.796-.275-4.171-.412-.275 3.208-.275 6.417-.55 9.625.917 2.567-.871 6.188-4.125 6.463-3.942.367-8.159-.046-12.284-.733 0 4.079-.046 8.113-.092 12.192-.046 1.146 0 2.338 0 3.529 4.125-.412 8.204-.55 12.421-.412 2.475.092 5.271 2.246 4.996 5.042-.321 3.621-.55 7.242-.733 10.909 4.904.367 9.809.779 14.667 1.192.229-3.713.321-7.425.183-11.184-.046-2.704 2.475-5.454 5.271-5.271 3.163.229 6.233.183 9.305.046.184-5.639.367-11.231.642-16.823zm-102.899 63.756c31.672-6.233 41.435-33.78 37.172-61.693-16.638-1.192-33.139-1.513-49.868-1.788-.321-.046-.596-.092-.825-.229.458 2.063.642 4.171.871 6.279.504 4.492 1.008 9.03 1.238 13.521 8.067-.458 16.226-.504 24.247.092 2.933.183 3.758 3.438 2.338 5.179-1.375 13.2-19.8 17.784-31.305 17.326-16.501-.733-27.959-14.667-30.48-30.251s4.813-32.359 20.167-38.134c12.971-4.813 24.888.733 34.743 8.846 2.2-2.75 4.492-5.454 6.784-8.021 2.017-2.292 4.217-5.271 6.738-7.425-20.167-11.092-41.297-17.784-63.298-4.95-21.176 12.33-31.626 37.951-24.705 61.602 7.973 27.225 38.453 45.055 66.183 39.646z" fill="#ff1d25"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 504 504">
-            <circle cx="252" cy="252" r="252" fill="#84dbff"/>
-            <path d="M389.9 162.1h-79.8l-14.2-58.6c-1.1-4.6-5.3-7.9-10-7.9H212c-4.8 0-8.9 3.3-10 7.9l-14.2 58.6h-37.3v-9.4h-25.1v9.4h-17.5c-6.1 0-11 4.9-11 11v182c0 6.1 4.9 11 11 11h281.9c6.1 0 11-4.9 11-11v-182c.1-6.1-4.9-11-10.9-11z" fill="#324a5e"/>
-            <g fill="#e6e9ee">
-                <path d="M217.2 114.3h63.3v33.8h-63.3z"/>
-                <circle cx="248.9" cy="264.1" r="69.5"/>
-            </g>
-            <circle cx="248.9" cy="264.1" r="54.2" fill="#acb3ba"/>
-            <ellipse transform="rotate(-45 225.67398 241.75974)" cx="225.676" cy="241.756" rx="16.5" ry="8.3" fill="#fff"/>
-            <path d="M134.5 189H97v150.2h37.6c7 0 12.6-5.7 12.6-12.6v-125c0-7-5.7-12.6-12.7-12.6z" fill="#ffd05b"/>
-            <circle cx="362.5" cy="191.3" r="9.3" fill="#ff7058"/>
-        </svg>
-        </div>
-    <div class="social"></div>
-    <div class="jaspero">
-        <p>Made by <span style="color: rgba(161,81,11,0.93)">Jaspero</span> </p>
-    </div>
 </footer>
 
 </body>
