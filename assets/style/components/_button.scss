@@ -4,6 +4,7 @@
 
 ==================================================*/
 
+.btn,
 button,
 input[type=button],
 input[type=submit],
@@ -15,19 +16,20 @@ input[type=reset],
   cursor: pointer;
 
   /* Box model */
-  padding: 2rem 6rem;
-  margin: 1rem;
-  outline: none;
-  border: .1rem solid black;
-  border-radius: 0;
+  padding: 1rem 2rem;
+  border: none;
 
   /* Background */
-  background: white;
+  background: sandybrown;
 
   /* Typography */
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
+  color: white;
+
+  /* Transition */
+  transition: .35s;
 
   /* -- Correct alignment inside buttons -- */
   svg, img { vertical-align: middle; }
@@ -43,6 +45,8 @@ input[type=reset],
 
   /* -- Hiding default input[type=file] -- */
   input[type="file"] { display: none; }
+
+  /* -- Custom -- */
 
 }
 

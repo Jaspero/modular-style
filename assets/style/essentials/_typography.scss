@@ -5,7 +5,7 @@
 ==================================================*/
 
 html {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 62.5%;
   line-height: 1.5;
 }
@@ -20,14 +20,14 @@ h6 {
   margin: 0;
 }
 
-h1 {}
-h2 {}
-h3 {}
-h4 {}
-h5 {}
-h6 {}
+h1 { font-size: 3.6rem; }
+h2 { font-size: 3.2rem; }
+h3 { font-size: 2.8rem; }
+h4 { font-size: 2.4rem; }
+h5 { font-size: 2.0rem; }
+h6 { font-size: 1.6rem; }
 
-p {}
+p {  font-size: 1.4rem; }
 
 a {
   text-decoration: none;
@@ -41,12 +41,14 @@ a {
 .link {
   text-decoration: underline;
   text-decoration-skip: ink;
-  &:link { color: #0000ee; }
-  &:visited { color: #551a8b; }
+  &:link { color: dodgerblue; }
+  &:visited { color: mediumpurple; }
 }
 
 .tag {
-  font-size: 1.2rem;
+  display: inline-block;
+  font-size: 1.3rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
+  opacity: .7;
 }

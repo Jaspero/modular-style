@@ -28,6 +28,8 @@ $grid-gap-negative: -$grid-gap;
   &.full-screen { max-width: 100%; }
   &.no-gutter { div[class^='col-'] { padding: 0; } }
   &.clip-end { margin-bottom: $grid-gap-negative;}
+  &.space-between { justify-content: space-between; }
+  &.items-center { align-items: center; }
 
   /* -- Large screen sizes -- */
   .col-1 { flex-basis: 8.3333%; }
