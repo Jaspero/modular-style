@@ -584,79 +584,6 @@ footer {
   padding: 40px;
   display: flex; }
 
-.row .col-3 {
-  flex: 1;
-  background: #465362;
-  height: 100px;
-  display: flex;
-  justify-content: center; }
-
-.back {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
-
-.profile {
-  align-self: flex-start;
-  height: 100px;
-  width: 100px;
-  background-image: url("http://teenzonemagazine.co.za/wp-content/uploads/2017/11/beyonc%C3%A9-4.jpg");
-  border-radius: 50%;
-  margin: 40px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  box-shadow: 0px 4px 8px; }
-
-.col-3 h4 {
-  padding-top: 150px;
-  text-align: center; }
-
-.col-3 p {
-  text-align: center;
-  padding: 10px; }
-
-.box {
-  height: 400px;
-  margin: 10px;
-  display: flex;
-  flex-basis: 25%;
-  box-shadow: 0px 4px 16px; }
-
-.perks {
-  background: #EEF2F7;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center; }
-
-.perks p {
-  padding: 10px; }
-
-.perks .col-3 {
-  background: #EEF2F7; }
-
-.row .col-12 {
-  display: flex;
-  flex-wrap: wrap; }
-
-.perks .row .col-3 {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 33%; }
-
-.perks .row .col-3 h4 {
-  padding: 0; }
-
-.row .col-12 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
-
 .join {
   background: #465362;
   padding: 60px;
@@ -676,6 +603,41 @@ footer {
 
 .resorsi {
   padding: 80px; }
+
+.row .ajmo {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #CDD8E7;
+  align-items: center;
+  flex-basis: 33%;
+  justify-content: center; }
+
+.ngeovi {
+  padding: 20px; }
+
+.boxovi {
+  display: flex;
+  flex-direction: column;
+  padding: 30px; }
+
+.row .col-8 {
+  display: flex; }
+
+.row .col-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #CDD8E7; }
+
+.ngeovi .row .col-5 {
+  flex-basis: inherit; }
+
+.ngeovi .row .col-5 p {
+  padding: 10px; }
+
+.blog {
+  padding: 100px;
+  text-align: center; }
 
 /*==================================================
 
