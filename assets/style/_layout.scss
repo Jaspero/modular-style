@@ -80,41 +80,37 @@ footer {
   background:white ;
   border-radius: 4px;
 }
-.resorsi{
+.resorsi {
   padding: 80px;
 }
-.row .ajmo{
-  display: flex;
-  flex-wrap: wrap;
- border: 1px solid #CDD8E7;
-  align-items: center;
-  flex-basis: 33%;
-  justify-content: center;
-}
-.ngeovi{
-  padding: 20px;
-}
-.boxovi{
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-}
-.row .col-8{
-  display: flex;
-}
-.row .col-3{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #CDD8E7;
-}
-.ngeovi .row .col-5{
-  flex-basis: inherit;
-}
-.ngeovi .row .col-5 p{
-  padding: 10px;
-}
+
 .blog{
   padding: 100px;
   text-align: center;
+}
+.words{
+  padding: 40px;
+}
+.row .col-8{
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-bottom: 1px solid #61BFE5;
+}
+.row .col-5{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+.row .col-3{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.comment{
+  display: flex;
+  padding: 3px;
+}
+.words p{
+  padding: 5px;
 }
