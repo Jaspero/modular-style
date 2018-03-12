@@ -29,33 +29,25 @@ sass --watch example.scss:example.css --style compressed
 
 <main>
 
-    <button class="btn">Button</button>
+    <button class="btn">Primary</button>
+
+    <button class="ctn">Containing</button>
+
+    <button class="ctn-pad">Containing with padding</button>
 
     <button class="btn">
-        <span>Btn SVG</span>
+        <span>With </span>
         <svg width="16" height="16" viewBox="1221 2035 18 12"><path d="M1221 2042h14.17l-3.58 3.59 1.41 1.41 6-6-6-6-1.41 1.41 3.58 3.59H1221z"/></svg>
     </button>
 
-    <button class="btn">
-        <img height="16" width="16" src="assets/img/zap.svg" alt="Zap">
-        <span>Btn IMG</span>
-    </button>
-
-    <input class="btn" type="button" value="button">
-
-    <input class="btn" type="reset" value="reset">
-
-    <input class="btn" type="submit" value="submit">
-
-    <label class="btn" for="file">
-        <svg height="16" width="16" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
-        <span>File</span>
-        <input id="file" type="file">
-    </label>
-
-    <button class="containing">
-        <span>Btn SVG</span>
-        <svg width="16" height="16" viewBox="1221 2035 18 12"><path d="M1221 2042h14.17l-3.58 3.59 1.41 1.41 6-6-6-6-1.41 1.41 3.58 3.59H1221z"/></svg>
+    <button id="dropddown">
+        <span>Hover me</span>
+        <div>
+            <span>asd</span>
+            <span>asd</span>
+            <span>asd</span>
+            <span>asd</span>
+        </div>
     </button>
 
 </main>
