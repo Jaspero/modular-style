@@ -34,6 +34,15 @@ a {
   color: unset;
 }
 
+hr {
+  display: block;
+  height: .1rem;
+  border: 0;
+  border-top: .1rem solid #ccc;
+  margin: .5rem 0;
+  padding: 0;
+}
+
 /*==================================================
   HELPER CLASSES
 ==================================================*/

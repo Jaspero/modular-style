@@ -6,4 +6,48 @@
 
 @import "assets/style/essentials";
 //@import "assets/style/components/component";
-@import "assets/style/components/buttons";
+
+.dd-el {
+  padding: .5rem 6rem .5rem 2rem;
+  font-size: 1.6rem;
+  transition: .2s;
+  &:hover { background: #ddd; }
+}
+
+
+
+.dd-toggle {
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  padding: 1rem;
+  display: inline-block;
+  background: hotpink;
+  cursor: pointer;
+
+  .dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    visibility: hidden;
+
+    padding: 1rem 0;
+
+    background: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+
+    opacity: 0;
+    transition: .1s;
+    transform: scale3d(.85,.85,1);
+    transform-origin: 0 0;
+  }
+
+  &:hover .dropdown {
+    opacity: 1;
+    transform: scale3d(1,1,1);
+    z-index: 1;
+    visibility: visible;
+  }
+
+}
