@@ -37,8 +37,8 @@
     & > div {
 
       /* Box model */
-      padding: .5rem 6rem .5rem 2rem;
       min-width: 20rem;
+      padding: .5rem 2rem;
 
       /* Typography */
       font-size: 1.4rem;
@@ -74,24 +74,28 @@
   top: 0;
   left: 0;
   transform-origin: 0 0;
+  text-align: left;
 }
 
 [dropdown*="top-right"] [dropdown-menu] {
   top: 0;
   right: 0;
   transform-origin: 100% 0;
+  text-align: right;
 }
 
 [dropdown*="bottom-left"] [dropdown-menu] {
   bottom: 0;
   left: 0;
   transform-origin: 0 100%;
+  text-align: left;
 }
 
 [dropdown*="bottom-right"] [dropdown-menu] {
   bottom: 0;
   right: 0;
   transform-origin: 100% 100%;
+  text-align: right;
 }
 
 /*
