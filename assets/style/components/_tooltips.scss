@@ -1,0 +1,108 @@
+/*==================================================
+
+  TOOLTIPS
+
+==================================================*/
+
+/* -- Tooltip style -- */
+%tooltip-style {
+
+  /* Basic */
+  display: inline-block;
+  opacity: .9;
+  pointer-events: none;
+
+  /* Positioning */
+  position: absolute;
+
+  /* Box model */
+  border-radius: .4rem;
+  padding: .2rem .8rem;
+
+  /* Background */
+  background: #666;
+
+  /* Typography */
+  font-size: 1.1rem;
+  color: white;
+
+  /* Transition */
+  transition: .2s;
+
+}
+
+/* -- Top tooltip -- */
+[tooltip-top] {
+  position: relative;
+
+  &:after {
+    content: attr(tooltip-top);
+    @extend %tooltip-style;
+    bottom: calc(100% + 1rem);
+    left: 50%;
+    transform: translate3d(-50%,0,0) scale3d(0,0,0);
+    transform-origin: center bottom;
+  }
+
+  &:hover:after { transform: translate3d(-50%,0,0) scale3d(1,1,1); }
+}
+
+/* -- Bottom tooltip -- */
+[tooltip-bottom] {
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: attr(tooltip-bottom);
+    @extend %tooltip-style;
+    top: calc(100% + 1rem);
+    left: 50%;
+    transform: translate3d(-50%,0,0) scale3d(0,0,0);
+    transform-origin: center top;
+  }
+
+  &:hover:after { transform: translate3d(-50%,0,0) scale3d(1,1,1); }
+}
+
+/* -- Left tooltip -- */
+[tooltip-left] {
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: attr(tooltip-left);
+    @extend %tooltip-style;
+    right: calc(100% + 1rem);
+    top: 50%;
+    transform: translate3d(0,-50%,0) scale3d(0,0,0);
+    transform-origin: right center;
+  }
+
+  &:hover:after { transform: translate3d(0,-50%,0) scale3d(1,1,1); }
+}
+
+/* -- Right tooltip -- */
+[tooltip-right] {
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: attr(tooltip-right);
+    @extend %tooltip-style;
+    left: calc(100% + 1rem);
+    top: 50%;
+    transform: translate3d(0,-50%,0) scale3d(0,0,0);
+    transform-origin: left center;
+  }
+
+  &:hover:after { transform: translate3d(0,-50%,0) scale3d(1,1,1); }
+}
+
+/*
+
+<div tooltip-top="Tooltip text">Hover me to display tooltip</div>
+<div tooltip-bottom="Tooltip text">Hover me to display tooltip</div>
+<div tooltip-left="Tooltip text">Hover me to display tooltip</div>
+<div tooltip-right="Tooltip text">Hover me to display tooltip</div>
+
+*/

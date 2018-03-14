@@ -6,29 +6,29 @@
 
 @mixin scroll-animation-left() {
   transform: translateX(-50%);
-  transition: $scroll-transition;
+  transition: $transition;
   &.enter { opacity: 1; transform: translateX(0); }
 }
 
 @mixin scroll-animation-right() {
   transform: translateX(50%);
-  transition: $scroll-transition;
+  transition: $transition;
   &.enter { opacity: 1; transform: translateX(0); }
 }
 
 @mixin scroll-animation-top() {
   transform: translateY(-50%);
-  transition: $scroll-transition;
+  transition: $transition;
   &.enter { opacity: 1; transform: translateY(0); }
 }
 
 @mixin scroll-animation-bottom() {
   transform: translateY(50%);
-  transition: $scroll-transition;
+  transition: $transition;
   &.enter { opacity: 1; transform: translateY(0); }
 }
 
 @mixin scroll-animation-fade-in() {
-  transition: $scroll-transition;
+  transition: $transition;
   &.enter { opacity: 1; }
 }

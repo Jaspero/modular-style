@@ -1,0 +1,83 @@
+/*==================================================
+
+  BUTTONS
+
+==================================================*/
+
+/* Primary button style */
+[class*="btn"] {
+
+  /* Basic */
+  display: inline-block;
+  cursor: pointer;
+
+  /* Box model */
+  padding: 1rem 2rem;
+  border: none;
+
+  /* Background */
+  background: sandybrown;
+
+  /* Typography */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  color: white;
+  fill: white;
+
+  /* Transition */
+  transition: .35s;
+
+  /* -- Correct alignment inside buttons -- */
+  & > * { vertical-align: middle; }
+
+  /* -- Hover & Focus -- */
+  &:hover, &:focus {}
+
+  /* -- Active -- */
+  &:active {}
+
+  /* -- Disabled -- */
+  &:disabled {}
+
+  /* -- Hiding default input[type=file] -- */
+  input[type="file"] { display: none; }
+
+}
+
+/* Containing button with no style */
+[class*="ctn"] {
+
+  /* Basic */
+  display: inline-block;
+  cursor: pointer;
+
+  /* Box model */
+  padding: 0;
+  border: none;
+
+  /* -- For easier clicks -- */
+  &[class*="-pad"] { padding: 1rem; }
+
+  /* Background */
+  background: none;
+
+  /* -- Correct alignment inside buttons -- */
+  & > * { vertical-align: middle; }
+
+}
+
+/*
+
+<button class="btn">Button</button>
+
+<button class="ctn">Button</button>
+
+<button class="ctn-pad">Button</button>
+
+<button class="btn">
+    <span>Btn SVG</span>
+    <svg width="16" height="16" viewBox="1221 2035 18 12"><path d="M1221 2042h14.17l-3.58 3.59 1.41 1.41 6-6-6-6-1.41 1.41 3.58 3.59H1221z"/></svg>
+</button>
+
+*/

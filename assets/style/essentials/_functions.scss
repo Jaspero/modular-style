@@ -1,0 +1,68 @@
+/*==================================================
+
+  FUNCTIONS
+
+==================================================*/
+
+/*==================================================
+  LIGHTEN & DARKEN
+==================================================*/
+
+/*
+ * color: lighten(red, 50%);
+ */
+
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function darken($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
+/*==================================================
+  SHORTHAND MARGIN & PADDING
+==================================================*/
+
+/*
+ * (m|p)-(a|x|y|t|r|b|l)-(0|1|2|3|4|5)
+ * 
+ * <p class="m-t-1">Margin top 1rem</p>
+ */
+
+$spacer: 1rem;
+$spacer-x: $spacer;
+$spacer-y: $spacer;
+$spacers: ();
+
+@for $i from 0 through 5 {
+  $spacers: map-merge($spacers, (
+          $i: (
+                  x: $spacer-x * $i,
+                  y: $spacer-y * $i
+          )
+  ))
+}
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $lengths in $spacers {
+    $length-x:   map-get($lengths, x);
+    $length-y:   map-get($lengths, y);
+
+    .#{$abbrev}-a-#{$size} { #{$prop}:        $length-x}
+    .#{$abbrev}-t-#{$size} { #{$prop}-top:    $length-y}
+    .#{$abbrev}-r-#{$size} { #{$prop}-right:  $length-x}
+    .#{$abbrev}-b-#{$size} { #{$prop}-bottom: $length-y}
+    .#{$abbrev}-l-#{$size} { #{$prop}-left:   $length-x}
+
+    .#{$abbrev}-x-#{$size} {
+      #{$prop}-right:  $length-x;
+      #{$prop}-left:   $length-x;
+    }
+    .#{$abbrev}-y-#{$size} {
+      #{$prop}-top:    $length-y;
+      #{$prop}-bottom: $length-y;
+    }
+  }
+}

@@ -1,24 +1,25 @@
 /*==================================================
 
-  FLUID VARIABLES
-  
+  MIXINS
+
 ==================================================*/
 
-// FLUID – min & max screen sizes
+/*==================================================
+  FLUID
+==================================================*/
+
 $min-vw: 60rem;
 $max-vw: 140rem;
 
-// Fluid helper
+/* -- Don't change -- */
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
 
 
-/*==================================================
-
-  FLUID MARGIN & PADDING
-  
-==================================================*/
+/*
+ * @include fluid(20rem, 10rem, padding);
+ */
 
 @mixin fluid($max, $min, $prop) {
 
@@ -104,11 +105,9 @@ $max-vw: 140rem;
 }
 
 
-/*==================================================
-
-  FLUID FONT-SIZE
-
-==================================================*/
+/*
+ * @include font-size(2rem, 1.6rem);
+ */
 
 @mixin font-size($max, $min) {
   & {
@@ -124,58 +123,56 @@ $max-vw: 140rem;
 
 
 /*==================================================
-
-  SHORTHAND MARGIN & PADDING
-
+  OVERLAY
 ==================================================*/
 
-$spacer: 1rem;
-$spacer-x: $spacer;
-$spacer-y: $spacer;
-$spacers: ();
+/*
+ * @include overlay(rgba(0,0,0,.5));
+ */
 
-@for $i from 0 through 5 {
-  $spacers: map-merge($spacers, (
-    $i: (
-      x: $spacer-x * $i,
-      y: $spacer-y * $i
-    )
-  ))
-}
+@mixin overlay($overlayColor) {
 
-@each $prop, $abbrev in (margin: m, padding: p) {
-  @each $size, $lengths in $spacers {
-    $length-x:   map-get($lengths, x);
-    $length-y:   map-get($lengths, y);
+  background-color: $overlayColor;
+  background-blend-mode: overlay;
 
-    .#{$abbrev}-a-#{$size} { #{$prop}:        $length-x}
-    .#{$abbrev}-t-#{$size} { #{$prop}-top:    $length-y}
-    .#{$abbrev}-r-#{$size} { #{$prop}-right:  $length-x}
-    .#{$abbrev}-b-#{$size} { #{$prop}-bottom: $length-y}
-    .#{$abbrev}-l-#{$size} { #{$prop}-left:   $length-x}
-
-    .#{$abbrev}-x-#{$size} {
-      #{$prop}-right:  $length-x;
-      #{$prop}-left:   $length-x;
+  /* -- IE10+ fallback -- */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $overlayColor;
     }
-    .#{$abbrev}-y-#{$size} {
-      #{$prop}-top:    $length-y;
-      #{$prop}-bottom: $length-y;
+    & > * {
+      position: relative;
+      z-index: 1;
     }
   }
-}
 
+  /* -- Microsoft Edge fallback -- */
+  @supports (-ms-ime-align: auto) {
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $overlayColor;
+    }
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
 
-/*==================================================
-
-  LIGHTEN & DARKEN
-
-==================================================*/
-
-@function lighten($color, $percentage) {
-  @return mix(white, $color, $percentage);
-}
-
-@function darken($color, $percentage) {
-  @return mix(black, $color, $percentage);
 }

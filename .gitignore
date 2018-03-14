@@ -1,2 +1,5 @@
 node_modules
 .sass-cache
+.idea
+example.css
+example.css.map
