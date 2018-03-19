@@ -12,10 +12,12 @@
 [btn].loading,
 [btn].success,
 [btn].error {
-  color: transparent;
+  color           : transparent;
+  pointer-events  : none;
+  position        : relative;
+
   svg, img { opacity: 0; }
-  pointer-events: none;
-  position: relative;
+
 }
 
 
@@ -24,35 +26,26 @@
  */
 
 [btn].loading {
-
-  /* Background */
   background: rgba(40,120,200,.6);
 
   &:after {
+    content       : '';
+    display       : block;
+    position      : absolute;
+    top           : 50%;
+    left          : 50%;
+    height        : 1.8rem;
+    width         : 1.8rem;
+    border-radius : 50%;
+    border-top    : .2rem solid white;
+    border-right  : .2rem solid white;
+    border-bottom : .2rem solid transparent;
+    border-left   : .2rem solid transparent;
+    animation     : progress-animation .75s linear infinite;
 
-    /* Basic */
-    content: '';
-    display: block;
-
-    /* Positioning */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    /* Box model */
-    height: 1.8rem;
-    width: 1.8rem;
-    border-radius: 50%;
-    border-top: .2rem solid white;
-    border-right: .2rem solid white;
-    border-bottom: .2rem solid transparent;
-    border-left: .2rem solid transparent;
-
-    /* Animation */
-    animation: progress-animation .75s linear infinite;
     @keyframes progress-animation {
-      0% { transform: translate(-50%,-50%) rotate(0deg); }
-      100% { transform: translate(-50%,-50%) rotate(360deg); }
+      0%    { transform: translate(-50%,-50%) rotate(0deg); }
+      100%  { transform: translate(-50%,-50%) rotate(360deg); }
     }
 
   }
@@ -65,27 +58,16 @@
  */
 
 [btn].success {
-
-  /* Background */
   background: rgba(80,200,80,.6);
 
   &:after {
-
-    /* Basic */
-    content: 'success';
-    display: block;
-
-    /* Positioning */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    /* Typography */
-    color: white;
-
-    /* Transform */
-    transform: translate(-50%,-50%);
-
+    content   : 'success';
+    display   : block;
+    position  : absolute;
+    top       : 50%;
+    left      : 50%;
+    color     : white;
+    transform : translate(-50%,-50%);
   }
 
 }
@@ -96,27 +78,16 @@
  */
 
 [btn].error {
-
-  /* Background */
   background: rgba(200,40,40,.6);
 
   &:after {
-
-    /* Basic */
-    content: 'error';
-    display: block;
-
-    /* Positioning */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    /* Typography */
-    color: white;
-
-    /* Transform */
-    transform: translate(-50%,-50%);
-
+    content   : 'error';
+    display   : block;
+    position  : absolute;
+    top       : 50%;
+    left      : 50%;
+    color     : white;
+    transform : translate(-50%,-50%);
   }
-
+  
 }

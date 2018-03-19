@@ -4,11 +4,23 @@
 
 ==================================================*/
 
+
+/*
+ * Base
+ */
+
 html {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 62.5%;
-  line-height: 1.5;
+  font-family : 'Open Sans', sans-serif;
+  font-size   : 62.5%;
+  line-height : 1.5;
 }
+
+body { font-size: 2rem; }
+
+
+/*
+ * Resets
+ */
 
 p,
 h1,
@@ -20,6 +32,25 @@ h6 {
   margin: 0;
 }
 
+a {
+  text-decoration : none;
+  color           : unset;
+}
+
+hr {
+  display     : block;
+  height      : .1rem;
+  border      : 0;
+  border-top  : .1rem solid #ccc;
+  margin      : .4rem 0;
+  padding     : 0;
+}
+
+
+/*
+ * Headings
+ */
+
 h1 { font-size: 3.6rem; }
 h2 { font-size: 3.2rem; }
 h3 { font-size: 2.8rem; }
@@ -27,37 +58,51 @@ h4 { font-size: 2.4rem; }
 h5 { font-size: 2.0rem; }
 h6 { font-size: 1.6rem; }
 
+
+/*
+ * Paragraph
+ */
+
 p {  font-size: 1.4rem; }
 
-a {
-  text-decoration: none;
-  color: unset;
-}
 
-hr {
-  display: block;
-  height: .1rem;
-  border: 0;
-  border-top: .1rem solid #ccc;
-  margin: .5rem 0;
-  padding: 0;
-}
-
-/*==================================================
-  HELPER CLASSES
-==================================================*/
+/*
+ * Link style
+ */
 
 .link {
   text-decoration: underline;
   text-decoration-skip: ink;
-  &:link { color: dodgerblue; }
+
+  &:link    { color: dodgerblue; }
   &:visited { color: mediumpurple; }
+
 }
 
-.tag {
-  display: inline-block;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: .2rem;
-  opacity: .7;
+
+/*
+ * Vertical list
+ */
+
+ul[vertical] {
+  list-style  : none;
+  margin      : 0;
+  padding     : 0;
+
+  li { display: block; }
+
+}
+
+
+/*
+ * Horizontal list
+ */
+
+ul[horizontal] {
+  list-style  : none;
+  margin      : 0;
+  padding     : 0;
+
+  li { display: inline-block; }
+
 }

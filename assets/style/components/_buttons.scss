@@ -6,30 +6,21 @@
 
 
 /*
- * Shared
+ * Shared style
  */
 
 [btn] {
+  display         : inline-block;
+  cursor          : pointer;
+  padding         : 1rem 2rem;
+  border          : none;
+  border-radius   : .2rem;
+  font-size       : 1.4rem;
+  font-weight     : 500;
+  font-family     : 'Montserrat', sans-serif;
+  text-transform  : uppercase;
+  transition      : .2s;
 
-  /* Basic */
-  display: inline-block;
-  cursor: pointer;
-
-  /* Box model */
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: .2rem;
-
-  /* Typography */
-  font-size: 1.4rem;
-  font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-
-  /* Transition */
-  transition: .2s;
-
-  /* -- Vertically centering elements inside buttons -- */
   span, svg, img { vertical-align: middle; }
 
 }
@@ -40,26 +31,20 @@
  */
 
 [btn][btn*="primary"] {
+  background  : $color-primary;
+  color       : $white;
+  fill        : $white;
 
-  /* Background */
-  background: $color-primary;
-
-  /* Typography */
-  color: $white;
-  fill: $white;
-
-  /* Pseudo classes */
-  &:hover, &:focus {
-    background: darken($color-primary,10%);
-  }
+  &:hover, &:focus {}
   &:active {}
   &:disabled {
-    cursor: not-allowed;
-    box-shadow: none;
-    color: #aaa;
-    fill: #aaa;
-    background: #eee;
+    cursor      : not-allowed;
+    box-shadow  : none;
+    color       : #aaa;
+    fill        : #aaa;
+    background  : #eee;
   }
+
 }
 
 

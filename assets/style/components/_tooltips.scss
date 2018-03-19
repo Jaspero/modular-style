@@ -6,34 +6,21 @@
 
 
 /*
- * Shared
+ * Shared style
  */
 
 %tooltip-style {
-
-  /* Basic */
   display: inline-block;
   opacity: .9;
   pointer-events: none;
-
-  /* Positioning */
   position: absolute;
-
-  /* Box model */
   border-radius: .4rem;
   padding: .2rem .8rem;
-
-  /* Background */
   background: #666;
-
-  /* Typography */
   font-size: 1.1rem;
   color: white;
   white-space: nowrap;
-
-  /* Transition */
   transition: .2s;
-
 }
 
 
@@ -43,6 +30,7 @@
 
 [tooltip-top] {
   position: relative;
+
   &:after {
     content: attr(tooltip-top);
     @extend %tooltip-style;
@@ -51,11 +39,14 @@
     transform: translate3d(-50%,0,0) scale3d(0,0,0);
     transform-origin: center bottom;
   }
+
   &:hover:after { transform: translate3d(-50%,0,0) scale3d(1,1,1); }
+
 }
 
 [tooltip-bottom] {
   position: relative;
+
   &:after {
     content: attr(tooltip-bottom);
     @extend %tooltip-style;
@@ -64,11 +55,14 @@
     transform: translate3d(-50%,0,0) scale3d(0,0,0);
     transform-origin: center top;
   }
+
   &:hover:after { transform: translate3d(-50%,0,0) scale3d(1,1,1); }
+
 }
 
 [tooltip-left] {
   position: relative;
+
   &:after {
     content: attr(tooltip-left);
     @extend %tooltip-style;
@@ -77,11 +71,14 @@
     transform: translate3d(0,-50%,0) scale3d(0,0,0);
     transform-origin: right center;
   }
+
   &:hover:after { transform: translate3d(0,-50%,0) scale3d(1,1,1); }
+
 }
 
 [tooltip-right] {
   position: relative;
+
   &:after {
     content: attr(tooltip-right);
     @extend %tooltip-style;
@@ -90,5 +87,7 @@
     transform: translate3d(0,-50%,0) scale3d(0,0,0);
     transform-origin: left center;
   }
+
   &:hover:after { transform: translate3d(0,-50%,0) scale3d(1,1,1); }
+
 }

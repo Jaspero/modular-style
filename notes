@@ -14,6 +14,11 @@
 /* Animation */
 
 
+/*
+ * Bla
+ */
+
+
 /*==================================================
 
   Attribute selection
@@ -84,19 +89,50 @@ Can be followed by characters?           Yes
 
 /*==================================================
 
-  Modal click JQuery
+  @for
 
 ==================================================*/
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("modal-overlay, [closeModal]").click(function(){
-            $("modal").removeClass("active");
-        });
-        $("[opens]").click(function() {
-            thisOpens = $(this).attr("opens");
-            $('#' + thisOpens).addClass('active');
-        });
-    });
-</script>
+ul li {
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          opacity: (0.1s * $i);
+        }
+    }
+}
+
+
+/*==================================================
+
+  SCROLL ANIMATIONS
+
+==================================================*/
+
+@mixin scroll-animation-left() {
+  transform: translateX(-50%);
+  transition: $transition;
+  &.enter { opacity: 1; transform: translateX(0); }
+}
+
+@mixin scroll-animation-right() {
+  transform: translateX(50%);
+  transition: $transition;
+  &.enter { opacity: 1; transform: translateX(0); }
+}
+
+@mixin scroll-animation-top() {
+  transform: translateY(-50%);
+  transition: $transition;
+  &.enter { opacity: 1; transform: translateY(0); }
+}
+
+@mixin scroll-animation-bottom() {
+  transform: translateY(50%);
+  transition: $transition;
+  &.enter { opacity: 1; transform: translateY(0); }
+}
+
+@mixin scroll-animation-fade-in() {
+  transition: $transition;
+  &.enter { opacity: 1; }
+}

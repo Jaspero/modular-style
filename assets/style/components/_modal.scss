@@ -1,0 +1,94 @@
+/*==================================================
+
+  MODAL
+  
+==================================================*/
+
+
+/*
+ * Modal
+ */
+
+modal {
+  visibility      : hidden; /* See Modal active */
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  z-index         : -1; /* See Modal active */
+  width           : 100%;
+  height          : 100%;
+}
+
+
+/*
+ * Modal active
+ */
+
+modal.active {
+  visibility  : visible;
+  z-index     : 10;
+}
+
+
+/*
+ * Modal overlay
+ */
+
+modal modal-overlay {
+  position    : absolute;
+  top         : 0;
+  left        : 0;
+  z-index     : 1;
+  width       : 100%;
+  height      : 100%;
+  background  : rgba(0,0,0,.5);
+
+  &[dark]   { background: rgba(0,0,0,.5); }
+  &[light]  { background: rgba(255,255,255,.8); }
+  
+}
+
+
+/*
+ * Modal content
+ */
+
+modal modal-content {
+  position      : relative;
+  z-index       : 2;
+  border-radius : .4rem;
+  box-shadow    : 0 .4rem .8rem rgba(0,0,0,.4);
+  margin        : 2rem;
+  background    : white;
+
+  &[size="small"] modal-body  { max-width: 40rem;}
+  &[size="medium"] modal-body { max-width: 80rem;}
+  &[size="large"] modal-body  { max-width: 120rem;}
+
+  modal-body {
+    display     : block;
+    overflow-y  : scroll;
+    padding     : 2rem;
+    max-width   : 120rem;
+    max-height  : calc(100vh - 20rem);
+  }
+
+  modal-header {
+    display       : block;
+    padding       : 2rem;
+    background    : #eee;
+    border-bottom : .1rem solid #ddd;
+  }
+
+  modal-footer {
+    display     : block;
+    padding     : 2rem;
+    text-align  : right;
+    background  : #eee;
+    border-top  : .1rem solid #ddd;
+  }
+
+}

@@ -10,8 +10,8 @@
  */
 
 dropdown {
-  position: relative;
-  display: inline-block;
+  position  : relative;
+  display   : inline-block;
 }
 
 
@@ -20,8 +20,8 @@ dropdown {
  */
 
 dropdown-toggle {
-  display: inline-block;
-  cursor: pointer;
+  display : inline-block;
+  cursor  : pointer;
 }
 
 
@@ -30,84 +30,72 @@ dropdown-toggle {
  */
 
 dropdown-item {
-  display: block;
-  padding: .5rem 1rem;
-  cursor: pointer;
+  display : block;
+  padding : .5rem 1rem;
+  cursor  : pointer;
+
   &:hover { background: #eee; }
+
 }
 
 
 /*
- * Dropdown menu (container)
+ * Dropdown menu - initial
  */
 
 dropdown-menu {
+  opacity       : 0; /* See Dropdown menu - active */
+  position      : absolute;
+  z-index       : -1; /* See Dropdown menu - active */
+  min-width     : 20rem;
+  border-radius : .2rem;
+  box-shadow    : 0 .2rem .4rem 0 rgba(0,0,0,.2);
+  padding       : 1rem 0;
+  background    : $white;
+  transform     : scale3d(.8,.8,1); /* See Dropdown menu - active */
+  transition    : .2s;
+}
 
-  /* Basic */
-  opacity: 0; /* See Anchoring */
 
-  /* Positioning */
-  position: absolute;
-  z-index: -1; /* See Anchoring */
+/*
+ * Dropdown menu - active
+ */
 
-  /* Box model */
-  min-width: 20rem;
-  border-radius: .2rem;
-  box-shadow: 0 .2rem .4rem 0 rgba(0,0,0,.2);
-  padding: 1rem 0;
-
-  /* Background */
-  background: $white;
-
-  /* Transform */
-  transform: scale3d(.8,.8,1); /* See Anchoring */
-
-  /* Transition */
-  transition: .2s;
-
+dropdown.active dropdown-menu {
+  opacity   : 1;
+  z-index   : 1;
+  transform : scale3d(1,1,1);
 }
 
 
 /*
  * Anchoring
- *
- * To trigger the menu with clicks instead of
- * hovers, replace :hover with .active
- *
- * Assign .active on click through JS.
- *
  */
 
-dropdown:hover dropdown-menu {
-  opacity: 1;
-  z-index: 1;
-  transform: scale3d(1,1,1);
-}
-
 dropdown-menu[anchor="top-left"] {
-  top: 0;
-  left: 0;
-  transform-origin: 0 0;
-  text-align: left;
+  top               : 0;
+  left              : 0;
+  transform-origin  : 0 0;
+  text-align        : left;
 }
 
 dropdown-menu[anchor="top-right"] {
-  top: 0;
-  right: 0;
-  transform-origin: 100% 0;
-  text-align: right;
+  top               : 0;
+  right             : 0;
+  transform-origin  : 100% 0;
+  text-align        : right;
 }
 
 dropdown-menu[anchor="bottom-left"] {
-  bottom: 0;
-  left: 0;
-  transform-origin: 0 100%;
-  text-align: left;
+  bottom            : 0;
+  left              : 0;
+  transform-origin  : 0 100%;
+  text-align        : left;
 }
 
 dropdown-menu[anchor="bottom-right"] {
-  bottom: 0;
-  right: 0;
-  transform-origin: 100% 100%;
-  text-align: right;
+  bottom            : 0;
+  right             : 0;
+  transform-origin  : 100% 100%;
+  text-align        : right;
 }

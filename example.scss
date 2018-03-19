@@ -5,10 +5,9 @@
 ==================================================*/
 
 @import "assets/style/essentials";
-@import "assets/style/components/tooltips";
+@import "assets/style/components/grid";
 
-main { font-size: 2rem; }
-
-/*
- * Bla
- */
+.box {
+  height: 200px;
+  background: red;
+}

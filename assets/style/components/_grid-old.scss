@@ -9,7 +9,7 @@ $grid-gap: 3rem;
 $grid-gap-half: $grid-gap/2;
 $grid-gap-negative: -$grid-gap;
 
-grid {
+.grid {
 
   /* Basic */
   display: flex;
@@ -22,7 +22,7 @@ grid {
   margin: 0 auto;
 
   /* -- Gutter -- */
-  column { padding: 0 $grid-gap-half $grid-gap; }
+  div[class^='col-'] { padding: 0 $grid-gap-half $grid-gap; }
 
   /* -- Helper classes -- */
   &.full-screen { max-width: 100%; }
@@ -30,8 +30,6 @@ grid {
   &.clip-end { margin-bottom: $grid-gap-negative;}
   &.space-between { justify-content: space-between; }
   &.items-center { align-items: center; }
-
-  column { flex-basis: 25%; }
 
   /* -- Large screen sizes -- */
   .col-1 { flex-basis: 8.3333%; }
@@ -80,3 +78,39 @@ grid {
   }
 
 }
+
+/*
+
+<div class="grid">
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+</div>
+
+<div class="grid">
+  <div class="col-3 col-m-6 col-s-9"> ... </div>
+  <div class="col-3 col-m-6 col-s-9"> ... </div>
+  <div class="col-3 col-m-6 col-s-9"> ... </div>
+  <div class="col-3 col-m-6 col-s-9"> ... </div>
+</div>
+
+<div class="grid clip-end">
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+</div>
+
+<div class="grid full-screen no-gutter">
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+  <div class="col-3"> ... </div>
+</div>
+
+*/
