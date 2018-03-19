@@ -4,8 +4,12 @@
 
 ==================================================*/
 
-/* Primary button style */
-[class*="btn"] {
+
+/*
+ * Shared
+ */
+
+[btn] {
 
   /* Basic */
   display: inline-block;
@@ -14,70 +18,53 @@
   /* Box model */
   padding: 1rem 2rem;
   border: none;
-
-  /* Background */
-  background: sandybrown;
+  border-radius: .2rem;
 
   /* Typography */
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  letter-spacing: .2rem;
-  color: white;
-  fill: white;
 
   /* Transition */
-  transition: .35s;
+  transition: .2s;
 
-  /* -- Correct alignment inside buttons -- */
-  & > * { vertical-align: middle; }
-
-  /* -- Hover & Focus -- */
-  &:hover, &:focus {}
-
-  /* -- Active -- */
-  &:active {}
-
-  /* -- Disabled -- */
-  &:disabled {}
-
-  /* -- Hiding default input[type=file] -- */
-  input[type="file"] { display: none; }
+  /* -- Vertically centering elements inside buttons -- */
+  span, svg, img { vertical-align: middle; }
 
 }
 
-/* Containing button with no style */
-[class*="ctn"] {
-
-  /* Basic */
-  display: inline-block;
-  cursor: pointer;
-
-  /* Box model */
-  padding: 0;
-  border: none;
-
-  /* -- For easier clicks -- */
-  &[class*="-pad"] { padding: 1rem; }
-
-  /* Background */
-  background: none;
-
-  /* -- Correct alignment inside buttons -- */
-  & > * { vertical-align: middle; }
-
-}
 
 /*
+ * Primary
+ */
 
-<button class="btn">Button</button>
+[btn][btn*="primary"] {
 
-<button class="ctn">Button</button>
+  /* Background */
+  background: $color-primary;
 
-<button class="ctn-pad">Button</button>
+  /* Typography */
+  color: $white;
+  fill: $white;
 
-<button class="btn">
-    <span>Btn SVG</span>
-    <svg width="16" height="16" viewBox="1221 2035 18 12"><path d="M1221 2042h14.17l-3.58 3.59 1.41 1.41 6-6-6-6-1.41 1.41 3.58 3.59H1221z"/></svg>
-</button>
+  /* Pseudo classes */
+  &:hover, &:focus {
+    background: darken($color-primary,10%);
+  }
+  &:active {}
+  &:disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+    color: #aaa;
+    fill: #aaa;
+    background: #eee;
+  }
+}
 
-*/
+
+/*
+ * Full
+ */
+
+[btn][btn*="full"] { width: 100%; }

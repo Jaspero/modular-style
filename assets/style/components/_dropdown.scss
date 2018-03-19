@@ -4,111 +4,110 @@
 
 ==================================================*/
 
-/* -- Dropdown parent -- */
-[dropdown] {
 
-  /* Basic */
+/*
+ * General
+ */
+
+dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+/*
+ * Dropdown toggle
+ */
+
+dropdown-toggle {
   display: inline-block;
   cursor: pointer;
+}
 
-  /* -- Dropdown menu -- */
-  [dropdown-menu] {
 
-    /* Basic */
-    visibility: hidden;
-    opacity: 0;
+/*
+ * Dropdown item
+ */
 
-    /* Positioning */
-    position: absolute;
-    z-index: -1;
+dropdown-item {
+  display: block;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  &:hover { background: #eee; }
+}
 
-    /* Box model */
-    padding: 1rem 0;
-    background: white;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 
-    /* Transform */
-    transform: scale3d(.85,.85,1);
+/*
+ * Dropdown menu (container)
+ */
 
-    /* Transition */
-    transition: .1s;
+dropdown-menu {
 
-    /* -- Dropdown items -- */
-    & > div {
+  /* Basic */
+  opacity: 0; /* See Anchoring */
 
-      /* Box model */
-      min-width: 20rem;
-      padding: .5rem 2rem;
+  /* Positioning */
+  position: absolute;
+  z-index: -1; /* See Anchoring */
 
-      /* Typography */
-      font-size: 1.4rem;
+  /* Box model */
+  min-width: 20rem;
+  border-radius: .2rem;
+  box-shadow: 0 .2rem .4rem 0 rgba(0,0,0,.2);
+  padding: 1rem 0;
 
-      /* Transition */
-      transition: .2s;
+  /* Background */
+  background: $white;
 
-      /* Hover */
-      &:hover { background: #ddd; }
+  /* Transform */
+  transform: scale3d(.8,.8,1); /* See Anchoring */
 
-    }
-
-  }
-
-  /* -- Dropdown active state -- */
-  &:hover [dropdown-menu] {
-
-    /* Basic */
-    visibility: visible;
-    opacity: 1;
-
-    /* Positioning */
-    z-index: 1;
-
-    /* Transform */
-    transform: scale3d(1,1,1);
-
-  }
+  /* Transition */
+  transition: .2s;
 
 }
 
-[dropdown*="top-left"] [dropdown-menu] {
+
+/*
+ * Anchoring
+ *
+ * To trigger the menu with clicks instead of
+ * hovers, replace :hover with .active
+ *
+ * Assign .active on click through JS.
+ *
+ */
+
+dropdown:hover dropdown-menu {
+  opacity: 1;
+  z-index: 1;
+  transform: scale3d(1,1,1);
+}
+
+dropdown-menu[anchor="top-left"] {
   top: 0;
   left: 0;
   transform-origin: 0 0;
   text-align: left;
 }
 
-[dropdown*="top-right"] [dropdown-menu] {
+dropdown-menu[anchor="top-right"] {
   top: 0;
   right: 0;
   transform-origin: 100% 0;
   text-align: right;
 }
 
-[dropdown*="bottom-left"] [dropdown-menu] {
+dropdown-menu[anchor="bottom-left"] {
   bottom: 0;
   left: 0;
   transform-origin: 0 100%;
   text-align: left;
 }
 
-[dropdown*="bottom-right"] [dropdown-menu] {
+dropdown-menu[anchor="bottom-right"] {
   bottom: 0;
   right: 0;
   transform-origin: 100% 100%;
   text-align: right;
 }
-
-/*
-
-<span dropdown="top-left">
-    <span>Dropdown</span>
-    <div dropdown-menu>
-        <div>View all projects</div>
-        <div>Create new project</div>
-        <hr>
-        <div>Dolor sit amet</div>
-        <div>Lorem ipsum</div>
-    </div>
-</span>
-
-*/

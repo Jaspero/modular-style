@@ -4,124 +4,119 @@
 
 ==================================================*/
 
-button {
 
-  /* -- Shared -- */
-  &.loading,
-  &.success,
-  &.error {
+/*
+ * Hiding button content
+ */
 
-    /* -- Hiding button content -- */
-    color: transparent;
-    svg, img { opacity: 0; }
-    pointer-events: none;
-    position: relative;
+[btn].loading,
+[btn].success,
+[btn].error {
+  color: transparent;
+  svg, img { opacity: 0; }
+  pointer-events: none;
+  position: relative;
+}
 
-  }
 
-  /* -- Loading -- */
-  &.loading {
+/*
+ * Loading
+ */
 
-    &:after {
+[btn].loading {
 
-      /* Basic */
-      content: '';
-      display: block;
+  /* Background */
+  background: rgba(40,120,200,.6);
 
-      /* Positioning */
-      position: absolute;
-      top: 50%;
-      left: 50%;
+  &:after {
 
-      /* Box model */
-      height: 1.8rem;
-      width: 1.8rem;
-      border-radius: 50%;
-      border-top: .2rem solid black;
-      border-right: .2rem solid black;
-      border-bottom: .2rem solid transparent;
-      border-left: .2rem solid transparent;
+    /* Basic */
+    content: '';
+    display: block;
 
-      /* Animation */
-      animation: progress-animation .75s linear infinite;
-      @keyframes progress-animation {
-        0% { transform: translate(-50%,-50%) rotate(0deg); }
-        100% { transform: translate(-50%,-50%) rotate(360deg); }
-      }
+    /* Positioning */
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-    }
+    /* Box model */
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 50%;
+    border-top: .2rem solid white;
+    border-right: .2rem solid white;
+    border-bottom: .2rem solid transparent;
+    border-left: .2rem solid transparent;
 
-  }
-
-  /* -- Success -- */
-  &.success {
-
-    /* Background */
-    background: rgba(0,200,0,.25);
-
-    &:after {
-
-      /* Basic */
-      content: '';
-      display: block;
-
-      /* Positioning */
-      position: absolute;
-      top: 50%;
-      left: 50%;
-
-      /* Box model */
-      width: .8rem;
-      height: 1.8rem;
-      border-top: none;
-      border-right: .2rem solid black;
-      border-bottom: .2rem solid black;
-      border-left: none;
-
-      /* Transform */
-      transform: translate(-50%,-50%) rotate(45deg);
-
-    }
-
-  }
-
-  /* -- Error -- */
-  &.error {
-
-    /* Background */
-    background: rgba(200,0,0,.5);
-
-    &:after {
-
-      /* Basic */
-      content: 'error';
-      display: block;
-
-      /* Positioning */
-      position: absolute;
-      top: 50%;
-      left: 50%;
-
-      /* Typography */
-      color: black;
-
-      /* Transform */
-      transform: translate(-50%,-50%);
-
+    /* Animation */
+    animation: progress-animation .75s linear infinite;
+    @keyframes progress-animation {
+      0% { transform: translate(-50%,-50%) rotate(0deg); }
+      100% { transform: translate(-50%,-50%) rotate(360deg); }
     }
 
   }
 
 }
 
+
 /*
+ * Success
+ */
 
-<button>View more</button>
+[btn].success {
 
-<button class="loading">View more</button>
+  /* Background */
+  background: rgba(80,200,80,.6);
 
-<button class="error">View more</button>
+  &:after {
 
-<button class="success">View more</button>
+    /* Basic */
+    content: 'success';
+    display: block;
 
-*/
+    /* Positioning */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /* Typography */
+    color: white;
+
+    /* Transform */
+    transform: translate(-50%,-50%);
+
+  }
+
+}
+
+
+/*
+ * Error
+ */
+
+[btn].error {
+
+  /* Background */
+  background: rgba(200,40,40,.6);
+
+  &:after {
+
+    /* Basic */
+    content: 'error';
+    display: block;
+
+    /* Positioning */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /* Typography */
+    color: white;
+
+    /* Transform */
+    transform: translate(-50%,-50%);
+
+  }
+
+}
