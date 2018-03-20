@@ -102,3 +102,93 @@
 [margin-right="huge"]   { @include fluid(160px, 80px, margin-right); }
 [margin-bottom="huge"]  { @include fluid(160px, 80px, margin-bottom); }
 [margin-left="huge"]    { @include fluid(160px, 80px, margin-left); }
+
+
+/*
+ * Vertical paddings
+ */
+
+[padding-vertical="tiny"] {
+  @include fluid(10px, 5px, padding-top);
+  @include fluid(10px, 5px, padding-bottom);
+}
+
+[padding-vertical="small"] {
+  @include fluid(20px, 10px, padding-top);
+  @include fluid(20px, 10px, padding-bottom);
+}
+
+[padding-vertical="medium"] {
+  @include fluid(40px, 20px, padding-top);
+  @include fluid(40px, 20px, padding-bottom);
+}
+
+[padding-vertical="large"] {
+  @include fluid(80px, 40px, padding-top);
+  @include fluid(80px, 40px, padding-bottom);
+}
+
+[padding-vertical="huge"] {
+  @include fluid(160px, 80px, padding-top);
+  @include fluid(160px, 80px, padding-bottom);
+}
+
+
+/*
+ * Horizontal paddings
+ */
+
+[padding-horizontal="tiny"] {
+  @include fluid(10px, 5px, padding-left);
+  @include fluid(10px, 5px, padding-right);
+}
+
+[padding-horizontal="small"] {
+  @include fluid(20px, 10px, padding-left);
+  @include fluid(20px, 10px, padding-right);
+}
+
+[padding-horizontal="medium"] {
+  @include fluid(40px, 20px, padding-left);
+  @include fluid(40px, 20px, padding-right);
+}
+
+[padding-horizontal="large"] {
+  @include fluid(80px, 40px, padding-left);
+  @include fluid(80px, 40px, padding-right);
+}
+
+[padding-horizontal="huge"] {
+  @include fluid(160px, 80px, padding-top);
+  @include fluid(160px, 80px, padding-bottom);
+}
+
+
+/*
+ * Each side paddings
+ */
+
+[padding-top="tiny"]      { @include fluid(10px, 5px, padding-top); }
+[padding-right="tiny"]    { @include fluid(10px, 5px, padding-right); }
+[padding-bottom="tiny"]   { @include fluid(10px, 5px, padding-bottom); }
+[padding-left="tiny"]     { @include fluid(10px, 5px, padding-left); }
+
+[padding-top="small"]     { @include fluid(20px, 10px, padding-top); }
+[padding-right="small"]   { @include fluid(20px, 10px, padding-right); }
+[padding-bottom="small"]  { @include fluid(20px, 10px, padding-bottom); }
+[padding-left="small"]    { @include fluid(20px, 10px, padding-left); }
+
+[padding-top="medium"]    { @include fluid(40px, 20px, padding-top); }
+[padding-right="medium"]  { @include fluid(40px, 20px, padding-right); }
+[padding-bottom="medium"] { @include fluid(40px, 20px, padding-bottom); }
+[padding-left="medium"]   { @include fluid(40px, 20px, padding-left); }
+
+[padding-top="large"]     { @include fluid(80px, 40px, padding-top); }
+[padding-right="large"]   { @include fluid(80px, 40px, padding-right); }
+[padding-bottom="large"]  { @include fluid(80px, 40px, padding-bottom); }
+[padding-left="large"]    { @include fluid(80px, 40px, padding-left); }
+
+[padding-top="huge"]      { @include fluid(160px, 80px, padding-top); }
+[padding-right="huge"]    { @include fluid(160px, 80px, padding-right); }
+[padding-bottom="huge"]   { @include fluid(160px, 80px, padding-bottom); }
+[padding-left="huge"]     { @include fluid(160px, 80px, padding-left); }

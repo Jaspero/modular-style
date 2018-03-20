@@ -25,13 +25,12 @@
 
 ==================================================*/
 
- - Cleanup mixins
- - add [padding] helpers
  - img global width: 100%; height: auto;
  - add box helper
  - refactor table
  - refactor forms
  - add accordion component
+ - JQ to JS
 
 
 /*==================================================
