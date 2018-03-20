@@ -18,6 +18,8 @@
  * Bla
  */
 
+ border-radius: 4000px;
+
 
 /*==================================================
 
@@ -136,3 +138,13 @@ ul li {
   transition: $transition;
   &.enter { opacity: 1; }
 }
+
+
+/*==================================================
+
+  Form
+
+==================================================*/
+
+role="submit" (when in form, ENTER will trigger this)
+role="button"
