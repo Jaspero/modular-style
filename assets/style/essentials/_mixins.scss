@@ -8,20 +8,15 @@
   FLUID
 ==================================================*/
 
-$min-vw: 60rem;
-$max-vw: 140rem;
+$min-vw: 900px;
+$max-vw: 1500px;
 
 /* -- Don't change -- */
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
 
-
-/*
- * @include fluid(20rem, 10rem, padding);
- */
-
-@mixin fluid($max, $min, $prop) {
+@mixin fluid-box($max, $min, $prop) {
 
   $maxTop: 0;
   $maxRight: 0;
@@ -105,18 +100,14 @@ $max-vw: 140rem;
 }
 
 
-/*
- * @include font-size(2rem, 1.6rem);
- */
-
-@mixin font-size($max, $min) {
+@mixin fluid($max, $min, $prop) {
   & {
-    font-size: $min;
+    #{$prop}: $min;
     @media screen and (min-width: $min-vw) {
-      font-size: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      #{$prop}: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
     }
     @media screen and (min-width: $max-vw) {
-      font-size: $max;
+      #{$prop}: $max;
     }
   }
 }
