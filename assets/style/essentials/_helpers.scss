@@ -12,3 +12,93 @@
 [text-align="left"]   { text-align: left; }
 [text-align="center"] { text-align: center; }
 [text-align="right"]  { text-align: right; }
+
+
+/*
+ * Vertical margins
+ */
+
+[margin-vertical="tiny"] {
+  @include fluid(10px, 5px, margin-top);
+  @include fluid(10px, 5px, margin-bottom);
+}
+
+[margin-vertical="small"] {
+  @include fluid(20px, 10px, margin-top);
+  @include fluid(20px, 10px, margin-bottom);
+}
+
+[margin-vertical="medium"] {
+  @include fluid(40px, 20px, margin-top);
+  @include fluid(40px, 20px, margin-bottom);
+}
+
+[margin-vertical="large"] {
+  @include fluid(80px, 40px, margin-top);
+  @include fluid(80px, 40px, margin-bottom);
+}
+
+[margin-vertical="huge"] {
+  @include fluid(160px, 80px, margin-top);
+  @include fluid(160px, 80px, margin-bottom);
+}
+
+
+/*
+ * Horizontal margins
+ */
+
+[margin-horizontal="tiny"] {
+  @include fluid(10px, 5px, margin-left);
+  @include fluid(10px, 5px, margin-right);
+}
+
+[margin-horizontal="small"] {
+  @include fluid(20px, 10px, margin-left);
+  @include fluid(20px, 10px, margin-right);
+}
+
+[margin-horizontal="medium"] {
+  @include fluid(40px, 20px, margin-left);
+  @include fluid(40px, 20px, margin-right);
+}
+
+[margin-horizontal="large"] {
+  @include fluid(80px, 40px, margin-left);
+  @include fluid(80px, 40px, margin-right);
+}
+
+[margin-horizontal="huge"] {
+  @include fluid(160px, 80px, margin-top);
+  @include fluid(160px, 80px, margin-bottom);
+}
+
+
+/*
+ * Each side margins
+ */
+
+[margin-top="tiny"]     { @include fluid(10px, 5px, margin-top); }
+[margin-right="tiny"]   { @include fluid(10px, 5px, margin-right); }
+[margin-bottom="tiny"]  { @include fluid(10px, 5px, margin-bottom); }
+[margin-left="tiny"]    { @include fluid(10px, 5px, margin-left); }
+
+[margin-top="small"]    { @include fluid(20px, 10px, margin-top); }
+[margin-right="small"]  { @include fluid(20px, 10px, margin-right); }
+[margin-bottom="small"] { @include fluid(20px, 10px, margin-bottom); }
+[margin-left="small"]   { @include fluid(20px, 10px, margin-left); }
+
+[margin-top="medium"]   { @include fluid(40px, 20px, margin-top); }
+[margin-right="medium"] { @include fluid(40px, 20px, margin-right); }
+[margin-bottom="medium"]{ @include fluid(40px, 20px, margin-bottom); }
+[margin-left="medium"]  { @include fluid(40px, 20px, margin-left); }
+
+[margin-top="large"]    { @include fluid(80px, 40px, margin-top); }
+[margin-right="large"]  { @include fluid(80px, 40px, margin-right); }
+[margin-bottom="large"] { @include fluid(80px, 40px, margin-bottom); }
+[margin-left="large"]   { @include fluid(80px, 40px, margin-left); }
+
+[margin-top="huge"]     { @include fluid(160px, 80px, margin-top); }
+[margin-right="huge"]   { @include fluid(160px, 80px, margin-right); }
+[margin-bottom="huge"]  { @include fluid(160px, 80px, margin-bottom); }
+[margin-left="huge"]    { @include fluid(160px, 80px, margin-left); }
