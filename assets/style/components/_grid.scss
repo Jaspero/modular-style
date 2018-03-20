@@ -20,9 +20,9 @@ grid {
   &[size="medium"]  { max-width: 1200px; }
   &[size="large"]   { max-width: 1500px; }
 
-  &[gutter="small"]   column { padding: 5px; }
-  &[gutter="medium"]  column { padding: 10px; }
-  &[gutter="large"]   column { padding: 20px; }
+  &[gutter="small"] column  { padding: 5px; }
+  &[gutter="medium"] column { padding: 10px; }
+  &[gutter="large"] column  { padding: 20px; }
 
 }
 
