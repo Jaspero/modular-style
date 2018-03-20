@@ -10,17 +10,17 @@
  */
 
 %tooltip-style {
-  display: inline-block;
-  opacity: .9;
-  pointer-events: none;
-  position: absolute;
-  border-radius: .4rem;
-  padding: .2rem .8rem;
-  background: #666;
-  font-size: 1.1rem;
-  color: white;
-  white-space: nowrap;
-  transition: .2s;
+  display         : inline-block;
+  opacity         : .9;
+  pointer-events  : none;
+  position        : absolute;
+  border-radius   : .4rem;
+  padding         : .2rem .8rem;
+  background      : #666;
+  font-size       : 1.1rem;
+  color           : white;
+  white-space     : nowrap;
+  transition      : .2s;
 }
 
 
@@ -32,12 +32,12 @@
   position: relative;
 
   &:after {
-    content: attr(tooltip-top);
     @extend %tooltip-style;
-    bottom: calc(100% + 1rem);
-    left: 50%;
-    transform: translate3d(-50%,0,0) scale3d(0,0,0);
-    transform-origin: center bottom;
+    content           : attr(tooltip-top);
+    bottom            : calc(100% + 1rem);
+    left              : 50%;
+    transform         : translate3d(-50%,0,0) scale3d(0,0,0);
+    transform-origin  : center bottom;
   }
 
   &:hover:after { transform: translate3d(-50%,0,0) scale3d(1,1,1); }
@@ -48,12 +48,12 @@
   position: relative;
 
   &:after {
-    content: attr(tooltip-bottom);
     @extend %tooltip-style;
-    top: calc(100% + 1rem);
-    left: 50%;
-    transform: translate3d(-50%,0,0) scale3d(0,0,0);
-    transform-origin: center top;
+    content           : attr(tooltip-bottom);
+    top               : calc(100% + 1rem);
+    left              : 50%;
+    transform         : translate3d(-50%,0,0) scale3d(0,0,0);
+    transform-origin  : center top;
   }
 
   &:hover:after { transform: translate3d(-50%,0,0) scale3d(1,1,1); }
@@ -64,12 +64,12 @@
   position: relative;
 
   &:after {
-    content: attr(tooltip-left);
     @extend %tooltip-style;
-    right: calc(100% + 1rem);
-    top: 50%;
-    transform: translate3d(0,-50%,0) scale3d(0,0,0);
-    transform-origin: right center;
+    content           : attr(tooltip-left);
+    right             : calc(100% + 1rem);
+    top               : 50%;
+    transform         : translate3d(0,-50%,0) scale3d(0,0,0);
+    transform-origin  : right center;
   }
 
   &:hover:after { transform: translate3d(0,-50%,0) scale3d(1,1,1); }
@@ -80,12 +80,12 @@
   position: relative;
 
   &:after {
-    content: attr(tooltip-right);
     @extend %tooltip-style;
-    left: calc(100% + 1rem);
-    top: 50%;
-    transform: translate3d(0,-50%,0) scale3d(0,0,0);
-    transform-origin: left center;
+    content           : attr(tooltip-right);
+    left              : calc(100% + 1rem);
+    top               : 50%;
+    transform         : translate3d(0,-50%,0) scale3d(0,0,0);
+    transform-origin  : left center;
   }
 
   &:hover:after { transform: translate3d(0,-50%,0) scale3d(1,1,1); }
