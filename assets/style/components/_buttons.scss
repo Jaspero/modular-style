@@ -30,7 +30,7 @@
  * Primary
  */
 
-[btn][btn*="primary"] {
+[btn*="primary"] {
   background  : $color-primary;
   color       : $white;
   fill        : $white;
@@ -52,4 +52,4 @@
  * Full
  */
 
-[btn][btn*="full"] { width: 100%; }
+[btn*="full"] { width: 100%; }
