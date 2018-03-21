@@ -28,7 +28,7 @@
  - img global width: 100%; height: auto;
  - refactor table
  - refactor forms
- - add accordion component
+ - fix nesting accordion
  - For javascript, add vanillaJS, angular, react, vue
  - add html examples for each scss
 

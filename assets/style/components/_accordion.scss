@@ -1,0 +1,42 @@
+/*==================================================
+
+  ACCORDION
+
+==================================================*/
+
+
+/*
+ * General
+ */
+
+accordion { display: block; }
+
+
+/*
+ * Accordion toggle
+ */
+
+accordion-toggle {
+  display     : block;
+  cursor      : pointer;
+  background  : #eee;
+  color       : #444;
+  transition  : 0.2s;
+
+  &:hover { background: #ccc; }
+
+}
+
+
+/*
+ * Accordion panel
+ */
+
+accordion-panel {
+  display         : block;
+  overflow        : hidden;
+  padding-top     : 0; /* Important */
+  padding-bottom  : 0; /* Important */
+  background      : white;
+  transition      : 0.2s;
+}
