@@ -66,11 +66,11 @@ header-content {
  */
 
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #eee;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  min-height      : 100vh;
+  background      : #eee;
 }
 
 
@@ -79,10 +79,80 @@ main {
  */
 
 footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 150px;
-  background: #666;
-  color: white;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  min-height      : 150px;
+  background      : #666;
+  color           : white;
+}
+
+
+/*
+ * Aside
+ */
+
+aside {
+  position    : fixed;
+  top         : 0;
+  left        : 0;
+  z-index     : -1;
+  width       : 100%;
+  height      : 100%;
+  background  : rgba(0,0,0,0);
+  transition  : .2s;
+
+  &.active {
+    z-index     : 10;
+    background  : rgba(0,0,0,.5);
+  }
+
+}
+
+/*
+ * Aside navigation menu
+ */
+
+aside nav {
+  display         : flex;
+  flex-direction  : column;
+  overflow-y      : auto;
+  position        : absolute;
+  background      : white;
+  padding         : 1rem;
+  transition      : .2s;
+
+  a { padding: 1rem 2rem; }
+
+  &[side="top"] {
+    top         : 0;
+    left        : 0;
+    width       : 100%;
+    text-align  : center;
+    transform   : translate3d(0,-100%,0); /* See below .active */
+  }
+  &[side="right"] {
+    top         : 0;
+    right       : 0;
+    height      : 100%;
+    text-align  : right;
+    transform   : translate3d(100%,0,0); /* See below .active */
+  }
+  &[side="bottom"] {
+    bottom      : 0;
+    left        : 0;
+    width       : 100%;
+    text-align  : center;
+    transform   : translate3d(0,100%,0); /* See below .active */
+  }
+  &[side="left"] {
+    top         : 0;
+    left        : 0;
+    height      : 100%;
+    text-align  : left;
+    transform   : translate3d(-100%,0,0); /* See below .active */
+  }
+
+  &.active { transform: translate3d(0,0,0); }
+
 }

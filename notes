@@ -25,12 +25,11 @@
 
 ==================================================*/
 
- - add aside menu, open with menu click
  - img global width: 100%; height: auto;
  - refactor table
  - refactor forms
  - add accordion component
- - JQ to JS
+ - For javascript, add vanillaJS, angular, react, vue
  - add html examples for each scss
 
 
@@ -199,24 +198,19 @@ img alt moraju
 ==================================================*/
 
 <header>
-
     <header-content>
-
         <a id="logo" href="">
             <img src="assets/imgs/zap.svg" alt="">
             <span>ZappyZap</span>
         </a>
-
         <nav>
             <a hide="xs" href="">Go here</a>
             <a hide="s" href="">Or here</a>
             <a hide="m" href="">Even here</a>
             <a hide="m" href="">But not here</a>
-            <a show="m" id="menu" href="">≡</a>
+            <a show="m" id="menu">≡</a>
         </nav>
-
     </header-content>
-
 </header>
 
 <main>
@@ -226,3 +220,12 @@ img alt moraju
 <footer>
     Footer
 </footer>
+
+<aside>
+    <nav side="right">
+        <a href="">Go here</a>
+        <a href="">Or here</a>
+        <a href="">Even here</a>
+        <a href="">But not here</a>
+    </nav>
+</aside>
