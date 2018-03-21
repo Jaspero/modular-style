@@ -15,7 +15,7 @@
 
 
 /*
- * Bla
+ * BlaBla
  */
 
 
@@ -25,12 +25,13 @@
 
 ==================================================*/
 
+ - add aside menu, open with menu click
  - img global width: 100%; height: auto;
  - refactor table
  - refactor forms
  - add accordion component
- - add layout basic style
  - JQ to JS
+ - add html examples for each scss
 
 
 /*==================================================
@@ -154,12 +155,17 @@ ul li {
 
 /*==================================================
 
-  Form
+  General rules
 
 ==================================================*/
 
 role="submit" (when in form, ENTER will trigger this)
 role="button"
+
+if target="_bland", also needs rel="noopener"
+
+img alt moraju
+
 
 /*==================================================
 
@@ -184,3 +190,39 @@ role="button"
   font-weight: normal;
   src: url('assets/fonts/PlantinInfantMTStd.otf') format('opentype');
 }
+
+
+/*==================================================
+
+  Layout
+
+==================================================*/
+
+<header>
+
+    <header-content>
+
+        <a id="logo" href="">
+            <img src="assets/imgs/zap.svg" alt="">
+            <span>ZappyZap</span>
+        </a>
+
+        <nav>
+            <a hide="xs" href="">Go here</a>
+            <a hide="s" href="">Or here</a>
+            <a hide="m" href="">Even here</a>
+            <a hide="m" href="">But not here</a>
+            <a show="m" id="menu" href="">≡</a>
+        </nav>
+
+    </header-content>
+
+</header>
+
+<main>
+    Main
+</main>
+
+<footer>
+    Footer
+</footer>

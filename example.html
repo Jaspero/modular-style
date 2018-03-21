@@ -17,18 +17,39 @@ sass --watch example.scss:example.css --style compressed
 
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/layout.js" type="text/javascript"></script>
 
 </head>
 
 <body>
 
 <header>
+
+    <header-content>
+
+        <a id="logo" href="">
+            <img src="assets/imgs/zap.svg" alt="">
+            <span>ZappyZap</span>
+        </a>
+
+        <nav>
+            <a hide="xs" href="">Go here</a>
+            <a hide="s" href="">Or here</a>
+            <a hide="m" href="">Even here</a>
+            <a hide="m" href="">But not here</a>
+            <a show="m" id="menu" href="">≡</a>
+        </nav>
+
+    </header-content>
+
 </header>
 
 <main>
+    Main
 </main>
 
 <footer>
+    Footer
 </footer>
 
 </body>

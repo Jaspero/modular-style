@@ -3,3 +3,86 @@
   LAYOUT
 
 ==================================================*/
+
+
+/*
+ * Header
+ */
+
+header {
+  position    : fixed;
+  top         : 0;
+  left        : 0;
+  width       : 100%;
+  background  : white;
+  transition  : .2s;
+
+  &.scrolled { box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); }
+
+}
+
+
+/*
+ * Header content
+ */
+
+header-content {
+  display         : flex;
+  align-items     : center;
+  justify-content : space-between;
+  width           : 100%;
+  max-width       : 120rem;
+  margin          : 0 auto;
+  padding         : 0 1rem;
+
+  #logo {
+    display     : flex;
+    align-items : center;
+    padding     : 1rem;
+  }
+
+  nav a {
+    padding : 1rem;
+    display : inline-block;
+
+    &:hover { color: red; }
+
+    &[hide="xs"]  { @media (max-width: $screen-xs) { display: none; } }
+    &[hide="s"]   { @media (max-width: $screen-s) { display: none; } }
+    &[hide="m"]   { @media (max-width: $screen-m) { display: none; } }
+
+    &[show]       { display: none; }
+    &[show="xs"]  { @media (max-width: $screen-xs) { display: inline-block; } }
+    &[show="s"]   { @media (max-width: $screen-s) { display: inline-block; } }
+    &[show="m"]   { @media (max-width: $screen-m) { display: inline-block; } }
+
+  }
+
+}
+
+
+/*
+ * Main
+ */
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #eee;
+}
+
+
+/*
+ * Footer
+ */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  background: #666;
+  color: white;
+}
