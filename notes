@@ -221,6 +221,13 @@ img alt moraju
     Footer
 </footer>
 
+
+/*==================================================
+
+  Accordion
+
+==================================================*/
+
 <aside>
     <nav side="right">
         <a href="">Go here</a>
@@ -229,3 +236,10 @@ img alt moraju
         <a href="">But not here</a>
     </nav>
 </aside>
+
+<accordion>
+      <accordion-toggle>Toggle</accordion-toggle>
+      <accordion-panel opened>
+          <p>Lorem ipsum dolor sit amet.</p>
+      </accordion-panel>
+  </accordion>
