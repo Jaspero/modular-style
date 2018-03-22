@@ -72,38 +72,10 @@ p { font-size: 1.4rem; }
  */
 
 .link {
-  text-decoration: underline;
-  text-decoration-skip: ink;
+  text-decoration       : underline;
+  text-decoration-skip  : ink;
 
   &:link    { color: dodgerblue; }
   &:visited { color: mediumpurple; }
-
-}
-
-
-/*
- * Vertical list
- */
-
-ul[vertical] {
-  list-style  : none;
-  margin      : 0;
-  padding     : 0;
-
-  li { display: block; }
-
-}
-
-
-/*
- * Horizontal list
- */
-
-ul[horizontal] {
-  list-style  : none;
-  margin      : 0;
-  padding     : 0;
-
-  li { display: inline-block; }
 
 }
