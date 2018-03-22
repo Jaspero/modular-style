@@ -28,7 +28,7 @@
  - img global width: 100%; height: auto;
  - refactor table
  - refactor forms
- - fix nesting accordion
+ - fix nesting accordion, refactor active on root accordion
  - For javascript, add vanillaJS, angular, react, vue
  - add html examples for each scss
 
@@ -238,8 +238,8 @@ img alt moraju
 </aside>
 
 <accordion>
-      <accordion-toggle>Toggle</accordion-toggle>
-      <accordion-panel opened>
-          <p>Lorem ipsum dolor sit amet.</p>
-      </accordion-panel>
-  </accordion>
+  <accordion-toggle>Toggle</accordion-toggle>
+  <accordion-panel opened>
+      <p>Lorem ipsum dolor sit amet.</p>
+  </accordion-panel>
+</accordion>
