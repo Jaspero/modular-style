@@ -1,8 +1,10 @@
 /*==================================================
 
-  CSS
+  Notes
 
 ==================================================*/
+
+sass --watch index.scss:index.css --style compressed
 
 /* Basic */
 /* Positioning */
@@ -18,16 +20,22 @@
  * BlaBla
  */
 
+BlaBla
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="assets/javascript/file.js" type="text/javascript"></script>
+
 
 /*==================================================
 
-  TODOs
+  To do
 
 ==================================================*/
 
  - img global width: 100%; height: auto;
  - refactor table
  - refactor forms
+ - add layout footer
  - fix nesting accordion, refactor active on root accordion
  - For javascript, add vanillaJS, angular, react, vue
  - add html examples for each scss

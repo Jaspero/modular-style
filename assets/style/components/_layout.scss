@@ -13,6 +13,7 @@ header {
   position    : fixed;
   top         : 0;
   left        : 0;
+  z-index     : 2;
   width       : 100%;
   background  : white;
   transition  : .2s;
@@ -45,7 +46,7 @@ header-content {
     padding : 1rem;
     display : inline-block;
 
-    &:hover { color: red; }
+    &:hover { color: dodgerblue; }
 
     &[hide="xs"]  { @media (max-width: $screen-xs) { display: none; } }
     &[hide="s"]   { @media (max-width: $screen-s) { display: none; } }
@@ -69,6 +70,8 @@ main {
   display         : flex;
   align-items     : center;
   justify-content : center;
+  position        : relative;
+  z-index         : 1;
   min-height      : 100vh;
   background      : #eee;
 }
@@ -83,6 +86,8 @@ footer {
   align-items     : center;
   justify-content : center;
   min-height      : 150px;
+  position        : relative;
+  z-index         : 1;
   background      : #666;
   color           : white;
 }
@@ -122,9 +127,15 @@ aside nav {
   padding         : 1rem;
   transition      : .2s;
 
-  a { padding: 1rem 2rem; }
+  a {
+    padding: 1rem 2rem;
+
+    &:hover { color: dodgerblue; }
+
+  }
 
   &[side="top"] {
+    align-items : center;
     top         : 0;
     left        : 0;
     width       : 100%;
@@ -132,13 +143,15 @@ aside nav {
     transform   : translate3d(0,-100%,0); /* See below .active */
   }
   &[side="right"] {
-    top         : 0;
-    right       : 0;
-    height      : 100%;
-    text-align  : right;
-    transform   : translate3d(100%,0,0); /* See below .active */
+    top           : 0;
+    right         : 0;
+    height        : 100%;
+    padding-left  : 10rem;
+    text-align    : right;
+    transform     : translate3d(100%,0,0); /* See below .active */
   }
   &[side="bottom"] {
+    align-items : center;
     bottom      : 0;
     left        : 0;
     width       : 100%;
@@ -146,11 +159,12 @@ aside nav {
     transform   : translate3d(0,100%,0); /* See below .active */
   }
   &[side="left"] {
-    top         : 0;
-    left        : 0;
-    height      : 100%;
-    text-align  : left;
-    transform   : translate3d(-100%,0,0); /* See below .active */
+    top           : 0;
+    left          : 0;
+    height        : 100%;
+    padding-right : 10rem;
+    text-align    : left;
+    transform     : translate3d(-100%,0,0); /* See below .active */
   }
 
   &.active { transform: translate3d(0,0,0); }

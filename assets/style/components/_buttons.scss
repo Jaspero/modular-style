@@ -18,7 +18,7 @@
   font-size       : 1.4rem;
   font-weight     : 500;
   font-family     : 'Montserrat', sans-serif;
-  text-transform  : uppercase;
+  letter-spacing  : .1rem;
   transition      : .2s;
 
   span, svg, img { vertical-align: middle; }
@@ -53,3 +53,91 @@
  */
 
 [btn*="full"] { width: 100%; }
+
+
+/*
+ * Hiding button content during states
+ */
+
+[btn].loading,
+[btn].success,
+[btn].error {
+  color           : transparent;
+  pointer-events  : none;
+  position        : relative;
+
+  svg, img { opacity: 0; }
+
+}
+
+
+/*
+ * Loading state
+ */
+
+[btn].loading {
+  background: rgba(40,120,200,.6);
+
+  &:after {
+    content       : '';
+    display       : block;
+    position      : absolute;
+    top           : 50%;
+    left          : 50%;
+    height        : 1.8rem;
+    width         : 1.8rem;
+    border-radius : 50%;
+    border-top    : .2rem solid white;
+    border-right  : .2rem solid white;
+    border-bottom : .2rem solid transparent;
+    border-left   : .2rem solid transparent;
+    animation     : progress-animation .75s linear infinite;
+
+    @keyframes progress-animation {
+      0%    { transform: translate(-50%,-50%) rotate(0deg); }
+      100%  { transform: translate(-50%,-50%) rotate(360deg); }
+    }
+
+  }
+
+}
+
+
+/*
+ * Success state
+ */
+
+[btn].success {
+  background: rgba(80,200,80,.6);
+
+  &:after {
+    content   : 'Success';
+    display   : block;
+    position  : absolute;
+    top       : 50%;
+    left      : 50%;
+    color     : white;
+    transform : translate(-50%,-50%);
+  }
+
+}
+
+
+/*
+ * Error state
+ */
+
+[btn].error {
+  background: rgba(200,40,40,.6);
+
+  &:after {
+    content   : 'Error';
+    display   : block;
+    position  : absolute;
+    top       : 50%;
+    left      : 50%;
+    color     : white;
+    transform : translate(-50%,-50%);
+  }
+
+}
