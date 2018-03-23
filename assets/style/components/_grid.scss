@@ -15,11 +15,14 @@ grid {
   justify-content : center;
   width           : 100%;
   margin          : 0 auto;
+  max-width       : 1200px; /* Default */
 
   &[size="small"]   { max-width: 900px; }
   &[size="medium"]  { max-width: 1200px; }
   &[size="large"]   { max-width: 1500px; }
+  &[size="full"]   { max-width: 100%; }
 
+  column { padding: 10px; } /* Default */
   &[gutter="small"] column  { padding: 5px; }
   &[gutter="medium"] column { padding: 10px; }
   &[gutter="large"] column  { padding: 20px; }

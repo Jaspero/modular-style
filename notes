@@ -25,7 +25,6 @@
 
 ==================================================*/
 
- - set default grid and flexbox values
  - img global width: 100%; height: auto;
  - refactor table
  - refactor forms
