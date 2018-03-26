@@ -1,23 +1,110 @@
 /*==================================================
 
-  Forms
+  Form
 
 ==================================================*/
 
-label {
-  display: flex;
-  border: 1px solid;
-  font-size: 2rem;
-  margin: 2rem 0;
-  padding: 1rem;
-  flex-direction: column;
 
-  &[direction="vertical"] {
-    flex-direction: column;
+/*
+ * General
+ */
+
+label {
+  display         : flex;
+  flex-direction  : column; /* Default */
+
+  &[inline] {
+    flex-flow       : row wrap;
+    align-items     : center;
+    justify-content : space-between;
+  
+    input, textarea, select { flex-basis: 200px; }
+
   }
-  &[direction="horizontal"] {
-    flex-direction: row;
-    span { flex-basis: 200px; }
-    input { flex: 1 1 auto; }
-  }
+
 }
+
+
+/*
+ * Label text
+ */
+
+ label span {
+  padding     : .5rem 0;
+  font-family : 'Open Sans', sans-serif;
+  font-size   : 1.4rem;
+}
+
+
+/*
+ * Input, textarea, select
+ */
+
+input, textarea, select {
+  padding     : 1rem .5rem;
+  border      : 1px solid #666;
+  font-family : 'Open Sans', sans-serif;
+  font-size   : 1.4rem;
+}
+
+
+/*
+ * Toggle
+ */
+
+.toggle {
+  cursor        : pointer;
+  position      : relative;
+  --width       : 4rem;
+  --height      : 2.6rem;
+  width         : var(--width);
+  height        : var(--height);
+  border-radius : 400rem;
+  box-shadow    : inset 0 1px 3px 0 rgba(0,0,0,.4);
+  background    : #ccc; /* Unchecked background */
+  transition    : .2s;
+
+  &:after {
+    content       : '';
+    position      : absolute;
+    top           : .3rem;
+    left          : .3rem;
+    width         : calc(var(--height) - 0.6rem);
+    height        : calc(var(--height) - 0.6rem);
+    border-radius : 50%;
+    box-shadow    : 0 2px 4px 0 rgba(0,0,0,.24);
+    background    : white;
+    transition    : .2s;
+  }
+
+}
+
+
+/*
+ * Toggle checked
+ */
+
+input[type=checkbox]:checked ~ .toggle {
+  background: rgba(80,200,80,.6);
+  &:after { left: calc(var(--width) - var(--height) + .3rem); }
+}
+
+
+/*
+ * Normalize
+ */
+
+ textarea {
+  -webkit-appearance  : textfield;
+  resize              : vertical;
+  overflow            : auto;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  position  : absolute;
+  z-index   : -1;
+  opacity   : 0;
+}
+
+input[type="number"] { width: 100%; }

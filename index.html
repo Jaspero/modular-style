@@ -18,11 +18,31 @@
 <body>
 
 <form action="">
-    <label for="id_text" direction="vertical">
+
+    <label for="id_toggle">
+        <span>Toggle</span>
+        <input type="checkbox" id="id_toggle" name="">
+        <div class="toggle"></div>
+    </label>
+
+    <label for="id_select">
+        <span>Select</span>
+        <select id="id_select" name="">
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+        </select>
+    </label>
+    <label for="id_textarea">
+        <span>Textarea</span>
+        <textarea name="" id="id_textarea" rows="4"></textarea>
+    </label>
+    <label for="id_text">
         <span>Text</span>
         <input type="text" id="id_text" name="">
     </label>
-    <label for="id_email" direction="horizontal">
+    <label for="id_email">
         <span>Email</span>
         <input type="email" id="id_email" name="">
     </label>
@@ -46,6 +66,7 @@
         <span>Number</span>
         <input type="number" id="id_number" name="">
     </label>
+
 </form>
 
 </body>
