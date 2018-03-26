@@ -57,9 +57,53 @@
  * Form
  */
 
-?
-?
-?
+<label for="id_toggle">
+    <span>Toggle</span>
+    <input type="checkbox" id="id_toggle" name="">
+    <div class="toggle"></div>
+</label>
+
+<label for="id_select">
+    <span>Select</span>
+    <select id="id_select" name="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+    </select>
+</label>
+<label for="id_textarea">
+    <span>Textarea</span>
+    <textarea name="" id="id_textarea" rows="4"></textarea>
+</label>
+<label for="id_text">
+    <span>Text</span>
+    <input type="text" id="id_text" name="">
+</label>
+<label for="id_email">
+    <span>Email</span>
+    <input type="email" id="id_email" name="">
+</label>
+<label for="id_tel">
+    <span>Tel</span>
+    <input type="tel" id="id_tel" name="">
+</label>
+<label for="id_url">
+    <span>URL</span>
+    <input type="url" id="id_url" name="">
+</label>
+<label for="id_password">
+    <span>Password</span>
+    <input type="password" id="id_password" name="">
+</label>
+<label for="id_search">
+    <span>Search</span>
+    <input type="search" id="id_search" name="">
+</label>
+<label for="id_number">
+    <span>Number</span>
+    <input type="number" id="id_number" name="">
+</label>
 
 
 /*
