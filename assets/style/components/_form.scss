@@ -6,61 +6,57 @@
 
 
 /*
- * General
+ * Label layouts
  */
 
 label {
   display: flex;
 
-  // inline for radio & checkboxes
-  &[foo="one"] {
+  &[layout="inline"] {
     align-items: center;
   }
 
-  // span above input
-  &[foo="two"] {
+  &[layout="block"] {
     flex-direction: column;
   }
 
-  // elements same row, but spaced between
-  &[foo="three"] {
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-between;
+  &[layout="inline-spaced"] {
+    flex-flow       : row wrap;
+    align-items     : center;
+    justify-content : space-between;
     input, textarea, select { flex-basis: 200px; }
   }
 
-  // column centered inside label
-  &[foo="four"] {
-    flex-direction: column;
-    align-items: center;
+  &[layout="centered"] {
+    flex-direction  : column;
+    align-items     : center;
   }
 
 }
 
 
 /*
- * Fieldgroup
+ * Fieldgroup layouts
  */
 
 fieldgroup {
-  label {border: 1px solid;}
-  border: 1px solid red;
   display: flex;
 
-  &[qwert="one"] {
+  &[layout="inline"] {
     flex-flow: row wrap;
   }
 
-  &[qwert="two"] {
+  &[layout="block"] {
     flex-flow: column wrap;
   }
 
-  &[qwert="three"] {
-    // TODO
+  &[layout="split-evenly"] {
+    @media (max-width: $screen-xs) { flex-direction: column; }
+    label { flex: 1 1 auto; }
   }
 
 }
+
 
 /*
  * General
@@ -83,6 +79,7 @@ input, textarea, select {
   &:invalid {}
 
 }
+
 
 /*
  * Toggle
@@ -117,7 +114,9 @@ input, textarea, select {
 
 input[type=checkbox]:checked ~ .toggle {
   background: rgba(80,200,80,.6);
+
   &:after { left: calc(var(--width) - var(--height) + .3rem); }
+
 }
 
 
@@ -135,7 +134,6 @@ input[type=checkbox]:checked ~ .toggle {
   border        : .2rem solid #666;
   border-radius : .2rem;
 
-  /* Click box */
   &:before {
     content       : '';
     position      : absolute;
@@ -150,7 +148,6 @@ input[type=checkbox]:checked ~ .toggle {
     transition    : .2s;
   }
 
-  /* Control box */
   &:after {
     content       : '';
     position      : absolute;
@@ -163,18 +160,13 @@ input[type=checkbox]:checked ~ .toggle {
     background    : #333;
     transform     : translate3d(-50%,-50%,0) scale3d(0,0,0);
     transition    : .2s;
-
   }
 
 }
 
-
-/*
- * Radio & checkbox states
- */
-
 input[type=checkbox],
 input[type=radio] {
+  
   &:focus ~ .checkbox:before,
   &:hover ~ .checkbox:before,
   &:focus ~ .radio:before,
@@ -196,7 +188,7 @@ input[type=radio] {
 
 
 /*
- * Normalize
+ * Clearing default values
  */
 
  textarea {
@@ -215,15 +207,3 @@ input[type=radio] {
 input[type="number"] { width: 100%; }
 
 .radio, .radio:after { border-radius: 50%; }
-
-
-/*==================================================
-
-  Field & fieldgroup
-
-==================================================*/
-
-field {
-  display: block;
-  border: 1px solid red;
-}

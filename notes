@@ -32,8 +32,7 @@ BlaBla
 
 ==================================================*/
 
- - refactor forms
- - add default form foos
+ - add default form layouts
  - img global width: 100%; height: auto;
  - refactor table
  - add layout footer

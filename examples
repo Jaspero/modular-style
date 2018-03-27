@@ -42,7 +42,7 @@
 
 <dropdown>
     <dropdown-toggle>Dropdown toggle</dropdown-toggle>
-    <dropdown-menu>
+    <dropdown-menu anchor="top-left|top-right|bottom-right|bottom-left">
         <dropdown-item>Dropdown item 1</dropdown-item>
         <hr>
         <dropdown-item>Dropdown item 2</dropdown-item>
@@ -55,9 +55,48 @@
  * Form
  */
 
-?
-?
-?
+<label for="" layout="inline|block|inline-spaced|centered">
+    <span>Lorem</span>
+    <input type="" id="" name="">
+</label>
+
+<label for="" layout="inline|block|inline-spaced|centered">
+    <span>Lorem</span>
+    <textarea id="" name="" rows="4"></textarea>
+</label>
+
+<label for="" layout="inline|block|inline-spaced|centered">
+    <span>Lorem</span>
+    <select id="" name="">
+        <option value="">Lorem</option>
+        <option value="">Ipsum</option>
+        <option value="">Dolor</option>
+    </select>
+</label>
+
+<label for="toggle" layout="inline|block|inline-spaced|centered">
+    <span>Toggle</span>
+    <input type="checkbox" id="toggle" name="">
+    <div class="toggle"></div>
+</label>
+
+<label for="checkbox" layout="inline|block|inline-spaced|centered">
+    <input type="checkbox" id="checkbox" name="">
+    <div class="checkbox"></div>
+    <span>Checkbox</span>
+</label>
+
+<label for="radio" layout="inline|block|inline-spaced|centered">
+    <input type="radio" id="radio" name="">
+    <div class="radio"></div>
+    <span>Radio</span>
+</label>
+
+<fieldgroup layout="inline|block|split-evenly">
+    <label>…</label>
+    <label>…</label>
+    …
+</fieldgroup>
 
 
 /*
@@ -65,10 +104,10 @@
  */
 
 <grid size="small|medium|large|full" gutter="small|medium|large">
-    <column class="span-3 span-s-6 span-xs-12">…</column>
-    <column class="span-3 span-s-6 span-xs-12">…</column>
-    <column class="span-3 span-s-6 span-xs-12">…</column>
-    <column class="span-3 span-s-6 span-xs-12">…</column>
+    <column class="span-3">…</column>
+    <column class="span-3">…</column>
+    <column class="span-3">…</column>
+    <column class="span-3">…</column>
 </grid>
 
 
