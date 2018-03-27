@@ -10,38 +10,79 @@
  */
 
 label {
-  display         : flex;
-  flex-direction  : column;
+  display: flex;
 
-  span {
-    padding     : .5rem 0;
-    font-family : 'Open Sans', sans-serif;
-    font-size   : 1.4rem;
+  // inline for radio & checkboxes
+  &[foo="one"] {
+    align-items: center;
   }
 
-  input, textarea, select {
-    padding     : 1rem .5rem;
-    border      : 1px solid #666;
-    font-family : 'Open Sans', sans-serif;
-    font-size   : 1.4rem;
-  
-    &:focus, &:hover {}
-    &:valid {}
-    &:invalid {}
-    
+  // span above input
+  &[foo="two"] {
+    flex-direction: column;
   }
 
-  &[inline] {
-    flex-flow       : row wrap;
-    align-items     : center;
-    justify-content : space-between;
-  
+  // elements same row, but spaced between
+  &[foo="three"] {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
     input, textarea, select { flex-basis: 200px; }
+  }
 
+  // column centered inside label
+  &[foo="four"] {
+    flex-direction: column;
+    align-items: center;
   }
 
 }
 
+
+/*
+ * Fieldgroup
+ */
+
+fieldgroup {
+  label {border: 1px solid;}
+  border: 1px solid red;
+  display: flex;
+
+  &[qwert="one"] {
+    flex-flow: row wrap;
+  }
+
+  &[qwert="two"] {
+    flex-flow: column wrap;
+  }
+
+  &[qwert="three"] {
+    // TODO
+  }
+
+}
+
+/*
+ * General
+ */
+
+span {
+  padding     : .5rem 0;
+  font-family : 'Open Sans', sans-serif;
+  font-size   : 1.4rem;
+}
+
+input, textarea, select {
+  padding     : 1rem .5rem;
+  border      : 1px solid #666;
+  font-family : 'Open Sans', sans-serif;
+  font-size   : 1.4rem;
+
+  &:focus, &:hover {}
+  &:valid {}
+  &:invalid {}
+
+}
 
 /*
  * Toggle
@@ -90,7 +131,7 @@ input[type=checkbox]:checked ~ .toggle {
   position      : relative;
   width         : 1.6rem;
   height        : 1.6rem;
-  margin-right  : .5rem;
+  margin        : .5rem;
   border        : .2rem solid #666;
   border-radius : .2rem;
 
@@ -122,15 +163,8 @@ input[type=checkbox]:checked ~ .toggle {
     background    : #333;
     transform     : translate3d(-50%,-50%,0) scale3d(0,0,0);
     transition    : .2s;
-    
+
   }
-
-}
-
-.radio {
-  border-radius: 50%;
-
-  &:after { border-radius: 50%; }
 
 }
 
@@ -180,19 +214,16 @@ input[type=radio] {
 
 input[type="number"] { width: 100%; }
 
+.radio, .radio:after { border-radius: 50%; }
 
-fieldgroup {
-  display   : flex;
-  flex-wrap : wrap;
-  border    : 0;
-  padding   : 0;
-  margin    : 0;
 
-  &:before { 
-    content     : attr(caption);
-    flex-basis  : 100%;
-  }
+/*==================================================
 
+  Field & fieldgroup
+
+==================================================*/
+
+field {
+  display: block;
+  border: 1px solid red;
 }
-
-label { border: 1px solid;}
