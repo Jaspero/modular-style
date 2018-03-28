@@ -23,7 +23,6 @@ modal {
   &[size="small"] modal-body  { max-width: 40rem; }
   &[size="medium"] modal-body { max-width: 80rem; }
   &[size="large"] modal-body  { max-width: 120rem; }
-  &[size="full"] modal-body   { max-width: 100%; }
 
   &[overlay="dark"] modal-overlay   { background: rgba(0,0,0,.5); }
   &[overlay="light"] modal-overlay  { background: rgba(255,255,255,.8); }
@@ -68,14 +67,11 @@ modal modal-content {
   margin        : 2rem;
   background    : white;
 
-
-
   modal-body {
     display     : block;
     overflow-y  : scroll;
     padding     : 2rem;
     max-width   : 120rem; /* Default size */
-    max-height  : calc(100vh - 20rem);
   }
 
   modal-header {
