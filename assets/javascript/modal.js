@@ -1,12 +1,26 @@
-$(document).ready(function(){
+/*==================================================
 
-    $("[opens]").click(function() {
-        thisOpens = $(this).attr("opens");
-        $('#' + thisOpens).addClass('active');
+  Modal
+
+==================================================*/
+
+window.onload = () => {
+
+    const modals = document.querySelectorAll('modal');
+
+    document.querySelectorAll('[opens]').forEach(el => {
+        const modalEl = document.getElementById(el.getAttribute('opens'));
+        el.addEventListener('click', () => {
+            modalEl.classList.add('active');
+        })
     });
 
-    $("modal-overlay, [closeModal]").click(function(){
-        $("modal").removeClass("active");
+    document.querySelectorAll('modal-overlay, [closeModal]').forEach(el => {
+        el.addEventListener('click', () => {
+            modals.forEach(el => {
+                el.classList.remove('active');
+            })
+        })
     });
 
-});
+};

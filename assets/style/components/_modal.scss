@@ -10,8 +10,7 @@
  */
 
 modal {
-  visibility      : hidden; /* See Modal active */
-  display         : flex;
+  display         : none; /* See Modal active */
   align-items     : center;
   justify-content : center;
   position        : fixed;
@@ -20,6 +19,15 @@ modal {
   z-index         : -1; /* See Modal active */
   width           : 100%;
   height          : 100%;
+
+  &[size="small"] modal-body  { max-width: 40rem; }
+  &[size="medium"] modal-body { max-width: 80rem; }
+  &[size="large"] modal-body  { max-width: 120rem; }
+  &[size="full"] modal-body   { max-width: 100%; }
+
+  &[overlay="dark"] modal-overlay   { background: rgba(0,0,0,.5); }
+  &[overlay="light"] modal-overlay  { background: rgba(255,255,255,.8); }
+
 }
 
 
@@ -28,8 +36,8 @@ modal {
  */
 
 modal.active {
-  visibility  : visible;
-  z-index     : 10;
+  display : flex;
+  z-index : 10;
 }
 
 
@@ -45,10 +53,6 @@ modal modal-overlay {
   width       : 100%;
   height      : 100%;
   background  : rgba(0,0,0,.5); /* Default background */
-
-  &[dark]   { background: rgba(0,0,0,.5); }
-  &[light]  { background: rgba(255,255,255,.8); }
-  
 }
 
 
@@ -64,9 +68,7 @@ modal modal-content {
   margin        : 2rem;
   background    : white;
 
-  &[size="small"] modal-body  { max-width: 40rem;}
-  &[size="medium"] modal-body { max-width: 80rem;}
-  &[size="large"] modal-body  { max-width: 120rem;}
+
 
   modal-body {
     display     : block;
