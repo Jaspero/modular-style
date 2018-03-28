@@ -10,9 +10,11 @@
  */
 
 label {
-  display: flex;
+  display         : flex;
+  flex-direction  : column; /* Default as "block" */
 
   &[layout="inline"] {
+    flex-direction: row;
     align-items: center;
   }
 
@@ -21,7 +23,7 @@ label {
   }
 
   &[layout="inline-spaced"] {
-    flex-flow       : row wrap;
+    flex-flow       : row nowrap;
     align-items     : center;
     justify-content : space-between;
     input, textarea, select { flex-basis: 200px; }
@@ -40,7 +42,8 @@ label {
  */
 
 fieldgroup {
-  display: flex;
+  display   : flex;
+  flex-flow : column wrap; /* Default as "block" */
 
   &[layout="inline"] {
     flex-flow: row wrap;
@@ -51,7 +54,8 @@ fieldgroup {
   }
 
   &[layout="split-evenly"] {
-    @media (max-width: $screen-xs) { flex-direction: column; }
+    flex-flow: row nowrap;
+    @media (max-width: $screen-s) { flex-flow: column nowrap; }
     label { flex: 1 1 auto; }
   }
 
