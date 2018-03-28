@@ -32,6 +32,8 @@ BlaBla
 
 ==================================================*/
 
+ - add full modal
+ - automate modal height
  - img global width: 100%; height: auto;
  - refactor table
  - add layout footer
