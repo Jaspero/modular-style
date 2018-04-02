@@ -47,8 +47,6 @@ function () {}
  - refactor table
  - add layout footer
  - fix nesting accordion, refactor active on root accordion
- - For javascript, add vanillaJS, angular, react, vue
- - add html examples for each scss
 
 
 /*==================================================

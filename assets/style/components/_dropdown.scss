@@ -72,14 +72,6 @@ dropdown.active dropdown-menu {
  * Anchoring
  */
 
-/* Default */
-dropdown-menu {
-  top               : 0;
-  left              : 0;
-  transform-origin  : 0 0;
-  text-align        : left;
-}
-
 dropdown-menu[anchor="top-left"] {
   top               : 0;
   left              : 0;
