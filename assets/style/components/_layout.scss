@@ -106,13 +106,8 @@ aside {
   height      : 100%;
   background  : rgba(0,0,0,0);
   transition  : .2s;
-
-  &.active {
-    z-index     : 10;
-    background  : rgba(0,0,0,.5);
-  }
-
 }
+
 
 /*
  * Aside navigation menu
@@ -167,6 +162,17 @@ aside nav {
     transform     : translate3d(-100%,0,0); /* See below .active */
   }
 
-  &.active { transform: translate3d(0,0,0); }
+}
+
+
+/*
+ * Aside active state
+ */
+
+aside.active {
+  z-index     : 10;
+  background  : rgba(0,0,0,.5);
+
+  nav { transform: translate3d(0,0,0); }
 
 }
