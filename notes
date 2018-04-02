@@ -44,7 +44,6 @@ function () {}
 
  - img global width: 100%; height: auto;
  - refactor table
- - add layout footer
  - fix nesting accordion, refactor active on root accordion
 
 

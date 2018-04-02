@@ -5,4 +5,17 @@
 ==================================================*/
 
 @import "assets/style/essentials";
-//@import "assets/style/components/lorem";
+@import "assets/style/components/accordion";
+
+body {
+  margin: 10rem auto;
+  width: 100%;
+  max-width: 900px;
+}
+
+accordion {
+  border: 1px solid red;
+  accordion-panel {
+    background: #333333;
+  }
+}

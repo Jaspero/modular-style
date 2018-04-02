@@ -25,6 +25,11 @@ accordion-toggle {
 
   &:hover { background: #ccc; }
 
+  img {
+    transition: .2s;
+    transform: rotate(0);
+  }
+
 }
 
 
@@ -39,4 +44,13 @@ accordion-panel {
   padding-bottom  : 0; /* Important */
   background      : white;
   transition      : 0.2s;
+}
+
+
+/*
+ * Accordion opened
+ */
+
+accordion[opened] > accordion-toggle > img {
+  transform: rotate(180deg);
 }
