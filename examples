@@ -23,9 +23,15 @@
  * Accordion
  */
 
-?
-?
-?
+<accordion opened>
+    <accordion-toggle>
+        <span>Toggle</span>
+        <img src="assets/imgs/caret.svg" alt="">
+    </accordion-toggle>
+    <accordion-panel>
+        <p>Panel 1</p>
+    </accordion-panel>
+</accordion>
 
 
 /*
@@ -176,4 +182,4 @@ BlaBla
  * Tooltips
  */
 
-BlaBla
+<element tooltip-right="Lorem ipsum">…</element>

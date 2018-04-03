@@ -42,9 +42,8 @@ function () {}
 
 ==================================================*/
 
- - img global width: 100%; height: auto;
+ - img, picture, etc;
  - refactor table
- - fix nesting accordion, refactor active on root accordion
 
 
 /*==================================================

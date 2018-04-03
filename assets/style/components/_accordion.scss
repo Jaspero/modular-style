@@ -17,11 +17,14 @@ accordion { display: block; }
  */
 
 accordion-toggle {
-  display     : block;
-  cursor      : pointer;
-  background  : #eee;
-  color       : #444;
-  transition  : 0.2s;
+  display         : flex;
+  justify-content : space-between;
+  align-items     : center;
+  cursor          : pointer;
+  padding         : 1rem;
+  background      : #eee;
+  color           : #444;
+  transition      : 0.2s;
 
   &:hover { background: #ccc; }
 
@@ -42,7 +45,9 @@ accordion-panel {
   overflow        : hidden;
   padding-top     : 0; /* Important */
   padding-bottom  : 0; /* Important */
-  background      : white;
+  padding-left    : 1rem;
+  padding-right   : 1rem;
+  background      : #fafafa;
   transition      : 0.2s;
 }
 

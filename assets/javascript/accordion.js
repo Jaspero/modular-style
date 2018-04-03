@@ -5,10 +5,7 @@
 ==================================================*/
 
 window.onload = () => {
-
   const accordions = document.querySelectorAll('accordion');
-
-  const button = document.querySelector('#lul');
 
   accordions.forEach( el => {
     let toggle = el.querySelector('accordion-toggle');
@@ -22,19 +19,17 @@ window.onload = () => {
 
     toggle.addEventListener('click', () => {
       if (el.hasAttribute("opened")) {
-
         setAccordionsHeight(panel, true);
         panel.style.maxHeight = '0';
-
         el.removeAttribute('opened');
       } else {
         panel.style.maxHeight = (panel.scrollHeight + 'px');
-
         setAccordionsHeight(panel);
         el.setAttribute('opened', '');
       }
 
     });
+
   });
 
 };
@@ -48,4 +43,5 @@ function setAccordionsHeight(panel, remove = false) {
     }
     el = el.parentElement;
   }
+
 }
