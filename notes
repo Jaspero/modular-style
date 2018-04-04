@@ -24,6 +24,8 @@ BlaBla
 
 <script src="assets/javascript/file.js" type="text/javascript"></script>
 
+background: [background-image] [background-position] / [background-size] [background-repeat] [background-attachment] [background-origin] [background-clip] [background-color];
+
 
 /*==================================================
 

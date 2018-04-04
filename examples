@@ -20,41 +20,28 @@
 
 
 /*
- * Accordion
- */
-
-<accordion opened>
-    <accordion-toggle>
-        <span>Toggle</span>
-        <img src="assets/imgs/caret.svg" alt="">
-    </accordion-toggle>
-    <accordion-panel>
-        <p>Panel 1</p>
-    </accordion-panel>
-</accordion>
-
-
-/*
  * Buttons
  */
 
-<button btn="primary">I'm a button</button>
-<button btn class="loading|success|error">I'm a button</button>
+<button class="btn">I'm a button</button>
+<button class="btn-ghost">Ghost</button>
+<button class="btn-primary">Primary</button>
+<button class="btn-contain">Contain</button>
+<button class="btn" disabled>Disabled</button>
+<button class="btn loading">I'm a button</button>
+<button class="btn error">I'm a button</button>
 
 
 /*
- * Dropdown
+ * Grid
  */
 
-<dropdown>
-    <dropdown-toggle>Dropdown toggle</dropdown-toggle>
-    <dropdown-menu anchor="top-left|top-right|bottom-right|bottom-left">
-        <dropdown-item>Dropdown item 1</dropdown-item>
-        <hr>
-        <dropdown-item>Dropdown item 2</dropdown-item>
-        <dropdown-item>Dropdown item 3</dropdown-item>
-    </dropdown-menu>
-</dropdown>
+<div class="grid--size-s--gutter-s">
+    <div class="col-3--s-6--xs-12">…</div>
+    <div class="col-3--s-6--xs-12">…</div>
+    <div class="col-3--s-6--xs-12">…</div>
+    <div class="col-3--s-6--xs-12">…</div>
+</div>
 
 
 /*
@@ -105,16 +92,7 @@
 </fieldgroup>
 
 
-/*
- * Grid
- */
 
-<grid size="small|medium|large|full" gutter="small|medium|large">
-    <column class="span-3">…</column>
-    <column class="span-3">…</column>
-    <column class="span-3">…</column>
-    <column class="span-3">…</column>
-</grid>
 
 
 /*
@@ -150,36 +128,3 @@
         <a>Zelda</a>
     </nav>
 </aside>
-
-
-/*
- * Modal
- */
-
-<button btn opens="some-modal">Modal</button>
-<modal id="some-modal" overlay="dark" size="small|medium|large">
-    <modal-overlay></modal-overlay>
-    <modal-content>
-        <modal-header>Header</modal-header>
-        <modal-body>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </modal-body>
-        <modal-footer>
-            <button btn closeModal>Close</button>
-        </modal-footer>
-    </modal-content>
-</modal>
-
-
-/*
- * Tables
- */
-
-BlaBla
-
-
-/*
- * Tooltips
- */
-
-<element tooltip-right="Lorem ipsum">…</element>

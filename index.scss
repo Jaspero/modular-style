@@ -5,3 +5,16 @@
 ==================================================*/
 
 @import "assets/style/essentials";
+@import "assets/style/components/accordion";
+@import "assets/style/components/buttons";
+@import "assets/style/components/dropdown";
+@import "assets/style/components/form";
+@import "assets/style/components/grid";
+@import "assets/style/components/layout";
+@import "assets/style/components/modal";
+@import "assets/style/components/tables";
+@import "assets/style/components/tooltips";
+
+.box {
+  background: pink;
+}

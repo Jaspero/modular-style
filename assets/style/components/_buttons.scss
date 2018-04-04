@@ -9,7 +9,7 @@
  * Shared style
  */
 
-[btn] {
+[class*="btn"] {
   display         : inline-block;
   cursor          : pointer;
   padding         : 1rem 2rem;
@@ -17,7 +17,7 @@
   outline         : none;
   border-radius   : .2rem;
   font-size       : 1.4rem;
-  font-weight     : 500;
+  font-weight     : 400;
   font-family     : 'Montserrat', sans-serif;
   letter-spacing  : .1rem;
   user-select     : none;
@@ -32,13 +32,19 @@
  * Primary
  */
 
-[btn*="primary"] {
-  background  : $color-primary;
-  color       : $white;
-  fill        : $white;
+[class*="btn"][class*="--primary"] {
+  background  : dodgerblue;
+  color       : white;
+  fill        : white;
 
-  &:hover, &:focus {}
-  &:active {}
+  &:hover, &:focus {
+    background: darken(dodgerblue,15%);
+  }
+
+  &:active {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+  }
+
   &:disabled {
     cursor      : not-allowed;
     box-shadow  : none;
@@ -51,34 +57,61 @@
 
 
 /*
- * Full
+ * Ghost
  */
 
-[btn*="full"] { width: 100%; }
+[class*="btn"][class*="--ghost"] {
+  background  : transparent;
+  color       : black;
+  fill        : black;
 
+  &:hover, &:focus {
+    background: #eee;
+  }
 
-/*
- * Hiding button content during states
- */
+  &:active {
+    background: #ddd;
+  }
 
-[btn].loading,
-[btn].success,
-[btn].error {
-  color           : transparent;
-  pointer-events  : none;
-  position        : relative;
-
-  svg, img { opacity: 0; }
+  &:disabled {
+    cursor      : not-allowed;
+    box-shadow  : none;
+    color       : #aaa;
+    fill        : #aaa;
+    background  : #eee;
+  }
 
 }
 
 
 /*
- * Loading state
+ * Contain
  */
 
-[btn].loading {
-  background: rgba(40,120,200,.6);
+[class*="btn"][class*="--contain"] {
+  padding       : .8rem;
+  background    : transparent;
+  color         : black;
+  fill          : black;
+}
+
+
+/*
+ * States
+ */
+
+[class*="btn"].loading,
+[class*="btn"].error {
+  pointer-events  : none;
+  position        : relative;
+  color           : transparent;
+
+  span, svg, img { opacity: 0; }
+
+}
+
+[class*="btn"].loading {
+  background: #eee;
 
   &:after {
     content       : '';
@@ -89,8 +122,8 @@
     height        : 1.8rem;
     width         : 1.8rem;
     border-radius : 50%;
-    border-top    : .2rem solid white;
-    border-right  : .2rem solid white;
+    border-top    : .2rem solid black;
+    border-right  : .2rem solid black;
     border-bottom : .2rem solid transparent;
     border-left   : .2rem solid transparent;
     animation     : progress-animation .75s linear infinite;
@@ -104,32 +137,7 @@
 
 }
 
-
-/*
- * Success state
- */
-
-[btn].success {
-  background: rgba(80,200,80,.6);
-
-  &:after {
-    content   : 'Success';
-    display   : block;
-    position  : absolute;
-    top       : 50%;
-    left      : 50%;
-    color     : white;
-    transform : translate(-50%,-50%);
-  }
-
-}
-
-
-/*
- * Error state
- */
-
-[btn].error {
+[class*="btn"].error {
   background: rgba(200,40,40,.6);
 
   &:after {

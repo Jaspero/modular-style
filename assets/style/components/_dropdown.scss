@@ -51,7 +51,7 @@ dropdown-menu {
   border-radius : .2rem;
   box-shadow    : 0 .2rem .4rem 0 rgba(0,0,0,.2);
   padding       : 1rem 0;
-  background    : $white;
+  background    : white;
   transform     : scale3d(.8,.8,1); /* See Dropdown menu - active */
   transition    : .2s;
 }
