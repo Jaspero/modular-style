@@ -6,30 +6,30 @@
 
 
 /*
- * Label layouts
+ * Label layout
  */
 
 label {
   display         : flex;
-  flex-direction  : column; /* Default as "block" */
+  flex-direction  : column;
 
-  &[layout="inline"] {
+  &[class*="layout-inline"] {
     flex-direction  : row;
     align-items     : center;
   }
 
-  &[layout="block"] {
+  &[class*="layout-block"] {
     flex-direction: column;
   }
 
-  &[layout="inline-spaced"] {
+  &[class*="layout-spaced"] {
     flex-flow       : row nowrap;
     align-items     : center;
     justify-content : space-between;
     input, textarea, select { flex-basis: 200px; }
   }
 
-  &[layout="centered"] {
+  &[class*="layout-centered"] {
     flex-direction  : column;
     align-items     : center;
   }
@@ -38,22 +38,22 @@ label {
 
 
 /*
- * Fieldgroup layouts
+ * Fieldgroup layout
  */
 
 fieldgroup {
   display   : flex;
   flex-flow : column wrap; /* Default as "block" */
 
-  &[layout="inline"] {
+  &[class*="layout-inline"] {
     flex-flow: row wrap;
   }
 
-  &[layout="block"] {
+  &[class*="layout-block"] {
     flex-flow: column wrap;
   }
 
-  &[layout="split-evenly"] {
+  &[class*="layout-split"] {
     flex-flow: row nowrap;
 
     @media (max-width: $screen-s) { flex-flow: column nowrap; }
@@ -69,16 +69,18 @@ fieldgroup {
  * General
  */
 
-span {
+label span {
   padding     : .5rem 0;
-  font-family : 'Open Sans', sans-serif;
+  font-family : 'Montserrat', sans-serif;
   font-size   : 1.4rem;
 }
 
-input, textarea, select {
+label input,
+label textarea,
+label select {
   padding     : 1rem .5rem;
   border      : 1px solid #666;
-  font-family : 'Open Sans', sans-serif;
+  font-family : 'Montserrat', sans-serif;
   font-size   : 1.4rem;
 
   &:focus, &:hover {}
@@ -198,19 +200,19 @@ input[type=radio] {
  * Clearing default values
  */
 
- textarea {
+ label textarea {
   -webkit-appearance  : textfield;
   resize              : vertical;
   overflow            : auto;
 }
 
-input[type=checkbox],
-input[type=radio] {
+label input[type=checkbox],
+label input[type=radio] {
   position  : absolute;
   z-index   : -1;
   opacity   : 0;
 }
 
-input[type="number"] { width: 100%; }
+label input[type="number"] { width: 100%; }
 
 .radio, .radio:after { border-radius: 50%; }

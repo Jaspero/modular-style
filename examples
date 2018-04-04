@@ -24,9 +24,9 @@
  */
 
 <button class="btn">I'm a button</button>
-<button class="btn-ghost">Ghost</button>
-<button class="btn-primary">Primary</button>
-<button class="btn-contain">Contain</button>
+<button class="btn--ghost">Ghost</button>
+<button class="btn--primary">Primary</button>
+<button class="btn--contain">Contain</button>
 <button class="btn" disabled>Disabled</button>
 <button class="btn loading">I'm a button</button>
 <button class="btn error">I'm a button</button>
@@ -48,17 +48,17 @@
  * Form
  */
 
-<label for="" layout="inline|block|inline-spaced|centered">
+<label for="" class="layout-block">
     <span>Lorem</span>
     <input type="" id="" name="">
 </label>
 
-<label for="" layout="inline|block|inline-spaced|centered">
+<label for="" class="layout-block">
     <span>Lorem</span>
     <textarea id="" name="" rows="4"></textarea>
 </label>
 
-<label for="" layout="inline|block|inline-spaced|centered">
+<label for="" class="layout-block">
     <span>Lorem</span>
     <select id="" name="">
         <option value="">Lorem</option>
@@ -67,64 +67,34 @@
     </select>
 </label>
 
-<label for="toggle" layout="inline|block|inline-spaced|centered">
+<label for="toggle" class="layout-spaced">
     <span>Toggle</span>
     <input type="checkbox" id="toggle" name="">
     <div class="toggle"></div>
 </label>
 
-<label for="checkbox" layout="inline|block|inline-spaced|centered">
+<label for="checkbox" class="layout-inline">
     <input type="checkbox" id="checkbox" name="">
     <div class="checkbox"></div>
     <span>Checkbox</span>
 </label>
 
-<label for="radio" layout="inline|block|inline-spaced|centered">
+<label for="radio" class="layout-inline">
     <input type="radio" id="radio" name="">
     <div class="radio"></div>
     <span>Radio</span>
 </label>
 
-<fieldgroup layout="inline|block|split-evenly">
+<fieldgroup class="layout-block">
     <label>…</label>
     <label>…</label>
     …
 </fieldgroup>
 
 
-
-
-
 /*
- * Layout
+ * Hide & show
  */
 
-<header>
-    <header-content>
-        <a id="logo">
-            <img src="assets/imgs/zap.svg">
-        </a>
-        <nav>
-            <a hide="xs|s|m">Link1</a>
-            <a hide="xs|s|m">Link2</a>
-            <a hide="xs|s|m">Zelda</a>
-            <a show="xs|s|m" id="menu"><img src="assets/imgs/menu.svg"></a>
-        </nav>
-    </header-content>
-</header>
-
-<main>
-    Main
-</main>
-
-<footer>
-    Footer
-</footer>
-
-<aside>
-    <nav side="top|right|bottom|left">
-        <a>Link1</a>
-        <a>Link2</a>
-        <a>Zelda</a>
-    </nav>
-</aside>
+<p class="show-m">Show on Medium</p>
+<p class="hide-m">Hide on Medium</p>

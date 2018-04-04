@@ -6,6 +6,20 @@
 
 
 /*
+ * Hide & show
+ */
+
+[class*="hide-xs"]  { @media (max-width: $screen-xs) { display: none; } }
+[class*="hide-s"]   { @media (max-width: $screen-s) { display: none; } }
+[class*="hide-m"]   { @media (max-width: $screen-m) { display: none; } }
+
+[class*="show"] { display: none; }
+[class*="show-xs"]  { @media (max-width: $screen-xs) { display: inline-block; } }
+[class*="show-s"]   { @media (max-width: $screen-s) { display: inline-block; } }
+[class*="show-m"]   { @media (max-width: $screen-m) { display: inline-block; } }
+
+
+/*
  * Flexbox component
  */
 
