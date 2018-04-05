@@ -4,7 +4,12 @@
 
 ==================================================*/
 
+/*
+ * Notes
+ */
+
 sass --watch index.scss:index.css --style compressed
+<script src="assets/javascript/file.js" type="text/javascript"></script>
 
 /* Basic */
 /* Positioning */
@@ -16,88 +21,7 @@ sass --watch index.scss:index.css --style compressed
 /* Animation */
 
 
-/*
- * BlaBla
- */
-
-BlaBla
-
-<script src="assets/javascript/file.js" type="text/javascript"></script>
-
 background: [background-image] [background-position] / [background-size] [background-repeat] [background-attachment] [background-origin] [background-clip] [background-color];
-
-
-/*==================================================
-
-  Javascript
-
-==================================================*/
-
-function () {}
-
-() => {}
-
-
-/*==================================================
-
-  To do
-
-==================================================*/
-
- - img, picture, etc;
- - refactor table
-
-
-/*==================================================
-
-  Attribute selection
-
-==================================================*/
-
-Select elements with a specified attribute.
-[atrib] {}
-
-Select elements with a specified attribute and value.
-[atrib="value"] {}
-Must be first?                           Yes
-Must be last?                            Yes
-Can be followed by hyphen?               No
-Can be followed by characters?           No
-
-Select elements with an attribute value containing a specified word.
-[atrib~="value"] {}
-Must be first?                           No
-Must be last?                            No
-Can be followed by hyphen?               No
-Can be followed by characters?           No
-
-Select elements with the specified attribute starting with the specified value.
-[atrib|="value"] {}
-Must be first?                           Yes
-Must be last?                            Yes
-Can be followed by hyphen?               Yes
-Can be followed by characters?           No
-
-Select elements whose attribute value begins with a specified value.
-[atrib^="value"] {}
-Must be first?                           Yes
-Must be last?                            No
-Can be followed by hyphen?               Yes
-Can be followed by characters?           Yes
-
-Select elements whose attribute value ends with a specified value.
-[atrib$="value"] {}
-Must be first?                           No
-Must be last?                            Yes
-Can be preceded by hyphen?               Yes
-Can be preceded by characters?           Yes
-
-Select elements whose attribute value contains a specified value.
-[atrib*="value"] {}
-Must be first?                           No
-Must be last?                            No
-Can be followed by hyphen?               Yes
-Can be followed by characters?           Yes
 
 
 /*==================================================

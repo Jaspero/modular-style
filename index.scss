@@ -12,3 +12,10 @@
 @import "assets/style/components/modal";
 @import "assets/style/components/tables";
 @import "assets/style/components/tooltips";
+
+body {
+  margin: 10rem auto;
+  width: 100%;
+  max-width: 100rem;
+  box-shadow: 0 2px 4px 2px rgba(0,0,0,.2);
+}
