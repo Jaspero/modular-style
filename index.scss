@@ -14,8 +14,23 @@
 @import "assets/style/components/tooltips";
 
 body {
-  margin: 10rem auto;
+  padding: 2rem;
+}
+
+.big {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 100rem;
-  box-shadow: 0 2px 4px 2px rgba(0,0,0,.2);
+  height: 100%;
+  background: darksalmon;
+  .small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%,-50%);
+    background: darkcyan;
+  }
 }

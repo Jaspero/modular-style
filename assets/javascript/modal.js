@@ -6,25 +6,40 @@
 
 window.onload = () => {
 
-    const modals = document.querySelectorAll('modal');
+    const modal = document.querySelectorAll('[class*="modal"][id]');
+    const modalContent = document.querySelectorAll('.modal_content');
+    const modalOpen = document.querySelectorAll('[data-open-modal]');
+    const modalClose = document.querySelectorAll('[data-close-modal]');
 
-    document.querySelectorAll('[opens]').forEach(el => {
-        const modalEl = document.getElementById(el.getAttribute('opens'));
+    modalOpen.forEach(el => {
+        const modalEl = document.getElementById(el.getAttribute('data-open-modal'));
         el.addEventListener('click', () => {
             modalEl.classList.add('active');
-            const modalHeaderEl = modalEl.querySelector('modal-header').scrollHeight;
-            const modalFooterEl = modalEl.querySelector('modal-footer').scrollHeight;
-            const modalBodyEl = modalEl.querySelector('modal-body');
+            const modalHeaderEl = modalEl.querySelector('.modal_header').scrollHeight;
+            const modalFooterEl = modalEl.querySelector('.modal_footer').scrollHeight;
+            const modalBodyEl = modalEl.querySelector('.modal_body');
             modalBodyEl.style.maxHeight = ('calc(100vh - 4rem - ' + (modalHeaderEl + modalFooterEl) + 'px)');
         })
     });
 
-    document.querySelectorAll('modal-overlay, [closeModal]').forEach(el => {
+    modalContent.forEach(el => {
+        el.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+    });
+
+    modal.forEach(el => {
         el.addEventListener('click', () => {
-            modals.forEach(el => {
+            el.classList.remove('active');
+        });
+    });
+
+    modalClose.forEach(el => {
+        el.addEventListener('click', () => {
+            modal.forEach(el => {
                 el.classList.remove('active');
-            })
-        })
+            });
+        });
     });
 
 };

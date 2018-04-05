@@ -6,8 +6,8 @@
 
 window.onload = () => {
 
-    const dropdownToggle = document.querySelectorAll('dropdown-toggle');
-    const dropdowns = document.querySelectorAll('dropdown');
+    const dropdownToggle = document.querySelectorAll('.dropdown-toggle');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
     dropdownToggle.forEach(el => {
         el.addEventListener('click', (event) => {

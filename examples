@@ -85,11 +85,11 @@
     <span>Radio</span>
 </label>
 
-<fieldgroup class="layout-block">
+<div class="fieldgroup--layout-block">
     <label>…</label>
     <label>…</label>
     …
-</fieldgroup>
+</div>
 
 
 /*
@@ -130,3 +130,69 @@
  */
 
 <span data-tooltip-bottom="I'm a tooltip!">Lorem ipsum dolor sit amet.</span>
+
+
+/*
+ * Table
+ */
+
+<table>
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td data-label="Index">1</td>
+        <td data-label="Name">Abraham Alpha</td>
+        <td data-label="Email">abe@email.com</td>
+        <td data-label="Status">Online</td>
+    </tr>
+    <tr>
+        <td data-label="Index">2</td>
+        <td data-label="Name">Benjamin Beta</td>
+        <td data-label="Email">ben@email.com</td>
+        <td data-label="Status">Offline</td>
+    </tr>
+    <tr>
+        <td data-label="Index">3</td>
+        <td data-label="Name">George Gamma</td>
+        <td data-label="Email">george@email.com</td>
+        <td data-label="Status">Offline</td>
+    </tr>
+    <tr>
+        <td data-label="Index">4</td>
+        <td data-label="Name">Daniel Delta</td>
+        <td data-label="Email">danny@email.com</td>
+        <td data-label="Status">Online</td>
+    </tr>
+    </tbody>
+</table>
+
+
+/*
+ * Modal
+ */
+
+<button data-open-modal="modalID">Button</button>
+
+<div id="modalID" class="modal--size-s">
+    <div class="modal_content">
+        <div class="modal_header">Header</div>
+        <div class="modal_body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="modal_footer"><button data-close-modal>Close</button></div>
+    </div>
+</div>
+
+
+/*
+ * Accordion
+ */
+
+asd

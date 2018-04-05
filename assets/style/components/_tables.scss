@@ -4,88 +4,75 @@
 
 ==================================================*/
 
-.table {
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    tr {
-      border: .1rem solid #eee;
-    }
-    td, th {
-      text-align: left;
-      padding: 1rem;
-    }
-  }
-}
-
-/* -- Responsive -- */
-.table {
-
-  /* -- Option #1 -- */
-  @media screen and (max-width: 800px) {
-    table {
-      tr {
-        display: block;
-        margin-bottom: 2rem;
-      }
-      td {
-        display: block;
-        text-align: right;
-      }
-      td:before {
-        content: attr(data-label);
-        float: left;
-      }
-      /* Hiding thead */
-      thead { position: absolute; opacity: 0; z-index: -1; }
-    }
-  }
-
-  /* -- Option #2 -- */
-  //overflow-x: auto;
-  //table { min-width: 100rem; }
-
-}
 
 /*
+ * General
+ */
 
-<div class="table">
-  <table>
-    <thead>
-    <tr>
-      <th>Index</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td data-label="Index">1</td>
-      <td data-label="Name">Abraham Alpha</td>
-      <td data-label="Email">john@email.com</td>
-      <td data-label="Status">Online</td>
-    </tr>
-    <tr>
-      <td data-label="Index">2</td>
-      <td data-label="Name">Benjamin Beta</td>
-      <td data-label="Email">john@email.com</td>
-      <td data-label="Status">Offline</td>
-    </tr>
-    <tr>
-      <td data-label="Index">3</td>
-      <td data-label="Name">George Gamma</td>
-      <td data-label="Email">john@email.com</td>
-      <td data-label="Status">Offline</td>
-    </tr>
-    <tr>
-      <td data-label="Index">4</td>
-      <td data-label="Name">Daniel Delta</td>
-      <td data-label="Email">dan@email.com</td>
-      <td data-label="Status">Online</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+table {
+  width           : 100%;
+  border-collapse : collapse;
+  box-shadow      : 0 1px 3px 0 rgba(0,0,0,0.2);
+  text-align      : left;
 
-*/
+  thead {
+    tr {
+      border      : .1rem solid rgba(0,0,0,.15);
+      background  : rgba(0,0,0,.05);
+    }
+    th {
+      padding   : .6rem;
+      font-size : 1.1rem;
+    }
+  }
+
+  tbody {
+    tr {
+      border: .1rem solid rgba(0,0,0,.15);
+    }
+    tr:hover {
+      background: rgba(0,0,0,.05);
+    }
+    td {
+      padding   : 1.2rem .8rem;
+      font-size : 1.2rem;
+    }
+  }
+
+}
+
+
+/*
+ * Smaller screen layout
+ */
+
+@media screen and (max-width: $screen-s) {
+
+  table {
+    box-shadow: none;
+
+    tr {
+      display     : block;
+      margin      : 1rem 0;
+      box-shadow  : 0 1px 3px 0 rgba(0,0,0,0.2);
+    }
+
+    td {
+      display     : block;
+      text-align  : right;
+    }
+
+    td:before {
+      content : attr(data-label);
+      float   : left;
+    }
+
+    thead {
+      opacity   : 0;
+      position  : absolute;
+      z-index   : -1;
+    }
+
+  }
+
+}
