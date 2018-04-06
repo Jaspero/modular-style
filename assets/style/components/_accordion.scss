@@ -14,6 +14,10 @@
   overflow: hidden;
   transition: .2s;
   padding: 0 2rem;
+
+  & > .accordion_summary > svg { transition: .2s; }
+  &.active > .accordion_summary > svg { transform: rotate(-90deg); }
+
 }
 
 
