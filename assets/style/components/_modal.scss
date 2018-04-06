@@ -6,17 +6,17 @@
 
 
 /*
- * Modal
+ * General
  */
 
 [class*="modal"][id] {
-  display         : none; /* See Modal active */
+  display         : none; /* See .active */
   align-items     : center;
   justify-content : center;
   position        : fixed;
   top             : 0;
   left            : 0;
-  z-index         : -1; /* See Modal active */
+  z-index         : -1; /* See .active */
   width           : 100%;
   height          : 100%;
   background      : rgba(0,0,0,.5);
@@ -30,33 +30,37 @@
     z-index : 10;
   }
 
-  .modal_content {
-    box-shadow    : 0 .4rem .8rem rgba(0,0,0,.4);
-    margin        : 2rem;
-    background    : white;
+}
 
-    .modal_body {
-      display     : block;
-      overflow-y  : scroll;
-      padding     : 2rem;
-      max-width   : 120rem; /* Default size */
-    }
+/*
+ * Modal content
+ */
 
-    .modal_header {
-      display       : block;
-      padding       : 2rem;
-      background    : #eee;
-      border-bottom : .1rem solid #ddd;
-    }
+.modal_content {
+  box-shadow    : 0 .4rem .8rem rgba(0,0,0,.4);
+  margin        : 2rem;
+  background    : white;
 
-    .modal_footer {
-      display     : block;
-      padding     : 2rem;
-      text-align  : right;
-      background  : #eee;
-      border-top  : .1rem solid #ddd;
-    }
+  .modal_body {
+    display     : block;
+    overflow-y  : scroll;
+    padding     : 2rem;
+    max-width   : 120rem; /* Default */
+  }
 
+  .modal_header {
+    display       : block;
+    padding       : 2rem;
+    background    : #eee;
+    border-bottom : .1rem solid #ddd;
+  }
+
+  .modal_footer {
+    display     : block;
+    padding     : 2rem;
+    text-align  : right;
+    background  : #eee;
+    border-top  : .1rem solid #ddd;
   }
 
 }

@@ -9,14 +9,19 @@
  * General
  */
 
-accordion { display: block; }
+.accordion {
+  display: block;
+  overflow: hidden;
+  transition: .2s;
+  padding: 0 2rem;
+}
 
 
 /*
- * Accordion toggle
+ * Accordion summary
  */
 
-accordion-toggle {
+.accordion_summary {
   display         : flex;
   justify-content : space-between;
   align-items     : center;
@@ -28,34 +33,4 @@ accordion-toggle {
 
   &:hover { background: #ccc; }
 
-  img {
-    transition: .2s;
-    transform: rotate(0);
-  }
-
-}
-
-
-/*
- * Accordion panel
- */
-
-accordion-panel {
-  display         : block;
-  overflow        : hidden;
-  padding-top     : 0; /* Important */
-  padding-bottom  : 0; /* Important */
-  padding-left    : 1rem;
-  padding-right   : 1rem;
-  background      : #fafafa;
-  transition      : 0.2s;
-}
-
-
-/*
- * Accordion opened
- */
-
-accordion[opened] > accordion-toggle > img {
-  transform: rotate(180deg);
 }

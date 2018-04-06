@@ -16,21 +16,3 @@
 body {
   padding: 2rem;
 }
-
-.big {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: darksalmon;
-  .small {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 50%;
-    transform: translate(-50%,-50%);
-    background: darkcyan;
-  }
-}
