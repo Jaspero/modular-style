@@ -6,21 +6,34 @@
 
 window.onload = () => {
 
-    const dropdownToggle = document.querySelectorAll('.dropdown-toggle');
-    const dropdowns = document.querySelectorAll('.dropdown');
+    const dropdown = document.querySelectorAll('.dropdown');
 
-    dropdownToggle.forEach(el => {
+    dropdown.forEach(el => {
+
+        const dropdownContent = el.querySelector('[class*="dropdown_content"]');
+        console.log(dropdownContent);
+
         el.addEventListener('click', (event) => {
-            dropdowns.forEach(el => {
+
+            event.stopPropagation();
+
+            dropdown.forEach(el => {
                 el.classList.remove('active');
             });
-            el.parentElement.classList.add('active');
-            event.stopPropagation();
+
+            el.classList.add('active');
+
+            dropdownContent.addEventListener('click', (event) => {
+                event.stopPropagation();
+                dropdownContent.parentElement.classList.remove('active');
+            });
+
         });
+
     });
 
     window.addEventListener('click', () => {
-        dropdowns.forEach(el => {
+        dropdown.forEach(el => {
             el.classList.remove('active');
         });
     });

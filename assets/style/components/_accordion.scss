@@ -13,11 +13,11 @@
   display: block;
   overflow: hidden;
   transition: .2s;
-  padding: 0 2rem;
-  background: salmon;
 
-  & > .accordion_summary > svg { transition: .2s; }
-  &.active > .accordion_summary > svg { transform: rotate(-90deg); }
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  &.active > .accordion_summary:after { transform: rotate(-90deg); }
 
 }
 
@@ -35,6 +35,11 @@
   background      : #eee;
   color           : #444;
   transition      : 0.2s;
+
+  &:after {
+    content     : url('assets/imgs/caret.svg');
+    transition  : .2s;
+  }
 
   &:hover { background: #ccc; }
 

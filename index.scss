@@ -14,5 +14,9 @@
 @import "assets/style/components/tooltips";
 
 body {
+  width: 100%;
+  max-width: 90rem;
+  margin: 10rem auto;
   padding: 2rem;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
