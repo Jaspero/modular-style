@@ -6,7 +6,38 @@
 
 
 /*
- * asd
+ * General
  */
 
-.tabs {}
+.tabs { border: 1px solid #ccc; }
+
+/*
+ * Tabs navigation
+ */
+
+.tabs nav {
+  display     : flex;
+  overflow-x  : auto; 
+  overflow-y  : hidden; 
+  background  : #eee;
+
+  a {
+    padding       : 1rem 3rem;
+    border-bottom : 2px solid transparent;
+    white-space   : nowrap;
+
+    &.active { border-bottom: 2px solid dodgerblue; }
+  }
+}
+
+/*
+ * Tab content
+ */
+
+.tab_content {
+  display : none;
+  padding : 2rem;
+
+  &.active { display: block; }
+
+}
