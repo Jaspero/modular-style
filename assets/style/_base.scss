@@ -1,6 +1,46 @@
-@import "base/base";
-@import "base/helpers";
-@import "base/typography";
-@import "base/buttons";
-@import "base/form";
-@import "base/grid";
+/*==================================================
+
+  Base
+
+==================================================*/
+
+
+/*
+ * Box sizing
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+/*
+ * Page setup
+ */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin      : 0;
+  overflow-x  : hidden;
+  min-height  : 100vh;
+}
+
+
+/*
+ * Images
+ */
+
+img {
+  max-width     : 100%;
+  font-style    : italic;
+  vertical-align: middle;
+}

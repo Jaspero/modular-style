@@ -16,7 +16,6 @@
 <h5>Heading 5</h5>
 <h6>Heading 6</h6>
 <p>The quick brown fox jumps over the lazy dog.</p>
-<a class="link" href="">Link</a>
 
 
 /*
@@ -36,11 +35,10 @@
  * Grid
  */
 
-<div class="grid--size-s--gutter-s">
-    <div class="col-3--s-6--xs-12">…</div>
-    <div class="col-3--s-6--xs-12">…</div>
-    <div class="col-3--s-6--xs-12">…</div>
-    <div class="col-3--s-6--xs-12">…</div>
+<div class="grid">
+    <div class="col">…</div>
+    <div class="col">…</div>
+    <div class="col">…</div>
 </div>
 
 
@@ -85,11 +83,12 @@
     <span>Radio</span>
 </label>
 
-<div class="fieldgroup--layout-block">
+<fieldset class="layout-block">
+    <legend>…</legend>
     <label>…</label>
     <label>…</label>
     …
-</div>
+</fieldset>
 
 
 /*

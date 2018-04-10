@@ -5,6 +5,15 @@
 ==================================================*/
 
 
+.link {
+  text-decoration       : underline;
+  text-decoration-skip  : ink;
+
+  &:link    { color: dodgerblue; }
+  &:visited { color: mediumpurple; }
+
+}
+
 /*
  * Hide & show
  */

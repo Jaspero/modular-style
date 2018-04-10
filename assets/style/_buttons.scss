@@ -1,0 +1,152 @@
+/*==================================================
+
+  Buttons
+
+==================================================*/
+
+
+/*
+ * Shared style
+ */
+
+[class*="btn"] {
+  display       : inline-block;
+  cursor        : pointer;
+  padding       : 1rem 2rem;
+  border        : none;
+  outline       : none;
+  border-radius : .2rem;
+  font-size     : 1.4rem;
+  letter-spacing: .1rem;
+  user-select   : none;
+  transition    : .2s;
+
+  span, svg, img {
+    vertical-align: middle;
+  }
+
+}
+
+
+/*
+ * Primary button
+ */
+
+[class*="btn--primary"] {
+  background: dodgerblue;
+  color     : white;
+  fill      : white;
+
+  &:hover, &:focus {
+    background: darken(dodgerblue,15%);
+  }
+
+  &:active {
+    box-shadow: 0 .2rem .4rem 0 rgba(0,0,0,.3);
+  }
+
+  &:disabled {
+    cursor    : not-allowed;
+    box-shadow: none;
+    color     : #aaa;
+    fill      : #aaa;
+    background: #eee;
+  }
+
+}
+
+
+/*
+ * Ghost button
+ */
+
+[class*="btn--ghost"] {
+  background: transparent;
+  color     : black;
+  fill      : black;
+
+  &:hover, &:focus {
+    background: #eee;
+  }
+
+  &:active {
+    background: #ddd;
+  }
+
+  &:disabled {
+    cursor    : not-allowed;
+    box-shadow: none;
+    color     : #aaa;
+    fill      : #aaa;
+    background: #eee;
+  }
+
+}
+
+
+/*
+ * Contain button
+ */
+
+[class*="btn--contain"] {
+  padding   : .8rem;
+  background: transparent;
+  color     : black;
+  fill      : black;
+}
+
+
+/*
+ * States
+ */
+
+[class*="btn"].loading,
+[class*="btn"].error {
+  pointer-events: none;
+  position      : relative;
+  color         : transparent;
+
+  span, svg, img {
+    opacity: 0;
+  }
+
+}
+
+[class*="btn"].loading {
+  background: #eee;
+
+  &:after {
+    content       : '';
+    position      : absolute;
+    top           : 50%;
+    left          : 50%;
+    height        : 1.8rem;
+    width         : 1.8rem;
+    border-radius : 50%;
+    border-width  : .2rem;
+    border-style  : solid;
+    border-color  : black black transparent transparent;
+    animation     : loading-animation .75s linear infinite;
+
+    @keyframes loading-animation {
+      0% { transform: translate(-50%,-50%) rotate(0deg); }
+      100% { transform: translate(-50%,-50%) rotate(360deg); }
+    }
+
+  }
+
+}
+
+[class*="btn"].error {
+  background: rgba(200,40,40,.6);
+
+  &:after {
+    content   : 'Error';
+    position  : absolute;
+    top       : 50%;
+    left      : 50%;
+    color     : white;
+    transform : translate(-50%,-50%);
+  }
+
+}
