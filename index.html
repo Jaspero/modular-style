@@ -191,24 +191,13 @@
 <h4>Heading 4</h4>
 <h5>Heading 5</h5>
 <h6>Heading 6</h6>
-
-<hr>
-
 <p>The quick brown fox jumps over the lazy dog.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis imperdiet purus at urna blandit tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque sapien dui, tristique eget placerat quis, vehicula ut ante. Phasellus tempor dui non enim bibendum posuere. Vestibulum id aliquam lacus. Fusce at cursus felis, sed rutrum diam. Donec egestas mattis nibh eget ultrices. Sed ut efficitur enim.</p>
-
-<hr>
-
-<p><a>Link</a> and <span>span</span> inside a paragraph.</p>
-
-<hr>
-
 <ul>
     <li>Lorem</li>
     <li>Lorem</li>
     <li>Lorem</li>
 </ul>
-<hr>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis imperdiet purus at urna blandit tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque sapien dui, tristique eget placerat quis, vehicula ut ante. Phasellus tempor dui non enim bibendum posuere. Vestibulum id aliquam lacus. Fusce at cursus felis, sed rutrum diam. Donec egestas mattis nibh eget ultrices. Sed ut efficitur enim.</p>
 <ol>
     <li>Lorem</li>
     <li>Lorem</li>
@@ -217,65 +206,63 @@
 
 <hr>
 
-<button class="btn">Button</button>
+<button class="btn-primary">Primary</button>
 <br>
-<button class="btn--primary">Button</button>
+<button class="btn-ghost">Ghost</button>
 <br>
-<button class="btn--ghost">Button</button>
+<button class="btn-contain">Contain</button>
 <br>
-<button class="btn--contain">Button</button>
-<br>
-<button class="btn--primary" disabled>Button</button>
+<button class="btn-primary" disabled>Disable</button>
 
 <hr>
 
 <div class="grid">
-    <div class="col"><box>col</box></div>
-    <div class="col"><box>col</box></div>
-    <div class="col"><box>col</box></div>
+    <div class="col col-m-12">col</div>
+    <div class="col">col</div>
+    <div class="col">col</div>
+</div>
+
+<div class="grid nogutter full">
+    <div class="col-4">col</div>
+    <div class="col-4">col</div>
+    <div class="col-4">col</div>
 </div>
 
 <div class="grid">
-    <div class="col-4"><box>col</box></div>
-    <div class="col-4"><box>col</box></div>
-    <div class="col-4"><box>col</box></div>
-</div>
-
-<div class="grid">
-    <div class="col-3--m-6--s-12"><box>col</box></div>
-    <div class="col-3--m-6--s-12"><box>col</box></div>
-    <div class="col-3--m-6--s-12"><box>col</box></div>
-    <div class="col-3--m-6--s-12"><box>col</box></div>
+    <div class="col-3 col-m-6 col-s-12">col</div>
+    <div class="col-3 col-m-6 col-s-12">col</div>
+    <div class="col-3 col-m-6 col-s-12">col</div>
+    <div class="col-3 col-m-6 col-s-12">col</div>
 </div>
 
 <hr>
 
 <form action="">
 
-    <label for="" class="layout-block">
+    <label for="" class="block">
         <span>Name</span>
         <input type="" id="" name="">
     </label>
-    <label for="" class="layout-block">
+    <label for="" class="block">
         <span>Email</span>
         <input type="" id="" name="">
     </label>
-    <label for="" class="layout-block">
+    <label for="" class="block">
         <span>Your message</span>
         <textarea id="" name="" rows="4"></textarea>
     </label>
 
     <hr>
 
-    <label for="" class="layout-spaced">
+    <label for="" class="spaced">
         <span>Name</span>
         <input type="" id="" name="">
     </label>
-    <label for="" class="layout-spaced">
+    <label for="" class="spaced">
         <span>Email</span>
         <input type="" id="" name="">
     </label>
-    <label for="" class="layout-spaced">
+    <label for="" class="spaced">
         <span>Options</span>
         <select id="" name="">
             <option value="">Lorem</option>
@@ -286,12 +273,12 @@
 
     <hr>
 
-    <label for="toggle1" class="layout-spaced">
+    <label for="toggle1" class="spaced">
         <span>Toggle 1</span>
         <input type="checkbox" id="toggle1" name="">
         <div class="toggle"></div>
     </label>
-    <label for="toggle2" class="layout-spaced">
+    <label for="toggle2" class="spaced">
         <span>Toggle 2</span>
         <input type="checkbox" id="toggle2" name="">
         <div class="toggle"></div>
@@ -299,12 +286,12 @@
 
     <hr>
 
-    <label for="toggle3" class="layout-inline">
+    <label for="toggle3" class="inline">
         <span>Toggle 3</span>
         <input type="checkbox" id="toggle3" name="">
         <div class="toggle"></div>
     </label>
-    <label for="toggle4" class="layout-inline">
+    <label for="toggle4" class="inline">
         <span>Toggle 4</span>
         <input type="checkbox" id="toggle4" name="">
         <div class="toggle"></div>
@@ -312,17 +299,17 @@
 
     <hr>
 
-    <label for="radio1" class="layout-inline">
+    <label for="radio1" class="inline">
         <input type="radio" id="radio1" name="radio">
         <div class="radio"></div>
         <span>Inline</span>
     </label>
-    <label for="radio2" class="layout-block">
+    <label for="radio2" class="block">
         <input type="radio" id="radio2" name="radio">
         <div class="radio"></div>
         <span>Block</span>
     </label>
-    <label for="radio3" class="layout-centered">
+    <label for="radio3" class="centered">
         <input type="radio" id="radio3" name="radio">
         <div class="radio"></div>
         <span>Centered</span>
@@ -330,57 +317,57 @@
 
     <hr>
 
-    <fieldset class="layout-block">
+    <fieldset class="block">
         <legend>Block fieldset</legend>
-        <label for="checkbox1" class="layout-inline">
+        <label for="checkbox1" class="inline">
             <input type="checkbox" id="checkbox1" name="">
             <div class="checkbox"></div>
             <span>Checkbox</span>
         </label>
-        <label for="checkbox2" class="layout-inline">
+        <label for="checkbox2" class="inline">
             <input type="checkbox" id="checkbox2" name="">
             <div class="checkbox"></div>
             <span>Checkbox</span>
         </label>
-        <label for="checkbox3" class="layout-inline">
+        <label for="checkbox3" class="inline">
             <input type="checkbox" id="checkbox3" name="">
             <div class="checkbox"></div>
             <span>Checkbox</span>
         </label>
     </fieldset>
 
-    <fieldset class="layout-inline">
+    <fieldset class="inline">
         <legend>Inline fieldset</legend>
-        <label for="checkbox4" class="layout-centered">
+        <label for="checkbox4" class="centered">
             <input type="checkbox" id="checkbox4" name="">
             <div class="checkbox"></div>
             <span>Checkbox</span>
         </label>
-        <label for="checkbox5" class="layout-centered">
+        <label for="checkbox5" class="centered">
             <input type="checkbox" id="checkbox5" name="">
             <div class="checkbox"></div>
             <span>Checkbox</span>
         </label>
-        <label for="checkbox6" class="layout-centered">
+        <label for="checkbox6" class="centered">
             <input type="checkbox" id="checkbox6" name="">
             <div class="checkbox"></div>
             <span>Checkbox</span>
         </label>
     </fieldset>
 
-    <fieldset class="layout-split">
+    <fieldset class="split">
         <legend>Split evenly fieldset</legend>
-        <label for="checkbox7" class="layout-centered">
+        <label for="checkbox7" class="centered">
             <input type="checkbox" id="checkbox7" name="">
             <div class="checkbox"></div>
             <span>Checkbox</span>
         </label>
-        <label for="checkbox8" class="layout-centered">
+        <label for="checkbox8" class="centered">
             <input type="checkbox" id="checkbox8" name="">
             <div class="checkbox"></div>
             <span>Checkbox</span>
         </label>
-        <label for="checkbox9" class="layout-centered">
+        <label for="checkbox9" class="centered">
             <input type="checkbox" id="checkbox9" name="">
             <div class="checkbox"></div>
             <span>Checkbox</span>
@@ -392,15 +379,15 @@
 <hr>
 
 <div class="accordion active">
-    <p class="accordion-summary">This accordion is active</p>
+    <p class="accordion-summary">This accordion is has active class</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
 
 <div class="accordion">
-    <p class="accordion-summary">This one isn't</p>
+    <p class="accordion-summary">There's a nested accordion inside</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <div class="accordion">
-        <p class="accordion-summary">This accordion is nested</p>
+        <p class="accordion-summary">Nested accordion</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
 </div>
@@ -436,7 +423,7 @@
 
 <hr>
 
-<table class="card">
+<table>
     <thead>
     <tr>
         <th>Index</th>
@@ -478,22 +465,47 @@
 <div class="dropdown">
     <p>Dropdown</p>
     <div class="dropdown-content">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item">Link 1</a>
+        <a class="dropdown-item">Link 2</a>
+        <a class="dropdown-item">Link 3</a>
     </div>
 </div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <div class="dropdown">
     <p>Dropdown</p>
-    <div class="dropdown-content--top-right">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+    <div class="dropdown-content from-top-right">
+        <a class="dropdown-item">Link 1</a>
+        <a class="dropdown-item">Link 2</a>
+        <a class="dropdown-item">Link 3</a>
     </div>
 </div>
 
-<div class="hagrid"></div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="dropdown">
+    <p>Dropdown</p>
+    <div class="dropdown-content from-bottom-left">
+        <a class="dropdown-item">Link 1</a>
+        <a class="dropdown-item">Link 2</a>
+        <a class="dropdown-item">Link 3</a>
+    </div>
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<div class="dropdown">
+    <p>Dropdown</p>
+    <div class="dropdown-content from-bottom-right">
+        <a class="dropdown-item">Link 1</a>
+        <a class="dropdown-item">Link 2</a>
+        <a class="dropdown-item">Link 3</a>
+    </div>
+</div>
 
 <hr>
 

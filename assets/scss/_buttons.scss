@@ -9,13 +9,13 @@
  * Shared style
  */
 
-[class*="btn"] {
+%button-shared {
   display       : inline-block;
   cursor        : pointer;
   padding       : 1rem 2rem;
   border        : none;
   outline       : none;
-  border-radius : .2rem;
+  border-radius : .3rem;
   font-size     : 1.4rem;
   letter-spacing: .1rem;
   user-select   : none;
@@ -29,10 +29,72 @@
 
 
 /*
+ * Button states
+ */
+
+%button-states {
+
+  &.loading,
+  &.error {
+    pointer-events: none;
+    position      : relative;
+    color         : transparent;
+
+    span, svg, img {
+      opacity: 0;
+    }
+
+  }
+
+  &.loading {
+    background: #eee;
+
+    &:after {
+      content       : '';
+      position      : absolute;
+      top           : 50%;
+      left          : 50%;
+      height        : 1.8rem;
+      width         : 1.8rem;
+      border-radius : 50%;
+      border-width  : .2rem;
+      border-style  : solid;
+      border-color  : black black transparent transparent;
+      animation     : loading-animation .75s linear infinite;
+
+      @keyframes loading-animation {
+        0% { transform: translate(-50%,-50%) rotate(0deg); }
+        100% { transform: translate(-50%,-50%) rotate(360deg); }
+      }
+
+    }
+
+  }
+
+  &.error {
+    background: rgba(200,40,40,.6);
+
+    &:after {
+      content   : 'Error';
+      position  : absolute;
+      top       : 50%;
+      left      : 50%;
+      color     : white;
+      transform : translate(-50%,-50%);
+    }
+
+  }
+
+}
+
+
+/*
  * Primary button
  */
 
-[class*="btn--primary"] {
+.btn-primary {
+  @extend %button-shared;
+  @extend %button-states;
   background: dodgerblue;
   color     : white;
   fill      : white;
@@ -60,7 +122,9 @@
  * Ghost button
  */
 
-[class*="btn--ghost"] {
+.btn-ghost {
+  @extend %button-shared;
+  @extend %button-states;
   background: transparent;
   color     : black;
   fill      : black;
@@ -88,65 +152,10 @@
  * Contain button
  */
 
-[class*="btn--contain"] {
+.btn-contain {
+  @extend %button-shared;
   padding   : .8rem;
   background: transparent;
   color     : black;
   fill      : black;
-}
-
-
-/*
- * States
- */
-
-[class*="btn"].loading,
-[class*="btn"].error {
-  pointer-events: none;
-  position      : relative;
-  color         : transparent;
-
-  span, svg, img {
-    opacity: 0;
-  }
-
-}
-
-[class*="btn"].loading {
-  background: #eee;
-
-  &:after {
-    content       : '';
-    position      : absolute;
-    top           : 50%;
-    left          : 50%;
-    height        : 1.8rem;
-    width         : 1.8rem;
-    border-radius : 50%;
-    border-width  : .2rem;
-    border-style  : solid;
-    border-color  : black black transparent transparent;
-    animation     : loading-animation .75s linear infinite;
-
-    @keyframes loading-animation {
-      0% { transform: translate(-50%,-50%) rotate(0deg); }
-      100% { transform: translate(-50%,-50%) rotate(360deg); }
-    }
-
-  }
-
-}
-
-[class*="btn"].error {
-  background: rgba(200,40,40,.6);
-
-  &:after {
-    content   : 'Error';
-    position  : absolute;
-    top       : 50%;
-    left      : 50%;
-    color     : white;
-    transform : translate(-50%,-50%);
-  }
-
 }

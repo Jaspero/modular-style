@@ -11,23 +11,22 @@
 
 label {
   display: flex;
-  margin : 1rem 0;
 
   span {
     padding: .4rem 0;
     margin : 0 1rem 0 0;
   }
 
-  &.layout-inline {
+  &.inline {
     flex-direction: row;
     align-items   : stretch;
   }
 
-  &.layout-block {
+  &.block {
     flex-direction: column;
   }
 
-  &.layout-spaced {
+  &.spaced {
     flex-flow       : row nowrap;
     align-items     : center;
     justify-content : space-between;
@@ -38,7 +37,7 @@ label {
 
   }
 
-  &.layout-centered {
+  &.centered {
     flex-direction: column;
     align-items   : center;
   }
@@ -54,21 +53,20 @@ fieldset {
   display : flex;
   border  : none;
   padding : 0;
-  margin  : 0 0 2rem;
 
   legend {
     padding: 0;
   }
 
-  &[class*="layout-inline"] {
+  &.inline {
     flex-flow: row wrap;
   }
 
-  &[class*="layout-block"] {
+  &.block {
     flex-flow: column wrap;
   }
 
-  &[class*="layout-split"] {
+  &.split {
     flex-flow: row nowrap;
 
     @media (max-width: $screen-s) {

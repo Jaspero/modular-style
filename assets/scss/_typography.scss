@@ -21,49 +21,62 @@ body {
 
 
 /*
+ * Shared
+ */
+
+%typography-shared {
+  margin: 0;
+}
+
+
+/*
  * Elements
  */
 
 h1 {
-  margin      : 0;
+  @extend %typography-shared;
   font-size   : 3.6rem;
   font-weight : normal;
 }
 
 h2 {
-  margin      : 0;
+  @extend %typography-shared;
   font-size   : 3.2rem;
   font-weight : normal;
 }
 
 h3 {
-  margin      : 0;
+  @extend %typography-shared;
   font-size   : 2.8rem;
   font-weight : normal;
 }
 
 h4 {
-  margin      : 0;
+  @extend %typography-shared;
   font-size   : 2.4rem;
   font-weight : normal;
 }
 
 h5 {
-  margin      : 0;
+  @extend %typography-shared;
   font-size   : 2.0rem;
   font-weight : normal;
 }
 
 h6 {
-  margin      : 0;
+  @extend %typography-shared;
   font-size   : 1.6rem;
   font-weight : normal;
 }
 
 p {
-  margin      : 0;
+  @extend %typography-shared;
   font-size   : 1.4rem;
   font-weight : normal;
+}
+
+ul, ol {
+  @extend %typography-shared;
 }
 
 a {
@@ -77,10 +90,6 @@ span {
   display: inline-block;
 }
 
-ul, ol {
-  margin: 0;
-}
-
 hr {
   display     : block;
   width       : 100%;
@@ -89,4 +98,10 @@ hr {
   border-width: .1rem 0 0;
   border-style: solid;
   border-color: rgba(0,0,0,.4);
+}
+
+img {
+  max-width     : 100%;
+  font-style    : italic;
+  vertical-align: middle;
 }

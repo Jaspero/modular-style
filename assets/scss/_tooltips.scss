@@ -10,18 +10,23 @@
  */
 
 %tooltip-style {
-  display       : inline-block;
-  opacity       : .9;
-  pointer-events: none;
-  position      : absolute;
-  border-radius : .4rem;
-  padding       : .2rem .8rem;
-  background    : #666;
-  font-size     : 1.1rem;
-  letter-spacing: 0;
-  color         : white;
-  white-space   : nowrap;
-  transition    : .2s;
+  position: relative;
+
+  &:after {
+    display       : inline-block;
+    opacity       : .9;
+    pointer-events: none;
+    position      : absolute;
+    border-radius : .4rem;
+    padding       : .2rem .8rem;
+    background    : #666;
+    font-size     : 1.1rem;
+    letter-spacing: 0;
+    color         : white;
+    white-space   : nowrap;
+    transition    : .2s;
+  }
+
 }
 
 
@@ -30,10 +35,9 @@
  */
 
 [data-tooltip-top] {
-  position: relative;
+  @extend %tooltip-style;
 
   &:after {
-    @extend %tooltip-style;
     content         : attr(data-tooltip-top);
     bottom          : calc(100% + 1rem);
     left            : 50%;
@@ -49,10 +53,9 @@
 }
 
 [data-tooltip-bottom] {
-  position: relative;
+  @extend %tooltip-style;
 
   &:after {
-    @extend %tooltip-style;
     content         : attr(data-tooltip-bottom);
     top             : calc(100% + 1rem);
     left            : 50%;
@@ -68,10 +71,9 @@
 }
 
 [data-tooltip-left] {
-  position: relative;
+  @extend %tooltip-style;
 
   &:after {
-    @extend %tooltip-style;
     content         : attr(data-tooltip-left);
     right           : calc(100% + 1rem);
     top             : 50%;
@@ -87,10 +89,9 @@
 }
 
 [data-tooltip-right] {
-  position: relative;
+  @extend %tooltip-style;
 
   &:after {
-    @extend %tooltip-style;
     content         : attr(data-tooltip-right);
     left            : calc(100% + 1rem);
     top             : 50%;
