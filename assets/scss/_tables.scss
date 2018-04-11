@@ -12,13 +12,12 @@
 table {
   width           : 100%;
   border-collapse : collapse;
-  box-shadow      : 0 1px 3px 0 rgba(0,0,0,0.2);
   text-align      : left;
 
   thead {
     tr {
-      border      : .1rem solid rgba(0,0,0,.15);
-      background  : rgba(0,0,0,.05);
+      border    : .1rem solid #ccc;
+      background: rgba(0,0,0,.05);
     }
     th {
       padding   : .6rem;
@@ -28,7 +27,7 @@ table {
 
   tbody {
     tr {
-      border: .1rem solid rgba(0,0,0,.15);
+      border: .1rem solid #ccc;
     }
     tr:hover {
       background: rgba(0,0,0,.05);
@@ -52,14 +51,14 @@ table {
     box-shadow: none;
 
     tr {
-      display     : block;
-      margin      : 1rem 0;
-      box-shadow  : 0 1px 3px 0 rgba(0,0,0,0.2);
+      display   : block;
+      margin    : 1rem 0;
+      box-shadow: 0 .1rem .3rem 0 rgba(0,0,0,0.2);
     }
 
     td {
-      display     : block;
-      text-align  : right;
+      display   : block;
+      text-align: right;
     }
 
     td:before {
@@ -68,9 +67,9 @@ table {
     }
 
     thead {
-      opacity   : 0;
-      position  : absolute;
-      z-index   : -1;
+      opacity : 0;
+      position: absolute;
+      z-index : -1;
     }
 
   }

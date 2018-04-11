@@ -1,0 +1,102 @@
+/*==================================================
+
+  Grid
+
+==================================================*/
+
+
+/*
+ * General
+ */
+
+[class*="grid"] {
+  display         : flex;
+  flex-wrap       : wrap;
+  justify-content : center;
+  max-width       : 120rem;
+  width           : 100%;
+  margin          : 0 auto;
+
+  &[class*="--full"] {
+    max-width: 100%;
+  }
+
+  &[class*="--nogutter"] [class*="col"] {
+    padding: 0;
+  }
+
+}
+
+
+/*
+ * Column sizes (general)
+ */
+
+[class*="col"] {
+  flex    : 1 1 auto;
+  padding : 1rem;
+
+  &[class*="col-1"]  { flex: 0 1 8.3333%; }
+  &[class*="col-2"]  { flex: 0 1 16.6666%; }
+  &[class*="col-3"]  { flex: 0 1 25%; }
+  &[class*="col-4"]  { flex: 0 1 33.3333%; }
+  &[class*="col-5"]  { flex: 0 1 41.6666%; }
+  &[class*="col-6"]  { flex: 0 1 50% }
+  &[class*="col-7"]  { flex: 0 1 58.3333%; }
+  &[class*="col-8"]  { flex: 0 1 66.6666%; }
+  &[class*="col-9"]  { flex: 0 1 75%; }
+  &[class*="col-10"] { flex: 0 1 83.3333%; }
+  &[class*="col-11"] { flex: 0 1 91.6666%; }
+  &[class*="col-12"] { flex: 0 1 100%; }
+}
+
+@media screen and (max-width: $screen-m) {
+  [class*="col"] {
+    &[class*="--m-1"]  { flex: 0 1 8.3333%; }
+    &[class*="--m-2"]  { flex: 0 1 16.6666%; }
+    &[class*="--m-3"]  { flex: 0 1 25%; }
+    &[class*="--m-4"]  { flex: 0 1 33.3333%; }
+    &[class*="--m-5"]  { flex: 0 1 41.6666%; }
+    &[class*="--m-6"]  { flex: 0 1 50% }
+    &[class*="--m-7"]  { flex: 0 1 58.3333%; }
+    &[class*="--m-8"]  { flex: 0 1 66.6666%; }
+    &[class*="--m-9"]  { flex: 0 1 75%; }
+    &[class*="--m-10"] { flex: 0 1 83.3333%; }
+    &[class*="--m-11"] { flex: 0 1 91.6666%; }
+    &[class*="--m-12"] { flex: 0 1 100%; }
+  }
+}
+
+@media screen and (max-width: $screen-s) {
+  [class*="col"] {
+    &[class*="--s-1"]  { flex: 0 1 8.3333%; }
+    &[class*="--s-2"]  { flex: 0 1 16.6666%; }
+    &[class*="--s-3"]  { flex: 0 1 25%; }
+    &[class*="--s-4"]  { flex: 0 1 33.3333%; }
+    &[class*="--s-5"]  { flex: 0 1 41.6666%; }
+    &[class*="--s-6"]  { flex: 0 1 50% }
+    &[class*="--s-7"]  { flex: 0 1 58.3333%; }
+    &[class*="--s-8"]  { flex: 0 1 66.6666%; }
+    &[class*="--s-9"]  { flex: 0 1 75%; }
+    &[class*="--s-10"] { flex: 0 1 83.3333%; }
+    &[class*="--s-11"] { flex: 0 1 91.6666%; }
+    &[class*="--s-12"] { flex: 0 1 100%; }
+  }
+}
+
+@media screen and (max-width: $screen-xs) {
+  [class*="col"] {
+    &[class*="--xs-1"]  { flex: 0 1 8.3333%; }
+    &[class*="--xs-2"]  { flex: 0 1 16.6666%; }
+    &[class*="--xs-3"]  { flex: 0 1 25%; }
+    &[class*="--xs-4"]  { flex: 0 1 33.3333%; }
+    &[class*="--xs-5"]  { flex: 0 1 41.6666%; }
+    &[class*="--xs-6"]  { flex: 0 1 50% }
+    &[class*="--xs-7"]  { flex: 0 1 58.3333%; }
+    &[class*="--xs-8"]  { flex: 0 1 66.6666%; }
+    &[class*="--xs-9"]  { flex: 0 1 75%; }
+    &[class*="--xs-10"] { flex: 0 1 83.3333%; }
+    &[class*="--xs-11"] { flex: 0 1 91.6666%; }
+    &[class*="--xs-12"] { flex: 0 1 100%; }
+  }
+}

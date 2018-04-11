@@ -11,14 +11,16 @@
 
 label {
   display: flex;
+  margin : 1rem 0;
 
   span {
     padding: .4rem 0;
+    margin : 0 1rem 0 0;
   }
 
   &.layout-inline {
     flex-direction: row;
-    align-items   : center;
+    align-items   : stretch;
   }
 
   &.layout-block {
@@ -31,7 +33,7 @@ label {
     justify-content : space-between;
 
     input, textarea, select {
-      flex-basis: 200px;
+      flex-basis: 20rem;
     }
 
   }
@@ -68,8 +70,15 @@ fieldset {
 
   &[class*="layout-split"] {
     flex-flow: row nowrap;
-    @media (max-width: $screen-s) { flex-flow: column nowrap; }
-    label { flex: 1 1 auto; }
+
+    @media (max-width: $screen-s) {
+      flex-flow: column nowrap;
+    }
+
+    label {
+      flex: 1 1 auto;
+    }
+
   }
 
 }
@@ -84,7 +93,7 @@ label input,
 label textarea,
 label select {
   padding     : 1rem .5rem;
-  border      : 1px solid #666;
+  border      : .1rem solid #666;
   font-family : sans-serif;
   font-size   : 1.4rem;
 
@@ -107,7 +116,7 @@ label select {
   width         : var(--width);
   height        : var(--height);
   border-radius : 400rem;
-  box-shadow    : inset 0 1px 3px 0 rgba(0,0,0,.4);
+  box-shadow    : inset 0 .1rem .3rem 0 rgba(0,0,0,.4);
   background    : #ccc;
   transition    : .2s;
 
@@ -119,7 +128,7 @@ label select {
     width         : calc(var(--height) - 0.6rem);
     height        : calc(var(--height) - 0.6rem);
     border-radius : 50%;
-    box-shadow    : 0 2px 4px 0 rgba(0,0,0,.24);
+    box-shadow    : 0 .2rem .4rem 0 rgba(0,0,0,.24);
     background    : white;
     transition    : .2s;
   }
@@ -129,7 +138,9 @@ label select {
 input[type=checkbox]:checked ~ .toggle {
   background: rgba(80,200,80,.6);
 
-  &:after { left: calc(var(--width) - var(--height) + .3rem); }
+  &:after {
+    left: calc(var(--width) - var(--height) + .3rem);
+  }
 
 }
 
@@ -206,18 +217,23 @@ input[type=radio] {
  */
 
 textarea {
-  -webkit-appearance  : textfield;
-  resize              : vertical;
-  overflow            : auto;
+  -webkit-appearance: textfield;
+  resize            : vertical;
+  overflow          : auto;
 }
 
 input[type=checkbox],
 input[type=radio] {
-  position  : absolute;
-  z-index   : -1;
-  opacity   : 0;
+  position: absolute;
+  z-index : -1;
+  opacity : 0;
 }
 
-input[type="number"] { width: 100%; }
+input[type="number"] {
+  width: 100%;
+}
 
-.radio, .radio:after { border-radius: 50%; }
+.radio,
+.radio:after {
+  border-radius: 50%;
+}

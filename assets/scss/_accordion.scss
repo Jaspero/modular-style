@@ -10,11 +10,13 @@
  */
 
 .accordion {
-  display     : block;
-  overflow    : hidden;
-  transition  : .2s;
+  display   : block;
+  overflow  : hidden;
+  transition: .2s;
 
-  &.active > .accordion_summary:after { transform: rotate(-90deg); }
+  &.active > .accordion-summary:after {
+    transform: rotate(-90deg);
+  }
 
 }
 
@@ -23,22 +25,25 @@
  * Accordion summary
  */
 
-.accordion_summary {
+.accordion-summary {
   display         : flex;
   justify-content : space-between;
   align-items     : center;
   cursor          : pointer;
   user-select     : none;
   padding         : 1rem;
+  margin          : 0;
   background      : #eee;
   color           : #444;
   transition      : 0.2s;
 
   &:after {
-    content     : url('assets/imgs/caret.svg');
-    transition  : .2s;
+    content   : url('assets/imgs/caret.svg');
+    transition: .2s;
   }
 
-  &:hover { background: #ddd; }
+  &:hover {
+    background: #ddd;
+  }
 
 }

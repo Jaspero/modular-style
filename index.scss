@@ -5,26 +5,30 @@
 ==================================================*/
 
 // 1. Essentials
-@import "assets/style/variables";
-@import "assets/style/tools";
+@import "assets/scss/variables";
+@import "assets/scss/tools";
 
 // 2. Base
-@import "assets/style/base";
-@import "assets/style/typography";
+@import "assets/scss/base";
+@import "assets/scss/typography";
 
 // 3. Components
-@import "assets/style/buttons";
-@import "assets/style/grid";
-@import "assets/style/form";
-@import "assets/style/accordion";
-@import "assets/style/modal";
-@import "assets/style/tabs";
-@import "assets/style/tables";
-@import "assets/style/dropdown";
-@import "assets/style/tooltips";
+@import "assets/scss/buttons";
+@import "assets/scss/grid";
+@import "assets/scss/form";
+@import "assets/scss/accordion";
+@import "assets/scss/modal";
+@import "assets/scss/tabs";
+@import "assets/scss/tables";
+@import "assets/scss/dropdown";
+@import "assets/scss/tooltips";
 
 // 4. Helpers
-@import "assets/style/helpers";
+@import "assets/scss/helpers";
+
+body {
+  padding: 2rem;
+}
 
 box {
   display: block;
@@ -34,4 +38,12 @@ box {
   text-align: center;
   vertical-align: middle;
   color: white;
+}
+
+form {
+  margin: 2rem auto;
+  max-width: 80rem;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 .2rem .4rem rgba(0,0,0,.3);
 }

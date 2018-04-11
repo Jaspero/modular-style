@@ -1,0 +1,100 @@
+/*==================================================
+
+  Dropdown
+
+==================================================*/
+
+
+/*
+ * General
+ */
+
+.dropdown {
+  display : inline-block;
+  cursor  : pointer;
+  position: relative;
+}
+
+
+/*
+ * Dropdown content
+ */
+
+[class*="dropdown-content"] {
+  opacity       : 0; /* See .active */
+  position      : absolute;
+  top           : 0; /* Default */
+  left          : 0; /* Default */
+  z-index       : -1; /* See .active */
+  min-width     : 20rem;
+  border-radius : .2rem;
+  box-shadow    : 0 .2rem .4rem 0 rgba(0,0,0,.2);
+  padding       : 1rem 0;
+  background    : white;
+  transform     : scale3d(.8,.8,1); /* See .active */
+  transition    : .2s;
+
+  &[class*="--top-left"] {
+    top             : 0;
+    right           : unset;
+    bottom          : unset;
+    left            : 0;
+    transform-origin: 0 0;
+    text-align      : left;
+  }
+
+  &[class*="--top-right"] {
+    top             : 0;
+    right           : 0;
+    bottom          : unset;
+    left            : unset;
+    transform-origin: 100% 0;
+    text-align      : right;
+  }
+
+  &[class*="--bottom-left"] {
+    top             : unset;
+    right           : unset;
+    bottom          : 0;
+    left            : 0;
+    transform-origin: 0 100%;
+    text-align      : left;
+  }
+
+  &[class*="--bottom-right"] {
+    top             : unset;
+    right           : 0;
+    bottom          : 0;
+    left            : unset;
+    transform-origin: 100% 100%;
+    text-align      : right;
+  }
+
+}
+
+
+/*
+ * Active
+ */
+
+.dropdown.active [class*="dropdown-content"] {
+  opacity   : 1;
+  z-index   : 1;
+  transform : scale3d(1,1,1);
+}
+
+
+/*
+ * Dropdown item
+ */
+
+.dropdown-item {
+  display : block;
+  padding : .5rem 1rem;
+  cursor  : pointer;
+
+  &:hover {
+    background: #eee;
+  }
+
+}
