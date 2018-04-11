@@ -15,6 +15,11 @@
     <!-- Javascript -->
     <script>
         window.onload = () => {
+
+            /*
+             * Accordion
+             */
+
             const activeClassName = 'active';
             const accordionClassName = 'accordion';
             const summaryClassName = 'accordion-summary';
@@ -84,8 +89,11 @@
                 })
             });
 
+            /*
+             * Modal
+             */
+
             const modal = document.querySelectorAll('.modal');
-            console.log(modal);
             const modalContent = document.querySelectorAll('.modal-content');
             const modalOpen = document.querySelectorAll('[data-open-modal]');
             const modalClose = document.querySelectorAll('[data-close-modal]');
@@ -121,6 +129,10 @@
                 });
             });
 
+            /*
+             * Tabs
+             */
+
             const tabs = document.querySelectorAll('.tabs');
 
             tabs.forEach(el => {
@@ -146,11 +158,15 @@
                 });
             });
 
+            /*
+             * Dropdown
+             */
+
             const dropdown = document.querySelectorAll('.dropdown');
 
             dropdown.forEach(el => {
 
-                const dropdownContent = el.querySelector('[class*="dropdown-content"]');
+                const dropdownContent = el.querySelector('.dropdown-content');
                 console.log(dropdownContent);
 
                 el.addEventListener('click', (event) => {
