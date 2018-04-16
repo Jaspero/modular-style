@@ -5,23 +5,23 @@
 ==================================================*/
 
 // 1. Essentials
-@import "assets/scss/variables";
-@import "assets/scss/tools";
+@import "assets/scss/essentials/variables";
+@import "assets/scss/essentials/tools";
 
 // 2. Base
-@import "assets/scss/base";
-@import "assets/scss/typography";
+@import "assets/scss/generic/base";
+@import "assets/scss/generic/typography";
 
 // 3. Components
-@import "assets/scss/buttons";
-@import "assets/scss/grid";
-@import "assets/scss/form";
-@import "assets/scss/accordion";
-@import "assets/scss/modal";
-@import "assets/scss/tabs";
-@import "assets/scss/tables";
-@import "assets/scss/dropdown";
-@import "assets/scss/tooltips";
+@import "assets/scss/components/buttons";
+@import "assets/scss/components/grid";
+@import "assets/scss/components/form";
+@import "assets/scss/components/accordion";
+@import "assets/scss/components/modal";
+@import "assets/scss/components/tabs";
+@import "assets/scss/components/tables";
+@import "assets/scss/components/dropdown";
+@import "assets/scss/components/tooltips";
 
 // 4. Helpers
-@import "assets/scss/utilities";
+@import "assets/scss/utilities/utilities";

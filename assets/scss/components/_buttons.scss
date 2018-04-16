@@ -158,4 +158,13 @@
   background: transparent;
   color     : black;
   fill      : black;
+
+  &:hover, &:focus {
+    background: #eee;
+  }
+
+  &:active {
+    background: #ddd;
+  }
+
 }

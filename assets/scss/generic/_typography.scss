@@ -21,10 +21,11 @@ body {
 
 
 /*
- * Shared
+ * Resets
  */
 
-%typography-shared {
+h1, h2, h3, h4, h5, h6,
+p, ul, ol {
   margin: 0;
 }
 
@@ -34,49 +35,38 @@ body {
  */
 
 h1 {
-  @extend %typography-shared;
   font-size   : 3.6rem;
   font-weight : normal;
 }
 
 h2 {
-  @extend %typography-shared;
   font-size   : 3.2rem;
   font-weight : normal;
 }
 
 h3 {
-  @extend %typography-shared;
   font-size   : 2.8rem;
   font-weight : normal;
 }
 
 h4 {
-  @extend %typography-shared;
   font-size   : 2.4rem;
   font-weight : normal;
 }
 
 h5 {
-  @extend %typography-shared;
   font-size   : 2.0rem;
   font-weight : normal;
 }
 
 h6 {
-  @extend %typography-shared;
   font-size   : 1.6rem;
   font-weight : normal;
 }
 
 p {
-  @extend %typography-shared;
   font-size   : 1.4rem;
   font-weight : normal;
-}
-
-ul, ol {
-  @extend %typography-shared;
 }
 
 a {

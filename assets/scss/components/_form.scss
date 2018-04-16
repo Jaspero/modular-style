@@ -6,86 +6,22 @@
 
 
 /*
- * Label
+ * Span & legend
  */
 
-label {
-  display: flex;
+label span {
+  padding: .4rem 0;
+  margin : 0 1rem 0 0;
+}
 
-  span {
-    padding: .4rem 0;
-    margin : 0 1rem 0 0;
-  }
-
-  &.inline {
-    flex-direction: row;
-    align-items   : stretch;
-  }
-
-  &.block {
-    flex-direction: column;
-  }
-
-  &.spaced {
-    flex-flow       : row nowrap;
-    align-items     : center;
-    justify-content : space-between;
-
-    input, textarea, select {
-      flex-basis: 20rem;
-    }
-
-  }
-
-  &.centered {
-    flex-direction: column;
-    align-items   : center;
-  }
-
+label legend {
+  padding: 0;
 }
 
 
 /*
- * Fieldset
+ * Input, textarea, select
  */
-
-fieldset {
-  display : flex;
-  border  : none;
-  padding : 0;
-
-  legend {
-    padding: 0;
-  }
-
-  &.inline {
-    flex-flow: row wrap;
-  }
-
-  &.block {
-    flex-flow: column wrap;
-  }
-
-  &.split {
-    flex-flow: row nowrap;
-
-    @media (max-width: $screen-s) {
-      flex-flow: column nowrap;
-    }
-
-    label {
-      flex: 1 1 auto;
-    }
-
-  }
-
-}
-
-
-/*
- * General
- */
-
 
 label input,
 label textarea,
@@ -133,6 +69,7 @@ label select {
 
 }
 
+// Toggle checked
 input[type=checkbox]:checked ~ .toggle {
   background: rgba(80,200,80,.6);
 
@@ -187,6 +124,12 @@ input[type=checkbox]:checked ~ .toggle {
 
 }
 
+.radio,
+.radio:after {
+  border-radius: 50%;
+}
+
+// Checkbox & radio checked
 input[type=checkbox],
 input[type=radio] {
   
@@ -211,6 +154,74 @@ input[type=radio] {
 
 
 /*
+ * Label layouts
+ */
+
+label {
+  display: flex;
+
+  &.inline {
+    flex-direction: row;
+    align-items   : stretch;
+  }
+
+  &.block {
+    flex-direction: column;
+  }
+
+  &.spaced {
+    flex-flow       : row nowrap;
+    align-items     : center;
+    justify-content : space-between;
+
+    input, textarea, select {
+      flex-basis: 20rem;
+    }
+
+  }
+
+  &.centered {
+    flex-direction: column;
+    align-items   : center;
+  }
+
+}
+
+
+/*
+ * Fieldset layouts
+ */
+
+fieldset {
+  display : flex;
+  border  : none;
+  padding : 0;
+
+  &.inline {
+    flex-flow: row wrap;
+  }
+
+  &.block {
+    flex-flow: column wrap;
+  }
+
+  &.split {
+    flex-flow: row nowrap;
+
+    @media (max-width: $screen-s) {
+      flex-flow: column nowrap;
+    }
+
+    label {
+      flex: 1 1 auto;
+    }
+
+  }
+
+}
+
+
+/*
  * Clearing default values
  */
 
@@ -229,9 +240,4 @@ input[type=radio] {
 
 input[type="number"] {
   width: 100%;
-}
-
-.radio,
-.radio:after {
-  border-radius: 50%;
 }
