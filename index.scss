@@ -26,3 +26,16 @@
 
 // 4. Helpers
 @import "assets/scss/utilities/utilities";
+
+a[href] { color: dodgerblue; display: block; }
+
+*:focus {background: red;}
+
+section {
+  height: 500px;
+  line-height: 500px;
+  text-align: center;
+  font-size: 8rem;
+  background: salmon;
+  &:nth-child(2n) { background: darkseagreen; }
+}

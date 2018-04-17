@@ -13,10 +13,45 @@
     <link rel="stylesheet" type="text/css" href="index.css" />
 
     <!-- Javascript -->
-    <script></script>
+    <script type="text/javascript" src="assets/javascript/modal.js"></script>
 
 </head>
 
-<body></body>
+<body>
+
+<main>
+    <form action="">
+        <button>form button</button>
+    </form>
+</main>
+
+<button data-open-modal="modalID">Open modal</button>
+<button data-open-modal="modalID2">Open modal 2</button>
+
+<div id="modalID" class="modal" role="dialog">
+    <div class="modal-content">
+        <div class="modal-header">Header <button data-close-modal>X</button></div>
+        <div class="modal-body">
+            <a href="" tabindex="1">First ahref</a>
+            <a href="" tabindex="2">Second ahref</a>
+            <a href="" tabindex="3">Third ahref</a>
+            <a href="" tabindex="4">Fourth ahref</a>
+            <a href="" tabindex="5">Fifth ahref</a>
+        </div>
+        <div class="modal-footer">Footer <button data-close-modal tabindex="6">Close</button></div>
+    </div>
+</div>
+
+<div id="modalID2" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">Header <button data-close-modal>X</button></div>
+        <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="modal-footer">Footer <button data-close-modal>Close</button></div>
+    </div>
+</div>
+
+</body>
 
 </html>

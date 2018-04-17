@@ -6,40 +6,64 @@
 
 window.onload = () => {
 
-    const modal = document.querySelectorAll('[class*="modal"][id]');
-    const modalContent = document.querySelectorAll('.modal_content');
+    /*
+     * Get elements with attribute 'data-open-modal'.
+     */
     const modalOpen = document.querySelectorAll('[data-open-modal]');
-    const modalClose = document.querySelectorAll('[data-close-modal]');
 
     modalOpen.forEach(el => {
+
+        /*
+         * Match 'data-open-modal' attribute value with div 'id' value.
+         * Clicking on an element with 'data-open-modal' opens correlating
+         * modal by giving it 'active' class.
+         * Also adds 'modal-opened' class on html to disable background
+         * scrolling.
+         */
         const modalEl = document.getElementById(el.getAttribute('data-open-modal'));
+
         el.addEventListener('click', () => {
             modalEl.classList.add('active');
-            const modalHeaderEl = modalEl.querySelector('.modal_header').scrollHeight;
-            const modalFooterEl = modalEl.querySelector('.modal_footer').scrollHeight;
-            const modalBodyEl = modalEl.querySelector('.modal_body');
-            modalBodyEl.style.maxHeight = ('calc(100vh - 4rem - ' + (modalHeaderEl + modalFooterEl) + 'px)');
-        })
-    });
+            document.documentElement.classList.add('modal-opened');
 
-    modalContent.forEach(el => {
-        el.addEventListener('click', (event) => {
-            event.stopPropagation();
-        });
-    });
+            /*
+             * Clicking on modal overlay or any element with
+             * '[data-close-modal]' attribute closes the modal.
+             */
+            let modalContent = modalEl.querySelector('.modal-content');
+            let modalClose = modalEl.querySelectorAll('[data-close-modal]');
 
-    modal.forEach(el => {
-        el.addEventListener('click', () => {
-            el.classList.remove('active');
-        });
-    });
-
-    modalClose.forEach(el => {
-        el.addEventListener('click', () => {
-            modal.forEach(el => {
-                el.classList.remove('active');
+            modalContent.addEventListener('click', (event) => {
+                event.stopPropagation();
             });
+            modalEl.addEventListener('click', () => {
+                modalEl.classList.remove('active');
+                document.documentElement.classList.remove('modal-opened');
+            });
+            modalClose.forEach(el => {
+                el.addEventListener('click', () => {
+                    modalEl.classList.remove('active');
+                    document.documentElement.classList.remove('modal-opened');
+                });
+            });
+
+            /*
+             * Prevent modal from being larger than screen size.
+             * Otherwise this would happen if header of footer are too big,
+             * and modal-body doesn't have a set max-height.
+             */
+            let modalHeaderEl = modalEl.querySelector('.modal-header').scrollHeight;
+            let modalFooterEl = modalEl.querySelector('.modal-footer').scrollHeight;
+            let modalBodyEl = modalEl.querySelector('.modal-body');
+            modalBodyEl.style.maxHeight = ('calc(100vh - 4rem - ' + (modalHeaderEl + modalFooterEl) + 'px)');
+
+            /*
+             * In case of a form, set focus to an element with 'tabindex="1"'
+             */
+            modalEl.querySelector('[tabindex="1"]').focus();
+
         });
+
     });
 
 };
