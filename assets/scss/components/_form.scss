@@ -4,36 +4,114 @@
 
 ==================================================*/
 
+$border: .1rem solid #ccc;
 
 /*
- * Span & legend
+ * Clearing default values
  */
 
-label span {
-  padding: .4rem 0;
-  margin : 0 1rem 0 0;
+%hide-input {
+
+  input[type=checkbox],
+  input[type=radio]{
+    position: absolute;
+    z-index : -1;
+    opacity : 0;
+  }
+
 }
 
-label legend {
-  padding: 0;
+%normalize-textarea {
+  -webkit-appearance: textfield;
+  resize            : vertical;
+  overflow          : auto;
+}
+
+%normalize-select {
+  cursor            : pointer;
+  appearance        : none;
+  -moz-appearance   : none;
+  -webkit-appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+
 }
 
 
 /*
- * Input, textarea, select
+ * Form group title
  */
 
-label input,
-label textarea,
-label select {
-  padding     : 1rem .5rem;
-  border      : .1rem solid #666;
-  font-family : sans-serif;
-  font-size   : 1.4rem;
+.form-group-title {
+  margin-top    : 6rem;
+  margin-bottom : 2rem;
+  padding-bottom: 1rem;
+  border-bottom : $border;
+  font-size     : 2.4rem;
 
-  &:focus, &:hover {}
-  &:valid {}
-  &:invalid {}
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+}
+
+
+/*
+ * Field
+ * Select, textarea, textual inputs
+ */
+
+.field {
+  display   : flex;
+  flex-flow : column nowrap;
+
+  textarea {
+    @extend %normalize-textarea;
+  }
+
+  input,
+  select,
+  textarea {
+    width         : 100%;
+    padding       : 1rem 2rem 1rem .5rem;
+    border        : $border;
+    border-radius : .3rem;
+    outline       : none;
+    margin        : 0;
+    font-family   : sans-serif;
+    font-size     : 1.4rem;
+    background    : white;
+
+    &::placeholder {}
+
+    &:hover {}
+
+    &:focus {}
+
+    &:valid {}
+
+    &:invalid {}
+
+  }
+
+  &.select {
+    position: relative;
+
+    select {
+      @extend %normalize-select;
+    }
+
+    &:after {
+      content       : url('assets/imgs/dropdown.svg');
+      pointer-events: none;
+      position      : absolute;
+      right         : 1rem;
+      bottom        : .6rem;
+    }
+
+  }
 
 }
 
@@ -43,178 +121,112 @@ label select {
  */
 
 .toggle {
-  cursor        : pointer;
-  position      : relative;
-  --width       : 4rem;
-  --height      : 2.6rem;
-  width         : var(--width);
-  height        : var(--height);
-  border-radius : 400rem;
-  box-shadow    : inset 0 .1rem .3rem 0 rgba(0,0,0,.4);
-  background    : #ccc;
-  transition    : .2s;
+  @extend %hide-input;
+  display         : flex;
+  flex-flow       : row nowrap;
+  align-items     : center;
+  justify-content : space-between;
 
-  &:after {
-    content       : '';
-    position      : absolute;
-    top           : .3rem;
-    left          : .3rem;
-    width         : calc(var(--height) - 0.6rem);
-    height        : calc(var(--height) - 0.6rem);
-    border-radius : 50%;
-    box-shadow    : 0 .2rem .4rem 0 rgba(0,0,0,.24);
-    background    : white;
-    transition    : .2s;
+  .toggle-text {
+    flex          : 1;
+    padding-right : 1rem;
   }
 
-}
+  .control {
+    position      : relative;
+    --width       : 4rem;
+    --height      : 2.6rem;
+    width         : var(--width);
+    height        : var(--height);
+    border-radius : 400rem;
+    box-shadow    : inset 0 .1rem .3rem 0 rgba(0,0,0,.4);
+    background    : #ccc;
+    transition    : .2s;
 
-// Toggle checked
-input[type=checkbox]:checked ~ .toggle {
-  background: rgba(80,200,80,.6);
+    &:after {
+      content       : '';
+      position      : absolute;
+      top           : .3rem;
+      left          : .3rem;
+      width         : calc(var(--height) - 0.6rem);
+      height        : calc(var(--height) - 0.6rem);
+      border-radius : 50%;
+      box-shadow    : 0 .2rem .4rem 0 rgba(0,0,0,.24);
+      background    : white;
+      transition    : .2s;
+    }
 
-  &:after {
-    left: calc(var(--width) - var(--height) + .3rem);
+  }
+
+  input[type=checkbox] {
+
+    &:hover ~ .control {}
+
+    &:focus ~ .control {}
+
+    &:checked ~ .control {}
+
   }
 
 }
 
 
 /*
- * Checkbox & radio
+ * Checkbox
  */
 
-.checkbox,
-.radio {
-  cursor        : pointer;
-  position      : relative;
-  width         : 1.6rem;
-  height        : 1.6rem;
-  margin        : .5rem;
-  border        : .2rem solid #666;
-  border-radius : .2rem;
+.checkbox {
+  @extend %hide-input;
+  display     : flex;
+  flex-flow   : row wrap;
+  align-items : center;
 
-  &:before {
-    content       : '';
-    position      : absolute;
-    top           : 50%;
-    left          : 50%;
-    z-index       : 1;
-    width         : 3.2rem;
-    height        : 3.2rem;
-    border-radius : 50%;
-    background    : transparent;
-    transform     : translate3d(-50%,-50%,0);
-    transition    : .2s;
-  }
-
-  &:after {
-    content       : '';
-    position      : absolute;
-    top           : 50%;
-    left          : 50%;
-    z-index       : 2;
-    width         : .8rem;
-    height        : .8rem;
+  .control {
+    position      : relative;
+    width         : 1.6rem;
+    height        : 1.6rem;
+    margin        : .5rem;
+    border        : $border;
     border-radius : .2rem;
-    background    : #333;
-    transform     : translate3d(-50%,-50%,0) scale3d(0,0,0);
-    transition    : .2s;
-  }
+    background    : white;
 
-}
+    &:before {
+      content       : '';
+      position      : absolute;
+      top           : 50%;
+      left          : 50%;
+      z-index       : 1;
+      width         : 3.2rem;
+      height        : 3.2rem;
+      border-radius : 50%;
+      background    : transparent;
+      transform     : translate3d(-50%,-50%,0);
+      transition    : .2s;
+    }
 
-.radio,
-.radio:after {
-  border-radius: 50%;
-}
-
-// Checkbox & radio checked
-input[type=checkbox],
-input[type=radio] {
-  
-  &:focus ~ .checkbox:before,
-  &:hover ~ .checkbox:before,
-  &:focus ~ .radio:before,
-  &:hover ~ .radio:before {
-    background: rgba(0,0,0,.1);
-  }
-
-  &:checked ~ .checkbox:after,
-  &:checked ~ .radio:after {
-    transform: translate3d(-50%,-50%,0) scale3d(1,1,1);
-  }
-
-  &:disabled ~ .checkbox,
-  &:disabled ~ .radio {
-    opacity: .3;
-  }
-
-}
-
-
-/*
- * Label layouts
- */
-
-label {
-  display: flex;
-
-  &.inline {
-    flex-direction: row;
-    align-items   : stretch;
-  }
-
-  &.block {
-    flex-direction: column;
-  }
-
-  &.spaced {
-    flex-flow       : row nowrap;
-    align-items     : center;
-    justify-content : space-between;
-
-    input, textarea, select {
-      flex-basis: 20rem;
+    &:after {
+      content       : '';
+      position      : absolute;
+      top           : 50%;
+      left          : 50%;
+      z-index       : 2;
+      width         : .5rem;
+      height        : 1rem;
+      border-bottom : .2rem solid black;
+      border-right  : .2rem solid black;
+      transform     : translate3d(-50%,-40%,0) rotate3d(0,0,1,40deg) scale3d(0,0,0);
+      transition    : .2s;
     }
 
   }
 
-  &.centered {
-    flex-direction: column;
-    align-items   : center;
-  }
+  input[type=checkbox] {
 
-}
+    &:hover ~ .control {}
 
+    &:focus ~ .control {}
 
-/*
- * Fieldset layouts
- */
-
-fieldset {
-  display : flex;
-  border  : none;
-  padding : 0;
-
-  &.inline {
-    flex-flow: row wrap;
-  }
-
-  &.block {
-    flex-flow: column wrap;
-  }
-
-  &.split {
-    flex-flow: row nowrap;
-
-    @media (max-width: $screen-s) {
-      flex-flow: column nowrap;
-    }
-
-    label {
-      flex: 1 1 auto;
-    }
+    &:checked ~ .control {}
 
   }
 
@@ -222,22 +234,49 @@ fieldset {
 
 
 /*
- * Clearing default values
+ * Selector
  */
 
-textarea {
-  -webkit-appearance: textfield;
-  resize            : vertical;
-  overflow          : auto;
-}
+.selector {
+  display   : flex;
+  flex-flow : row nowrap;
 
-input[type=checkbox],
-input[type=radio] {
-  position: absolute;
-  z-index : -1;
-  opacity : 0;
-}
+  .radio-select {
+    @extend %hide-input;
+    flex: 1 1 auto;
 
-input[type="number"] {
-  width: 100%;
+    .control {
+      width         : 100%;
+      border-top    : .2rem solid #ccc;
+      border-right  : none;
+      border-bottom : .2rem solid #ccc;
+      border-left   : .2rem solid #ccc;
+      padding       : 1rem 0;
+      text-align    : center;
+      background    : white;
+      transition    : .2s;
+    }
+
+    &:first-of-type .control {
+      border-top-left-radius    : .3rem;
+      border-bottom-left-radius : .3rem;
+    }
+    &:last-of-type .control {
+      border-right              : .2rem solid #ccc;
+      border-top-right-radius   : .3rem;
+      border-bottom-right-radius: .3rem;
+    }
+
+    input[type=radio] {
+
+      &:hover ~ .control {}
+
+      &:focus ~ .control {}
+
+      &:checked ~ .control {}
+
+    }
+
+  }
+
 }
