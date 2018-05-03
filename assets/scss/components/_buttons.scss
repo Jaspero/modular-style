@@ -19,6 +19,7 @@
   font-size     : 1.4rem;
   letter-spacing: .1rem;
   user-select   : none;
+  -webkit-user-select: none;
   transition    : .2s;
 
   span, svg, img {
