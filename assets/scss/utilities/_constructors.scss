@@ -9,10 +9,7 @@
  * Flex
  */
 
-.flex {
-  display   : flex;
-  flex-wrap : wrap;
-}
+.flex { display: flex; flex-wrap: wrap; }
 
 .fw-wrap   { flex-wrap: wrap; }
 .fw-nowrap { flex-wrap: nowrap; }
@@ -46,18 +43,14 @@
  * Height
  */
 
-.height-full {
-  height: 100%;
-}
+.height-full { height: 100%; }
 
 
 /*
  * Width
  */
 
-.width-full {
-  height: 100%;
-}
+.width-full { height: 100%; }
 
 
 /*
