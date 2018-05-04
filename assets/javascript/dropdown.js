@@ -10,7 +10,7 @@ window.onload = () => {
 
     dropdown.forEach(el => {
 
-        const dropdownContent = el.querySelector('[class*="dropdown_content"]');
+        const dropdownContent = el.querySelector('.dropdown-content');
         console.log(dropdownContent);
 
         el.addEventListener('click', (event) => {

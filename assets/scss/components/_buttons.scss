@@ -175,7 +175,7 @@
       animation     : loading-animation .75s linear infinite;
 
       @keyframes loading-animation {
-        0% { transform: translate(-50%,-50%) rotate(0deg); }
+        0%   { transform: translate(-50%,-50%) rotate(0deg); }
         100% { transform: translate(-50%,-50%) rotate(360deg); }
       }
 
