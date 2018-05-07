@@ -13,10 +13,455 @@
     <link rel="stylesheet" type="text/css" href="index.css" />
 
     <!-- Javascript -->
+    <script>
+        window.onload = () => {
+
+            const activeClassName = 'active';
+            const accordionClassName = 'accordion';
+            const summaryClassName = 'accordion-summary';
+            const accordionElements = document.querySelectorAll('.' + accordionClassName);
+
+            function open(accordionEl) {
+                const height = accordionEl.scrollHeight;
+                accordionEl.style.maxHeight = height + 'px';
+                let parent = accordionEl.parentElement;
+
+                while (parent) {
+                    if (parent.classList.contains(accordionClassName)) {
+                        const currentMaxHeight = parseInt(parent.style.maxHeight.replace('px', ''));
+                        parent.style.maxHeight = (currentMaxHeight + height) + 'px';
+                    }
+                    parent = parent.parentElement;
+                }
+                accordionEl.classList.add(activeClassName);
+            }
+
+            function close(accordionEl, summeryEl) {
+                const height = accordionEl.scrollHeight - summeryEl.scrollHeight;
+                accordionEl.style.maxHeight = summeryEl.scrollHeight + 'px';
+                let parent = accordionEl.parentElement;
+                while (parent) {
+
+                    if (parent.classList.contains(accordionClassName)) {
+                        const currentMaxHeight = parseInt(parent.style.maxHeight.replace('px', ''));
+                        parent.style.maxHeight = (currentMaxHeight - height) + 'px';
+                    }
+                    parent = parent.parentElement;
+                }
+                accordionEl.classList.remove(activeClassName);
+            }
+
+            accordionElements.forEach(accordionEl => {
+                const summeryEl = accordionEl.querySelector('.' + summaryClassName);
+                let active = accordionEl.classList.contains(activeClassName);
+                if (active) {
+                    open(accordionEl);
+                } else {
+                    close(accordionEl, summeryEl);
+                }
+                summeryEl.addEventListener('click', () => {
+                    if (active) {
+                        close(accordionEl, summeryEl);
+                    } else {
+                        open(accordionEl);
+                    }
+                    active = !active;
+                })
+            });
+            /*
+     * Get elements with attribute 'data-open-modal'.
+     */
+            const modalOpen = document.querySelectorAll('[data-open-modal]');
+
+            modalOpen.forEach(el => {
+
+                /*
+                 * Match 'data-open-modal' attribute value with div 'id' value.
+                 * Clicking on an element with 'data-open-modal' opens correlating
+                 * modal by giving it 'active' class.
+                 * Also adds 'modal-opened' class on html to disable background
+                 * scrolling.
+                 */
+                const modalEl = document.getElementById(el.getAttribute('data-open-modal'));
+
+                el.addEventListener('click', () => {
+                    modalEl.classList.add('active');
+                    document.documentElement.classList.add('modal-opened');
+
+                    /*
+                     * Clicking on modal overlay or any element with
+                     * '[data-close-modal]' attribute closes the modal.
+                     */
+                    let modalContent = modalEl.querySelector('.modal-content');
+                    let modalClose = modalEl.querySelectorAll('[data-close-modal]');
+
+                    modalContent.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                    });
+                    modalEl.addEventListener('click', () => {
+                        modalEl.classList.remove('active');
+                        document.documentElement.classList.remove('modal-opened');
+                    });
+                    modalClose.forEach(el => {
+                        el.addEventListener('click', () => {
+                            modalEl.classList.remove('active');
+                            document.documentElement.classList.remove('modal-opened');
+                        });
+                    });
+
+                    /*
+                     * Prevent modal from being larger than screen size.
+                     * Otherwise this would happen if header of footer are too big,
+                     * and modal-body doesn't have a set max-height.
+                     */
+                    let modalHeaderEl = modalEl.querySelector('.modal-header').scrollHeight;
+                    let modalFooterEl = modalEl.querySelector('.modal-footer').scrollHeight;
+                    let modalBodyEl = modalEl.querySelector('.modal-body');
+                    modalBodyEl.style.maxHeight = ('calc(100vh - 4rem - ' + (modalHeaderEl + modalFooterEl) + 'px)');
+
+                    /*
+                     * In case of a form, set focus to an element with 'tabindex="1"'
+                     */
+                    modalEl.querySelector('[tabindex="1"]').focus();
+
+                });
+
+            });
+            const tabs = document.querySelectorAll('.tabs');
+
+            tabs.forEach(el => {
+                let nav = el.querySelector('nav');
+                let a = nav.querySelectorAll('a');
+
+                a[0].classList.add('active');
+                document.getElementById(a[0].getAttribute('href').substring(1)).classList.add('active');
+
+                a.forEach(el => {
+                    el.addEventListener('click', (event) => {
+                        event.preventDefault();
+
+                        a.forEach(el => {
+                            el.classList.remove('active');
+                            document.getElementById(el.getAttribute('href').substring(1)).classList.remove('active');
+                        });
+
+                        el.classList.add('active');
+                        document.getElementById(el.getAttribute('href').substring(1)).classList.add('active');
+
+                    });
+                });
+            });
+            const dropdown = document.querySelectorAll('.dropdown');
+
+            dropdown.forEach(el => {
+
+                const dropdownContent = el.querySelector('.dropdown-content');
+                console.log(dropdownContent);
+
+                el.addEventListener('click', (event) => {
+
+                    event.stopPropagation();
+
+                    dropdown.forEach(el => {
+                        el.classList.remove('active');
+                    });
+
+                    el.classList.add('active');
+
+                    dropdownContent.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        dropdownContent.parentElement.classList.remove('active');
+                    });
+
+                });
+
+            });
+
+            window.addEventListener('click', () => {
+                dropdown.forEach(el => {
+                    el.classList.remove('active');
+                });
+            });
+        };
+    </script>
 
 </head>
 
 <body>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+<p>A quick brown fox jumps over the lazy dog.</p>
+<ul>
+    <li>Unordered</li>
+    <li>List</li>
+    <li>Example</li>
+</ul>
+<hr>
+<ol>
+    <li>Ordered</li>
+    <li>List</li>
+    <li>Example</li>
+</ol>
+<span class="tag-info">Info</span>
+<span class="tag-success">Success</span>
+<span class="tag-warning">Warning</span>
+<span class="tag-danger">Danger</span>
+<button class="btn-primary">Primary</button>
+<button class="btn-secondary">Secondary</button>
+<button class="btn-ghost">Ghost</button>
+<button class="btn-contain">asd</button>
+<button class="btn-primary" disabled>Disabled</button>
+<button class="btn-primary loading">Primary</button>
+<button class="btn-primary error">Primary</button>
+<svg class="loading-spinner"><circle cx="20" cy="20" r="18"></circle></svg>
+<div class="loading-bar"></div>
+<form action="">
+
+    <div class="form-group-title">Personal</div>
+
+    <label for="name" class="field">
+        <span>Name</span>
+        <input type="text" id="name" name="" placeholder="John Doe">
+    </label>
+
+    <fieldset>
+        <legend>Date of birth</legend>
+        <div class="fields">
+            <label for="day" class="field select">
+                <select id="day" name="">
+                    <option value="">Day</option>
+                    <option value="">Lorem</option>
+                    <option value="">Ipsum</option>
+                </select>
+            </label>
+            <label for="month" class="field select">
+                <select id="month" name="">
+                    <option value="">Month</option>
+                    <option value="">Lorem</option>
+                    <option value="">Ipsum</option>
+                </select>
+            </label>
+            <label for="year" class="field select">
+                <select id="year" name="">
+                    <option value="">Year</option>
+                    <option value="">Lorem</option>
+                    <option value="">Ipsum</option>
+                </select>
+            </label>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>What colors do you like?</legend>
+        <label for="red" class="checkbox">
+            <input type="checkbox" id="red" name="">
+            <div class="control"></div>
+            <span>Red</span>
+        </label>
+        <label for="green" class="checkbox">
+            <input type="checkbox" id="green" name="">
+            <div class="control"></div>
+            <span>Green</span>
+        </label>
+        <label for="blue" class="checkbox">
+            <input type="checkbox" id="blue" name="">
+            <div class="control"></div>
+            <span>Blue</span>
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend>What is your favorite animal?</legend>
+        <div class="selector">
+            <label for="radio1" class="radio-select">
+                <input type="radio" id="radio1" name="radio">
+                <span class="control">Lion</span>
+            </label>
+            <label for="radio2" class="radio-select">
+                <input type="radio" id="radio2" name="radio">
+                <span class="control">Tiger</span>
+            </label>
+            <label for="radio3" class="radio-select">
+                <input type="radio" id="radio3" name="radio">
+                <span class="control">Bear</span>
+            </label>
+            <label for="radio4" class="radio-select">
+                <input type="radio" id="radio4" name="radio">
+                <span class="control">Cat</span>
+            </label>
+            <label for="radio5" class="radio-select">
+                <input type="radio" id="radio5" name="radio">
+                <span class="control">Dog</span>
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="form-group-title">Account</div>
+
+    <label for="email" class="field">
+        <span>Email</span>
+        <input type="email" id="email" name="" placeholder="john@johndoe.com">
+    </label>
+
+    <label for="password" class="field">
+        <span>Password</span>
+        <input type="password" id="password" name="">
+    </label>
+
+    <div class="form-group-title">Contact</div>
+
+    <label for="address" class="field">
+        <span>Address</span>
+        <input type="text" id="address" name="" placeholder="420 Lorem St.">
+    </label>
+
+    <label for="city" class="field">
+        <span>City</span>
+        <input type="text" id="city" name="" placeholder="Ipsum">
+    </label>
+
+    <label for="state" class="field select">
+        <span>State</span>
+        <select id="state" name="">
+            <option value="">-Select your state-</option>
+            <option value="">Lorem</option>
+            <option value="">Ipsum</option>
+        </select>
+    </label>
+
+    <label for="Phone" class="field">
+        <span>Phone</span>
+        <input type="tel" id="Phone" name="" placeholder="123-456-7890">
+    </label>
+
+    <div class="form-group-title">Other</div>
+
+    <label for="toggle" class="toggle">
+        <div class="toggle-text">
+            <div>Notifications</div>
+            <div style="opacity: .5;">Notifications will notify you about important events. You can change this.</div>
+        </div>
+        <input type="checkbox" id="toggle" name="">
+        <div class="control"></div>
+    </label>
+
+    <label for="message" class="field">
+        <span>Message</span>
+        <textarea id="message" name="" rows="6" placeholder="Heyyy"></textarea>
+    </label>
+
+</form>
+<div class="accordion">
+    <span class="accordion-summary">Accordion</span>
+    <span>Accordion content</span>
+</div>
+<button data-open-modal="modalID">Open modal</button>
+<div id="modalID" class="modal" role="dialog">
+    <div class="modal-content">
+        <div class="modal-header">Header</div>
+        <div class="modal-body">…</div>
+        <div class="modal-footer"><button data-close-modal>Close</button></div>
+    </div>
+</div>
+<div class="tabs">
+    <nav>
+        <a href="#tab1">Tab 1</a>
+        <a href="#tab2">Tab 2</a>
+        <a href="#tab3">Tab 3</a>
+    </nav>
+    <div class="tab-content" id="tab1">Tab 1</div>
+    <div class="tab-content" id="tab2">Tab 2</div>
+    <div class="tab-content" id="tab3">Tab 3</div>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td data-label="Index">1</td>
+        <td data-label="Name">Abraham Alpha</td>
+        <td data-label="Email">abe@email.com</td>
+        <td data-label="Status">Online</td>
+    </tr>
+    <tr>
+        <td data-label="Index">2</td>
+        <td data-label="Name">Benjamin Beta</td>
+        <td data-label="Email">ben@email.com</td>
+        <td data-label="Status">Offline</td>
+    </tr>
+    <tr>
+        <td data-label="Index">3</td>
+        <td data-label="Name">George Gamma</td>
+        <td data-label="Email">george@email.com</td>
+        <td data-label="Status">Offline</td>
+    </tr>
+    <tr>
+        <td data-label="Index">4</td>
+        <td data-label="Name">Daniel Delta</td>
+        <td data-label="Email">danny@email.com</td>
+        <td data-label="Status">Online</td>
+    </tr>
+    </tbody>
+</table>
+<div class="dropdown">
+    <p>Dropdown (default)</p>
+    <div class="dropdown-content">
+        <a class="dropdown-item">Link 1</a>
+        <a class="dropdown-item">Link 2</a>
+        <a class="dropdown-item">Link 3</a>
+    </div>
+</div>
+<div class="dropdown">
+    <p>Dropdown from top right</p>
+    <div class="dropdown-content from-top-right">
+        <a class="dropdown-item">Link 1</a>
+        <a class="dropdown-item">Link 2</a>
+        <a class="dropdown-item">Link 3</a>
+    </div>
+</div>
+<div class="dropdown">
+    <p>Dropdown from bottom right</p>
+    <div class="dropdown-content from-bottom-right">
+        <a class="dropdown-item">Link 1</a>
+        <a class="dropdown-item">Link 2</a>
+        <a class="dropdown-item">Link 3</a>
+    </div>
+</div>
+<div class="dropdown">
+    <p>Dropdown from bottom left</p>
+    <div class="dropdown-content from-bottom-left">
+        <a class="dropdown-item">Link 1</a>
+        <a class="dropdown-item">Link 2</a>
+        <a class="dropdown-item">Link 3</a>
+    </div>
+</div>
+<a href="" class="link">Link</a>
+<div class="card">Card</div>
+<p class="align-left">Left</p>
+<p class="align-center">Center</p>
+<p class="align-right">Right</p>
+<span class="hide-xs">Hide on extra-small screen</span>
+<span class="hide-s">Hide on small screen</span>
+<span class="hide-m">Hide on medium screen</span>
+<span class="show-xs">Show on extra-small screen</span>
+<span class="show-s">Show on small screen</span>
+<span class="show-m">Show on medium screen</span>
+<div class="flex fd-col ai-center">
+    <span>First span</span>
+    <span>Second span</span>
+    <span>Third span</span>
+</div>
+
 </body>
 
 </html>

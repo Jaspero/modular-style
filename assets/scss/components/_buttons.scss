@@ -135,6 +135,7 @@
   @extend %button-shared;
   padding   : .8rem;
   border    : none;
+  font-size : inherit;
   background: transparent;
 }
 
