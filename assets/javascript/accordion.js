@@ -8,7 +8,7 @@ window.onload = () => {
 
     const activeClassName = 'active';
     const accordionClassName = 'accordion';
-    const summaryClassName = 'accordion_summary';
+    const summaryClassName = 'accordion-summary';
     const accordionElements = document.querySelectorAll('.' + accordionClassName);
 
     function open(accordionEl) {

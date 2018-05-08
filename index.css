@@ -174,7 +174,7 @@ hr {
   color: #444;
   transition: .2s; }
   .accordion-summary:after {
-    content: url("assets/imgs/caret.svg");
+    content: url("assets/images/caret.svg");
     transition: .2s; }
   .accordion-summary:hover {
     background: #ddd; }
@@ -457,7 +457,7 @@ fieldset {
   .field.select {
     position: relative; }
     .field.select:after {
-      content: url("assets/imgs/dropdown.svg");
+      content: url("assets/images/dropdown.svg");
       pointer-events: none;
       position: absolute;
       right: 1rem;
