@@ -12,23 +12,8 @@ primary, accent, warning colors
 
  */
 
-@mixin theme-light() {
-  background: white;
-  color: black;
-}
 
-@mixin theme-dark() {
-  background: black;
-  color: white;
-}
-
-html.theme-dark {
-  @include theme-dark;
-}
-
-html.theme-light {
-  @include theme-light;
-}
+html {background: lighten(blue,50%);}
 
 /**/
 
@@ -77,5 +62,3 @@ p {
 p.important {
   @include foobar(123, "abc", 50px); // override the default
 }
-
-/**/
