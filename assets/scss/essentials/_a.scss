@@ -1,0 +1,81 @@
+/*==================================================
+
+  a
+
+==================================================*/
+
+/*
+
+1. light & dark theme (typography colors, buttons???)
+
+primary, accent, warning colors
+
+ */
+
+@mixin theme-light() {
+  background: white;
+  color: black;
+}
+
+@mixin theme-dark() {
+  background: black;
+  color: white;
+}
+
+html.theme-dark {
+  @include theme-dark;
+}
+
+html.theme-light {
+  @include theme-light;
+}
+
+/**/
+
+.funky {
+  font: {
+    family: fantasy;
+    size: 30em;
+    weight: bold;
+  }
+}
+
+/**/
+
+$debug: false;
+
+@if ($debug) { // visualizing layout internals
+  *:not(path):not(g) {
+    color: hsla(210, 100%, 100%, 0.9) !important;
+    background: hsla(210, 100%, 50%, 0.5) !important;
+    outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+}
+
+/**/
+
+@function make-greener($value) {
+  @return $value + rgb(0,50,0); // arithmetic with colors is totally fine, btw
+}
+p {
+  background: make-greener(crimson);
+}
+
+/**/
+
+@mixin foobar($a, $b, $padding: 20px) {
+  padding: $padding;
+  // ...and something with $a and $b
+}
+
+p {
+  @include foobar(123, "abc"); // the default padding's fine
+}
+
+p.important {
+  @include foobar(123, "abc", 50px); // override the default
+}
+
+/**/

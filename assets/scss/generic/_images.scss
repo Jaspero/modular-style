@@ -9,3 +9,25 @@ img {
   font-style    : italic;
   vertical-align: middle;
 }
+
+/*
+
+@each $name in 'save' 'cancel' 'help' {
+  .icon-#{$name} {
+    background-image: url('/images/#{$name}.png');
+  }
+}
+
+// compiles to
+
+.icon-save {
+  background-image: url("/images/save.png");
+}
+.icon-cancel {
+  background-image: url("/images/cancel.png");
+}
+.icon-help {
+  background-image: url("/images/help.png");
+}
+
+*/

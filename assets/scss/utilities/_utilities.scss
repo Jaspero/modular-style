@@ -1,6 +1,6 @@
 /*==================================================
 
-  Constructors
+  Utilities
 
 ==================================================*/
 
@@ -40,17 +40,17 @@
 
 
 /*
- * Height
- */
-
-.height-full { height: 100%; }
-
-
-/*
  * Width
  */
 
-.width-full { height: 100%; }
+.w-full { width: 100%; }
+
+
+/*
+ * Height
+ */
+
+.h-full { height: 100%; }
 
 
 /*
@@ -74,6 +74,63 @@
 .show-xs  { display: none; @media (max-width: $screen-xs) { display: inline-block; } }
 .show-s   { display: none; @media (max-width: $screen-s) { display: inline-block; } }
 .show-m   { display: none; @media (max-width: $screen-m) { display: inline-block; } }
+
+
+/*
+ * Link
+ */
+
+.link {
+  cursor              : pointer;
+  text-decoration     : underline;
+  text-decoration-skip: ink;
+}
+
+
+/*
+ * Colors TODO: change
+ */
+
+.black-fadein {
+  color     : rgba(0,0,0,.5);
+  fill      : rgba(0,0,0,.5);
+  transition: .2s;
+
+  &:hover {
+    color : rgba(0,0,0,.9);
+    fill  : rgba(0,0,0,.9);
+  }
+
+}
+
+.white-fadein {
+  color     : rgba(255,255,255,.5);
+  fill      : rgba(255,255,255,.5);
+  transition: .2s;
+
+  &:hover {
+    color : rgba(255,255,255,.9);
+    fill  : rgba(255,255,255,.9);
+  }
+
+}
+
+
+/*
+ * Card
+ */
+
+.card {
+  border-radius : .3rem;
+  box-shadow    : 0 .2rem .4rem rgba(0,0,0,.3);
+  background    : #FFFFFF;
+}
+
+.card {
+  background    : #F8F9FA;
+  border-radius : .3rem;
+  box-shadow    : 0 .2rem .4rem rgba(0,0,0,.3);
+}
 
 
 /*
