@@ -1,2 +1,2 @@
-html{background:#8080ff}.funky{font-family:fantasy;font-size:30em;font-weight:bold}p{background:#dc463c}p{padding:20px}p.important{padding:50px}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}html{overflow-y:scroll}body{margin:0;overflow-x:hidden;min-height:100vh}
+.btn-primary{color:#fff;background:#3f51b5;font-size:16px;padding:15px 35px;border:none;border-radius:3px}.btn-accent{color:#000;background:#ffd740;font-size:16px;padding:15px 35px;border:none;border-radius:3px}.btn-warn{color:#000;background:#f44336;font-size:16px;padding:15px 35px;border:none;border-radius:3px}
 /*# sourceMappingURL=index.css.map */

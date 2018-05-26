@@ -5,12 +5,12 @@
 ==================================================*/
 
 // 1. Essentials
-@import "assets/scss/essentials/variables";
-@import "assets/scss/essentials/tools";
-@import "assets/scss/essentials/a";
+//@import "assets/scss/essentials/variables";
+//@import "assets/scss/essentials/tools";
+//@import "assets/scss/essentials/a";
 
 // 2. Base
-@import "assets/scss/generic/base";
+//@import "assets/scss/generic/base";
 //@import "assets/scss/generic/images"; // TODO: add object-fit
 //@import "assets/scss/generic/typography";
 
@@ -31,3 +31,66 @@
 // 4. Utilities
 //@import "assets/scss/utilities/utilities"; // TODO: cleanup
 //@import "assets/scss/utilities/custom";
+
+$theme: (
+  dark: true,
+  primary: #3f51b5,
+  accent: #ffd740,
+  warn: #f44336,
+);
+
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+$warn: map-get($theme, warn);
+
+@function contrast($value) {
+  $result: null;
+  @if ((red($value) + green($value) + blue($value)) > 354) {
+    $result: black; // TODO: change color
+  }
+  @else {
+    $result: white; // TODO: change color
+  }
+  @return $result;
+}
+
+@mixin button-theme {
+  .btn-primary {
+    color: contrast($primary);
+    background: $primary;
+    font-size: 16px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 3px;
+  }
+  .btn-accent {
+    color: contrast($accent);
+    background: $accent;
+    font-size: 16px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 3px;
+  }
+  .btn-warn {
+    color: contrast($warn);
+    background: $warn;
+    font-size: 16px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 3px;
+  }
+}
+
+@include button-theme;
+
+
+// TODO: figure out what to do with this
+
+@if (map-get($theme, dark)) {
+  @debug 'asd' map-get($theme, dark);
+}
+@else {
+  @debug 'qwe' map-get($theme, dark);
+}
+
+@debug red(#767676) + green(#767676) + blue(#767676);
