@@ -45,7 +45,7 @@ $warn: map-get($theme, warn);
 
 @function contrast($value) {
   $result: null;
-  @if ((red($value) + green($value) + blue($value)) > 354) {
+  @if ((0.2126 * red($value) + 0.7152 * green($value) + 0.0722 * blue($value)) > 120) {
     $result: black; // TODO: change color
   }
   @else {
@@ -92,5 +92,3 @@ $warn: map-get($theme, warn);
 @else {
   @debug 'qwe' map-get($theme, dark);
 }
-
-@debug red(#767676) + green(#767676) + blue(#767676);
