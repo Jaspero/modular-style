@@ -10,26 +10,15 @@ img {
   vertical-align: middle;
 }
 
-// TODO: add object-fit
-
-/*
-
-@each $name in 'save' 'cancel' 'help' {
-  .icon-#{$name} {
-    background-image: url('/images/#{$name}.png');
-  }
+.img-full {
+  width : 100%;
+  height: 100%;
 }
 
-// compiles to
-
-.icon-save {
-  background-image: url("/images/save.png");
-}
-.icon-cancel {
-  background-image: url("/images/cancel.png");
-}
-.icon-help {
-  background-image: url("/images/help.png");
+.img-cover {
+  object-fit: cover;
 }
 
-*/
+.img-contain {
+  object-fit: contain;
+}

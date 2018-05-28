@@ -32,22 +32,8 @@
 //@import "assets/scss/utilities/utilities"; // TODO: cleanup
 //@import "assets/scss/utilities/custom";
 
-
-
-
-
-@mixin card-theme {
-  .card {
-    background: if(map-get($theme, dark), black, white);
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
-  }
-}
-
 @mixin theme {
   @include button-theme;
-  @include card-theme;
 }
 
 @include theme;
-
-//background: if(map-get($theme, dark), /*value*/, /*value*/);
