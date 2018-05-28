@@ -41,3 +41,18 @@ $high-screen-limit: 1600px;
   @return mix(black, $color, $percentage);
 }
 
+
+/*
+ * Contrast function
+ */
+
+@function contrast($value) {
+  $result: null;
+  @if ((0.2126 * red($value) + 0.7152 * green($value) + 0.0722 * blue($value)) > 128) {
+    $result: rgba(0,0,0,.9);
+  }
+  @else {
+    $result: rgb(255,255,255);
+  }
+  @return $result;
+}

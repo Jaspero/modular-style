@@ -26,10 +26,11 @@ html {
 
 html {
   overflow-y: scroll;
+  background: if(map-get($theme, dark), #212121, white);
 }
 
 body {
-  margin      : 0;
-  overflow-x  : hidden;
-  min-height  : 100vh;
+  margin    : 0;
+  overflow-x: hidden;
+  min-height: 100vh;
 }

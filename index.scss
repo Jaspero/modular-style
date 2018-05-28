@@ -5,18 +5,18 @@
 ==================================================*/
 
 // 1. Essentials
-//@import "assets/scss/essentials/variables";
-//@import "assets/scss/essentials/tools";
-//@import "assets/scss/essentials/a";
+@import "assets/scss/essentials/theme";
+@import "assets/scss/essentials/variables";
+@import "assets/scss/essentials/tools";
 
 // 2. Base
-//@import "assets/scss/generic/base";
-//@import "assets/scss/generic/images"; // TODO: add object-fit
+@import "assets/scss/generic/base";
+@import "assets/scss/generic/images";
 //@import "assets/scss/generic/typography";
 
 // 3. Components
 //@import "assets/scss/components/accordion";
-//@import "assets/scss/components/buttons";
+@import "assets/scss/components/buttons";
 //@import "assets/scss/components/dropdown";
 //@import "assets/scss/components/form";
 //@import "assets/scss/components/grid";
@@ -32,63 +32,22 @@
 //@import "assets/scss/utilities/utilities"; // TODO: cleanup
 //@import "assets/scss/utilities/custom";
 
-$theme: (
-  dark: true,
-  primary: #3f51b5,
-  accent: #ffd740,
-  warn: #f44336,
-);
 
-$primary: map-get($theme, primary);
-$accent: map-get($theme, accent);
-$warn: map-get($theme, warn);
 
-@function contrast($value) {
-  $result: null;
-  @if ((0.2126 * red($value) + 0.7152 * green($value) + 0.0722 * blue($value)) > 120) {
-    $result: black; // TODO: change color
-  }
-  @else {
-    $result: white; // TODO: change color
-  }
-  @return $result;
-}
 
-@mixin button-theme {
-  .btn-primary {
-    color: contrast($primary);
-    background: $primary;
-    font-size: 16px;
-    padding: 15px 35px;
-    border: none;
-    border-radius: 3px;
-  }
-  .btn-accent {
-    color: contrast($accent);
-    background: $accent;
-    font-size: 16px;
-    padding: 15px 35px;
-    border: none;
-    border-radius: 3px;
-  }
-  .btn-warn {
-    color: contrast($warn);
-    background: $warn;
-    font-size: 16px;
-    padding: 15px 35px;
-    border: none;
-    border-radius: 3px;
+
+@mixin card-theme {
+  .card {
+    background: if(map-get($theme, dark), black, white);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
   }
 }
 
-@include button-theme;
-
-
-// TODO: figure out what to do with this
-
-@if (map-get($theme, dark)) {
-  @debug 'asd' map-get($theme, dark);
+@mixin theme {
+  @include button-theme;
+  @include card-theme;
 }
-@else {
-  @debug 'qwe' map-get($theme, dark);
-}
+
+@include theme;
+
+//background: if(map-get($theme, dark), /*value*/, /*value*/);

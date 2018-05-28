@@ -4,11 +4,34 @@
 
 ==================================================*/
 
+@mixin button-theme {
+  .btn-primary {
+    color: contrast($primary);
+    background: $primary;
+    font-size: 16px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 3px;
+  }
+  .btn-accent {
+    color: contrast($accent);
+    background: $accent;
+    font-size: 16px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 3px;
+  }
+  .btn-warn {
+    color: contrast($warn);
+    background: $warn;
+    font-size: 16px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 3px;
+  }
+}
 
 /*
- * Shared style
- */
-
 %button-shared {
   display             : inline-block;
   cursor              : pointer;
@@ -23,11 +46,6 @@
   }
 
 }
-
-
-/*
- * Primary button
- */
 
 .btn-primary {
   @extend %button-shared;
@@ -57,11 +75,6 @@
 
   @extend %button-states;
 }
-
-
-/*
- * Secondary button
- */
 
 .btn-secondary {
   @extend %button-shared;
@@ -93,11 +106,6 @@
   @extend %button-states;
 }
 
-
-/*
- * Ghost button
- */
-
 .btn-ghost {
   @extend %button-shared;
   padding   : 1rem 2rem;
@@ -126,11 +134,6 @@
   @extend %button-states;
 }
 
-
-/*
- * Contain button
- */
-
 .btn-contain {
   @extend %button-shared;
   padding   : .8rem;
@@ -138,11 +141,6 @@
   font-size : inherit;
   background: transparent;
 }
-
-
-/*
- * Button states
- */
 
 %button-states {
 
@@ -199,3 +197,5 @@
   }
 
 }
+
+*/
