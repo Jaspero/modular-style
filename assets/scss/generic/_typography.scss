@@ -13,7 +13,7 @@ html {
   font-family   : sans-serif;
   font-size     : 62.5%;
   line-height   : 1.5;
-  color         : if(map-get($theme, dark), rgb(255,255,255), rgba(0,0,0,.9));
+  //color         : if(map-get($theme, dark), rgb(255,255,255), rgba(0,0,0,.9));
   word-wrap     : break-word;
   overflow-wrap : break-word;
 }
@@ -100,5 +100,5 @@ hr {
   margin      : 1rem 0;
   border-width: .1rem 0 0;
   border-style: solid;
-  border-color: if(map-get($theme, dark), rgba(255,255,255,.2), rgba(0,0,0,.2));
+  //border-color: if(map-get($theme, dark), rgba(255,255,255,.2), rgba(0,0,0,.2));
 }

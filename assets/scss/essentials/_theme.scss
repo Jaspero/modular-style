@@ -4,9 +4,139 @@
 
 ==================================================*/
 
-$theme: (
-  dark    : true,
-  primary : #465362,
-  accent  : dodgerblue,
-  warn    : crimson,
+
+$my-primary: #465362;
+$my-accent : dodgerblue;
+$my-warn   : crimson;
+
+
+
+
+// Light theme colors
+$light-theme-background: (
+  base: white
 );
+
+$light-theme-foreground: (
+  base: black
+);
+
+// Dark theme colors
+$dark-theme-background: (
+  base: black
+);
+
+$dark-theme-foreground: (
+  base: white
+);
+
+
+
+
+
+
+@function get-light-theme($primary, $accent, $warn) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: false,
+    foreground: $light-theme-foreground,
+    background: $light-theme-background,
+  );
+}
+
+@function get-dark-theme($primary, $accent, $warn) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: true,
+    foreground: $dark-theme-foreground,
+    background: $dark-theme-background,
+  );
+}
+
+
+// todo
+
+
+
+$my-dark-theme: get-dark-theme (
+  $my-primary,
+  $my-accent,
+  $my-warn
+);
+
+$my-light-theme: get-light-theme (
+  $my-primary,
+  $my-accent,
+  $my-warn
+);
+
+
+
+
+@mixin theme() {}
+
+
+
+html {
+  @include theme($my-light-theme);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//// define 3 theme color
+//// mat-palette accepts $palette-name, main, lighter and darker variants
+
+//$my-theme-primary: mat-palette($mat-indigo, 700, 300, 900);
+//$my-theme-accent: mat-palette($mat-light-blue);
+//$my-theme-warn: mat-palette($mat-deep-orange, A200);
+//
+//// create theme (use mat-dark-theme for themes with dark backgrounds)
+
+//$my-theme: mat-light-theme(
+//                $my-theme-primary,
+//                $my-theme-accent,
+//                $my-theme-warn
+//);
+//
+//.my-theme {
+//  @include angular-material-theme($my-theme);
+//}
+//
+
+//// additional css classes
+//// you can hardcode one of them on the <body> tag
+//// or switch dynamically during runtime with [class]
+
+//.my-light-theme {
+//  @include angular-material-theme($my-light-theme);
+//}
+//
+//.my-dark-theme {
+//  @include angular-material-theme($my-dark-theme);
+//}
+
+
+
+
+//$primary: map-get($theme, primary);
+//$accent : map-get($theme, accent);
+//$warn   : map-get($theme, warn);

@@ -26,7 +26,7 @@ html {
 
 html {
   overflow-y: scroll;
-  background: if(map-get($theme, dark), #212121, white);
+  //background: if(map-get($theme, dark), #212121, white);
 }
 
 body {

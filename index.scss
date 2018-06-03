@@ -31,9 +31,3 @@
 // 4. Utilities
 //@import "assets/scss/utilities/utilities"; // TODO: cleanup
 //@import "assets/scss/utilities/custom";
-
-@mixin theme {
-  @include button-theme;
-}
-
-@include theme;

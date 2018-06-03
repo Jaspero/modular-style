@@ -39,13 +39,13 @@
     @extend %button-shared;
     padding   : 1rem 2.5rem;
     border    : none;
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-    color     : contrast($accent);
-    fill      : contrast($accent);
-    background: $accent;
+    //box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    //color     : contrast($accent);
+    //fill      : contrast($accent);
+    //background: $accent;
 
     &:hover, &:focus {
-      background: darken($accent, 10%);
+      //background: darken($accent, 10%);
     }
 
     &:active {
@@ -66,12 +66,12 @@
   .btn-outline {
     @extend %button-shared;
     padding   : 1rem 2.5rem;
-    border    : .1rem solid $accent;
-    color     : $accent;
+    //border    : .1rem solid $accent;
+    //color     : $accent;
     background: transparent;
 
     &:hover, &:focus {
-      background: fade-out($accent, .8);
+      //background: fade-out($accent, .8);
     }
 
     &:active {}
@@ -92,8 +92,8 @@
     padding   : 1rem 2.5rem;
     border    : none;
     background: transparent;
-    color     : if(map-get($theme, dark), rgb(255,255,255), rgba(0,0,0,.9));
-    fill      : if(map-get($theme, dark), rgb(255,255,255), rgba(0,0,0,.9));
+    //color     : if(map-get($theme, dark), rgb(255,255,255), rgba(0,0,0,.9));
+    //fill      : if(map-get($theme, dark), rgb(255,255,255), rgba(0,0,0,.9));
 
     &:hover, &:focus {
       background: #ddd;
@@ -178,7 +178,7 @@
     }
 
     &.loading {
-      background: $accent;
+      //background: $accent;
 
       &:after {
         content       : '';
@@ -190,7 +190,7 @@
         border-radius : 50%;
         border-width  : .2rem;
         border-style  : solid;
-        border-color  : contrast($accent) contrast($accent) transparent transparent;
+        //border-color  : contrast($accent) contrast($accent) transparent transparent;
         animation     : loading-animation .75s linear infinite;
 
         @keyframes loading-animation {
@@ -203,7 +203,7 @@
     }
 
     &.error {
-      background: $warn;
+      //background: $warn;
 
       &:after {
         content   : 'Error';
