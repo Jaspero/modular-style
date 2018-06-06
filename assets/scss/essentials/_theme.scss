@@ -5,138 +5,74 @@
 ==================================================*/
 
 
-$my-primary: #465362;
-$my-accent : dodgerblue;
-$my-warn   : crimson;
-
-
-
-
-// Light theme colors
 $light-theme-background: (
-  base: white
+  base: white,
+  bla: #eee
 );
 
 $light-theme-foreground: (
   base: black
 );
 
-// Dark theme colors
 $dark-theme-background: (
-  base: black
+  base: black,
+  bla: #666
 );
 
 $dark-theme-foreground: (
   base: white
 );
 
-
-
-
-
-
-@function get-light-theme($primary, $accent, $warn) {
+@function get-light-theme($primary, $accent, $warn: crimson) {
   @return (
     primary: $primary,
     accent: $accent,
     warn: $warn,
-    is-dark: false,
     foreground: $light-theme-foreground,
-    background: $light-theme-background,
+    background: $light-theme-background
   );
 }
 
-@function get-dark-theme($primary, $accent, $warn) {
+@function get-dark-theme($primary, $accent, $warn: crimson) {
   @return (
     primary: $primary,
     accent: $accent,
     warn: $warn,
-    is-dark: true,
     foreground: $dark-theme-foreground,
-    background: $dark-theme-background,
+    background: $dark-theme-background
   );
 }
 
 
-// todo
-
-
-
-$my-dark-theme: get-dark-theme (
-  $my-primary,
-  $my-accent,
-  $my-warn
+$my-theme: get-light-theme(
+  $primary: pink,
+  $accent: purple
 );
 
-$my-light-theme: get-light-theme (
-  $my-primary,
-  $my-accent,
-  $my-warn
+$my-second-theme: get-light-theme(
+  $primary: darkgreen,
+  $accent: cyan
 );
 
 
+@mixin button-mixin($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
 
+  button {
+    background: $warn;
+    color: map_get($background, bla);
+  }
 
-@mixin theme() {}
-
-
-
-html {
-  @include theme($my-light-theme);
 }
 
 
+@mixin angular-material-theme($theme) {
+  @include button-mixin($theme);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//// define 3 theme color
-//// mat-palette accepts $palette-name, main, lighter and darker variants
-
-//$my-theme-primary: mat-palette($mat-indigo, 700, 300, 900);
-//$my-theme-accent: mat-palette($mat-light-blue);
-//$my-theme-warn: mat-palette($mat-deep-orange, A200);
-//
-//// create theme (use mat-dark-theme for themes with dark backgrounds)
-
-//$my-theme: mat-light-theme(
-//                $my-theme-primary,
-//                $my-theme-accent,
-//                $my-theme-warn
-//);
-//
-//.my-theme {
-//  @include angular-material-theme($my-theme);
-//}
-//
-
-//// additional css classes
-//// you can hardcode one of them on the <body> tag
-//// or switch dynamically during runtime with [class]
-
-//.my-light-theme {
-//  @include angular-material-theme($my-light-theme);
-//}
-//
-//.my-dark-theme {
-//  @include angular-material-theme($my-dark-theme);
-//}
-
-
-
-
-//$primary: map-get($theme, primary);
-//$accent : map-get($theme, accent);
-//$warn   : map-get($theme, warn);
+@include angular-material-theme($my-second-theme);
