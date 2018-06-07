@@ -5,13 +5,13 @@
 ==================================================*/
 
 
+/*
+ * Theme background colors
+ */
+
 $light-theme-background: (
   base: white,
   bla: #eee
-);
-
-$light-theme-foreground: (
-  base: black
 );
 
 $dark-theme-background: (
@@ -19,60 +19,40 @@ $dark-theme-background: (
   bla: #666
 );
 
+
+/*
+ * Theme foreground colors
+ */
+
+$light-theme-foreground: (
+  base: black
+);
+
 $dark-theme-foreground: (
   base: white
 );
 
+
+/*
+ * Function to get proper colors
+ */
+
 @function get-light-theme($primary, $accent, $warn: crimson) {
   @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-    foreground: $light-theme-foreground,
-    background: $light-theme-background
+          primary: $primary,
+          accent: $accent,
+          warn: $warn,
+          foreground: $light-theme-foreground,
+          background: $light-theme-background
   );
 }
 
 @function get-dark-theme($primary, $accent, $warn: crimson) {
   @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-    foreground: $dark-theme-foreground,
-    background: $dark-theme-background
+          primary: $primary,
+          accent: $accent,
+          warn: $warn,
+          foreground: $dark-theme-foreground,
+          background: $dark-theme-background
   );
 }
-
-
-$my-theme: get-light-theme(
-  $primary: pink,
-  $accent: purple
-);
-
-$my-second-theme: get-light-theme(
-  $primary: darkgreen,
-  $accent: cyan
-);
-
-
-@mixin button-mixin($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
-
-  button {
-    background: $warn;
-    color: map_get($background, bla);
-  }
-
-}
-
-
-@mixin angular-material-theme($theme) {
-  @include button-mixin($theme);
-}
-
-
-@include angular-material-theme($my-second-theme);

@@ -29,5 +29,11 @@
 //@import "assets/scss/components/tooltips";
 
 // 4. Utilities
-//@import "assets/scss/utilities/utilities"; // TODO: cleanup
+//@import "assets/scss/utilities/utilities";
 //@import "assets/scss/utilities/custom";
+
+@mixin theme($theme) {
+  @include buttons($theme);
+}
+
+@include theme($my-second-theme);

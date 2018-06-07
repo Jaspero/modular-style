@@ -4,14 +4,19 @@
 
 ==================================================*/
 
-
 /*
  * Theme colors
  */
 
-//$primary: map-get($theme, primary);
-//$accent : map-get($theme, accent);
-//$warn   : map-get($theme, warn);
+$my-theme: get-light-theme(
+        $primary: pink,
+        $accent: purple
+);
+
+$my-second-theme: get-light-theme(
+        $primary: darkgreen,
+        $accent: cyan
+);
 
 
 /*

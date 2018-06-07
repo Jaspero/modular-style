@@ -4,6 +4,21 @@
 
 ==================================================*/
 
+
+@mixin buttons($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  button {
+    background: $warn;
+    color: map_get($background, bla);
+  }
+
+}
+
 @mixin button-theme {
 
 
