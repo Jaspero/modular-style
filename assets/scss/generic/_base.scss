@@ -4,33 +4,39 @@
 
 ==================================================*/
 
+@mixin base($theme) {
 
-/*
- * Box sizing
- */
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+  $background: map-get($theme, background);
 
 
-/*
- * Page setup
- */
+  /*
+   * Box sizing
+   */
 
-html {
-  overflow-y: scroll;
-  //background: if(map-get($theme, dark), #212121, white);
-}
+  html {
+    box-sizing: border-box;
+  }
 
-body {
-  margin    : 0;
-  overflow-x: hidden;
-  min-height: 100vh;
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+
+  /*
+   * Page setup
+   */
+
+  html {
+    overflow-y: scroll;
+    background: map_get($background, background);
+  }
+
+  body {
+    margin    : 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
 }

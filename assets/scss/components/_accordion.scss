@@ -4,47 +4,50 @@
 
 ==================================================*/
 
+@mixin accordion($theme) {
 
-/*
- * General
- */
+  /*
+   * General
+   */
 
-.accordion {
-  display   : block;
-  overflow  : hidden;
-  transition: .2s;
-
-  &.active > .accordion-summary:after {
-    transform: rotate(-90deg);
-  }
-
-}
-
-
-/*
- * Accordion summary
- */
-
-.accordion-summary {
-  display             : flex;
-  justify-content     : space-between;
-  align-items         : center;
-  cursor              : pointer;
-  user-select         : none;
-  -webkit-user-select : none;
-  padding             : 1rem;
-  margin              : 0;
-  background          : #eee;
-  color               : #444;
-  transition          : .2s;
-
-  &:after {
-    content   : url('assets/images/caret.svg');
+  .accordion {
+    display   : block;
+    overflow  : hidden;
     transition: .2s;
+
+    &.active > .accordion-summary:after {
+      transform: rotate(90deg);
+    }
+
   }
 
-  &:hover {
-    background: #ddd;
+
+  /*
+   * Accordion summary
+   */
+
+  .accordion-summary {
+    display             : flex;
+    justify-content     : space-between;
+    align-items         : center;
+    cursor              : pointer;
+    user-select         : none;
+    -webkit-user-select : none;
+    padding             : 1rem;
+    margin              : 0;
+    background          : #eee;
+    color               : #444;
+    transition          : .2s;
+
+    &:after {
+      content   : '▸';
+      transition: .2s;
+    }
+
+    &:hover {
+      background: #ddd;
+    }
+
   }
 
 }

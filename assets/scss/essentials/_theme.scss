@@ -10,12 +10,12 @@
  */
 
 $light-theme-background: (
-  base: white,
-  bla: #eee
+  background: white,
+  bla: white,
 );
 
 $dark-theme-background: (
-  base: black,
+  background: #212121,
   bla: #666
 );
 
@@ -25,11 +25,15 @@ $dark-theme-background: (
  */
 
 $light-theme-foreground: (
-  base: black
+  text-primary: rgba(0,0,0,.9),
+  text-secondary: rgba(0,0,0,.6),
+  divider: rgba(0,0,0,.2)
 );
 
 $dark-theme-foreground: (
-  base: white
+  text-primary: rgba(255,255,255,.9),
+  text-secondary: rgba(255,255,255,.6),
+  divider: rgba(255,255,255,.2)
 );
 
 
@@ -39,20 +43,20 @@ $dark-theme-foreground: (
 
 @function get-light-theme($primary, $accent, $warn: crimson) {
   @return (
-          primary: $primary,
-          accent: $accent,
-          warn: $warn,
-          foreground: $light-theme-foreground,
-          background: $light-theme-background
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    foreground: $light-theme-foreground,
+    background: $light-theme-background
   );
 }
 
 @function get-dark-theme($primary, $accent, $warn: crimson) {
   @return (
-          primary: $primary,
-          accent: $accent,
-          warn: $warn,
-          foreground: $dark-theme-foreground,
-          background: $dark-theme-background
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    foreground: $dark-theme-foreground,
+    background: $dark-theme-background
   );
 }

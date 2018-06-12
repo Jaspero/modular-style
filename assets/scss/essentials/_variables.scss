@@ -8,14 +8,14 @@
  * Theme colors
  */
 
-$my-theme: get-light-theme(
-        $primary: pink,
-        $accent: purple
+$my-light-theme: get-light-theme(
+  $primary: pink,
+  $accent: purple
 );
 
-$my-second-theme: get-light-theme(
-        $primary: darkgreen,
-        $accent: cyan
+$my-dark-theme: get-dark-theme(
+  $primary: pink,
+  $accent: purple
 );
 
 
