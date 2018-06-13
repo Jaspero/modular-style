@@ -6,17 +6,58 @@
 
 @mixin accordion($theme) {
 
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+
   /*
    * General
    */
 
   .accordion {
-    display   : block;
-    overflow  : hidden;
-    transition: .2s;
+    display       : block;
+    overflow      : hidden;
+    box-shadow    : $box-shadow;
+    background    : map_get($background, card);
+    transition    : .2s;
 
     &.active > .accordion-summary:after {
-      transform: rotate(90deg);
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    &.active {
+      margin-bottom: 1rem;
+    }
+
+  }
+
+  /*
+   * Accordion summary
+   */
+
+  .accordion-summary {
+    position            : relative;
+    display             : flex;
+    align-items         : center;
+    cursor              : pointer;
+    user-select         : none;
+    -webkit-user-select : none;
+    padding             : 1rem 4rem 1rem 1rem;
+    margin              : 0;
+    color               : map_get($foreground, text-primary);
+    transition          : .2s;
+
+    &:after {
+      content   : '▸';
+      position  : absolute;
+      top       : 50%;
+      right     : 1rem;
+      transform : translateY(-50%);
+      transition: .2s;
+    }
+
+    &:hover {
+      background: map_get($background, hover);
     }
 
   }
@@ -26,28 +67,8 @@
    * Accordion summary
    */
 
-  .accordion-summary {
-    display             : flex;
-    justify-content     : space-between;
-    align-items         : center;
-    cursor              : pointer;
-    user-select         : none;
-    -webkit-user-select : none;
-    padding             : 1rem;
-    margin              : 0;
-    background          : #eee;
-    color               : #444;
-    transition          : .2s;
-
-    &:after {
-      content   : '▸';
-      transition: .2s;
-    }
-
-    &:hover {
-      background: #ddd;
-    }
-
+  .accordion-content {
+    padding: 1rem;
   }
 
 }

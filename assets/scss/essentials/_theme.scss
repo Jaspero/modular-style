@@ -11,12 +11,16 @@
 
 $light-theme-background: (
   background: white,
-  bla: white,
+  card: white,
+  hover: #eee,
+  odd-rows: rgba(0,0,0,.04)
 );
 
 $dark-theme-background: (
   background: #212121,
-  bla: #666
+  card: #424242,
+  hover: #636363,
+  odd-rows: rgba(255,255,255,.08)
 );
 
 

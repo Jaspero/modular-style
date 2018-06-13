@@ -4,39 +4,43 @@
 
 ==================================================*/
 
-
-/*
- * Shared
- */
-
-%tags-shared {
-  display       : inline-block;
-  padding       : .2rem 0.8rem;
-  border-radius : .3rem;
-  color         : white;
-}
+@mixin tags($theme) {
 
 
-/*
- * Tags
- */
+  /*
+   * Shared
+   */
 
-.tag-info {
-  @extend %tags-shared;
-  background: lightskyblue;
-}
+  %tags-shared {
+    display       : inline-block;
+    padding       : .2rem 0.8rem;
+    border-radius : .3rem;
+    color         : white;
+  }
 
-.tag-success {
-  @extend %tags-shared;
-  background: mediumaquamarine;
-}
 
-.tag-warning {
-  @extend %tags-shared;
-  background: orange;
-}
+  /*
+   * Tags
+   */
 
-.tag-danger {
-  @extend %tags-shared;
-  background: tomato;
+  .tag-info {
+    @extend %tags-shared;
+    background: lightskyblue;
+  }
+
+  .tag-success {
+    @extend %tags-shared;
+    background: mediumaquamarine;
+  }
+
+  .tag-warning {
+    @extend %tags-shared;
+    background: orange;
+  }
+
+  .tag-danger {
+    @extend %tags-shared;
+    background: tomato;
+  }
+
 }

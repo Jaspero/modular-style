@@ -4,72 +4,118 @@
 
 ==================================================*/
 
+@mixin tables($theme) {
 
-/*
- * General
- */
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
 
-table {
-  width           : 100%;
-  border-collapse : collapse;
-  text-align      : left;
+  /*
+   * Simple table
+   */
 
-  thead {
+  .simple-table {
+    border-collapse : collapse;
+    width           : 100%;
+    box-shadow      : $box-shadow;
+    text-align      : left;
+    background      : map_get($background, card);
+
     tr {
-      border    : .1rem solid #ccc;
-      background: rgba(0,0,0,.05);
+      border-bottom: .1rem solid map_get($foreground, divider);
+
+      &:nth-child(2n-1) {
+        background: map_get($background, odd-rows);
+      }
+
+      &:hover {
+        background: map_get($background, hover);
+      }
+
     }
+
+    thead tr:nth-child(1) {
+      background: map_get($background, card);
+    }
+
+    tbody tr:nth-last-child(1) {
+      border-bottom: none;
+    }
+
     th {
-      padding   : .6rem;
-      font-size : 1.1rem;
-    }
-  }
+      padding     : 1.6rem .8rem;
+      font-size   : 1.1rem;
+      font-weight : bold;
+      color       : map_get($foreground, text-secondary);
 
-  tbody {
-    tr {
-      border: .1rem solid #ccc;
+      &:nth-child(1) {
+        padding: .8rem .8rem .8rem 2.4rem;
+      }
+
+      &:nth-last-child(1) {
+        padding: .8rem 2.4rem .8rem .8rem;
+      }
+
     }
-    tr:hover {
-      background: rgba(0,0,0,.05);
-    }
+
     td {
-      padding   : 1.2rem .8rem;
+      padding   : .8rem;
       font-size : 1.2rem;
-    }
-  }
+      color     : map_get($foreground, text-primary);
 
-}
+      &:nth-child(1) {
+        padding: .8rem .8rem .8rem 2.4rem;
+      }
 
+      &:nth-last-child(1) {
+        padding: .8rem 2.4rem .8rem .8rem;
+      }
 
-/*
- * Smaller screen layout
- */
-
-@media screen and (max-width: $screen-s) {
-
-  table {
-    box-shadow: none;
-
-    tr {
-      display   : block;
-      margin    : 1rem 0;
-      box-shadow: 0 .1rem .3rem 0 rgba(0,0,0,0.2);
     }
 
-    td {
-      display   : block;
-      text-align: right;
-    }
 
-    td:before {
-      content : attr(data-label);
-      float   : left;
-    }
+    /*
+     * Smaller screen layout
+     */
 
-    thead {
-      opacity : 0;
-      position: absolute;
-      z-index : -1;
+    @media screen and (max-width: $screen-s) {
+      box-shadow: none;
+
+      tr {
+        display   : block;
+        margin    : 1rem 0;
+        box-shadow: $box-shadow;
+      }
+
+      td {
+        display       : block;
+        text-align    : right;
+        border-bottom : 1px solid map_get($foreground, divider);
+
+        &:nth-child(1) {
+          padding: .8rem .8rem .8rem .8rem;
+        }
+
+        &:nth-last-child(1) {
+          padding: .8rem .8rem .8rem .8rem;
+        }
+
+      }
+
+      tr td:nth-last-child(1) {
+        border-bottom: none;
+      }
+
+      td:before {
+        content : attr(data-label);
+        float   : left;
+      }
+
+      thead {
+        opacity : 0;
+        position: absolute;
+        z-index : -1;
+      }
+
     }
 
   }
