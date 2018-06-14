@@ -30,22 +30,10 @@ $high-screen-limit: 1600px;
 
 
 /*
- * Lighten & darken functions
- */
-
-@function lighten($color, $percentage) {
-  @return mix(white, $color, $percentage);
-}
-
-@function darken($color, $percentage) {
-  @return mix(black, $color, $percentage);
-}
-
-
-/*
  * Contrast function
  */
 
+// For text
 @function contrast($value) {
   $result: null;
   @if ((0.2126 * red($value) + 0.7152 * green($value) + 0.0722 * blue($value)) > 128) {
@@ -53,6 +41,18 @@ $high-screen-limit: 1600px;
   }
   @else {
     $result: rgb(255,255,255);
+  }
+  @return $result;
+}
+
+// For ripple
+@function contrast-ripple($value) {
+  $result: null;
+  @if ((0.2126 * red($value) + 0.7152 * green($value) + 0.0722 * blue($value)) > 128) {
+    $result: #000;
+  }
+  @else {
+    $result: #FFF;
   }
   @return $result;
 }

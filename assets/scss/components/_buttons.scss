@@ -4,10 +4,8 @@
 
 ==================================================*/
 
-// TODO: ripple color based on background
-// TODO: icon & contain buttons
-
 @mixin buttons($theme) {
+
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
@@ -66,61 +64,13 @@
     }
 
     @extend %ripple;
-    @extend %button-states;
+    @extend %loading;
     @extend %disabled;
 
   }
 
 
-  /*
-   * Outline button
-   */
 
-  .btn-outline {
-    @extend %button-shared;
-    padding   : 1rem 2.5rem;
-    border    : .1rem solid $accent;
-    color     : $accent;
-    background: transparent;
-
-    &:hover, &:focus {
-      background: fade-out($accent, .8);
-    }
-
-    &:active {}
-
-    @extend %ripple;
-    @extend %button-states;
-    @extend %disabled;
-
-  }
-
-
-  /*
-   * Outline button
-   */
-
-  .btn-ghost {
-    @extend %button-shared;
-    padding   : 1rem 2.5rem;
-    border    : none;
-    background: transparent;
-    color     : map_get($foreground, base);
-    fill      : map_get($foreground, base);
-
-    &:hover, &:focus {
-      background: fade-out($accent, .9);
-    }
-
-    &:active {
-      background: fade-out($accent, .8);
-    }
-
-    @extend %ripple;
-    @extend %button-states;
-    @extend %disabled;
-
-  }
 
 
   /*
@@ -156,7 +106,7 @@
       left                : 0;
       width               : 100%;
       height              : 100%;
-      background-image    : radial-gradient(circle, #000 10%, transparent 10.01%);
+      background-image    : radial-gradient(circle, contrast-ripple($accent) 10%, transparent 10.01%);
       background-repeat   : no-repeat;
       background-position : 50%;
       transform           : scale(10, 10);
@@ -176,22 +126,18 @@
    * Button states (loading, error)
    */
 
-  %button-states {
+  %loading {
 
-    &.loading, &.error {
+    &.loading {
       pointer-events: none;
       position      : relative;
       border        : none;
       color         : transparent;
+      background    : $accent;
 
       span, svg, img {
         opacity: 0;
       }
-
-    }
-
-    &.loading {
-      background: $accent;
 
       &:after {
         content       : '';
@@ -215,20 +161,56 @@
 
     }
 
-    &.error {
-      background: $warn;
-
-      &:after {
-        content   : 'Error';
-        position  : absolute;
-        top       : 50%;
-        left      : 50%;
-        color     : white;
-        transform : translate(-50%,-50%);
-      }
-
-    }
-
   }
 
 }
+
+
+/*
+
+.btn-outline {
+  @extend %button-shared;
+  padding   : 1rem 2.5rem;
+  border    : .1rem solid $accent;
+  color     : $accent;
+  background: transparent;
+
+  &:hover, &:focus {
+    background: fade-out($accent, .8);
+  }
+
+  &:active {}
+
+  @extend %ripple;
+  @extend %button-states;
+  @extend %disabled;
+
+}
+
+.btn-ghost {
+  @extend %button-shared;
+  padding   : 1rem 2.5rem;
+  border    : none;
+  background: transparent;
+  color     : map_get($foreground, base);
+  fill      : map_get($foreground, base);
+
+  &:hover, &:focus {
+    background: fade-out($accent, .9);
+  }
+
+  &:active {
+    background: fade-out($accent, .8);
+  }
+
+  @extend %ripple;
+  @extend %button-states;
+  @extend %disabled;
+
+}
+
+.btn-icon {}
+
+.btn-contain {}
+
+*/
