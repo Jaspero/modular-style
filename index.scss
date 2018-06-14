@@ -40,11 +40,12 @@
   @include typography($theme);
   @include accordion($theme);
   @include buttons($theme);
+  @include form($theme);
   @include grid($theme);
   @include read-format($theme);
   @include tables($theme);
 }
 
 // My themes
-//@include theme($my-light-theme);
-@include theme($my-dark-theme);
+@include theme($my-light-theme);
+//@include theme($my-dark-theme);
