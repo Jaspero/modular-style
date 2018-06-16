@@ -57,6 +57,9 @@
 
 }
 
-// My themes
+// Global theme
 @include theme($my-light-theme);
-//@include theme($my-dark-theme);
+
+// Local theme
+.theme-light { @include theme($my-light-theme); }
+.theme-dark { @include theme($my-dark-theme); }
