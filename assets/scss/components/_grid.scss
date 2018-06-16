@@ -34,6 +34,7 @@
     .col-12 { flex-basis: 100%; }
 
     @media screen and (max-width: $screen-m) {
+      .o-m-last { order: 9; }
       .col-m-0  { display: none; }
       .col-m-1  { flex-basis: 8.3333%; }
       .col-m-2  { flex-basis: 16.6666%; }
@@ -50,6 +51,7 @@
     }
 
     @media screen and (max-width: $screen-s) {
+      .o-s-last { order: 9; }
       .col-s-0  { display: none; }
       .col-s-1  { flex-basis: 8.3333%; }
       .col-s-2  { flex-basis: 16.6666%; }
@@ -66,6 +68,7 @@
     }
 
     @media screen and (max-width: $screen-xs) {
+      .o-xs-last { order: 9; }
       .col-xs-0  { display: none; }
       .col-xs-1  { flex-basis: 8.3333%; }
       .col-xs-2  { flex-basis: 16.6666%; }

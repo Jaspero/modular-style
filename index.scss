@@ -35,15 +35,26 @@
 
 // Including style mixin for each import
 @mixin theme($theme) {
+
+  // Base
   @include base($theme);
   @include images($theme);
   @include typography($theme);
+
+  // Components
   @include accordion($theme);
   @include buttons($theme);
   @include form($theme);
   @include grid($theme);
-  @include read-format($theme);
+  @include layout($theme);
   @include tables($theme);
+  @include tags($theme);
+  @include read-format($theme);
+
+  // Utilities
+  @include utilities($theme);
+  @include custom($theme);
+
 }
 
 // My themes
