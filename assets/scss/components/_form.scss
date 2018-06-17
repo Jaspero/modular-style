@@ -89,6 +89,11 @@
   fieldset {
     border  : none;
     padding : 0;
+
+    legend {
+      color: map_get($foreground, text-secondary);
+    }
+
   }
 
 
@@ -100,6 +105,10 @@
   .field {
     display   : flex;
     flex-flow : column nowrap;
+
+    span {
+      color: map_get($foreground, text-secondary);
+    }
 
     textarea {
       @extend %normalize-textarea;
@@ -169,6 +178,7 @@
     span {
       user-select         : none;
       -webkit-user-select : none;
+      color               : map_get($foreground, text-secondary);
     }
 
     .control {
@@ -240,6 +250,7 @@
     span {
       user-select         : none;
       -webkit-user-select : none;
+      color               : map_get($foreground, text-secondary);
     }
 
     .control {
@@ -312,6 +323,12 @@
     .toggle-text {
       flex          : 1;
       padding-right : 1rem;
+      color         : map_get($foreground, text-secondary);
+
+      .toggle-text-description {
+        opacity: .75;
+      }
+
     }
 
     .control {

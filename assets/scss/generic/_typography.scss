@@ -71,7 +71,8 @@
   }
 
   p {
-    font-size: 1.4rem;
+    color     : map_get($foreground, text-secondary);
+    font-size : 1.4rem;
   }
 
   button {
@@ -86,7 +87,7 @@
   }
 
   span {
-    display: inline-block;
+    display : inline-block;
   }
 
   b, strong {
