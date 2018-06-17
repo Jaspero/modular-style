@@ -20,15 +20,6 @@
     box-shadow    : $box-shadow;
     background    : map_get($background, card);
     transition    : .2s;
-
-    &.active > .accordion-summary:after {
-      transform: translateY(-50%) rotate(90deg);
-    }
-
-    &.active {
-      margin-bottom: 1rem;
-    }
-
   }
 
   /*
@@ -64,11 +55,28 @@
 
 
   /*
-   * Accordion summary
+   * Accordion content
    */
 
   .accordion-content {
     padding: 1rem;
+  }
+
+
+  /*
+   * Accordion active
+   */
+
+  .accordion.active > .accordion-summary:after {
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  .accordion.active + .accordion {
+    margin-top: 1rem;
+  }
+
+  .accordion + .active {
+    margin-top: 1rem;
   }
 
 }

@@ -28,15 +28,12 @@
    * Page setup
    */
 
-  html {
-    overflow-y: scroll;
-    background: map_get($background, background);
-  }
-
   body {
     margin    : 0;
     overflow-x: hidden;
+    overflow-y: scroll;
     min-height: 100vh;
+    background: map_get($background, background);
   }
 
 }
