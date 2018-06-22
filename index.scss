@@ -63,3 +63,6 @@
 // Local theme
 .theme-light { @include theme($my-light-theme); }
 .theme-dark { @include theme($my-dark-theme); }
+
+
+.box { background: crimson; width: 100%; min-height: 80px; }
