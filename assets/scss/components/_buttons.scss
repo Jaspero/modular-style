@@ -4,6 +4,24 @@
 
 ==================================================*/
 
+
+@mixin box($theme) {
+
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .box {
+
+    @include get-property-color(background, map_get($background, hover), $theme);
+    width: 100%;
+    min-height: 80px;
+  }
+
+}
+
 @mixin buttons($theme) {
 
   $primary: map-get($theme, primary);

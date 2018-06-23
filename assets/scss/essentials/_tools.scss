@@ -56,3 +56,23 @@ $high-screen-limit: 1600px;
   }
   @return $result;
 }
+
+
+/*
+ * Color matching
+ */
+
+@mixin get-property-color($prop, $default, $theme) {
+
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  #{$prop}: $default;
+  &[data-color='accent'] { #{$prop}: $accent; }
+  &[data-color='primary'] { #{$prop}: $primary; }
+  &[data-color='warn'] { #{$prop}: $warn; }
+
+}
