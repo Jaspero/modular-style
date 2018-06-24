@@ -11,18 +11,18 @@
 
 $light-theme-background: (
   background: white,
-  card: white,
-  hover: #eee,
-  odd-rows: rgba(0,0,0,.04),
-  field: #fafafa
+  card      : white,
+  hover     : rgba(0,0,0,.12),
+  odd-rows  : rgba(0,0,0,.04),
+  field     : #fafafa
 );
 
 $dark-theme-background: (
   background: #212121,
-  card: #424242,
-  hover: #636363,
-  odd-rows: rgba(255,255,255,.08),
-  field: #2f2f2f
+  card      : #424242,
+  hover     : #636363,
+  odd-rows  : rgba(255,255,255,.08),
+  field     : #2f2f2f
 );
 
 
@@ -31,19 +31,21 @@ $dark-theme-background: (
  */
 
 $light-theme-foreground: (
-  text-primary: rgba(0,0,0,.9),
+  text-primary  : rgba(0,0,0,.9),
   text-secondary: rgba(0,0,0,.6),
-  divider: rgba(0,0,0,.2),
-  border: rgba(0,0,0,.2),
-  toggle: #5f5f5f,
+  disabled      : rgba(0,0,0,.26),
+  divider       : rgba(0,0,0,.2),
+  border        : rgba(0,0,0,.2),
+  toggle        : #5f5f5f,
 );
 
 $dark-theme-foreground: (
-  text-primary: rgba(255,255,255,.9),
+  text-primary  : rgba(255,255,255,.9),
   text-secondary: rgba(255,255,255,.6),
-  divider: rgba(255,255,255,.2),
-  border: rgba(255,255,255,.2),
-  toggle: #c0c0c0,
+  disabled      : rgba(255,255,255,.3),
+  divider       : rgba(255,255,255,.2),
+  border        : rgba(255,255,255,.2),
+  toggle        : #c0c0c0,
 );
 
 
@@ -51,21 +53,23 @@ $dark-theme-foreground: (
  * Function to get proper colors
  */
 
-@function get-light-theme($primary, $accent, $warn: crimson) {
+@function get-light-theme($primary, $accent, $warn: crimson, $success: limegreen) {
   @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
+    primary   : $primary,
+    accent    : $accent,
+    warn      : $warn,
+    success   : $success,
     foreground: $light-theme-foreground,
     background: $light-theme-background
   );
 }
 
-@function get-dark-theme($primary, $accent, $warn: crimson) {
+@function get-dark-theme($primary, $accent, $warn: crimson, $success: limegreen) {
   @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
+    primary   : $primary,
+    accent    : $accent,
+    warn      : $warn,
+    success   : $success,
     foreground: $dark-theme-foreground,
     background: $dark-theme-background
   );

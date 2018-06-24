@@ -62,17 +62,36 @@ $high-screen-limit: 1600px;
  * Color matching
  */
 
-@mixin get-property-color($prop, $default, $theme) {
+@mixin get-property-color($prop, $default, $hue, $theme) {
 
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
+  $primary    : map-get($theme, primary);
+  $accent     : map-get($theme, accent);
+  $warn       : map-get($theme, warn);
+  $success    : map-get($theme, success);
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
 
   #{$prop}: $default;
-  &[data-color='accent'] { #{$prop}: $accent; }
-  &[data-color='primary'] { #{$prop}: $primary; }
-  &[data-color='warn'] { #{$prop}: $warn; }
+  &[data-color='primary'] { #{$prop}: fade-out($primary, $hue); }
+  &[data-color='accent']  { #{$prop}: fade-out($accent, $hue); }
+  &[data-color='warn']    { #{$prop}: fade-out($warn, $hue); }
+  &[data-color='success'] { #{$prop}: fade-out($success, $hue); }
+
+}
+
+@mixin get-property-contrast($prop, $default, $hue, $theme) {
+
+  $primary    : map-get($theme, primary);
+  $accent     : map-get($theme, accent);
+  $warn       : map-get($theme, warn);
+  $success    : map-get($theme, success);
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
+
+  #{$prop}: $default;
+  &[data-color='primary'] { #{$prop}: contrast(fade-out($primary, $hue)); }
+  &[data-color='accent']  { #{$prop}: contrast(fade-out($accent, $hue)); }
+  &[data-color='warn']    { #{$prop}: contrast(fade-out($warn, $hue)); }
+  &[data-color='success'] { #{$prop}: contrast(fade-out($success, $hue)); }
 
 }

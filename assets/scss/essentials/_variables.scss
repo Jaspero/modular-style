@@ -10,15 +10,13 @@
  */
 
 $my-light-theme: get-light-theme(
-  $primary: #262E39,
-  $accent : #F2BE35,
-  $warn   : crimson
+  $primary: #673AB7,
+  $accent : #FFD740
 );
 
 $my-dark-theme: get-dark-theme(
-  $primary: #262E39,
-  $accent : #F28F37,
-  $warn   : crimson
+  $primary: #E91E63,
+  $accent : #69F0AE
 );
 
 

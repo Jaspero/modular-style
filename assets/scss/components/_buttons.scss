@@ -4,38 +4,14 @@
 
 ==================================================*/
 
-
-@mixin box($theme) {
-
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
-
-  .box {
-
-    @include get-property-color(background, map_get($background, hover), $theme);
-    width: 100%;
-    min-height: 80px;
-  }
-
-}
-
 @mixin buttons($theme) {
 
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
-
-  /*
-  button {
-    background: $warn;
-    color: map_get($background, bla);
-  }
-  */
+  $primary    : map-get($theme, primary);
+  $accent     : map-get($theme, accent);
+  $warn       : map-get($theme, warn);
+  $success    : map-get($theme, success);
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
 
   /*
    * Shared style
@@ -47,9 +23,11 @@
     overflow            : hidden;
     position            : relative;
     outline             : none;
+    border              : none;
     border-radius       : .3rem;
     user-select         : none;
     -webkit-user-select : none;
+    font-weight         : bold;
     transition          : .2s;
 
     span, svg, img {
@@ -65,44 +43,93 @@
 
   .btn {
     @extend %button-shared;
-    padding   : 1rem 2.5rem;
-    border    : none;
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-    color     : contrast($accent);
-    fill      : contrast($accent);
-    background: $accent;
+    padding     : 1rem 2.5rem;
+    background  : transparent;
+    @include get-property-color(color, map_get($foreground, text-primary), 0, $theme);
+    @include get-property-color(fill, map_get($foreground, text-primary), 0, $theme);
 
     &:hover, &:focus {
-      background: darken($accent, 10%);
+      @include get-property-color(background, map_get($background, hover), .86, $theme);
     }
 
-    &:active {
-      box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+    &:active {}
+
+    &:disabled {
+      pointer-events: none;
+      color         : map_get($foreground, disabled);
+      fill          : map_get($foreground, disabled);
     }
 
     @extend %ripple;
     @extend %loading;
-    @extend %disabled;
 
   }
 
 
   /*
-   * Disabled
+   * Raised button
    */
 
-  %disabled {
+  .btn-raised {
+    @extend %button-shared;
+    padding     : 1rem 2.5rem;
+    box-shadow  : 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+    @include get-property-contrast(color, map_get($foreground, text-primary), 0, $theme);
+    @include get-property-contrast(fill, map_get($foreground, text-primary), 0, $theme);
+    @include get-property-color(background, map_get($background,  card), 0, $theme);
+
+    &:hover, &:focus {}
+
+    &:active {
+      box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+    }
 
     &:disabled {
       pointer-events: none;
-      border        : none;
       box-shadow    : none;
-      color         : #aaa;
-      fill          : #aaa;
-      background    : #eee;
+      background    : map_get($background, hover);
+      color         : map_get($foreground, disabled);
+      fill          : map_get($foreground, disabled);
     }
 
+    @extend %ripple;
+    @extend %loading;
+
   }
+
+
+  /*
+   * Outline button
+   */
+
+  .btn-outline {
+    @extend %button-shared;
+    padding     : 1rem 2.5rem;
+    background  : transparent;
+    border-width: .2rem;
+    border-style: solid;
+    @include get-property-color(border-color, map_get($foreground, text-primary), 0, $theme);
+    @include get-property-color(color, map_get($foreground, text-primary), 0, $theme);
+    @include get-property-color(fill, map_get($foreground, text-primary), 0, $theme);
+
+    &:hover, &:focus {
+      @include get-property-color(background, map_get($background, hover), .86, $theme);
+    }
+
+    &:active {}
+
+    &:disabled {
+      pointer-events: none;
+      border-color  : map_get($foreground, disabled);
+      color         : map_get($foreground, disabled);
+      fill          : map_get($foreground, disabled);
+    }
+
+    @extend %ripple;
+    @extend %loading;
+
+  }
+
 
 
   /*
@@ -147,7 +174,6 @@
       position      : relative;
       border        : none;
       color         : transparent;
-      background    : $accent;
 
       span, svg, img {
         opacity: 0;
