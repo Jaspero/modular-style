@@ -62,7 +62,7 @@ $high-screen-limit: 1600px;
  * Color matching
  */
 
-@mixin get-property-color($prop, $default, $hue, $theme) {
+@mixin get-prop-color($prop, $default, $hue, $theme) {
 
   $primary    : map-get($theme, primary);
   $accent     : map-get($theme, accent);
@@ -79,7 +79,7 @@ $high-screen-limit: 1600px;
 
 }
 
-@mixin get-property-contrast($prop, $default, $hue, $theme) {
+@mixin get-prop-contrast($prop, $default, $hue, $theme) {
 
   $primary    : map-get($theme, primary);
   $accent     : map-get($theme, accent);
@@ -93,5 +93,22 @@ $high-screen-limit: 1600px;
   &[data-color='accent']  { #{$prop}: contrast(fade-out($accent, $hue)); }
   &[data-color='warn']    { #{$prop}: contrast(fade-out($warn, $hue)); }
   &[data-color='success'] { #{$prop}: contrast(fade-out($success, $hue)); }
+
+}
+
+@mixin get-ripple-color($theme) {
+
+  $primary    : map-get($theme, primary);
+  $accent     : map-get($theme, accent);
+  $warn       : map-get($theme, warn);
+  $success    : map-get($theme, success);
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
+
+  //background-image: radial-gradient(circle, contrast-ripple($accent) 10%, transparent 10.01%);
+  &[data-color='primary']:before { background-image: radial-gradient(circle, contrast-ripple($primary) 10%, transparent 10.01%); }
+  &[data-color='accent']:before  { background-image: radial-gradient(circle, contrast-ripple($accent) 10%, transparent 10.01%); }
+  &[data-color='warn']:before    { background-image: radial-gradient(circle, contrast-ripple($warn) 10%, transparent 10.01%); }
+  &[data-color='success']:before { background-image: radial-gradient(circle, contrast-ripple($success) 10%, transparent 10.01%); }
 
 }

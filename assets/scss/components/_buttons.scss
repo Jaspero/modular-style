@@ -45,11 +45,11 @@
     @extend %button-shared;
     padding     : 1rem 2.5rem;
     background  : transparent;
-    @include get-property-color(color, map_get($foreground, text-primary), 0, $theme);
-    @include get-property-color(fill, map_get($foreground, text-primary), 0, $theme);
+    @include get-prop-color(color, map_get($foreground, text-primary), 0, $theme);
+    @include get-prop-color(fill, map_get($foreground, text-primary), 0, $theme);
 
     &:hover, &:focus {
-      @include get-property-color(background, map_get($background, hover), .86, $theme);
+      @include get-prop-color(background, map_get($background, hover), .86, $theme);
     }
 
     &:active {}
@@ -74,9 +74,9 @@
     @extend %button-shared;
     padding     : 1rem 2.5rem;
     box-shadow  : 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
-    @include get-property-contrast(color, map_get($foreground, text-primary), 0, $theme);
-    @include get-property-contrast(fill, map_get($foreground, text-primary), 0, $theme);
-    @include get-property-color(background, map_get($background,  card), 0, $theme);
+    @include get-prop-contrast(color, map_get($foreground, text-primary), 0, $theme);
+    @include get-prop-contrast(fill, map_get($foreground, text-primary), 0, $theme);
+    @include get-prop-color(background, map_get($background,  card), 0, $theme);
 
     &:hover, &:focus {}
 
@@ -108,12 +108,12 @@
     background  : transparent;
     border-width: .2rem;
     border-style: solid;
-    @include get-property-color(border-color, map_get($foreground, text-primary), 0, $theme);
-    @include get-property-color(color, map_get($foreground, text-primary), 0, $theme);
-    @include get-property-color(fill, map_get($foreground, text-primary), 0, $theme);
+    @include get-prop-color(border-color, map_get($foreground, text-primary), 0, $theme);
+    @include get-prop-color(color, map_get($foreground, text-primary), 0, $theme);
+    @include get-prop-color(fill, map_get($foreground, text-primary), 0, $theme);
 
     &:hover, &:focus {
-      @include get-property-color(background, map_get($background, hover), .86, $theme);
+      @include get-prop-color(background, map_get($background, hover), .86, $theme);
     }
 
     &:active {}
@@ -131,12 +131,47 @@
   }
 
 
+  /*
+   * Icon button
+   */
+
+  .btn-icon {
+    @extend %button-shared;
+    display         : inline-flex;
+    justify-content : center;
+    align-items     : center;
+    width           : 40px;
+    height          : 40px;
+    border-radius   : 50%;
+    background      : transparent;
+    @include get-prop-color(color, map_get($foreground, text-primary), 0, $theme);
+    @include get-prop-color(fill, map_get($foreground, text-primary), 0, $theme);
+
+    &:hover, &:focus {
+      @include get-prop-color(background, map_get($background, hover), .86, $theme);
+    }
+
+    &:active {}
+
+    &:disabled {
+      pointer-events: none;
+      border-color  : map_get($foreground, disabled);
+      color         : map_get($foreground, disabled);
+      fill          : map_get($foreground, disabled);
+    }
+
+    @extend %ripple;
+    @extend %loading;
+
+  }
+
 
   /*
    * Ripple
    */
 
   %ripple {
+    @include get-ripple-color($theme);
 
     &:before {
       content             : "";
@@ -147,7 +182,6 @@
       left                : 0;
       width               : 100%;
       height              : 100%;
-      background-image    : radial-gradient(circle, contrast-ripple($accent) 10%, transparent 10.01%);
       background-repeat   : no-repeat;
       background-position : 50%;
       transform           : scale(10, 10);
@@ -189,7 +223,7 @@
         border-radius : 50%;
         border-width  : .2rem;
         border-style  : solid;
-        border-color  : contrast($accent) contrast($accent) transparent transparent;
+        border-color  : map_get($foreground, text-primary) map_get($foreground, text-primary) transparent transparent;
         animation     : loading-animation .75s linear infinite;
 
         @keyframes loading-animation {

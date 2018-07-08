@@ -53,7 +53,7 @@ $dark-theme-foreground: (
  * Function to get proper colors
  */
 
-@function get-light-theme($primary, $accent, $warn: crimson, $success: limegreen) {
+@function get-light-theme($primary, $accent, $warn: #f15a5a, $success: #4eba6f) {
   @return (
     primary   : $primary,
     accent    : $accent,
@@ -64,7 +64,7 @@ $dark-theme-foreground: (
   );
 }
 
-@function get-dark-theme($primary, $accent, $warn: crimson, $success: limegreen) {
+@function get-dark-theme($primary, $accent, $warn: #f15a5a, $success: #4eba6f) {
   @return (
     primary   : $primary,
     accent    : $accent,

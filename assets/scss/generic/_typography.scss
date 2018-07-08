@@ -96,6 +96,11 @@
 
   i {
     font-style: italic;
+
+    &.material-icons {
+      font-style: normal;
+    }
+
   }
 
   u {
