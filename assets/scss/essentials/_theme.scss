@@ -14,7 +14,8 @@ $light-theme-background: (
   card      : white,
   hover     : rgba(0,0,0,.12),
   odd-rows  : rgba(0,0,0,.04),
-  field     : #fafafa
+  field     : #fafafa,
+  ripple    : radial-gradient(circle, black 10%, transparent 10.01%)
 );
 
 $dark-theme-background: (
@@ -22,7 +23,8 @@ $dark-theme-background: (
   card      : #424242,
   hover     : #636363,
   odd-rows  : rgba(255,255,255,.08),
-  field     : #2f2f2f
+  field     : #2f2f2f,
+  ripple    : radial-gradient(circle, white 10%, transparent 10.01%)
 );
 
 

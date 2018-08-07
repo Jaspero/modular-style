@@ -1,8 +1,4 @@
-/*==================================================
-
-  Buttons
-
-==================================================*/
+@import "buttons-variables";
 
 @mixin buttons($theme) {
 
@@ -13,25 +9,82 @@
   $foreground : map-get($theme, foreground);
   $background : map-get($theme, background);
 
+
   /*
    * Shared style
    */
 
-  %button-shared {
-    display             : inline-block;
-    cursor              : pointer;
-    overflow            : hidden;
-    position            : relative;
-    outline             : none;
-    border              : none;
-    border-radius       : .3rem;
-    user-select         : none;
-    -webkit-user-select : none;
-    font-weight         : bold;
-    transition          : .2s;
+  %button-base {
+    display: inline-flex;
+    cursor: pointer;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    padding: $button-padding;
+    border-radius: $button-border-radius;
+    border: none;
+    outline: none;
+    font-weight: $button-font-weight;
+    font-size: $button-font-size;
+    transition: .2s;
 
     span, svg, img {
       vertical-align: middle;
+    }
+
+    &.loading {
+      pointer-events: none;
+      position: relative;
+      border: none;
+      color: transparent;
+
+      span, svg, img {
+        opacity: 0;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 1.8rem;
+        width: 1.8rem;
+        border-radius: 50%;
+        border-width: .2rem;
+        border-style: solid;
+        border-color: map_get($foreground, text-primary) map_get($foreground, text-primary) transparent transparent;
+        animation: loading-animation .75s linear infinite;
+
+        @keyframes loading-animation {
+          0% { transform: translate(-50%,-50%) rotate(0deg); }
+          100% { transform: translate(-50%,-50%) rotate(360deg); }
+        }
+
+      }
+
+    }
+
+    &:before {
+      content: "";
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: map_get($background, ripple);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transform: scale(10, 10);
+      transition: transform .5s, opacity 1s;
+    }
+
+    &:active:before {
+      opacity: .3;
+      transform: scale(0, 0);
+      transition: 0s;
     }
 
   }
@@ -42,9 +95,8 @@
    */
 
   .btn {
-    @extend %button-shared;
-    padding     : 1rem 2.5rem;
-    background  : transparent;
+    @extend %button-base;
+    background: transparent;
     @include get-prop-color(color, map_get($foreground, text-primary), 0, $theme);
     @include get-prop-color(fill, map_get($foreground, text-primary), 0, $theme);
 
@@ -54,11 +106,9 @@
 
     &:disabled {
       pointer-events: none;
-      color         : map_get($foreground, disabled);
-      fill          : map_get($foreground, disabled);
+      color: map_get($foreground, disabled);
+      fill: map_get($foreground, disabled);
     }
-
-    @extend %loading;
 
   }
 
@@ -68,9 +118,8 @@
    */
 
   .btn-raised {
-    @extend %button-shared;
-    padding     : 1rem 2.5rem;
-    box-shadow  : 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+    @extend %button-base;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
     @include get-prop-contrast(color, map_get($foreground, text-primary), 0, $theme);
     @include get-prop-contrast(fill, map_get($foreground, text-primary), 0, $theme);
     @include get-prop-color(background, map_get($background,  card), 0, $theme);
@@ -81,13 +130,11 @@
 
     &:disabled {
       pointer-events: none;
-      box-shadow    : none;
-      background    : map_get($background, hover);
-      color         : map_get($foreground, disabled);
-      fill          : map_get($foreground, disabled);
+      box-shadow: none;
+      background: map_get($background, hover);
+      color: map_get($foreground, disabled);
+      fill: map_get($foreground, disabled);
     }
-
-    @extend %loading;
 
   }
 
@@ -97,9 +144,8 @@
    */
 
   .btn-outline {
-    @extend %button-shared;
-    padding     : 1rem 2.5rem;
-    background  : transparent;
+    @extend %button-base;
+    background: transparent;
     border-width: .2rem;
     border-style: solid;
     @include get-prop-color(border-color, map_get($foreground, text-primary), 0, $theme);
@@ -112,12 +158,10 @@
 
     &:disabled {
       pointer-events: none;
-      border-color  : map_get($foreground, disabled);
-      color         : map_get($foreground, disabled);
-      fill          : map_get($foreground, disabled);
+      border-color: map_get($foreground, disabled);
+      color: map_get($foreground, disabled);
+      fill: map_get($foreground, disabled);
     }
-
-    @extend %loading;
 
   }
 
@@ -127,14 +171,14 @@
    */
 
   .btn-icon {
-    @extend %button-shared;
-    display         : inline-flex;
-    justify-content : center;
-    align-items     : center;
-    width           : 40px;
-    height          : 40px;
-    border-radius   : 50%;
-    background      : transparent;
+    @extend %button-base;
+    justify-content: center;
+    align-items: center;
+    width: $button-icon-size;
+    height: $button-icon-size;
+    padding: 0;
+    border-radius: 50%;
+    background: transparent;
     @include get-prop-color(color, map_get($foreground, text-primary), 0, $theme);
     @include get-prop-color(fill, map_get($foreground, text-primary), 0, $theme);
 
@@ -144,52 +188,9 @@
 
     &:disabled {
       pointer-events: none;
-      border-color  : map_get($foreground, disabled);
-      color         : map_get($foreground, disabled);
-      fill          : map_get($foreground, disabled);
-    }
-
-    @extend %loading;
-
-  }
-
-
-  /*
-   * Button states (loading, error)
-   */
-
-  %loading {
-
-    &.loading {
-      pointer-events: none;
-      position      : relative;
-      border        : none;
-      color         : transparent;
-
-      span, svg, img {
-        opacity: 0;
-      }
-
-      &:after {
-        content       : '';
-        position      : absolute;
-        top           : 50%;
-        left          : 50%;
-        height        : 1.8rem;
-        width         : 1.8rem;
-        border-radius : 50%;
-        border-width  : .2rem;
-        border-style  : solid;
-        border-color  : map_get($foreground, text-primary) map_get($foreground, text-primary) transparent transparent;
-        animation     : loading-animation .75s linear infinite;
-
-        @keyframes loading-animation {
-          0%   { transform: translate(-50%,-50%) rotate(0deg); }
-          100% { transform: translate(-50%,-50%) rotate(360deg); }
-        }
-
-      }
-
+      border-color: map_get($foreground, disabled);
+      color: map_get($foreground, disabled);
+      fill: map_get($foreground, disabled);
     }
 
   }

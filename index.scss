@@ -63,5 +63,3 @@
 // Local theme
 .theme-light { @include theme($my-light-theme); }
 .theme-dark { @include theme($my-dark-theme); }
-
-.box { background:#eee;width:100%; }
