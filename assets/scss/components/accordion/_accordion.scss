@@ -1,0 +1,86 @@
+@import "accordion-variables";
+
+@mixin accordion($theme) {
+
+  $primary    : map-get($theme, primary);
+  $accent     : map-get($theme, accent);
+  $warn       : map-get($theme, warn);
+  $success    : map-get($theme, success);
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
+
+
+  /*
+   * General
+   */
+
+  .accordion {
+    display: block;
+    overflow: hidden;
+    margin-bottom: $accordion-margin-bottom;
+    box-shadow: $accordion-box-shadow;
+    border: $accordion-border;
+    background: map_get($background, card);
+    transition: .2s;
+  }
+
+
+  /*
+   * Accordion summary
+   */
+
+  .accordion-summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    padding: $accordion-padding 4rem $accordion-padding $accordion-padding;
+    margin: 0;
+    color: map_get($foreground, text-primary);
+    transition: .2s;
+
+    &:after {
+      content: '▸';
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      font-size: 14px;
+      transform: translateY(-50%);
+      transition: .2s;
+    }
+
+    &:hover {
+      background: map_get($background, hover);
+    }
+
+  }
+
+
+  /*
+   * Accordion content
+   */
+
+  .accordion-content {
+    padding: 1rem;
+  }
+
+
+  /*
+   * Accordion active
+   */
+
+  .accordion.active > .accordion-summary:after {
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  .accordion.active + .accordion {
+    margin-top: 1rem;
+  }
+
+  .accordion + .active {
+    margin-top: 1rem;
+  }
+
+}

@@ -52,7 +52,7 @@ $dark-theme-foreground: (
 
 
 /*
- * Function to get proper colors
+ * Function to get theme colors
  */
 
 @function get-light-theme($primary, $accent, $warn: #f15a5a, $success: #4eba6f) {

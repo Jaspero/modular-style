@@ -1,0 +1,108 @@
+@import "typography-variables";
+
+@mixin typography($theme) {
+
+  $primary    : map-get($theme, primary);
+  $accent     : map-get($theme, accent);
+  $warn       : map-get($theme, warn);
+  $success    : map-get($theme, success);
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
+
+
+  /*
+   * Base setup
+   */
+
+  html {
+    font-family: $font-family-base;
+    font-size: 62.5%;
+    line-height: $line-height-base;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  body {
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  p, ul, ol {
+    margin: 0;
+  }
+
+
+  /*
+   * Elements
+   */
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-heading;
+    font-weight: $font-weight-heading;
+    line-height: $line-height-heading;
+    color: map_get($foreground, text-primary);
+  }
+
+  h1 { font-size: $font-size-base + ($font-size-heading-inc * 5); }
+  h2 { font-size: $font-size-base + ($font-size-heading-inc * 4); }
+  h3 { font-size: $font-size-base + ($font-size-heading-inc * 3); }
+  h4 { font-size: $font-size-base + ($font-size-heading-inc * 2); }
+  h5 { font-size: $font-size-base + ($font-size-heading-inc * 1); }
+  h6 { font-size: $font-size-base + ($font-size-heading-inc * 0); }
+
+  p {
+    color: map_get($foreground, text-secondary);
+  }
+
+  a {
+    display: inline-block;
+    cursor: pointer;
+    color: map_get($foreground, text-secondary);
+    text-decoration: none;
+  }
+
+  span {
+    display: inline-block;
+    color: map_get($foreground, text-secondary);
+  }
+
+  ul, ol {
+    color: map_get($foreground, text-secondary);
+    padding-left: 3rem;
+  }
+
+  b, strong {
+    font-weight: bold;
+  }
+
+  i, em {
+    font-style: italic;
+
+    &.material-icons {
+      font-style: normal;
+    }
+
+  }
+
+  u {
+    text-decoration: underline;
+  }
+
+  hr {
+    display: block;
+    width: 100%;
+    height: $hr-height;
+    margin: 1rem 0;
+    border-width: $hr-height 0 0;
+    border-style: solid;
+    border-color: map_get($foreground, divider);
+  }
+
+  .link {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-skip: ink;
+  }
+
+}

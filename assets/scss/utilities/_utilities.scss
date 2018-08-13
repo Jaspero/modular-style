@@ -6,6 +6,13 @@
 
 @mixin utilities($theme) {
 
+  $primary    : map-get($theme, primary);
+  $accent     : map-get($theme, accent);
+  $warn       : map-get($theme, warn);
+  $success    : map-get($theme, success);
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
+
 
   /*
    * Flex
@@ -21,10 +28,10 @@
   .fd-col     { flex-direction: column; }
   .fd-col-rev { flex-direction: column-reverse; }
 
-  .ai-stretch  { align-items: stretch; }
-  .ai-start    { align-items: flex-start; }
-  .ai-end      { align-items: flex-end; }
-  .ai-center   { align-items: center; }
+  .ai-stretch { align-items: stretch; }
+  .ai-start   { align-items: flex-start; }
+  .ai-end     { align-items: flex-end; }
+  .ai-center  { align-items: center; }
 
   .ac-stretch { align-content: stretch; }
   .ac-start   { align-content: flex-start; }
@@ -33,12 +40,32 @@
   .ac-around  { align-content: space-around; }
   .ac-between { align-content: space-between; }
 
-  .jc-start    { justify-content: flex-start; }
-  .jc-end      { justify-content: flex-end; }
-  .jc-center   { justify-content: center; }
-  .jc-around   { justify-content: space-around; }
-  .jc-between  { justify-content: space-between; }
-  .jc-evenly   { justify-content: space-evenly; }
+  .jc-start   { justify-content: flex-start; }
+  .jc-end     { justify-content: flex-end; }
+  .jc-center  { justify-content: center; }
+  .jc-around  { justify-content: space-around; }
+  .jc-between { justify-content: space-between; }
+  .jc-evenly  { justify-content: space-evenly; }
+
+
+  /*
+   * Colors
+   */
+
+  .c-primary { color: $primary; }
+  .c-accent  { color: $accent; }
+  .c-warn    { color: $warn; }
+  .c-success { color: $success; }
+
+
+  /*
+   * Backgrounds
+   */
+
+  .bg-primary { background-color: $primary; }
+  .bg-accent  { background-color: $accent; }
+  .bg-warn    { background-color: $warn; }
+  .bg-success { background-color: $success; }
 
 
   /*
@@ -76,13 +103,13 @@
    * Hide & show
    */
 
-  .hide-xs  { @media (max-width: $screen-xs) { display: none; } }
-  .hide-s   { @media (max-width: $screen-s) { display: none; } }
-  .hide-m   { @media (max-width: $screen-m) { display: none; } }
+  .hide-xs { @media (max-width: $screen-xs) { display: none; } }
+  .hide-s  { @media (max-width: $screen-s) { display: none; } }
+  .hide-m  { @media (max-width: $screen-m) { display: none; } }
 
-  .show-xs  { display: none; @media (max-width: $screen-xs) { display: inline-block; } }
-  .show-s   { display: none; @media (max-width: $screen-s) { display: inline-block; } }
-  .show-m   { display: none; @media (max-width: $screen-m) { display: inline-block; } }
+  .show-xs { display: none; @media (max-width: $screen-xs) { display: inline-block; } }
+  .show-s  { display: none; @media (max-width: $screen-s) { display: inline-block; } }
+  .show-m  { display: none; @media (max-width: $screen-m) { display: inline-block; } }
 
 
   /*
@@ -91,47 +118,54 @@
 
   .p-a-0 { padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; }
 
-  .p-a-xs { @include fluid(10px, 5px, padding); }
-  .p-a-s  { @include fluid(20px, 10px, padding); }
-  .p-a-m  { @include fluid(40px, 20px, padding); }
-  .p-a-l  { @include fluid(80px, 40px, padding); }
-  .p-a-xl { @include fluid(160px, 80px, padding); }
+  .p-a-xs  { @include fluid(10px, 5px, padding); }
+  .p-a-s   { @include fluid(20px, 10px, padding); }
+  .p-a-m   { @include fluid(40px, 20px, padding); }
+  .p-a-l   { @include fluid(80px, 40px, padding); }
+  .p-a-xl  { @include fluid(160px, 80px, padding); }
+  .p-a-xxl { @include fluid(320px, 160px, padding); }
 
-  .p-x-xs { @include fluid(10px, 5px, padding-left); @include fluid(10px, 5px, padding-right); }
-  .p-x-s  { @include fluid(20px, 10px, padding-left); @include fluid(20px, 10px, padding-right); }
-  .p-x-m  { @include fluid(40px, 20px, padding-left); @include fluid(40px, 20px, padding-right); }
-  .p-x-l  { @include fluid(80px, 40px, padding-left); @include fluid(80px, 40px, padding-right); }
-  .p-x-xl { @include fluid(160px, 80px, padding-left); @include fluid(160px, 80px, padding-right); }
+  .p-x-xs  { @include fluid(10px, 5px, padding-left); @include fluid(10px, 5px, padding-right); }
+  .p-x-s   { @include fluid(20px, 10px, padding-left); @include fluid(20px, 10px, padding-right); }
+  .p-x-m   { @include fluid(40px, 20px, padding-left); @include fluid(40px, 20px, padding-right); }
+  .p-x-l   { @include fluid(80px, 40px, padding-left); @include fluid(80px, 40px, padding-right); }
+  .p-x-xl  { @include fluid(160px, 80px, padding-left); @include fluid(160px, 80px, padding-right); }
+  .p-x-xxl { @include fluid(320px, 160px, padding-left); @include fluid(320px, 160px, padding-right); }
 
-  .p-y-xs { @include fluid(10px, 5px, padding-top); @include fluid(10px, 5px, padding-bottom); }
-  .p-y-s  { @include fluid(20px, 10px, padding-top); @include fluid(20px, 10px, padding-bottom); }
-  .p-y-m  { @include fluid(40px, 20px, padding-top); @include fluid(40px, 20px, padding-bottom); }
-  .p-y-l  { @include fluid(80px, 40px, padding-top); @include fluid(80px, 40px, padding-bottom); }
-  .p-y-xl { @include fluid(160px, 80px, padding-top); @include fluid(160px, 80px, padding-bottom); }
+  .p-y-xs  { @include fluid(10px, 5px, padding-top); @include fluid(10px, 5px, padding-bottom); }
+  .p-y-s   { @include fluid(20px, 10px, padding-top); @include fluid(20px, 10px, padding-bottom); }
+  .p-y-m   { @include fluid(40px, 20px, padding-top); @include fluid(40px, 20px, padding-bottom); }
+  .p-y-l   { @include fluid(80px, 40px, padding-top); @include fluid(80px, 40px, padding-bottom); }
+  .p-y-xl  { @include fluid(160px, 80px, padding-top); @include fluid(160px, 80px, padding-bottom); }
+  .p-y-xxl { @include fluid(320px, 160px, padding-top); @include fluid(320px, 160px, padding-bottom); }
 
-  .p-t-xs { @include fluid(10px, 5px, padding-top); }
-  .p-t-s  { @include fluid(20px, 10px, padding-top); }
-  .p-t-m  { @include fluid(40px, 20px, padding-top); }
-  .p-t-l  { @include fluid(80px, 40px, padding-top); }
-  .p-t-xl { @include fluid(160px, 80px, padding-top); }
+  .p-t-xs  { @include fluid(10px, 5px, padding-top); }
+  .p-t-s   { @include fluid(20px, 10px, padding-top); }
+  .p-t-m   { @include fluid(40px, 20px, padding-top); }
+  .p-t-l   { @include fluid(80px, 40px, padding-top); }
+  .p-t-xl  { @include fluid(160px, 80px, padding-top); }
+  .p-t-xxl { @include fluid(320px, 160px, padding-top); }
 
-  .p-r-xs { @include fluid(10px, 5px, padding-right); }
-  .p-r-s  { @include fluid(20px, 10px, padding-right); }
-  .p-r-m  { @include fluid(40px, 20px, padding-right); }
-  .p-r-l  { @include fluid(80px, 40px, padding-right); }
-  .p-r-xl { @include fluid(160px, 80px, padding-right); }
+  .p-r-xs  { @include fluid(10px, 5px, padding-right); }
+  .p-r-s   { @include fluid(20px, 10px, padding-right); }
+  .p-r-m   { @include fluid(40px, 20px, padding-right); }
+  .p-r-l   { @include fluid(80px, 40px, padding-right); }
+  .p-r-xl  { @include fluid(160px, 80px, padding-right); }
+  .p-r-xxl { @include fluid(320px, 160px, padding-right); }
 
-  .p-b-xs { @include fluid(10px, 5px, padding-bottom); }
-  .p-b-s  { @include fluid(20px, 10px, padding-bottom); }
-  .p-b-m  { @include fluid(40px, 20px, padding-bottom); }
-  .p-b-l  { @include fluid(80px, 40px, padding-bottom); }
-  .p-b-xl { @include fluid(160px, 80px, padding-bottom); }
+  .p-b-xs  { @include fluid(10px, 5px, padding-bottom); }
+  .p-b-s   { @include fluid(20px, 10px, padding-bottom); }
+  .p-b-m   { @include fluid(40px, 20px, padding-bottom); }
+  .p-b-l   { @include fluid(80px, 40px, padding-bottom); }
+  .p-b-xl  { @include fluid(160px, 80px, padding-bottom); }
+  .p-b-xxl { @include fluid(320px, 160px, padding-bottom); }
 
-  .p-l-xs { @include fluid(10px, 5px, padding-left); }
-  .p-l-s  { @include fluid(20px, 10px, padding-left); }
-  .p-l-m  { @include fluid(40px, 20px, padding-left); }
-  .p-l-l  { @include fluid(80px, 40px, padding-left); }
-  .p-l-xl { @include fluid(160px, 80px, padding-left); }
+  .p-l-xs  { @include fluid(10px, 5px, padding-left); }
+  .p-l-s   { @include fluid(20px, 10px, padding-left); }
+  .p-l-m   { @include fluid(40px, 20px, padding-left); }
+  .p-l-l   { @include fluid(80px, 40px, padding-left); }
+  .p-l-xl  { @include fluid(160px, 80px, padding-left); }
+  .p-l-xxl { @include fluid(320px, 160px, padding-left); }
 
 
   /*
@@ -140,46 +174,53 @@
 
   .m-a-0 { margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; }
 
-  .m-a-xs { @include fluid(10px, 5px, margin); }
-  .m-a-s  { @include fluid(20px, 10px, margin); }
-  .m-a-m  { @include fluid(40px, 20px, margin); }
-  .m-a-l  { @include fluid(80px, 40px, margin); }
-  .m-a-xl { @include fluid(160px, 80px, margin); }
+  .m-a-xs  { @include fluid(10px, 5px, margin); }
+  .m-a-s   { @include fluid(20px, 10px, margin); }
+  .m-a-m   { @include fluid(40px, 20px, margin); }
+  .m-a-l   { @include fluid(80px, 40px, margin); }
+  .m-a-xl  { @include fluid(160px, 80px, margin); }
+  .m-a-xxl { @include fluid(320px, 160px, margin); }
 
-  .m-x-xs { @include fluid(10px, 5px, margin-left); @include fluid(10px, 5px, margin-right); }
-  .m-x-s  { @include fluid(20px, 10px, margin-left); @include fluid(20px, 10px, margin-right); }
-  .m-x-m  { @include fluid(40px, 20px, margin-left); @include fluid(40px, 20px, margin-right); }
-  .m-x-l  { @include fluid(80px, 40px, margin-left); @include fluid(80px, 40px, margin-right); }
-  .m-x-xl { @include fluid(160px, 80px, margin-left); @include fluid(160px, 80px, margin-right); }
+  .m-x-xs  { @include fluid(10px, 5px, margin-left); @include fluid(10px, 5px, margin-right); }
+  .m-x-s   { @include fluid(20px, 10px, margin-left); @include fluid(20px, 10px, margin-right); }
+  .m-x-m   { @include fluid(40px, 20px, margin-left); @include fluid(40px, 20px, margin-right); }
+  .m-x-l   { @include fluid(80px, 40px, margin-left); @include fluid(80px, 40px, margin-right); }
+  .m-x-xl  { @include fluid(160px, 80px, margin-left); @include fluid(160px, 80px, margin-right); }
+  .m-x-xxl { @include fluid(320px, 160px, margin-left); @include fluid(320px, 160px, margin-right); }
 
-  .m-y-xs { @include fluid(10px, 5px, margin-top); @include fluid(10px, 5px, margin-bottom); }
-  .m-y-s  { @include fluid(20px, 10px, margin-top); @include fluid(20px, 10px, margin-bottom); }
-  .m-y-m  { @include fluid(40px, 20px, margin-top); @include fluid(40px, 20px, margin-bottom); }
-  .m-y-l  { @include fluid(80px, 40px, margin-top); @include fluid(80px, 40px, margin-bottom); }
-  .m-y-xl { @include fluid(160px, 80px, margin-top); @include fluid(160px, 80px, margin-bottom); }
+  .m-y-xs  { @include fluid(10px, 5px, margin-top); @include fluid(10px, 5px, margin-bottom); }
+  .m-y-s   { @include fluid(20px, 10px, margin-top); @include fluid(20px, 10px, margin-bottom); }
+  .m-y-m   { @include fluid(40px, 20px, margin-top); @include fluid(40px, 20px, margin-bottom); }
+  .m-y-l   { @include fluid(80px, 40px, margin-top); @include fluid(80px, 40px, margin-bottom); }
+  .m-y-xl  { @include fluid(160px, 80px, margin-top); @include fluid(160px, 80px, margin-bottom); }
+  .m-y-xxl { @include fluid(320px, 160px, margin-top); @include fluid(320px, 160px, margin-bottom); }
 
-  .m-t-xs { @include fluid(10px, 5px, margin-top); }
-  .m-t-s  { @include fluid(20px, 10px, margin-top); }
-  .m-t-m  { @include fluid(40px, 20px, margin-top); }
-  .m-t-l  { @include fluid(80px, 40px, margin-top); }
-  .m-t-xl { @include fluid(160px, 80px, margin-top); }
+  .m-t-xs  { @include fluid(10px, 5px, margin-top); }
+  .m-t-s   { @include fluid(20px, 10px, margin-top); }
+  .m-t-m   { @include fluid(40px, 20px, margin-top); }
+  .m-t-l   { @include fluid(80px, 40px, margin-top); }
+  .m-t-xl  { @include fluid(160px, 80px, margin-top); }
+  .m-t-xxl { @include fluid(320px, 160px, margin-top); }
 
-  .m-r-xs { @include fluid(10px, 5px, margin-right); }
-  .m-r-s  { @include fluid(20px, 10px, margin-right); }
-  .m-r-m  { @include fluid(40px, 20px, margin-right); }
-  .m-r-l  { @include fluid(80px, 40px, margin-right); }
-  .m-r-xl { @include fluid(160px, 80px, margin-right); }
+  .m-r-xs  { @include fluid(10px, 5px, margin-right); }
+  .m-r-s   { @include fluid(20px, 10px, margin-right); }
+  .m-r-m   { @include fluid(40px, 20px, margin-right); }
+  .m-r-l   { @include fluid(80px, 40px, margin-right); }
+  .m-r-xl  { @include fluid(160px, 80px, margin-right); }
+  .m-r-xxl { @include fluid(320px, 160px, margin-right); }
 
-  .m-b-xs { @include fluid(10px, 5px, margin-bottom); }
-  .m-b-s  { @include fluid(20px, 10px, margin-bottom); }
-  .m-b-m  { @include fluid(40px, 20px, margin-bottom); }
-  .m-b-l  { @include fluid(80px, 40px, margin-bottom); }
-  .m-b-xl { @include fluid(160px, 80px, margin-bottom); }
+  .m-b-xs  { @include fluid(10px, 5px, margin-bottom); }
+  .m-b-s   { @include fluid(20px, 10px, margin-bottom); }
+  .m-b-m   { @include fluid(40px, 20px, margin-bottom); }
+  .m-b-l   { @include fluid(80px, 40px, margin-bottom); }
+  .m-b-xl  { @include fluid(160px, 80px, margin-bottom); }
+  .m-b-xxl { @include fluid(320px, 160px, margin-bottom); }
 
-  .m-l-xs { @include fluid(10px, 5px, margin-left); }
-  .m-l-s  { @include fluid(20px, 10px, margin-left); }
-  .m-l-m  { @include fluid(40px, 20px, margin-left); }
-  .m-l-l  { @include fluid(80px, 40px, margin-left); }
-  .m-l-xl { @include fluid(160px, 80px, margin-left); }
+  .m-l-xs  { @include fluid(10px, 5px, margin-left); }
+  .m-l-s   { @include fluid(20px, 10px, margin-left); }
+  .m-l-m   { @include fluid(40px, 20px, margin-left); }
+  .m-l-l   { @include fluid(80px, 40px, margin-left); }
+  .m-l-xl  { @include fluid(160px, 80px, margin-left); }
+  .m-l-xxl { @include fluid(320px, 160px, margin-left); }
 
 }

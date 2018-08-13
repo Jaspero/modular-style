@@ -1,20 +1,16 @@
-/*==================================================
-
-  Grid
-
-==================================================*/
+@import "grid-variables";
 
 @mixin grid($theme) {
 
   .grid {
-    display         : flex;
-    flex-wrap       : wrap;
-    justify-content : center;
-    max-width       : 120rem;
-    width           : 100%;
-    margin          : 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: $grid-width;
+    width: 100%;
+    margin: 0 auto;
 
-    & > [class*="col"] { padding: 1rem; }
+    & > [class*="col"] { padding: $grid-gutter / 2; }
 
     &.full { max-width: 100%; }
 

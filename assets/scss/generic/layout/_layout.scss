@@ -1,8 +1,4 @@
-/*==================================================
-
-  Layout
-
-==================================================*/
+@import "layout-variables";
 
 @mixin layout($theme) {
 
@@ -12,6 +8,11 @@
   $success    : map-get($theme, success);
   $foreground : map-get($theme, foreground);
   $background : map-get($theme, background);
+
+
+  /*
+   * Div
+   */
 
   .div {
     @include get-prop-color(background-color, map_get($background, background), 0, $theme);
