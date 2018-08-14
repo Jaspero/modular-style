@@ -72,52 +72,6 @@
 
     }
 
-
-    /*
-     * Smaller screen layout
-     */
-
-    @media screen and (max-width: $screen-s) {
-      box-shadow: none;
-
-      tr {
-        display   : block;
-        margin    : 1rem 0;
-        box-shadow: $box-shadow;
-      }
-
-      td {
-        display       : block;
-        text-align    : right;
-        border-bottom : 1px solid map_get($foreground, divider);
-
-        &:nth-child(1) {
-          padding: .8rem .8rem .8rem .8rem;
-        }
-
-        &:nth-last-child(1) {
-          padding: .8rem .8rem .8rem .8rem;
-        }
-
-      }
-
-      tr td:nth-last-child(1) {
-        border-bottom: none;
-      }
-
-      td:before {
-        content : attr(data-label);
-        float   : left;
-      }
-
-      thead {
-        opacity : 0;
-        position: absolute;
-        z-index : -1;
-      }
-
-    }
-
   }
 
 }

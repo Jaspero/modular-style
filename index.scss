@@ -1,21 +1,10 @@
-/*==================================================
-
-  Index
-
-==================================================*/
-
-// 1. Essentials
 @import "assets/scss/core/theme";
 @import "assets/scss/core/variables";
 @import "assets/scss/core/tools";
-
-// 2. Base
 @import "assets/scss/generic/base/base";
 @import "assets/scss/generic/media/media";
 @import "assets/scss/generic/typography/typography";
 @import "assets/scss/generic/layout/layout";
-
-// 3. Components
 @import "assets/scss/components/accordion/accordion";
 @import "assets/scss/components/buttons/buttons";
 @import "assets/scss/components/grid/grid";
@@ -23,9 +12,7 @@
 @import "assets/scss/components/loading";
 @import "assets/scss/components/read-format";
 @import "assets/scss/components/tables";
-@import "assets/scss/components/tags";
-
-// 4. Utilities
+@import "assets/scss/components/tags/tags";
 @import "assets/scss/utilities/utilities";
 @import "assets/scss/utilities/custom";
 
