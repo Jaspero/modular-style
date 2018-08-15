@@ -1,14 +1,14 @@
-/*==================================================
-
-  Read format
-
-==================================================*/
+@import "read-format-variables";
 
 @mixin read-format($theme) {
 
   .read-format {
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3 {
+      margin: 1.5em 0 .5em 0;
+    }
+
+    h4, h5, h6 {
       margin: 1em 0 .5em 0;
     }
 

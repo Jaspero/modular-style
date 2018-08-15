@@ -1,5 +1,5 @@
-@import "assets/scss/core/theme";
-@import "assets/scss/core/variables";
+@import "assets/scss/core/theme-fg-and-bg";
+@import "assets/scss/core/theme-colors";
 @import "assets/scss/core/tools";
 @import "assets/scss/generic/base/base";
 @import "assets/scss/generic/media/media";
@@ -9,9 +9,9 @@
 @import "assets/scss/components/buttons/buttons";
 @import "assets/scss/components/grid/grid";
 @import "assets/scss/components/form";
-@import "assets/scss/components/loading";
-@import "assets/scss/components/read-format";
-@import "assets/scss/components/tables";
+@import "assets/scss/components/loading/loading";
+@import "assets/scss/components/read-format/read-format";
+@import "assets/scss/components/tables/tables";
 @import "assets/scss/components/tags/tags";
 @import "assets/scss/utilities/utilities";
 @import "assets/scss/utilities/custom";
@@ -31,6 +31,7 @@
   @include form($theme);
   @include grid($theme);
   @include tables($theme);
+  @include loading($theme);
   @include tags($theme);
   @include read-format($theme);
 
@@ -43,6 +44,6 @@
 // Global theme
 @include theme($my-light-theme);
 
-// Local theme
+// Local themes
 .theme-light { @include theme($my-light-theme); }
 .theme-dark { @include theme($my-dark-theme); }

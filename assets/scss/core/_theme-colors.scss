@@ -1,0 +1,13 @@
+/*
+ * Theme colors
+ */
+
+$my-light-theme: get-light-theme(
+  $primary: #955ba5,
+  $accent : #f0c419
+);
+
+$my-dark-theme: get-dark-theme(
+  $primary: #2d95bf,
+  $accent : #f0c419
+);
