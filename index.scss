@@ -1,20 +1,20 @@
-@import "assets/scss/core/theme-fg-and-bg";
-@import "assets/scss/core/theme-colors";
-@import "assets/scss/core/tools";
-@import "assets/scss/generic/base/base";
-@import "assets/scss/generic/media/media";
-@import "assets/scss/generic/typography/typography";
-@import "assets/scss/generic/layout/layout";
-@import "assets/scss/components/accordion/accordion";
-@import "assets/scss/components/buttons/buttons";
-@import "assets/scss/components/grid/grid";
-@import "assets/scss/components/form";
-@import "assets/scss/components/loading/loading";
-@import "assets/scss/components/read-format/read-format";
-@import "assets/scss/components/tables/tables";
-@import "assets/scss/components/tags/tags";
-@import "assets/scss/utilities/utilities";
-@import "assets/scss/utilities/custom";
+@import "scss/core/theme-fg-and-bg";
+@import "scss/core/theme-colors";
+@import "scss/core/tools";
+@import "scss/generic/base";
+@import "scss/generic/media";
+@import "scss/generic/typography";
+@import "scss/generic/layout";
+@import "scss/components/accordion";
+@import "scss/components/buttons";
+@import "scss/components/grid";
+@import "scss/components/form";
+@import "scss/components/loading";
+@import "scss/components/read-format";
+@import "scss/components/tables";
+@import "scss/components/tags";
+@import "scss/utilities/utilities";
+@import "scss/utilities/custom";
 
 // Including style mixin for each import
 @mixin theme($theme) {

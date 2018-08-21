@@ -1,0 +1,75 @@
+@mixin tables($theme) {
+
+  $primary    : map-get($theme, primary);
+  $accent     : map-get($theme, accent);
+  $warn       : map-get($theme, warn);
+  $success    : map-get($theme, success);
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
+
+  /*
+   * Simple table
+   */
+
+  .simple-table {
+    border-collapse: collapse;
+    width: 100%;
+    background: map_get($background, card);
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+    border: 1px solid map_get($foreground, divider);
+    text-align: left;
+
+    tr {
+      border-bottom: .1rem solid map_get($foreground, divider);
+
+      &:nth-child(2n-1) {
+        background: map_get($background, odd-rows);
+      }
+
+      &:hover {
+        background: map_get($background, hover);
+      }
+
+    }
+
+    thead tr:nth-child(1) {
+      background: map_get($background, card);
+    }
+
+    tbody tr:nth-last-child(1) {
+      border-bottom: none;
+    }
+
+    th {
+      padding: 16px 8px;
+      font-size: 11px;
+      font-weight: normal;
+      color: map_get($foreground, text-secondary);
+    }
+
+    td {
+      padding: 8px;
+      font-size: 12px;
+      color: map_get($foreground, text-primary);
+    }
+
+  }
+
+
+  /*
+   * No-style table
+   */
+
+  .no-style-table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+
+    td, th {
+      color: map_get($foreground, text-secondary);
+      font-weight: normal;
+    }
+
+  }
+
+}

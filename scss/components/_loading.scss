@@ -1,0 +1,75 @@
+@mixin loading($theme) {
+
+  $primary    : map-get($theme, primary);
+  $accent     : map-get($theme, accent);
+  $warn       : map-get($theme, warn);
+  $success    : map-get($theme, success);
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
+
+
+  /*
+   * Loading circle
+   */
+
+  .loading-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border-width: 6px;
+    border-style: solid;
+    border-top-color: transparent;
+    @include get-prop-color(border-right-color, $primary, 0, $theme);
+    @include get-prop-color(border-bottom-color, $primary, 0, $theme);
+    @include get-prop-color(border-left-color, $primary, 0, $theme);
+    animation: loading-circle .75s linear infinite;
+
+    @keyframes loading-circle {
+      0%   { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+
+  }
+
+
+  /*
+   * Loading bar
+   */
+
+  .loading-bar {
+    overflow: hidden;
+    position: relative;
+    height: 6px;
+    background: fade_out($primary, .7);
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: $primary;
+    }
+
+    &[data-color="primary"] { background-color: fade_out($primary, .7); &:before, &:after { background-color: $primary; } }
+    &[data-color="accent"] { background-color: fade_out($accent, .7); &:before, &:after { background-color: $accent; } }
+    &[data-color="warn"] { background-color: fade_out($warn, .7); &:before, &:after { background-color: $warn; } }
+    &[data-color="success"] { background-color: fade_out($success, .7); &:before, &:after { background-color: $success; } }
+
+    &:before {
+      animation: loading-bar 2.5s ease infinite;
+    }
+
+    &:after {
+      animation: loading-bar 2.5s cubic-bezier(.9,.1,.6,.7) infinite;
+    }
+
+    @keyframes loading-bar {
+      0%   { transform: translate3d(-100%,0,0); }
+      100% { transform: translate3d(200%,0,0); }
+    }
+
+  }
+
+}
+
+
