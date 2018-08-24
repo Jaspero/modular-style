@@ -1,0 +1,61 @@
+@mixin form-input($theme) {
+
+  $primary    : map-get($theme, primary);
+  $accent     : map-get($theme, accent);
+  $warn       : map-get($theme, warn);
+  $success    : map-get($theme, success);
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
+
+  %shared {
+    width: 100%;
+    padding: 1rem .5rem;
+    border: .1rem solid map_get($foreground, border);
+    border-radius: .3rem;
+    outline: none;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: map_get($foreground, text-primary);
+    background: map_get($background, field);
+
+    &::placeholder {
+      opacity: .4;
+    }
+
+    &:hover, &:focus {
+      border-color: $accent;
+      box-shadow: 0 0 .6rem fade_out($accent, .5);
+    }
+
+    &:valid {}
+
+    &:invalid {}
+
+  }
+
+  .form-field input {
+    @extend %shared;
+    line-height: 1.536;
+  }
+
+  .form-field textarea {
+    @extend %shared;
+    -webkit-appearance: textfield;
+    resize: vertical;
+    overflow: auto;
+  }
+
+  .form-field select {
+    @extend %shared;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+  }
+
+}

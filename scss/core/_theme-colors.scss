@@ -1,6 +1,8 @@
+@import "variables";
+
 $my-light-theme: get-light-theme(
-  $primary: #955ba5,
-  $accent : #f0c419
+  $primary: $var-primary,
+  $accent : $var-accent
 );
 
 $my-dark-theme: get-dark-theme(
