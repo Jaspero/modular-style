@@ -1,4 +1,4 @@
-@import "variables";
+@import "../01-setup/variables";
 
 $my-light-theme: get-light-theme(
   $primary: $var-primary,

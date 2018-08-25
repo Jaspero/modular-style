@@ -1,0 +1,10 @@
+@function contrast($value) {
+  $result: null;
+  @if ((0.2126 * red($value) + 0.7152 * green($value) + 0.0722 * blue($value)) > 128) {
+    $result: black;
+  }
+  @else {
+    $result: white;
+  }
+  @return $result;
+}

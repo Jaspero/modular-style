@@ -1,49 +1,45 @@
-@import "scss/core/theme-fg-and-bg";
-@import "scss/core/theme-colors";
-@import "scss/core/tools";
-@import "scss/generic/base";
-@import "scss/generic/media";
-@import "scss/generic/typography";
-@import "scss/generic/layout";
-@import "scss/components/accordion";
-@import "scss/components/buttons";
-@import "scss/components/grid";
-@import "scss/components/form/form";
-@import "scss/components/loading";
-@import "scss/components/read-format";
-@import "scss/components/tables";
-@import "scss/components/tags";
-@import "scss/utilities/utilities";
-@import "scss/utilities/custom";
+// Setup
+@import "scss/01-setup/setup";
 
-// Including style mixin for each import
+// Tools
+@import "scss/02-tools/fluid";
+@import "scss/02-tools/contrast";
+
+// Generic
+@import "scss/03-generic/base";
+@import "scss/03-generic/media";
+
+// Components
+@import "scss/04-components/grid";
+@import "scss/04-components/read-format";
+@import "scss/04-components/tags";
+
+// Utilities
+@import "scss/05-utilities/utilities";
+@import "scss/05-utilities/custom";
+
+/*
+
+@import "scss/02-tools/theme-fg-and-bg";
+@import "scss/02-tools/theme-colors";
+@import "scss/03-generic/typography";
+@import "scss/03-generic/layout";
+@import "scss/04-components/buttons";
+@import "scss/04-components/tables";
+
+
 @mixin theme($theme) {
-
-  // Generic
-  @include base($theme);
-  @include media($theme);
   @include typography($theme);
   @include layout($theme);
-
-  // Components
-  @include accordion($theme);
   @include buttons($theme);
-  @include form($theme);
-  @include grid($theme);
   @include tables($theme);
-  @include loading($theme);
-  @include tags($theme);
-  @include read-format($theme);
-
-  // Utilities
   @include utilities($theme);
   @include custom($theme);
-
 }
 
-// Global theme
 @include theme($my-light-theme);
 
-// Local themes
 .theme-light { @include theme($my-light-theme); }
 .theme-dark { @include theme($my-dark-theme); }
+
+*/
