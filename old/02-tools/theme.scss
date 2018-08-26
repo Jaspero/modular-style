@@ -69,3 +69,13 @@ $dark-theme-foreground: (
     background: $dark-theme-background
   );
 }
+
+$my-light-theme: get-light-theme(
+  $primary: red,
+  $accent : blue
+);
+
+$my-dark-theme: get-dark-theme(
+  $primary: red,
+  $accent : blue
+);
