@@ -1,46 +1,21 @@
 // Setup
-//@import "scss/01-setup/setup";
+@import "scss/01-setup/setup";
 
 // Tools
-//@import "scss/02-tools/fluid";
-//@import "scss/02-tools/contrast";
+@import "scss/02-tools/fluid";
+@import "scss/02-tools/contrast";
 
 // Generic
-//@import "scss/03-generic/base";
-//@import "scss/03-generic/media";
+@import "scss/03-generic/typography";
+@import "scss/03-generic/base";
 
 // Components
-//@import "scss/04-components/grid";
-//@import "scss/04-components/read-format";
-//@import "scss/04-components/tags";
-//@import "scss/04-components/layout";
+@import "scss/04-components/grid";
+@import "scss/04-components/layout";
+@import "scss/04-components/media";
+@import "scss/04-components/read-format";
+@import "scss/04-components/tags";
 
 // Utilities
-//@import "scss/05-utilities/utilities";
-//@import "scss/05-utilities/custom";
-
-/*
-
-@import "scss/02-tools/theme-fg-and-bg";
-@import "scss/02-tools/theme-colors";
-@import "scss/03-generic/typography";
-@import "scss/03-generic/layout";
-@import "scss/04-components/buttons";
-@import "scss/04-components/tables";
-
-
-@mixin theme($theme) {
-  @include typography($theme);
-  @include layout($theme);
-  @include buttons($theme);
-  @include tables($theme);
-  @include utilities($theme);
-  @include custom($theme);
-}
-
-@include theme($my-light-theme);
-
-.theme-light { @include theme($my-light-theme); }
-.theme-dark { @include theme($my-dark-theme); }
-
-*/
+@import "scss/05-utilities/utilities";
+@import "scss/05-utilities/custom";
