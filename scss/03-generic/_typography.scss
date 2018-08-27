@@ -51,7 +51,7 @@ ul, ol {
 }
 
 b, strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 i, em {
@@ -77,7 +77,7 @@ hr {
   border-color: #808080;
 }
 
-.link {
+.link:hover {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-skip: ink;

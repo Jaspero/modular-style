@@ -8,7 +8,7 @@
   "main": "index.html",
   "homepage": "https://github.com/Jaspero/modular-style",
   "scripts": {
-    "start": "sass --watch index.scss:index.css --style compressed"
+    "start": "sass --watch index.scss:index.css"
   },
   "repository": {
     "type": "git",

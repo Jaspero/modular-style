@@ -2,15 +2,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1400px;
+  max-width: $grid-size;
   width: 100%;
   margin: 0 auto;
 
-  & > [class*="col"] { padding: 1rem; }
+  & > [class*="col"] { padding: $grid-gutter / 2; }
 
-  &.full { max-width: 100%; }
+  // Full width helper class
+  &.grid-full { max-width: 100%; }
 
-  &.nogutter > [class*="col"] { padding: 0; }
+  // No gutter helper class
+  &.grid-no-gutter > [class*="col"] { padding: 0; }
 
   .o-first { order: 0; }
   .o-last  { /* Execute */ order: 66; }
@@ -28,7 +30,25 @@
   .col-11  { display: block; flex-basis: 91.6666%; width: 91.6666%; }
   .col-12  { display: block; flex-basis: 100%; width: 100%; }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: $grid-breakpoint-l) {
+    .o-l-first { order: 0; }
+    .o-l-last  { /* Execute */ order: 66; }
+    .col-l-0   { display: none; }
+    .col-l-1   { display: block; flex-basis: 8.3333%; width: 8.3333%; }
+    .col-l-2   { display: block; flex-basis: 16.6666%; width: 16.6666%; }
+    .col-l-3   { display: block; flex-basis: 25%; width: 25%; }
+    .col-l-4   { display: block; flex-basis: 33.3333%; width: 33.3333%; }
+    .col-l-5   { display: block; flex-basis: 41.6666%; width: 41.6666%; }
+    .col-l-6   { display: block; flex-basis: 50%; width: 50%; }
+    .col-l-7   { display: block; flex-basis: 58.3333%; width: 58.3333%; }
+    .col-l-8   { display: block; flex-basis: 66.6666%; width: 66.6666%; }
+    .col-l-9   { display: block; flex-basis: 75%; width: 75%; }
+    .col-l-10  { display: block; flex-basis: 83.3333%; width: 83.3333%; }
+    .col-l-11  { display: block; flex-basis: 91.6666%; width: 91.6666%; }
+    .col-l-12  { display: block; flex-basis: 100%; width: 100%; }
+  }
+
+  @media screen and (max-width: $grid-breakpoint-m) {
     .o-m-first { order: 0; }
     .o-m-last  { /* Execute */ order: 66; }
     .col-m-0   { display: none; }
@@ -46,7 +66,7 @@
     .col-m-12  { display: block; flex-basis: 100%; width: 100%; }
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $grid-breakpoint-s) {
     .o-s-first { order: 0; }
     .o-s-last  { /* Execute */ order: 66; }
     .col-s-0   { display: none; }
@@ -64,7 +84,7 @@
     .col-s-12  { display: block; flex-basis: 100%; width: 100%; }
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: $grid-breakpoint-xs) {
     .o-xs-first { order: 0; }
     .o-xs-last  { /* Execute */ order: 66; }
     .col-xs-0   { display: none; }

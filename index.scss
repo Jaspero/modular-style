@@ -6,15 +6,13 @@
 @import "scss/02-tools/contrast";
 
 // Generic
-@import "scss/03-generic/typography";
 @import "scss/03-generic/base";
+@import "scss/03-generic/grid";
+@import "scss/03-generic/media";
+@import "scss/03-generic/read-format";
+@import "scss/03-generic/typography";
 
 // Components
-@import "scss/04-components/grid";
-@import "scss/04-components/layout";
-@import "scss/04-components/media";
-@import "scss/04-components/read-format";
-@import "scss/04-components/tags";
 
 // Utilities
 @import "scss/05-utilities/utilities";
