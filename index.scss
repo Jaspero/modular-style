@@ -1,19 +1,27 @@
-// Setup
-@import "scss/01-setup/setup";
+/**
+ * CONTENTS
+ *
+ * Variables...........Globally-available variables.
+ *
+ * 01-Tools............Useful mixins and functions.
+ * 02-Generic..........Resets, global low-spec rules.
+ * 03-Layout...........Objects, layout modules, design patterns.
+ * 04-Components.......Discrete, complete chunks of UI.
+ * 05-Utilities........Helper classes.
+ */
 
-// Tools
-@import "scss/02-tools/fluid";
-@import "scss/02-tools/contrast";
+// 01-Tools
+@import "scss/01-tools/contrast";
+@import "scss/01-tools/fluid";
 
-// Generic
-@import "scss/03-generic/base";
-@import "scss/03-generic/grid";
-@import "scss/03-generic/media";
-@import "scss/03-generic/read-format";
-@import "scss/03-generic/typography";
+// 02-Generic
+@import "scss/02-generic/resets";
+@import "scss/02-generic/generic";
 
-// Components
+// 03-Layout
 
-// Utilities
-@import "scss/05-utilities/utilities";
-@import "scss/05-utilities/custom";
+// 04-Components
+
+// 05-Utilities
+
+/*============================================================================*/

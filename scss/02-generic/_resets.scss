@@ -1,0 +1,90 @@
+/*------------------------------------*\
+  # RESETS
+\*------------------------------------*/
+
+/**
+ * Margin resets
+ */
+
+body,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, dd, ol, ul,
+figure,
+hr,
+fieldset, legend {
+  margin:  0;
+}
+
+
+
+
+
+/**
+ * Remove trailing margins from nested lists.
+ */
+
+li > {
+
+  ol, ul {
+    margin-bottom: 0;
+  }
+
+}
+
+
+
+
+
+/**
+ * Remove default table spacing.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+
+/**
+ * Makes it possible to add height and width.
+ */
+
+span {
+  display: inline-block;
+}
+
+
+
+
+
+/**
+ * Semantic markup
+ */
+
+b, strong { font-weight: 700; }
+i, em     { font-style: italic; }
+u         { text-decoration: underline; }
+
+// Makes sure material icons aren't italicized
+i.material-icons { font-style: normal; }
+
+
+
+
+
+/**
+ * 1. Forces the <a></a> element to always have a pointer.
+ * 2. Removes the default blue/purple <a></a> element color.
+ * 3. Removes the default underline for <a></a> elements.
+ */
+
+a {
+  display: inline-block;
+  cursor: pointer; /* [1] */
+  color: inherit; /* [2] */
+  text-decoration: none; /* [3] */
+}

@@ -52,6 +52,13 @@
 // Position
 .relative { position: relative; }
 
+// Helper class to make links look like links
+.link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-skip: ink;
+}
+
 // Width
 .w-full { width: 100%; }
 

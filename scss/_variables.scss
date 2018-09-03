@@ -1,0 +1,87 @@
+/**
+ * @import this file into other files to use any of these variables.
+ */
+
+/*------------------------------------*\
+  # ACCENT COLORS
+\*------------------------------------*/
+
+/**
+ * 1. These are mostly for checkout/dashboard style websites that need
+ *    to have colors that represent positive (green) and negative (red)
+ *    outcomes.
+ */
+
+$accent-primary  : cornflowerblue;
+$accent-secondary: deeppink;
+$accent-success  : limegreen; /* [1] */
+$accent-warning  : crimson; /* [1] */
+
+
+
+
+
+/*------------------------------------*\
+  # BACKGROUND COLORS
+\*------------------------------------*/
+
+// Light theme background colors:
+$bg-light-primary  : #ffffff;
+$bg-light-secondary: #eeeeee;
+
+// Dark theme background colors:
+$bg-dark-primary   : #040404;
+$bg-dark-secondary : #1c1f24;
+
+
+
+
+
+/*------------------------------------*\
+  # FOREGROUND COLORS
+\*------------------------------------*/
+
+// Light theme foreground colors:
+$fg-light-primary  : rgba(0,0,0,.9);
+$fg-light-secondary: rgba(0,0,0,.65);
+$fg-light-tertiary : rgba(0,0,0,.4);
+
+// Dark theme foreground colors:
+$fg-dark-primary   : rgba(255,255,255,.9);
+$fg-dark-secondary : rgba(255,255,255,.65);
+$fg-dark-tertiary  : rgba(255,255,255,.4);
+
+
+
+
+
+/*------------------------------------*\
+  # FONTS
+\*------------------------------------*/
+
+$font-primary  : 'Open Sans', sans-serif;
+$font-secondary: 'Open Sans Condensed', sans-serif;
+
+
+
+
+
+/*------------------------------------*\
+  # @MEDIA BREAKPOINTS
+\*------------------------------------*/
+
+/**
+ * Phone           :    0px - 600px
+ * Tablet portrait :  600px - 900px
+ * Tablet landscape:  900px - 1200px
+ * Desktop         : 1200px - 1800px
+ * Large desktop   : 1800px +
+ *
+ * Source:
+ * https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+ */
+
+$screen-xs: 600px;
+$screen-s : 900px;
+$screen-m : 1200px;
+$screen-l : 1800px;
