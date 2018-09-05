@@ -1,17 +1,22 @@
 @import "../variables";
 
-/*------------------------------------*\
-  # BASIC PAGE SETUP
-\*------------------------------------*/
+/**
+ * Generic
+ *
+ * Style for generic HTML elements with low-spec.
+ *
+ *============================================================================*/
 
+
+
+
+
+/* Basic page setup
+ *============================================================================*/
 /**
  * 1. Best practice box-sizing. Source:
- *    css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- * 2. Causes 1rem to be equal to 10px. Only helpful if you're using rem.
- * 3. Forces long words to break into new line instead of overflowing.
- * 4. Default color for text.
- * 5. Default font family.
- * 6. Default font size
+ *    css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ * 2. Force long words to break into new lines if they don't fit a container.
  */
 
 *, *:before, *:after {
@@ -21,33 +26,31 @@
 html {
   scroll-behavior: smooth;
   box-sizing: border-box; /* [1] */
-  font-size: 62.5%; /* [2] */
-  word-wrap: break-word; /* [3] */
-  overflow-wrap: break-word; /* [3] */
+  word-wrap: break-word; /* [2] */
+  overflow-wrap: break-word; /* [2] */
   line-height: 1.5;
-  font-family: $font-primary; /* [4] */
-  color: $fg-light-secondary; /* [5] */
+  font-family: $font-primary;
+  color: $lt-fg-secondary;
 }
 
 body {
   overflow-x: hidden;
   min-height: 100vh;
-  font-size: 16px; /* [6] */
+  font-size: 16px;
 }
 
 
 
 
 
-/*------------------------------------*\
-  # HEADINGS
-\*------------------------------------*/
+/* Headings
+ *============================================================================*/
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-secondary;
   font-weight: 700;
   line-height: 1.2;
-  color: $fg-light-primary;
+  color: $lt-fg-primary;
 }
 
 h1 { font-size: 40px; }
@@ -61,9 +64,8 @@ h6 { font-size: 20px; }
 
 
 
-/*------------------------------------*\
-  # HR
-\*------------------------------------*/
+/* Horizontal rule
+ *============================================================================*/
 
 hr {
   display: block;
@@ -73,4 +75,22 @@ hr {
   border-width: 1px 0 0;
   border-style: solid;
   border-color: #808080;
+}
+
+
+
+
+
+/* Images, videos
+ *============================================================================*/
+/**
+ * 1. Images will retain their aspect ratio on screen resizing. They will never
+      scale up to be larger than their original size.
+ */
+
+img {
+  max-width: 100%; /* [1] */
+  height: auto; /* [1] */
+  font-style: italic;
+  vertical-align: middle;
 }

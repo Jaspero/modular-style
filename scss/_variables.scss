@@ -1,63 +1,60 @@
 /**
- * @import this file into other files to use any of these variables.
- */
+ * Variables
+ *
+ * @import this file to use its features.
+ *
+ *============================================================================*/
 
-/*------------------------------------*\
-  # ACCENT COLORS
-\*------------------------------------*/
 
-/**
- * 1. These are mostly for checkout/dashboard style websites that need
- *    to have colors that represent positive (green) and negative (red)
- *    outcomes.
- */
+
+
+
+/* Accent colors
+ *============================================================================*/
 
 $accent-primary  : cornflowerblue;
 $accent-secondary: deeppink;
-$accent-success  : limegreen; /* [1] */
-$accent-warning  : crimson; /* [1] */
+$accent-success  : limegreen;
+$accent-warning  : crimson;
 
 
 
 
 
-/*------------------------------------*\
-  # BACKGROUND COLORS
-\*------------------------------------*/
+/* Background colors
+ *============================================================================*/
 
 // Light theme background colors:
-$bg-light-primary  : #ffffff;
-$bg-light-secondary: #eeeeee;
+$lt-bg-primary  : #ffffff;
+$lt-bg-secondary: #eeeeee;
 
 // Dark theme background colors:
-$bg-dark-primary   : #040404;
-$bg-dark-secondary : #1c1f24;
+$dt-bg-primary  : #040404;
+$dt-bg-secondary: #1c1f24;
 
 
 
 
 
-/*------------------------------------*\
-  # FOREGROUND COLORS
-\*------------------------------------*/
+/* Foreground colors
+ *============================================================================*/
 
 // Light theme foreground colors:
-$fg-light-primary  : rgba(0,0,0,.9);
-$fg-light-secondary: rgba(0,0,0,.65);
-$fg-light-tertiary : rgba(0,0,0,.4);
+$lt-fg-primary  : rgba(0,0,0,.9);
+$lt-fg-secondary: rgba(0,0,0,.65);
+$lt-fg-tertiary : rgba(0,0,0,.4);
 
 // Dark theme foreground colors:
-$fg-dark-primary   : rgba(255,255,255,.9);
-$fg-dark-secondary : rgba(255,255,255,.65);
-$fg-dark-tertiary  : rgba(255,255,255,.4);
+$dt-fg-primary  : rgba(255,255,255,.9);
+$dt-fg-secondary: rgba(255,255,255,.65);
+$dt-fg-tertiary : rgba(255,255,255,.4);
 
 
 
 
 
-/*------------------------------------*\
-  # FONTS
-\*------------------------------------*/
+/* Fonts
+ *============================================================================*/
 
 $font-primary  : 'Open Sans', sans-serif;
 $font-secondary: 'Open Sans Condensed', sans-serif;
@@ -66,10 +63,8 @@ $font-secondary: 'Open Sans Condensed', sans-serif;
 
 
 
-/*------------------------------------*\
-  # @MEDIA BREAKPOINTS
-\*------------------------------------*/
-
+/* @media breakpoints
+ *============================================================================*/
 /**
  * Phone           :    0px - 600px
  * Tablet portrait :  600px - 900px
@@ -78,7 +73,7 @@ $font-secondary: 'Open Sans Condensed', sans-serif;
  * Large desktop   : 1800px +
  *
  * Source:
- * https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+ * medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
  */
 
 $screen-xs: 600px;

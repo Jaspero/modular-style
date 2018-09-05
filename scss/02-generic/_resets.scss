@@ -1,10 +1,16 @@
-/*------------------------------------*\
-  # RESETS
-\*------------------------------------*/
-
 /**
- * Margin resets
- */
+ * Resets
+ *
+ * Style resets in order to synchronize different browser default styles.
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Margin resets
+ *============================================================================*/
 
 body,
 h1, h2, h3, h4, h5, h6,
@@ -16,29 +22,17 @@ fieldset, legend {
   margin:  0;
 }
 
-
-
-
-
-/**
- * Remove trailing margins from nested lists.
- */
-
-li > {
-
-  ol, ul {
+// Remove trailing margins from nested lists
+li > ol, ul {
     margin-bottom: 0;
-  }
-
 }
 
 
 
 
 
-/**
- * Remove default table spacing.
- */
+/* Table spacing
+ *============================================================================*/
 
 table {
   border-collapse: collapse;
@@ -49,11 +43,11 @@ table {
 
 
 
-/**
- * Makes it possible to add height and width.
- */
+/* Inline -> inline-block
+ *============================================================================*/
 
-span {
+span,
+a {
   display: inline-block;
 }
 
@@ -61,30 +55,35 @@ span {
 
 
 
-/**
- * Semantic markup
- */
+/* Semantic markup
+ *============================================================================*/
 
-b, strong { font-weight: 700; }
-i, em     { font-style: italic; }
-u         { text-decoration: underline; }
+b, strong {
+  font-weight: 700;
+}
 
-// Makes sure material icons aren't italicized
-i.material-icons { font-style: normal; }
+i, em {
+  font-style: italic;
+}
+
+u {
+  text-decoration: underline;
+}
+
+// Prevent material icons from being italic
+i.material-icons {
+  font-style: normal;
+}
 
 
 
 
 
-/**
- * 1. Forces the <a></a> element to always have a pointer.
- * 2. Removes the default blue/purple <a></a> element color.
- * 3. Removes the default underline for <a></a> elements.
- */
+/* Hyperlink reset
+ *============================================================================*/
 
 a {
-  display: inline-block;
-  cursor: pointer; /* [1] */
-  color: inherit; /* [2] */
-  text-decoration: none; /* [3] */
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 }

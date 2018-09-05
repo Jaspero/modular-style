@@ -1,9 +1,7 @@
-/*------------------------------------*\
-  # CONTRAST
-\*------------------------------------*/
-
 /**
- * A function that calculates relative luminance of a passed color. It returns
+ * Contrast
+ *
+ * A function that calculates relative luminance of a given color. It returns
  * either black or white, based on whichever has more contrast. This is useful
  * for accessibility purposes. People with impaired vision prefer a greater
  * contrast of colors.
@@ -11,7 +9,15 @@
  * Further info:
  * https://en.wikipedia.org/wiki/Relative_luminance
  * https://webaim.org/resources/contrastchecker/
- */
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Main function
+ *============================================================================*/
 
 @function contrast($color) {
   $result: null;
@@ -23,9 +29,13 @@
   @return $result;
 }
 
+
+
+
+
+/* Example
+ *============================================================================*/
 /**
- * Example of use:
- *
  * Given a button with the following background color, you can let contrast()
  * function determine whether black or white is more suited for text color.
  *
@@ -33,5 +43,4 @@
  *   background-color: firebrick;
  *   color: contrast(firebrick); // results in white color
  * }
- *
  */
