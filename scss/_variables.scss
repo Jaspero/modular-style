@@ -12,10 +12,10 @@
 /* Accent colors
  *============================================================================*/
 
-$accent-primary  : cornflowerblue;
-$accent-secondary: deeppink;
-$accent-success  : limegreen;
-$accent-warning  : crimson;
+$acc-primary  : cornflowerblue;
+$acc-secondary: deeppink;
+$acc-success  : limegreen;
+$acc-warning  : crimson;
 
 
 
@@ -25,12 +25,12 @@ $accent-warning  : crimson;
  *============================================================================*/
 
 // Light theme background colors:
-$lt-bg-primary  : #ffffff;
-$lt-bg-secondary: #eeeeee;
+$bg-lt-primary  : #ffffff;
+$bg-lt-secondary: #eeeeee;
 
 // Dark theme background colors:
-$dt-bg-primary  : #040404;
-$dt-bg-secondary: #1c1f24;
+$bg-dt-primary  : #040404;
+$bg-dt-secondary: #1c1f24;
 
 
 
@@ -40,14 +40,14 @@ $dt-bg-secondary: #1c1f24;
  *============================================================================*/
 
 // Light theme foreground colors:
-$lt-fg-primary  : rgba(0,0,0,.9);
-$lt-fg-secondary: rgba(0,0,0,.65);
-$lt-fg-tertiary : rgba(0,0,0,.4);
+$fg-lt-primary  : rgba(0,0,0,.9);
+$fg-lt-secondary: rgba(0,0,0,.65);
+$fg-lt-tertiary : rgba(0,0,0,.4);
 
 // Dark theme foreground colors:
-$dt-fg-primary  : rgba(255,255,255,.9);
-$dt-fg-secondary: rgba(255,255,255,.65);
-$dt-fg-tertiary : rgba(255,255,255,.4);
+$fg-dt-primary  : rgba(255,255,255,.9);
+$fg-dt-secondary: rgba(255,255,255,.65);
+$fg-dt-tertiary : rgba(255,255,255,.4);
 
 
 

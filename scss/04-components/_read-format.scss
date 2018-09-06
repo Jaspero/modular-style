@@ -1,0 +1,125 @@
+/**
+ * Read format
+ *
+ * Overrides that change the page's text size, contrast, and layout for better
+ * readability.
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Layout
+ *============================================================================*/
+
+.read-format {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333333;
+  font-size: 20px;
+  font-family: serif;
+  background: white;
+}
+
+// Inheritance
+.read-format * {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+
+
+
+
+/* Headings
+ *============================================================================*/
+
+.read-format {
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 { font-size: 40px; }
+  h2 { font-size: 36px; }
+  h3 { font-size: 32px; }
+  h4 { font-size: 28px; }
+  h5 { font-size: 24px; }
+  h6 { font-size: 20px; }
+
+}
+
+
+
+
+
+/* Text elements
+ *============================================================================*/
+
+.read-format span {
+  display: inline;
+}
+
+.read-format a {
+  display: inline;
+  color: dodgerblue;
+  text-decoration: underline;
+}
+
+.read-format a:visited {
+  color: rebeccapurple;
+  text-decoration: underline;
+}
+
+
+
+
+
+/* Margin control
+ *============================================================================*/
+
+.read-format {
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 2em 0 1em 0;
+  }
+
+  p,
+  table,
+  img {
+    margin: 1em 0;
+  }
+
+  ul, ol {
+    margin: 1rem 0 2em 0;
+  }
+
+  hr {
+    margin: 5em 0;
+  }
+
+}
+
+
+
+
+
+/* Example
+ *============================================================================*/
+/**
+ * <div class="read-format">
+ *   <h1>Heading</h1>
+ *   <p>This text is formated for readability. This includes some of the following:</p>
+ *   <ul>
+ *     <li>Optimal font size,</li>
+ *     <li>Optimal font color,</li>
+ *     <li>Optimal number of characters per line,</li>
+ *     <li>Good white space hierarchy.</li>
+ *   </ul>
+ * </div>
+ */

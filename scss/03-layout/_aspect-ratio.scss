@@ -1,0 +1,76 @@
+/**
+ * Aspect ratio
+ *
+ * A container element that keeps its aspect ratio when resized.
+ *
+ * Further read: https://css-tricks.com/aspect-ratio-boxes/
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Aspect ratios
+ *============================================================================*/
+/**
+ * A list of all aspect ratios used in a project.
+ */
+
+$aspect-ratios: (
+  '4:3',
+  '3:4',
+  '16:9',
+  '9:16'
+);
+
+
+
+
+
+/* Aspect ratio container style
+ *============================================================================*/
+
+.aspect-ratio {
+  position: relative;
+}
+
+@each $item in $aspect-ratios {
+  $first: number(str-slice($item, 1, str-index($item, ':') - 1));
+  $second: number(str-slice($item, str-index($item, ':') + 1, str-length($item)));
+
+  .aspect-ratio[data-ratio="#{$first}:#{$second}"] {
+    padding-bottom: $second / $first * 100%;
+  }
+
+}
+
+
+
+
+
+/* Aspect ratio image
+ *============================================================================*/
+
+.aspect-ratio > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+/* Example
+ *============================================================================*/
+/**
+ * The image will always have 16:9 aspect ratio, no matter the screen size.
+ *
+ * <div class="aspect-ratio" data-ratio="16:9">
+ *     <img src="https://www.w3schools.com/w3css/img_lights.jpg">
+ * </div>
+ */
