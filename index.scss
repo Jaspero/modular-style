@@ -1,35 +1,10 @@
-/**
- * Index
- *
- * Variables...........Globally-available variables.
- * 01-Tools............Useful mixins and functions.
- * 02-Generic..........Resets, global low-spec rules.
- * 03-Layout...........Objects, layout modules, design patterns.
- * 04-Components.......Discrete, complete chunks of UI.
- * 05-Utilities........Helper classes.
- *
- *============================================================================*/
-
-
-
-
-
-// Tools
 @import "scss/01-tools/number";
 @import "scss/01-tools/contrast";
 @import "scss/01-tools/fluid";
-
-// Generic
 @import "scss/02-generic/resets";
 @import "scss/02-generic/generic";
-
-// Layout
 @import "scss/03-layout/grid";
 @import "scss/03-layout/aspect-ratio";
-
-// Components
 @import "scss/04-components/buttons";
 @import "scss/04-components/read-format";
-
-// Utilities
 @import "scss/05-utilities/utilities";
