@@ -31,7 +31,7 @@ li > ol, ul {
 
 
 
-/* Table spacing
+/* Table
  *============================================================================*/
 
 table {
@@ -45,6 +45,9 @@ table {
 
 /* Inline -> inline-block
  *============================================================================*/
+/**
+ * Makes it possible to set proper height, width, margins, and paddings.
+ */
 
 span,
 a {
@@ -79,11 +82,28 @@ i.material-icons {
 
 
 
-/* Hyperlink reset
+/* Unset hyperlink style
  *============================================================================*/
 
 a {
   cursor: pointer;
   color: inherit;
   text-decoration: none;
+}
+
+
+
+
+
+/* Images
+ *============================================================================*/
+/**
+ * 1. Images will retain their aspect ratio on screen resizing. They will never
+ *    scale up to be larger than their original size.
+ * 2. Remove whitespace under the image.
+ */
+
+img {
+  max-width: 100%; /* [1] */
+  vertical-align: middle; /* [2] */
 }

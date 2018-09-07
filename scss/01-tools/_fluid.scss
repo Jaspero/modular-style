@@ -46,13 +46,17 @@ $top-resize-limit   : $screen-s; /* [2] */
 @mixin fluid($max, $min, $prop) {
   & {
     #{$prop}: $min;
+
     @media screen and (min-width: $bottom-resize-limit) {
       #{$prop}: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$bottom-resize-limit}) / #{strip-unit($top-resize-limit - $bottom-resize-limit)}));
     }
+
     @media screen and (min-width: $top-resize-limit) {
       #{$prop}: $max;
     }
+
   }
+
 }
 
 

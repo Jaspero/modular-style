@@ -30,7 +30,7 @@ html {
   overflow-wrap: break-word; /* [2] */
   line-height: 1.5;
   font-family: $font-primary;
-  color: $lt-fg-secondary;
+  color: $fg-lt-secondary;
 }
 
 body {
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-secondary;
   font-weight: 700;
   line-height: 1.2;
-  color: $lt-fg-primary;
+  color: $fg-lt-primary;
 }
 
 h1 { font-size: 40px; }
@@ -75,22 +75,4 @@ hr {
   border-width: 1px 0 0;
   border-style: solid;
   border-color: #808080;
-}
-
-
-
-
-
-/* Images, videos
- *============================================================================*/
-/**
- * 1. Images will retain their aspect ratio on screen resizing. They will never
-      scale up to be larger than their original size.
- */
-
-img {
-  max-width: 100%; /* [1] */
-  height: auto; /* [1] */
-  font-style: italic;
-  vertical-align: middle;
 }
