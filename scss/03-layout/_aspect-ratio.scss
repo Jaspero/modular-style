@@ -18,10 +18,9 @@
  */
 
 $aspect-ratios: (
+  '3:2',
   '4:3',
-  '3:4',
-  '16:9',
-  '9:16'
+  '16:9'
 );
 
 
@@ -49,10 +48,10 @@ $aspect-ratios: (
 
 
 
-/* Aspect ratio image
+/* Aspect ratio item
  *============================================================================*/
 
-.aspect-ratio > img {
+.aspect-item {
   position: absolute;
   top: 0;
   left: 0;
@@ -71,6 +70,6 @@ $aspect-ratios: (
  * The image will always have 16:9 aspect ratio, no matter the screen size.
  *
  * <div class="aspect-ratio" data-ratio="16:9">
- *     <img src="https://www.w3schools.com/w3css/img_lights.jpg">
+ *     <img class="aspect-item" src="https://www.w3schools.com/w3css/img_lights.jpg">
  * </div>
  */

@@ -61,19 +61,23 @@
 /* Text elements
  *============================================================================*/
 
-.read-format span {
-  display: inline;
-}
+.read-format {
 
-.read-format a {
-  display: inline;
-  color: dodgerblue;
-  text-decoration: underline;
-}
+  span {
+    display: inline;
+  }
 
-.read-format a:visited {
-  color: rebeccapurple;
-  text-decoration: underline;
+  a {
+    display: inline;
+    color: dodgerblue;
+    text-decoration: underline;
+  }
+
+  a:visited {
+    color: rebeccapurple;
+    text-decoration: underline;
+  }
+
 }
 
 
