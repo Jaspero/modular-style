@@ -84,7 +84,7 @@ $grid-gutter: 30px; /* [2] */
 }
 
 // Large screen layout
-@media screen and (max-width: $screen-l) {
+@media (max-width: $screen-l) {
   .col-l-0 { display: none; }
   @for $i from 1 through 12 {
     .col-l-#{$i} {
@@ -96,7 +96,7 @@ $grid-gutter: 30px; /* [2] */
 }
 
 // Medium screen layout
-@media screen and (max-width: $screen-m) {
+@media (max-width: $screen-m) {
   .col-m-0 { display: none; }
   @for $i from 1 through 12 {
     .col-m-#{$i} {
@@ -108,7 +108,7 @@ $grid-gutter: 30px; /* [2] */
 }
 
 // Small screen layout
-@media screen and (max-width: $screen-s) {
+@media (max-width: $screen-s) {
   .col-s-0 { display: none; }
   @for $i from 1 through 12 {
     .col-s-#{$i} {
@@ -120,7 +120,7 @@ $grid-gutter: 30px; /* [2] */
 }
 
 // Extra small screen layout
-@media screen and (max-width: $screen-xs) {
+@media (max-width: $screen-xs) {
   .col-xs-0 { display: none; }
   @for $i from 1 through 12 {
     .col-xs-#{$i} {

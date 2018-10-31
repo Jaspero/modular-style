@@ -9,13 +9,40 @@
 
 
 
+/* Basic page behaviour resets
+ *============================================================================*/
+/**
+ * 1. Best practice box-sizing. Source:
+ *    css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ * 2. Force long words to break into new lines if they don't fit a container.
+ */
+
+*, *:before, *:after {
+  box-sizing: inherit; /* [1] */
+}
+
+html {
+  box-sizing: border-box; /* [1] */
+  word-wrap: break-word; /* [2] */
+  overflow-wrap: break-word; /* [2] */
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+
+
+
+
 /* Margin resets
  *============================================================================*/
 
 body,
 h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-dl, dd, ol, ul,
+p, ol, ul,
 figure,
 hr,
 fieldset, legend {
@@ -61,6 +88,10 @@ a {
 /* Semantic markup
  *============================================================================*/
 
+small {
+  font-size: .75em;
+}
+
 b, strong {
   font-weight: 700;
 }
@@ -98,12 +129,13 @@ a {
 /* Images
  *============================================================================*/
 /**
- * 1. Images will retain their aspect ratio on screen resizing. They will never
- *    scale up to be larger than their original size.
- * 2. Remove whitespace under the image.
+ * 1. Images will retain their aspect ratio on screen resizing. They
+      will never scale up to be larger than their original size.
+ * 2. Remove whitespace under images.
  */
 
 img {
   max-width: 100%; /* [1] */
+  height: auto; /* [1] */
   vertical-align: middle; /* [2] */
 }

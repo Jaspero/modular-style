@@ -10,16 +10,15 @@
 
 
 
-/* Layout
+/* Inheritance
  *============================================================================*/
 
 .read-format {
   color: #333333;
-  font-size: 18px;
-  font-family: serif;
+  font-size: inherit;
+  font-family: inherit;
 }
 
-// Inheritance
 .read-format * {
   color: inherit;
   font-size: inherit;
@@ -70,7 +69,15 @@
 
   a:visited {
     color: rebeccapurple;
-    text-decoration: underline;
+  }
+
+  hr {
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: #808080;
   }
 
 }

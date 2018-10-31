@@ -24,13 +24,13 @@ $acc-warning  : crimson;
 /* Background colors
  *============================================================================*/
 
-// Light theme background colors:
-$bg-lt-primary  : #ffffff;
-$bg-lt-secondary: #eeeeee;
+// Light:
+$bg-l-primary  : #ffffff;
+$bg-l-secondary: #eeeeee;
 
-// Dark theme background colors:
-$bg-dt-primary  : #040404;
-$bg-dt-secondary: #1c1f24;
+// Dark:
+$bg-d-primary  : #040404;
+$bg-d-secondary: #1c1f24;
 
 
 
@@ -39,15 +39,15 @@ $bg-dt-secondary: #1c1f24;
 /* Foreground colors
  *============================================================================*/
 
-// Light theme foreground colors:
-$fg-lt-primary  : rgba(0,0,0,.9);
-$fg-lt-secondary: rgba(0,0,0,.65);
-$fg-lt-tertiary : rgba(0,0,0,.4);
+// Light:
+$fg-l-primary  : rgba(255,255,255,.9);
+$fg-l-secondary: rgba(255,255,255,.7);
+$fg-l-tertiary : rgba(255,255,255,.4);
 
-// Dark theme foreground colors:
-$fg-dt-primary  : rgba(255,255,255,.9);
-$fg-dt-secondary: rgba(255,255,255,.65);
-$fg-dt-tertiary : rgba(255,255,255,.4);
+// Dark:
+$fg-d-primary  : rgba(0,0,0,.9);
+$fg-d-secondary: rgba(0,0,0,.7);
+$fg-d-tertiary : rgba(0,0,0,.4);
 
 
 

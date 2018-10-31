@@ -11,32 +11,14 @@
 
 
 
-/* Basic page setup
+/* HTML
  *============================================================================*/
-/**
- * 1. Best practice box-sizing. Source:
- *    css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
- * 2. Force long words to break into new lines if they don't fit a container.
- */
-
-*, *:before, *:after {
-  box-sizing: inherit; /* [1] */
-}
 
 html {
-  scroll-behavior: smooth;
-  box-sizing: border-box; /* [1] */
-  word-wrap: break-word; /* [2] */
-  overflow-wrap: break-word; /* [2] */
-  line-height: 1.5;
   font-family: $font-primary;
-  color: $fg-lt-secondary;
-}
-
-body {
-  overflow-x: hidden;
-  min-height: 100vh;
+  line-height: 1.5;
   font-size: 16px;
+  color: $fg-d-secondary;
 }
 
 
@@ -48,9 +30,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-secondary;
-  font-weight: 700;
   line-height: 1.2;
-  color: $fg-lt-primary;
+  font-weight: 700;
+  color: $fg-d-primary;
 }
 
 h1 { font-size: 40px; }
@@ -59,20 +41,3 @@ h3 { font-size: 32px; }
 h4 { font-size: 28px; }
 h5 { font-size: 24px; }
 h6 { font-size: 20px; }
-
-
-
-
-
-/* Horizontal rule
- *============================================================================*/
-
-hr {
-  display: block;
-  width: 100%;
-  height: 1px;
-  margin: 10px 0;
-  border-width: 1px 0 0;
-  border-style: solid;
-  border-color: #808080;
-}
