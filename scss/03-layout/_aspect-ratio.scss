@@ -13,15 +13,24 @@
 
 /* Aspect ratios
  *============================================================================*/
-/**
- * A list of all aspect ratios used in a project.
- */
 
+// A list of all aspect ratios used in a project.
 $aspect-ratios: (
   '3:2',
   '4:3',
   '16:9'
 );
+
+// Creates a CSS selector for each item in the list of aspect ratios (above)
+@each $item in $aspect-ratios {
+  $first: number(str-slice($item, 1, str-index($item, ':') - 1));
+  $second: number(str-slice($item, str-index($item, ':') + 1, str-length($item)));
+
+  .aspect-ratio[data-ratio="#{$first}:#{$second}"] {
+    padding-bottom: $second / $first * 100%;
+  }
+
+}
 
 
 
@@ -32,16 +41,6 @@ $aspect-ratios: (
 
 .aspect-ratio {
   position: relative;
-}
-
-@each $item in $aspect-ratios {
-  $first: number(str-slice($item, 1, str-index($item, ':') - 1));
-  $second: number(str-slice($item, str-index($item, ':') + 1, str-length($item)));
-
-  .aspect-ratio[data-ratio="#{$first}:#{$second}"] {
-    padding-bottom: $second / $first * 100%;
-  }
-
 }
 
 
