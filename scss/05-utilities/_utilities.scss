@@ -31,13 +31,6 @@
 .ai-center  { align-items: center; }
 .ai-base    { align-items: baseline; }
 
-.ac-stretch { align-content: stretch; }
-.ac-start   { align-content: flex-start; }
-.ac-end     { align-content: flex-end; }
-.ac-center  { align-content: center; }
-.ac-around  { align-content: space-around; }
-.ac-between { align-content: space-between; }
-
 .jc-start   { justify-content: flex-start; }
 .jc-end     { justify-content: flex-end; }
 .jc-center  { justify-content: center; }
@@ -52,10 +45,9 @@
 /* Background colors
  *============================================================================*/
 
-.bg-acc-primary   { background-color: $acc-primary; }
-.bg-acc-secondary { background-color: $acc-secondary; }
-.bg-acc-success   { background-color: $acc-success; }
-.bg-acc-warning   { background-color: $acc-warning; }
+.bg-primary       { background-color: $primary; }
+.bg-accent        { background-color: $accent; }
+.bg-warn          { background-color: $warn; }
 
 .bg-l-primary     { background-color: $bg-l-primary; }
 .bg-l-secondary   { background-color: $bg-l-secondary; }
@@ -70,18 +62,19 @@
 /* Colors
  *============================================================================*/
 
-.c-acc-primary   { color: $acc-primary; }
-.c-acc-secondary { color: $acc-secondary; }
-.c-acc-success   { color: $acc-success; }
-.c-acc-warning   { color: $acc-warning; }
+.c-primary       { background-color: $primary; }
+.c-accent        { background-color: $accent; }
+.c-warn          { background-color: $warn; }
 
 .c-l-primary     { color: $fg-l-primary; }
 .c-l-secondary   { color: $fg-l-secondary; }
 .c-l-tertiary    { color: $fg-l-tertiary; }
+.c-l-quaternary  { color: $fg-l-quaternary; }
 
 .c-d-primary     { color: $fg-d-primary; }
 .c-d-secondary   { color: $fg-d-secondary; }
 .c-d-tertiary    { color: $fg-d-tertiary; }
+.c-d-quaternary  { color: $fg-d-quaternary; }
 
 
 
