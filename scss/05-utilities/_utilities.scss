@@ -148,10 +148,10 @@
 .hide-m  { @media (max-width: $screen-m)  { display: none; } }
 .hide-l  { @media (max-width: $screen-l)  { display: none; } }
 
-.show-xs { display: none; @media (max-width: $screen-xs) { display: inline-block; } }
-.show-s  { display: none; @media (max-width: $screen-s)  { display: inline-block; } }
-.show-m  { display: none; @media (max-width: $screen-m)  { display: inline-block; } }
-.show-m  { display: none; @media (max-width: $screen-l)  { display: inline-block; } }
+.show-xs { @media (min-width: $screen-xs + 1px) { display: none; } }
+.show-s  { @media (min-width: $screen-s + 1px)  { display: none; } }
+.show-m  { @media (min-width: $screen-m + 1px)  { display: none; } }
+.show-m  { @media (min-width: $screen-l + 1px)  { display: none; } }
 
 
 
