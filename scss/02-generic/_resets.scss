@@ -57,7 +57,7 @@ li > ol, ul {
 
 
 
-/* Table
+/* Tables
  *============================================================================*/
 
 table {
@@ -88,16 +88,11 @@ u {
   text-decoration: underline;
 }
 
-// Prevent material icons from being italic
-i.material-icons {
-  font-style: normal;
-}
 
 
 
 
-
-/* Unset hyperlink style
+/* Hyperlink
  *============================================================================*/
 
 a {

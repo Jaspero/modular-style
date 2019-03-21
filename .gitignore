@@ -1,2 +1,4 @@
-*.css
-*.map
+.sass-cache
+.idea
+index.css
+index.css.map

@@ -14,29 +14,39 @@
 /* Flex
  *============================================================================*/
 
-.flex       { display: flex; }
-.iflex      { display: inline-flex; }
+.flex        { display: flex; }
+.iflex       { display: inline-flex; }
 
-.fw-wrap    { flex-wrap: wrap; }
-.fw-nowrap  { flex-wrap: nowrap; }
+.fw-wrap     { flex-wrap: wrap; }
+.fw-nowrap   { flex-wrap: nowrap; }
+.fw-wrap-rev { flex-wrap: wrap-reverse; }
 
-.fd-row     { flex-direction: row; }
-.fd-row-rev { flex-direction: row-reverse; }
-.fd-col     { flex-direction: column; }
-.fd-col-rev { flex-direction: column-reverse; }
+.fd-row      { flex-direction: row; }
+.fd-row-rev  { flex-direction: row-reverse; }
+.fd-col      { flex-direction: column; }
+.fd-col-rev  { flex-direction: column-reverse; }
 
-.ai-stretch { align-items: stretch; }
-.ai-start   { align-items: flex-start; }
-.ai-end     { align-items: flex-end; }
-.ai-center  { align-items: center; }
-.ai-base    { align-items: baseline; }
+.ai-stretch  { align-items: stretch; }
+.ai-start    { align-items: flex-start; }
+.ai-end      { align-items: flex-end; }
+.ai-center   { align-items: center; }
+.ai-base     { align-items: baseline; }
 
-.jc-start   { justify-content: flex-start; }
-.jc-end     { justify-content: flex-end; }
-.jc-center  { justify-content: center; }
-.jc-around  { justify-content: space-around; }
-.jc-between { justify-content: space-between; }
-.jc-evenly  { justify-content: space-evenly; }
+.jc-start    { justify-content: flex-start; }
+.jc-end      { justify-content: flex-end; }
+.jc-center   { justify-content: center; }
+.jc-around   { justify-content: space-around; }
+.jc-between  { justify-content: space-between; }
+.jc-evenly   { justify-content: space-evenly; }
+
+
+
+
+
+/* Flex children
+ *============================================================================*/
+
+.f1 { flex: 1; }
 
 
 
@@ -72,9 +82,9 @@
 /* Colors
  *============================================================================*/
 
-.c-primary       { background-color: $primary; }
-.c-accent        { background-color: $accent; }
-.c-warn          { background-color: $warn; }
+.c-primary       { color: $primary; }
+.c-accent        { color: $accent; }
+.c-warn          { color: $warn; }
 
 .c-l-primary     { color: $fg-l-primary; }
 .c-l-secondary   { color: $fg-l-secondary; }
@@ -100,6 +110,9 @@
 
 .ws-nowrap    { white-space: nowrap; }
 .ws-normal    { white-space: normal; }
+
+.fs-small     { font-size: 0.75em; }
+.fs-large     { font-size: 1.25em; }
 
 .ff-primary   { font-family: $font-primary; }
 .ff-secondary { font-family: $font-secondary; }
