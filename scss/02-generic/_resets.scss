@@ -14,7 +14,7 @@
 /**
  * 1. Best practice box-sizing. Source:
  *    css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
- * 2. Force long words to break into new lines if they don't fit a container.
+ * 2. Forces long words to break into new lines if they don't fit a container.
  */
 
 *, *:before, *:after {
@@ -48,7 +48,7 @@ fieldset, legend {
   margin:  0;
 }
 
-// Remove trailing margins from nested lists
+// Removes trailing margins from nested lists
 li > ol, ul {
     margin-bottom: 0;
 }
@@ -73,7 +73,7 @@ table {
  *============================================================================*/
 
 small {
-  font-size: .75em;
+  font-size: .8em;
 }
 
 b, strong {
@@ -110,7 +110,7 @@ a {
 /**
  * 1. Images will retain their aspect ratio on screen resizing. They
       will never scale up to be larger than their original size.
- * 2. Remove whitespace under images.
+ * 2. Removes whitespace under images.
  */
 
 img {

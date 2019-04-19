@@ -48,6 +48,7 @@
 
 .f1 { flex: 1; }
 .f2 { flex: 2; }
+.f3 { flex: 3; }
 
 
 
@@ -112,8 +113,8 @@
 .ws-nowrap    { white-space: nowrap; }
 .ws-normal    { white-space: normal; }
 
-.fs-small     { font-size: 0.75em; }
-.fs-large     { font-size: 1.25em; }
+.fs-small     { font-size: 0.8em; }
+.fs-large     { font-size: 1.3em; }
 
 .ff-primary   { font-family: $font-primary; }
 .ff-secondary { font-family: $font-secondary; }
@@ -144,11 +145,13 @@
 /* Width & height
  *============================================================================*/
 
-.w-full { width: 100%; }
-.w-auto { width: auto; }
+.w-full  { width: 100%; }
+.w-auto  { width: auto; }
 
-.h-full { height: 100%; }
-.h-auto { height: auto; }
+.h-full  { height: 100%; }
+.h-auto  { height: auto; }
+
+.mw-full { max-width: 100%; }
 
 
 

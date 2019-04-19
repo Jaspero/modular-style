@@ -7,7 +7,9 @@
  * Based on fluid typography. Source:
  * https://css-tricks.com/snippets/css/fluid-typography/
  *
- * Supports only pixel values.
+ * Supports pixel values. Example of use:
+ *
+ * p { @include fluid(18px, 14px, font-size); }
  *
  *============================================================================*/
 
@@ -23,16 +25,16 @@
  */
 
 $ll: $screen-xs; /* [1] */
-$ul: $screen-s; /* [2] */
+$ul: $screen-m; /* [2] */
 
 
 
 
 
-/* Helper function
+/* Helper function to strip units
  *============================================================================*/
 
-@function strip-unit($value) {
+@function su($value) {
   @return $value / ($value * 0 + 1);
 }
 
@@ -40,36 +42,17 @@ $ul: $screen-s; /* [2] */
 
 
 
-/* Main mixin
+/* Fluid mixin
  *============================================================================*/
 
 @mixin fluid($max, $min, $prop) {
   & {
     #{$prop}: $min;
-
     @media (min-width: $ll) {
-      #{$prop}: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - #{$ll}) / #{strip-unit($ul - $ll)}));
+      #{$prop}: calc(#{$min} + #{su($max - $min)} * ((100vw - #{$ll}) / #{su($ul - $ll)}));
     }
-
     @media (min-width: $ul) {
       #{$prop}: $max;
     }
-
   }
-
 }
-
-
-
-
-
-/* Example
- *============================================================================*/
-/**
- * Paragraph font size will fluently scale from 18px on large screens to 14px
- * on smaller screens:
- *
- * p {
- *   @include fluid(18px, 14px, font-size);
- * }
- */
