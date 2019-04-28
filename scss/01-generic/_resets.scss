@@ -19,6 +19,7 @@
 
 *, *:before, *:after {
   box-sizing: inherit; /* [1] */
+  border-color: inherit;
 }
 
 html {
@@ -41,10 +42,7 @@ body {
  *============================================================================*/
 
 h1, h2, h3, h4, h5, h6,
-p, ol, ul,
-figure,
-hr,
-fieldset, legend {
+p, ol, ul, hr {
   margin:  0;
 }
 
@@ -92,13 +90,24 @@ u {
 
 
 
-/* Hyperlink
+/* Hyperlinks
  *============================================================================*/
 
 a {
   cursor: pointer;
   color: inherit;
   text-decoration: none;
+}
+
+
+
+
+
+/* Buttons
+ *============================================================================*/
+
+button {
+  cursor: pointer;
 }
 
 

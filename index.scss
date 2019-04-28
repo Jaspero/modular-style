@@ -1,5 +1,14 @@
-@import "scss/01-tools/fluid";
-@import "scss/02-generic/resets";
-@import "scss/02-generic/generic";
+@import "scss/00-setup/theme";
+@import "scss/01-generic/resets";
+@import "scss/01-generic/generic";
 @import "scss/03-utilities/grid";
 @import "scss/03-utilities/utilities";
+
+.op\.7 { opacity: .7; }
+
+hr {
+  border-top-width: 2px;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+}

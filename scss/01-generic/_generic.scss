@@ -1,5 +1,3 @@
-@import "../variables";
-
 /**
  * Generic
  *
@@ -15,10 +13,12 @@
  *============================================================================*/
 
 html {
-  font-family: $font-primary;
-  line-height: 1.5;
   font-size: 16px;
-  color: $fg-d-secondary;
+  line-height: 1.5;
+  font-family: var(--font-primary);
+  color: var(--light-contrast);
+  border-color: var(--light-border);
+  background-color: var(--light-primary);
 }
 
 
@@ -29,10 +29,8 @@ html {
  *============================================================================*/
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-secondary;
   line-height: 1.2;
-  font-weight: 700;
-  color: $fg-d-primary;
+  font-weight: normal;
 }
 
 h1 { font-size: 40px; }

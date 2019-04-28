@@ -1,0 +1,66 @@
+/**
+ * Theme
+ *
+ * Adjustable theme settings.
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Map of CSS variables
+ *============================================================================*/
+
+$colors: (
+        primary: (
+                primary  : #3f51b5,
+                contrast : rgba(255,255,255,1),
+                border   : rgba(255,255,255,.3)
+        ),
+        accent: (
+                primary  : #ff4081,
+                contrast : rgba(255,255,255,1),
+                border   : rgba(255,255,255,.3)
+        ),
+        warn: (
+                primary  : #dc143c,
+                contrast : rgba(255,255,255,1),
+                border   : rgba(255,255,255,.3)
+        ),
+        light: (
+                primary  : #f2f2f2,
+                contrast : rgba(0,0,0,.87),
+                border   : rgba(0,0,0,.12)
+        ),
+        dark: (
+                primary  : #12161a,
+                contrast : rgba(255,255,255,1),
+                border   : rgba(255,255,255,.3)
+        )
+);
+
+$fonts: (
+        primary  : sans-serif,
+        secondary: serif,
+        tertiary : monospace
+
+);
+
+
+
+
+
+/* Generating CSS variables in :root
+ *============================================================================*/
+
+:root {
+  @each $group-name, $group in $colors {
+    @each $color-name, $color-value in $group {
+      --#{$group-name}-#{$color-name}: #{$color-value};
+    }
+  }
+  @each $font-name, $font-value in $fonts {
+    --font-#{$font-name}: #{$font-value};
+  }
+}

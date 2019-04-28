@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "sass --watch index.scss:index.css --style compressed"
+    "start": "sass --watch index.scss:index.css"
   },
   "keywords": [],
   "author": "",
