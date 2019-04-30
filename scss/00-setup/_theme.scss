@@ -14,28 +14,33 @@
 
 $colors: (
         primary: (
-                primary  : #3f51b5,
-                contrast : rgba(255,255,255,1),
+                base     : #3f51b5,
+                primary  : rgba(255,255,255,1),
+                secondary: rgba(255,255,255,.7),
                 border   : rgba(255,255,255,.3)
         ),
         accent: (
-                primary  : #ff4081,
-                contrast : rgba(255,255,255,1),
+                base     : #ff4081,
+                primary  : rgba(255,255,255,1),
+                secondary: rgba(255,255,255,.7),
                 border   : rgba(255,255,255,.3)
         ),
         warn: (
-                primary  : #dc143c,
-                contrast : rgba(255,255,255,1),
+                base     : #dc143c,
+                primary  : rgba(255,255,255,1),
+                secondary: rgba(255,255,255,.7),
                 border   : rgba(255,255,255,.3)
         ),
         light: (
-                primary  : #f2f2f2,
-                contrast : rgba(0,0,0,.87),
+                base     : #f2f2f2,
+                primary  : rgba(0,0,0,.87),
+                secondary: rgba(0,0,0,.54),
                 border   : rgba(0,0,0,.12)
         ),
         dark: (
-                primary  : #12161a,
-                contrast : rgba(255,255,255,1),
+                base     : #12161a,
+                primary  : rgba(255,255,255,1),
+                secondary: rgba(255,255,255,.7),
                 border   : rgba(255,255,255,.3)
         )
 );

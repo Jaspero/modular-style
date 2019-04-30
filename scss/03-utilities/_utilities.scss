@@ -69,9 +69,11 @@
 
 @each $group-name, $group in $colors {
   .bg-#{$group-name} {
-    background: var(--#{$group-name}-primary);
-    color: var(--#{$group-name}-contrast);
+    background: var(--#{$group-name}-base);
+    color: var(--#{$group-name}-primary);
     border-color: var(--#{$group-name}-border);
+    .alpha-primary { color: red; }
+    .alpha-secondary { color: green; }
   }
   .c-#{$group-name} {
     color: var(--#{$group-name}-primary);
