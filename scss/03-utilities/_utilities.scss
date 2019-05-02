@@ -67,41 +67,33 @@
 /* Colors
  *============================================================================*/
 
-@each $group-name, $group in $colors {
-  .bg-#{$group-name} {
-    background: var(--#{$group-name}-base);
-    color: var(--#{$group-name}-primary);
-    border-color: var(--#{$group-name}-border);
-    .alpha-primary { color: red; }
-    .alpha-secondary { color: green; }
-  }
+@each $group-name, $group in $colors-themes {
   .c-#{$group-name} {
-    color: var(--#{$group-name}-primary);
-  }
-  .b-#{$group-name} {
-    border: 2px solid var(--#{$group-name}-border);
-  }
-  .b-x-#{$group-name} {
-    border-left: 2px solid var(--#{$group-name}-border);
-    border-right: 2px solid var(--#{$group-name}-border);
-  }
-  .b-y-#{$group-name} {
-    border-top: 2px solid var(--#{$group-name}-border);
-    border-bottom: 2px solid var(--#{$group-name}-border);
-  }
-  .b-t-#{$group-name} {
-    border-top: 2px solid var(--#{$group-name}-border);
-  }
-  .b-r-#{$group-name} {
-    border-right: 2px solid var(--#{$group-name}-border);
-  }
-  .b-b-#{$group-name} {
-    border-bottom: 2px solid var(--#{$group-name}-border);
-  }
-  .b-l-#{$group-name} {
-    border-left: 2px solid var(--#{$group-name}-border);
+    color: var(--#{$group-name}-theme);
   }
 }
+
+
+
+
+
+/* Colors
+ *============================================================================*/
+
+.bg-theme { background: var(--theme); }
+
+
+
+
+
+/* Borders
+ *============================================================================*/
+
+.b-a { border       : 2px solid; }
+.b-t { border-top   : 2px solid; }
+.b-r { border-right : 2px solid; }
+.b-b { border-bottom: 2px solid; }
+.b-l { border-left  : 2px solid; }
 
 
 

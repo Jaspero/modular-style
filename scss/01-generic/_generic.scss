@@ -16,9 +16,6 @@ html {
   font-size: 16px;
   line-height: 1.5;
   font-family: var(--font-primary);
-  color: var(--light-primary);
-  border-color: var(--light-border);
-  background-color: var(--light-base);
 }
 
 
@@ -39,13 +36,3 @@ h3 { font-size: 32px; }
 h4 { font-size: 28px; }
 h5 { font-size: 24px; }
 h6 { font-size: 20px; }
-
-
-
-
-
-/* Alpha
- *============================================================================*/
-
-.alpha-primary   { color: var(--light-primary); }
-.alpha-secondary { color: var(--light-secondary); }

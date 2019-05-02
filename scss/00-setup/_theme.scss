@@ -9,47 +9,41 @@
 
 
 
-/* Map of CSS variables
+/* Themes
  *============================================================================*/
 
-$colors: (
-        primary: (
-                base     : #3f51b5,
-                primary  : rgba(255,255,255,1),
-                secondary: rgba(255,255,255,.7),
-                border   : rgba(255,255,255,.3)
-        ),
-        accent: (
-                base     : #ff4081,
-                primary  : rgba(255,255,255,1),
-                secondary: rgba(255,255,255,.7),
-                border   : rgba(255,255,255,.3)
-        ),
-        warn: (
-                base     : #dc143c,
-                primary  : rgba(255,255,255,1),
-                secondary: rgba(255,255,255,.7),
-                border   : rgba(255,255,255,.3)
-        ),
-        light: (
-                base     : #f2f2f2,
-                primary  : rgba(0,0,0,.87),
-                secondary: rgba(0,0,0,.54),
-                border   : rgba(0,0,0,.12)
-        ),
-        dark: (
-                base     : #12161a,
-                primary  : rgba(255,255,255,1),
-                secondary: rgba(255,255,255,.7),
-                border   : rgba(255,255,255,.3)
-        )
+$colors-themes: (
+  primary: (
+    theme    : #3f51b5,
+    primary  : rgba(255,255,255,1),
+    secondary: rgba(255,255,255,.7)
+  ),
+  accent: (
+    theme    : #ff4081,
+    primary  : rgba(255,255,255,1),
+    secondary: rgba(255,255,255,.7)
+  ),
+  warn: (
+    theme    : #dc143c,
+    primary  : rgba(255,255,255,1),
+    secondary: rgba(255,255,255,.7)
+  ),
+  light: (
+    theme    : #f2f2f2,
+    primary  : rgba(0,0,0,.87),
+    secondary: rgba(0,0,0,.54)
+  ),
+  dark: (
+    theme    : #12161a,
+    primary  : rgba(255,255,255,1),
+    secondary: rgba(255,255,255,.7)
+  )
 );
 
 $fonts: (
-        primary  : sans-serif,
-        secondary: serif,
-        tertiary : monospace
-
+  primary  : sans-serif,
+  secondary: serif,
+  tertiary : monospace
 );
 
 
@@ -60,12 +54,27 @@ $fonts: (
  *============================================================================*/
 
 :root {
-  @each $group-name, $group in $colors {
+  @each $group-name, $group in $colors-themes {
     @each $color-name, $color-value in $group {
       --#{$group-name}-#{$color-name}: #{$color-value};
     }
   }
   @each $font-name, $font-value in $fonts {
     --font-#{$font-name}: #{$font-value};
+  }
+}
+
+
+
+
+
+/* Generating theme classes
+ *============================================================================*/
+
+@each $group-name, $group in $colors-themes {
+  .theme-#{$group-name} {
+    --theme    : var(--#{$group-name}-theme);
+    --primary  : var(--#{$group-name}-primary);
+    --secondary: var(--#{$group-name}-secondary);
   }
 }
