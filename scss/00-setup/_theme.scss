@@ -72,7 +72,7 @@ $fonts: (
  *============================================================================*/
 
 @each $group-name, $group in $colors-themes {
-  .theme-#{$group-name} {
+  .#{$group-name} {
     --theme    : var(--#{$group-name}-theme);
     --primary  : var(--#{$group-name}-primary);
     --secondary: var(--#{$group-name}-secondary);
