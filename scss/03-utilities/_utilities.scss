@@ -64,12 +64,18 @@
 
 
 
-/* Colors
+/* Backgrounds
  *============================================================================*/
 
+
+.bg {
+  background-color: var(--theme);
+  color: var(--primary);
+}
 @each $group-name, $group in $colors-themes {
-  .c-#{$group-name} {
-    color: var(--#{$group-name}-theme);
+  .bg-#{$group-name} {
+    background-color: var(--#{$group-name}-theme);
+    color: var(--#{$group-name}-primary);
   }
 }
 
@@ -80,7 +86,23 @@
 /* Colors
  *============================================================================*/
 
-.bg-theme { background: var(--theme); }
+.c {
+  color: var(--theme);
+}
+
+.c1 {
+  color: var(--primary);
+}
+
+.c2 {
+  color: var(--secondary);
+}
+
+@each $group-name, $group in $colors-themes {
+  .c-#{$group-name} {
+    color: var(--#{$group-name}-theme);
+  }
+}
 
 
 
