@@ -9,8 +9,6 @@
 
 
 
-
-
 /* Flex
  *============================================================================*/
 
@@ -46,8 +44,6 @@
 
 
 
-
-
 /* Other displays
  *============================================================================*/
 
@@ -55,8 +51,6 @@
 .iblock   { display: inline-block; }
 .inline   { display: inline; }
 .contents { display: contents; }
-
-
 
 
 
@@ -75,11 +69,8 @@
 
 
 
-
-
 /* Backgrounds
  *============================================================================*/
-
 
 .bg {
   background-color: var(--theme);
@@ -91,8 +82,6 @@
     color: var(--#{$group-name}-primary);
   }
 }
-
-
 
 
 
@@ -111,8 +100,6 @@
 
 
 
-
-
 /* Fonts
  *============================================================================*/
 
@@ -124,9 +111,7 @@
 
 
 
-
-
-/* Content helpers
+/* Text aligns
  *============================================================================*/
 
 .ta-left    { text-align: left; }
@@ -134,24 +119,49 @@
 .ta-right   { text-align: right; }
 .ta-justify { text-align: justify; }
 
+
+
+/* White space
+ *============================================================================*/
+
 .ws-nowrap { white-space: nowrap; }
 .ws-normal { white-space: normal; }
+
+
+
+/* Font size
+ *============================================================================*/
 
 .fs-small { font-size: 0.8em; }
 .fs-large { font-size: 1.3em; }
 
+
+
+/* Image controls
+ *============================================================================*/
+
 .obj-cover   { object-fit: cover; }
 .obj-contain { object-fit: contain; }
 
+
+
+/* Position
+ *============================================================================*/
+
 .relative { position: relative; }
+
+
+
+/* Width & height
+ *============================================================================*/
 
 .w-full  { width: 100%; }
 .w-auto  { width: auto; }
+
 .h-full  { height: 100%; }
 .h-auto  { height: auto; }
+
 .mw-full { max-width: 100%; }
-
-
 
 
 
@@ -163,8 +173,6 @@
 .b-r { border-right : 2px solid; }
 .b-b { border-bottom: 2px solid; }
 .b-l { border-left  : 2px solid; }
-
-
 
 
 
@@ -200,8 +208,6 @@
 .p-l-m  { padding-left: 20px; }
 .p-l-l  { padding-left: 40px; }
 .p-l-xl { padding-left: 80px; }
-
-
 
 
 

@@ -13,14 +13,7 @@ Variables...........Globally-available variables
  *
  * Short description here.
  *
- * Pay attention to spacing (5 empty rows between major section, 1 between
- * closely related elements) 
- *
  *============================================================================*/
-
-
-
-
 
 /* Section title
  *============================================================================*/
@@ -38,10 +31,6 @@ Variables...........Globally-available variables
   attribute: value;
 }
 
-
-
-
-
 /* Section title
  *============================================================================*/
 /**
@@ -54,10 +43,6 @@ Variables...........Globally-available variables
   attribute: value;
   attribute: value;
 }
-
-
-
-
 
 /* Section title
  *============================================================================*/
