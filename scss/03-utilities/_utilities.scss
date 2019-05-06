@@ -83,12 +83,12 @@
 
 .bg {
   background-color: var(--theme);
-  color           : var(--primary);
+  color: var(--primary);
 }
 @each $group-name, $group in $colors-themes {
   .bg-#{$group-name} {
     background-color: var(--#{$group-name}-theme);
-    color           : var(--#{$group-name}-primary);
+    color: var(--#{$group-name}-primary);
   }
 }
 
