@@ -112,3 +112,14 @@ img {
   height: auto; /* [1] */
   vertical-align: middle; /* [2] */
 }
+
+
+
+/* Disabled content
+ *============================================================================*/
+
+.disabled, :disabled, [disabled] {
+  opacity: .5;
+  user-select: none;
+  pointer-events: none;
+}

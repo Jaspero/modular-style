@@ -152,6 +152,23 @@
 
 
 
+/* Overflows
+ *============================================================================*/
+
+.of-auto     { overflow: auto; }
+.of-hidden   { overflow: hidden; }
+.of-scroll   { overflow: scroll; }
+
+.of-x-auto   { overflow-x: auto; }
+.of-x-hidden { overflow-x: hidden; }
+.of-x-scroll { overflow-x: scroll; }
+
+.of-y-auto   { overflow-y: auto; }
+.of-y-hidden { overflow-y: hidden; }
+.of-y-scroll { overflow-y: scroll; }
+
+
+
 /* Width & height
  *============================================================================*/
 
