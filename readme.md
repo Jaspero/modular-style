@@ -26,14 +26,14 @@
  * 2. Comment for [2]
  */
 
-
-
 .element-one {
   attribute: value; /* [1] */
   attribute: value; /* [2] */
   attribute: value;
   attribute: value;
 }
+
+
 
 /* Section title
  *============================================================================*/
