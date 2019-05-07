@@ -1,9 +1,9 @@
 ##### Content
 ```
-Variables...........Globally-available variables
-01-Tools............Useful mixins and functions
-02-Generic..........Resets, global low-spec rules
-03-Utilities........Short and simple classes
+00-setup............Globally-available variables
+01-generic..........Resets, global low-spec rules
+02-components.......Discrete, complete chunks of UI
+03-utilities........Short and simple classes
 ```
 
 ##### Syntax
