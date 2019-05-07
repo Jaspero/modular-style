@@ -1,9 +1,9 @@
 ##### Content
 ```
-Variables...........Globally-available variables
-01-Tools............Useful mixins and functions
-02-Generic..........Resets, global low-spec rules
-03-Utilities........Short and simple classes
+00-setup............Globally-available variables
+01-generic..........Resets, global low-spec rules
+02-components.......Discrete, complete chunks of UI
+03-utilities........Short and simple classes
 ```
 
 ##### Syntax
@@ -13,12 +13,7 @@ Variables...........Globally-available variables
  *
  * Short description here.
  *
- * Pay attention to spacing (5 empty rows between major section, 1 between
- * closely related elements) 
- *
  *============================================================================*/
-
-
 
 
 
@@ -40,8 +35,6 @@ Variables...........Globally-available variables
 
 
 
-
-
 /* Section title
  *============================================================================*/
 /**
@@ -54,8 +47,6 @@ Variables...........Globally-available variables
   attribute: value;
   attribute: value;
 }
-
-
 
 
 
