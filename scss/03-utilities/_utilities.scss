@@ -88,9 +88,9 @@
 /* Colors
  *============================================================================*/
 
-.c  { color: var(--theme); }
-.c1 { color: var(--primary); }
-.c2 { color: var(--secondary); }
+.c            { color: var(--theme); }
+.fg-primary   { color: var(--primary); }
+.fg-secondary { color: var(--secondary); }
 
 @each $group-name, $group in $colors-themes {
   .c-#{$group-name} {
