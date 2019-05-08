@@ -182,6 +182,24 @@
 
 
 
+/* Box shadows
+ *============================================================================*/
+
+.shadow-s { box-shadow: 0 2px 6px 0 rgba(0,0,0,.35); }
+.shadow-m { box-shadow: 0 10px 30px 0 rgba(0,0,0,.25); }
+.shadow-l { box-shadow: 0 20px 60px 0 rgba(0,0,0,.15); }
+
+
+
+/* Border radii
+ *============================================================================*/
+
+.br-rounded { border-radius: 4px; }
+.br-circle  { border-radius: 50%; }
+.br-pill    { border-radius: 999px; }
+
+
+
 /* Borders
  *============================================================================*/
 
