@@ -13,6 +13,8 @@
  * 1. Best practice box-sizing. Source:
  *    css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
  * 2. Forces long words to break into new lines if they don't fit a container.
+ * 3. Sharper font rendering. Source:
+ *    developer.mozilla.org/en-US/docs/Web/CSS/font-smooth
  */
 
 *, *:before, *:after {
@@ -23,6 +25,9 @@ html {
   box-sizing: border-box; /* [1] */
   word-wrap: break-word; /* [2] */
   overflow-wrap: break-word; /* [2] */
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale; /* [3] */
+  -webkit-font-smoothing: antialiased; /* [3] */
 }
 
 body {
