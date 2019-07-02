@@ -126,5 +126,6 @@ img {
 .disabled, :disabled, [disabled] {
   opacity: .5;
   user-select: none;
+  -webkit-user-select: none;
   pointer-events: none;
 }
