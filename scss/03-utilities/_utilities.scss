@@ -214,6 +214,12 @@
 /* Paddings
  *============================================================================*/
 
+.p-a-0  { padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; }
+.p-t-0  { padding-top: 0; }
+.p-r-0  { padding-right: 0; }
+.p-b-0  { padding-bottom: 0; }
+.p-l-0  { padding-left: 0; }
+
 .p-a-xs { padding: calc(4px + .25vw); }
 .p-a-s  { padding: calc(8px + .5vw); }
 .p-a-m  { padding: calc(16px + 1vw); }
@@ -260,6 +266,12 @@
 
 /* Margins
  *============================================================================*/
+
+.m-a-0  { margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; }
+.m-t-0  { margin-top: 0; }
+.m-r-0  { margin-right: 0; }
+.m-b-0  { margin-bottom: 0; }
+.m-l-0  { margin-left: 0; }
 
 .m-a-xs { margin: calc(4px + .25vw); }
 .m-a-s  { margin: calc(8px + .5vw); }
