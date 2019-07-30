@@ -182,15 +182,6 @@
 
 
 
-/* Box shadows
- *============================================================================*/
-
-.shadow-s { box-shadow: 0 2px 6px 0 rgba(0,0,0,.25); }
-.shadow-m { box-shadow: 0 calc(10px + 1vw) 30px 0 rgba(0,0,0,.20); }
-.shadow-l { box-shadow: 0 20px 60px 0 rgba(0,0,0,.15); }
-
-
-
 /* Border radii
  *============================================================================*/
 
@@ -203,11 +194,11 @@
 /* Borders
  *============================================================================*/
 
-.b-a { border       : 2px solid; }
-.b-t { border-top   : 2px solid; }
-.b-r { border-right : 2px solid; }
-.b-b { border-bottom: 2px solid; }
-.b-l { border-left  : 2px solid; }
+.b-a { border       : 1px solid var(--tertiary); }
+.b-t { border-top   : 1px solid var(--tertiary); }
+.b-r { border-right : 1px solid var(--tertiary); }
+.b-b { border-bottom: 1px solid var(--tertiary); }
+.b-l { border-left  : 1px solid var(--tertiary); }
 
 
 
