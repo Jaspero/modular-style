@@ -37,6 +37,7 @@
     width: #{$i / 12 * 100%};
   }
 }
+
 @media (max-width: $screen-l) {
   .col-l-0 { display: none; }
   @for $i from 1 through 12 {
@@ -46,6 +47,7 @@
     }
   }
 }
+
 @media (max-width: $screen-m) {
   .col-m-0 { display: none; }
   @for $i from 1 through 12 {
@@ -55,6 +57,7 @@
     }
   }
 }
+
 @media (max-width: $screen-s) {
   .col-s-0 { display: none; }
   @for $i from 1 through 12 {
@@ -64,6 +67,7 @@
     }
   }
 }
+
 @media (max-width: $screen-xs) {
   .col-xs-0 { display: none; }
   @for $i from 1 through 12 {

@@ -72,10 +72,13 @@
 /* Backgrounds
  *============================================================================*/
 
+// Relative
 .bg {
   background-color: var(--theme);
   color: var(--primary);
 }
+
+// Absolute
 @each $group-name, $group in $colors-themes {
   .bg-#{$group-name} {
     background-color: var(--#{$group-name}-theme);
@@ -88,11 +91,13 @@
 /* Colors
  *============================================================================*/
 
+// Relative
 .c            { color: var(--theme); }
 .fg-primary   { color: var(--primary); }
 .fg-secondary { color: var(--secondary); }
 .fg-tertiary  { color: var(--tertiary); }
 
+// Absolute
 @each $group-name, $group in $colors-themes {
   .c-#{$group-name} {
     color: var(--#{$group-name}-theme);
