@@ -91,6 +91,7 @@
 .c            { color: var(--theme); }
 .fg-primary   { color: var(--primary); }
 .fg-secondary { color: var(--secondary); }
+.fg-tertiary  { color: var(--tertiary); }
 
 @each $group-name, $group in $colors-themes {
   .c-#{$group-name} {
