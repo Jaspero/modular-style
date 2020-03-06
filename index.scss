@@ -1,5 +1,26 @@
-@import "scss/00-setup/theme";
-@import "scss/01-generic/resets";
-@import "scss/01-generic/generic";
-@import "scss/03-utilities/grid";
-@import "scss/03-utilities/utilities";
+$breakpoints: (
+        m: 1200px,
+        s: 900px,
+        xs: 600px
+);
+
+$sizes: (
+        0: 0,
+        ¼: .25rem,
+        ½: .5rem,
+        ¾: .75rem,
+        1: 1rem,
+        2: 2rem,
+        3: 3rem,
+        4: 4rem
+);
+
+@each $size-name, $size-value in $sizes {
+  .p-t-#{$size-name} { padding-top: #{$size-value}; }
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @media (max-width: #{$breakpoint-value}) { .p-t-#{$size-name}-#{$breakpoint-name} { padding-top: #{$size-value}; } }
+  }
+}
+
+
+

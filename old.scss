@@ -1,4 +1,90 @@
-@import "../breakpoints";
+/* Theme
+ *============================================================================*/
+
+$colors-themes: (
+        primary: (
+                theme    : #3f51b5,
+                primary  : rgba(255,255,255,1),
+                secondary: rgba(255,255,255,.8),
+                tertiary : rgba(255,255,255,.15)
+        ),
+        accent: (
+                theme    : #ff4081,
+                primary  : rgba(255,255,255,1),
+                secondary: rgba(255,255,255,.8),
+                tertiary : rgba(255,255,255,.15)
+        ),
+        warn: (
+                theme    : #dc143c,
+                primary  : rgba(255,255,255,1),
+                secondary: rgba(255,255,255,.8),
+                tertiary : rgba(255,255,255,.15)
+        ),
+        light: (
+                theme    : #f2f2f2,
+                primary  : rgba(0,0,0,.9),
+                secondary: rgba(0,0,0,.7),
+                tertiary : rgba(0,0,0,.15)
+        ),
+        dark: (
+                theme    : #212121,
+                primary  : rgba(255,255,255,1),
+                secondary: rgba(255,255,255,.8),
+                tertiary : rgba(255,255,255,.15)
+        )
+);
+
+$fonts: (
+        primary  : "sans-serif",
+        secondary: "serif",
+        tertiary : "monospace",
+);
+
+
+
+/* Generating CSS variables in :root
+ *============================================================================*/
+
+:root {
+  @each $group-name, $group in $colors-themes {
+    @each $color-name, $color-value in $group {
+      --#{$group-name}-#{$color-name}: #{$color-value};
+    }
+  }
+  @each $font-name, $font-value in $fonts {
+    --font-#{$font-name}: #{$font-value};
+  }
+}
+
+
+
+/* Generating theme classes
+ *============================================================================*/
+
+@each $group-name, $group in $colors-themes {
+  .#{$group-name} {
+    --theme    : var(--#{$group-name}-theme);
+    --primary  : var(--#{$group-name}-primary);
+    --secondary: var(--#{$group-name}-secondary);
+    --tertiary : var(--#{$group-name}-tertiary);
+  }
+}
+
+/**
+ * @media breakpoints
+ *
+ * Phone           :    0px - 600px
+ * Tablet portrait :  600px - 900px
+ * Tablet landscape:  900px - 1200px
+ * Desktop         : 1200px - 1800px
+ * Large desktop   : 1800px +
+ *
+ *============================================================================*/
+
+$screen-xs: 600px;
+$screen-s : 900px;
+$screen-m : 1200px;
+$screen-l : 1800px;
 
 /**
  * Utilities
@@ -327,3 +413,5 @@
 .m-l-m  { margin-left: calc(16px + 1vw); }
 .m-l-l  { margin-left: calc(32px + 2vw); }
 .m-l-xl { margin-left: calc(64px + 4vw); }
+
+p-t-¾ { color: red;}

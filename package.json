@@ -4,11 +4,14 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "sass --watch index.scss:index.css --style compressed"
+    "build:scss": "node-sass index.scss index.css",
+    "watch:scss": "node-sass index.scss index.css -w"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  },
   "dependencies": {}
 }
