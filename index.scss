@@ -15,12 +15,31 @@ $sizes: (
         4: 4rem
 );
 
-@each $size-name, $size-value in $sizes {
-  .p-t-#{$size-name} { padding-top: #{$size-value}; }
-  @each $breakpoint-name, $breakpoint-value in $breakpoints {
-    @media (max-width: #{$breakpoint-value}) { .p-t-#{$size-name}-#{$breakpoint-name} { padding-top: #{$size-value}; } }
+$properties: (
+        padding: p-a,
+        padding-top: p-t,
+        padding-right: p-r,
+        padding-bottom: p-b,
+        padding-left: p-l,
+        margin: m-a,
+        margin-top: m-t,
+        margin-right: m-r,
+        margin-bottom: m-b,
+        margin-left: m-l
+);
+
+@each $properties-key, $properties-value in $properties {
+  @each $sizes-key, $sizes-value in $sizes {
+    .#{$properties-value}-#{$sizes-key} { #{$properties-key}: #{$sizes-value}; }
   }
 }
 
-
-
+@each $breakpoints-key, $breakpoints-value in $breakpoints {
+  @media (max-width: #{$breakpoints-value}) {
+    @each $properties-key, $properties-value in $properties {
+      @each $sizes-key, $sizes-value in $sizes {
+        .#{$properties-value}-#{$sizes-key}-#{$breakpoints-key} { #{$properties-key}: #{$sizes-value}; }
+      }
+    }
+  }
+}
