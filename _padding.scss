@@ -1,0 +1,14 @@
+$sizes: (
+        0: 0,
+        ¼: .25rem,
+        ½: .5rem,
+        ¾: .75rem,
+        1: 1rem,
+        2: 2rem,
+        3: 3rem,
+        4: 4rem
+);
+
+@each $key, $value in $breakpoints {
+  @debug $key, $value;
+}
