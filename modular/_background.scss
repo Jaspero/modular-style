@@ -1,0 +1,34 @@
+/**
+ * Background
+ *
+ * TODO: add description
+ *
+ *============================================================================*/
+
+
+
+/* background-color
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+@each $key, $value in $colors {
+  // Using main-color
+  .bg-#{$key}-lightest { background-color: scale-color(nth($value, 1), $lightness: 90%); }
+  .bg-#{$key}-lighter { background-color: scale-color(nth($value, 1), $lightness: 60%); }
+  .bg-#{$key}-light { background-color: scale-color(nth($value, 1), $lightness: 30%); }
+  .bg-#{$key} { background-color: nth($value, 1); }
+  .bg-#{$key}-dark { background-color: scale-color(nth($value, 1), $lightness: -30%); }
+  .bg-#{$key}-darker { background-color: scale-color(nth($value, 1), $lightness: -60%); }
+  .bg-#{$key}-darkest { background-color: scale-color(nth($value, 1), $lightness: -90%); }
+
+  // Using contrast-color
+  .bg-rev-#{$key}-lightest { background-color: scale-color(nth($value, 2), $lightness: 90%); }
+  .bg-rev-#{$key}-lighter { background-color: scale-color(nth($value, 2), $lightness: 60%); }
+  .bg-rev-#{$key}-light { background-color: scale-color(nth($value, 2), $lightness: 30%); }
+  .bg-rev-#{$key} { background-color: nth($value, 2); }
+  .bg-rev-#{$key}-dark { background-color: scale-color(nth($value, 2), $lightness: -30%); }
+  .bg-rev-#{$key}-darker { background-color: scale-color(nth($value, 2), $lightness: -60%); }
+  .bg-rev-#{$key}-darkest { background-color: scale-color(nth($value, 2), $lightness: -90%); }
+}

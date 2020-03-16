@@ -1,0 +1,135 @@
+/**
+ * Typography
+ *
+ * TODO: add description
+ *
+ *============================================================================*/
+
+
+
+/* color (foreground color)
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+@each $key, $value in $colors {
+
+  // Using contrast-color
+  .fg-#{$key}-lightest { color: scale-color(nth($value, 2), $lightness: 90%); }
+  .fg-#{$key}-lighter { color: scale-color(nth($value, 2), $lightness: 60%); }
+  .fg-#{$key}-light { color: scale-color(nth($value, 2), $lightness: 30%); }
+  .fg-#{$key} { color: nth($value, 2); }
+  .fg-#{$key}-dark { color: scale-color(nth($value, 2), $lightness: -30%); }
+  .fg-#{$key}-darker { color: scale-color(nth($value, 2), $lightness: -60%); }
+  .fg-#{$key}-darkest { color: scale-color(nth($value, 2), $lightness: -90%); }
+
+  // Using main-color
+  .fg-rev-#{$key}-lightest { color: scale-color(nth($value, 1), $lightness: 90%); }
+  .fg-rev-#{$key}-lighter { color: scale-color(nth($value, 1), $lightness: 60%); }
+  .fg-rev-#{$key}-light { color: scale-color(nth($value, 1), $lightness: 30%); }
+  .fg-rev-#{$key} { color: nth($value, 1); }
+  .fg-rev-#{$key}-dark { color: scale-color(nth($value, 1), $lightness: -30%); }
+  .fg-rev-#{$key}-darker { color: scale-color(nth($value, 1), $lightness: -60%); }
+  .fg-rev-#{$key}-darkest { color: scale-color(nth($value, 1), $lightness: -90%); }
+}
+
+
+
+/* font-family
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+/* TODO: add content */
+
+
+
+/* font-size
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+/* TODO: add content */
+
+
+
+/* font-style
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+/* TODO: add content */
+
+
+
+/* font-weight
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+/* TODO: add content */
+
+
+
+/* letter-spacing
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+/* TODO: add content */
+
+
+
+/* text-align
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+/* TODO: add content */
+
+
+
+/* text-decoration
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+/* TODO: add content */
+
+
+
+/* text-transform
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+/* TODO: add content */
+
+
+
+/* white-space
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+/* TODO: add content */
+
+
+
+/* word-break
+ *============================================================================*/
+/**
+ * TODO: add description
+ */
+
+/* TODO: add content */
