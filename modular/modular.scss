@@ -1,2 +1,63 @@
-@import 'breakpoints';
-@import 'padding';
+@import 'variables';
+@import 'colors';
+@import 'paddings';
+
+/*
+# Background
+- background-color
+
+# Box model
+- margin
+- border (width, style, color)
+- padding
+- line-height
+- height (+ min & max)
+- width (+ min & max)
+
+# Flexbox
+- align-content
+- align-items
+- flex-direction
+- flex-wrap
+- justify-content
+- align-self
+- order
+? flex-basis, flex-grow, flex-shrink
+
+# Positioning
+- position
+- z-index
+- top, right, bottom, left
+
+# Typography
+- color
+- font-family
+- font-size
+- font-style
+- font-weight
+- letter-spacing
+- text-align
+- text-decoration
+- text-transform
+- white-space
+- word-break
+
+# Other
+- border-radius
+- box-shadow
+- display
+- float
+- text-shadow
+- opacity
+- outline
+- overflow
+- pointer-events
+- vertical-align
+
+# Maybe
+? transitions
+*/
+
+@media (max-width: 1200px) {
+  [class^="md-"] {}
+}
