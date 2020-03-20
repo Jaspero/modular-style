@@ -1,0 +1,54 @@
+/**
+ * Generic
+ *
+ * Low spec selectors and resets
+ *
+ *============================================================================*/
+
+
+
+/* root variables
+ *============================================================================*/
+
+:root {
+
+  // All colors
+  @each $key, $value in $colors {
+    --color-#{$key}: #{$value};
+  }
+
+  // Base unit
+  --base-unit: #{$base-unit};
+
+  // All sizes
+  @each $key, $value in $sizes {
+    --size-#{$key}: #{$value};
+  }
+}
+
+
+
+/* Box sizing reset
+ *============================================================================*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+
+/* Body margin reset
+ *============================================================================*/
+
+body {
+  margin: 0;
+}
+
+
+
+/* button and link correct cursors
+ *============================================================================*/
+
+button, a {
+  cursor: pointer;
+}
