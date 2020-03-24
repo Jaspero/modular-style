@@ -1,0 +1,52 @@
+/**
+ * Background
+ *
+ * TODO: add description
+ *
+ *============================================================================*/
+
+
+
+/* background-color
+ *============================================================================*/
+
+@each $key, $value in $colors {
+
+  // Background
+  .bg-#{$key} {
+    background-color: var(--bg-#{$key});
+  }
+
+  // Background light variations
+  @each $_key, $_value in $light {
+    .bg-#{$key}-#{$_key} {
+      background-color: var(--bg-#{$key}-#{$_key});
+    }
+  }
+
+  // Background dark variations
+  @each $_key, $_value in $dark {
+    .bg-#{$key}-#{$_key} {
+      background-color: var(--bg-#{$key}-#{$_key});
+    }
+  }
+
+  // Background reverse
+  .bg-rev-#{$key} {
+    background-color: var(--fg-#{$key});
+  }
+
+  // Background reverse light variations
+  @each $_key, $_value in $light {
+    .bg-rev-#{$key}-#{$_key} {
+      background-color: var(--fg-#{$key}-#{$_key});
+    }
+  }
+
+  // Background reverse dark variations
+  @each $_key, $_value in $dark {
+    .bg-rev-#{$key}-#{$_key} {
+      background-color: var(--fg-#{$key}-#{$_key});
+    }
+  }
+}

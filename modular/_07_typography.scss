@@ -12,23 +12,43 @@
 
 @each $key, $value in $colors {
 
-  // Using contrast-color
-  .fg-#{$key}-lightest { color: scale-color(nth($value, 2), $lightness: 90%); }
-  .fg-#{$key}-lighter { color: scale-color(nth($value, 2), $lightness: 60%); }
-  .fg-#{$key}-light { color: scale-color(nth($value, 2), $lightness: 30%); }
-  .fg-#{$key} { color: nth($value, 2); }
-  .fg-#{$key}-dark { color: scale-color(nth($value, 2), $lightness: -30%); }
-  .fg-#{$key}-darker { color: scale-color(nth($value, 2), $lightness: -60%); }
-  .fg-#{$key}-darkest { color: scale-color(nth($value, 2), $lightness: -90%); }
+  // Foreground
+  .fg-#{$key} {
+    color: var(--fg-#{$key});
+  }
 
-  // Using main-color
-  .fg-rev-#{$key}-lightest { color: scale-color(nth($value, 1), $lightness: 90%); }
-  .fg-rev-#{$key}-lighter { color: scale-color(nth($value, 1), $lightness: 60%); }
-  .fg-rev-#{$key}-light { color: scale-color(nth($value, 1), $lightness: 30%); }
-  .fg-rev-#{$key} { color: nth($value, 1); }
-  .fg-rev-#{$key}-dark { color: scale-color(nth($value, 1), $lightness: -30%); }
-  .fg-rev-#{$key}-darker { color: scale-color(nth($value, 1), $lightness: -60%); }
-  .fg-rev-#{$key}-darkest { color: scale-color(nth($value, 1), $lightness: -90%); }
+  // Foreground light variations
+  @each $_key, $_value in $light {
+    .fg-#{$key}-#{$_key} {
+      color: var(--fg-#{$key}-#{$_key});
+    }
+  }
+
+  // Foreground dark variations
+  @each $_key, $_value in $dark {
+    .fg-#{$key}-#{$_key} {
+      color: var(--fg-#{$key}-#{$_key});
+    }
+  }
+
+  // Foreground reverse
+  .fg-rev-#{$key} {
+    color: var(--bg-#{$key});
+  }
+
+  // Foreground reverse light variations
+  @each $_key, $_value in $light {
+    .fg-rev-#{$key}-#{$_key} {
+      color: var(--bg-#{$key}-#{$_key});
+    }
+  }
+
+  // Foreground reverse dark variations
+  @each $_key, $_value in $dark {
+    .fg-rev-#{$key}-#{$_key} {
+      color: var(--bg-#{$key}-#{$_key});
+    }
+  }
 }
 
 

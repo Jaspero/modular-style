@@ -1,0 +1,68 @@
+/**
+ * Settings
+ *
+ * TODO: add description
+ *
+ *============================================================================*/
+
+
+
+/* Custom properties: colors
+ *============================================================================*/
+
+@mixin generate-colors {
+  @each $key, $value in $colors {
+
+    // Background
+    --bg-#{$key}: #{nth($value, 1)};
+
+    // Background light variations
+    @each $_key, $_value in $light {
+      --bg-#{$key}-#{$_key}: #{scale_color(nth($value, 1), $lightness: $_value)};
+    }
+
+    // Background dark variations
+    @each $_key, $_value in $dark {
+      --bg-#{$key}-#{$_key}: #{scale_color(nth($value, 1), $lightness: $_value)};
+    }
+
+    // Foreground
+    --fg-#{$key}: #{nth($value, 2)};
+
+    // Foreground light variations
+    @each $_key, $_value in $light {
+      --fg-#{$key}-#{$_key}: #{scale_color(nth($value, 2), $lightness: $_value)};
+    }
+
+    // Foreground dark variations
+    @each $_key, $_value in $dark {
+      --fg-#{$key}-#{$_key}: #{scale_color(nth($value, 2), $lightness: $_value)};
+    }
+  }
+}
+
+
+
+/* Custom properties: sizes
+ *============================================================================*/
+
+@mixin generate-sizes {}
+
+
+
+/* Generate custom properties
+ *============================================================================*/
+
+:root {
+  @include generate-colors;
+  @include generate-sizes;
+}
+
+
+
+/* Box sizing reset
+ *============================================================================*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}

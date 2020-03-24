@@ -18,10 +18,40 @@ $breakpoints: (
 
 
 
-/* Colors (name: (background, foreground))
+/* Colors
  *============================================================================*/
 
 $colors: (
         main: (dodgerblue, white),
         warn: (crimson, white)
+);
+
+$light: (
+        light: 30%,
+        lighter: 60%,
+        lightest: 90%
+);
+
+$dark: (
+        dark: -30%,
+        darker: -60%,
+        darkest: -90%
+);
+
+
+
+/* Sizes
+ *============================================================================*/
+
+$unit: 4px;
+
+$sizes: (
+        0: $unit * 0,
+        1: $unit * 1,
+        2: $unit * 2,
+        3: $unit * 3,
+        4: $unit * 4,
+        5: $unit * 5,
+        6: $unit * 6,
+        auto: auto
 );
