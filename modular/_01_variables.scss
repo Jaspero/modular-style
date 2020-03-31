@@ -23,55 +23,42 @@ $breakpoints: (
 
 $properties: (
         align-content: (
-                property  : 'align-content',
-                prefix    : 'ac',
-                values    : ('stretch', 'center'),
-                hover     : false,
-                responsive: true,
+                shorthand: 'ac',
+                responsive: false,
+                hover: false,
+                values: (
+                        'stretch': 'stretch',
+                        'start': 'flex-start'
+                ),
         ),
         overflow: (
-                property  : 'overflow',
-                prefix    : 'of',
-                values    : ('hidden', 'auto'),
-                hover     : true,
-                responsive: false,
+                values: ('auto', 'hidden'),
         )
 );
 
 
 @each $properties-key, $properties-value in $properties {
 
-  // Generate a class with the following syntax:
-  // .[prefix]-[value] { [property]: [value]; }
-  @each $key, $value in map-get($properties-value, "values") {
-    .#{map-get($properties-value, "prefix")}-#{$key} {
-      #{map-get($properties-value, "property")}: #{$key};
+  // If property has a shorthand version
+  @if map-get($properties-value, 'shorthand') and map-get($properties-value, 'shorthand') != '' {
+    @debug map-get($properties-value, 'values');
+
+    // Values can be maps or lists
+    @debug type-of(map-get($properties-value, 'values')) == map;
+
+    // Hover & Focus style
+    @if map-get($properties-value, 'hover') {
+      @debug hover is true;
+    }
+
+    // Responsive style
+    @if map-get($properties-value, 'responsive') {
+      @debug responsive is true;
     }
   }
-
-  // Generate a hover/focus class with the following syntax:
-  // .[prefix]-[value]-hover { [property]: [value]; }
-  @if map-get($properties-value, 'hover') {
-    @each $key, $value in map-get($properties-value, "values") {
-      .#{map-get($properties-value, "prefix")}-#{$key}-hover:hover,
-      .#{map-get($properties-value, "prefix")}-#{$key}-hover:focus {
-        #{map-get($properties-value, "property")}: #{$key};
-      }
-    }
-  }
-
-  // Generate a responsive class with the following syntax:
-  // .[prefix]-[value]-[breakpoint] { [property]: [value]; }
-  @if map-get($properties-value, "responsive") {
-    @each $key, $value in $breakpoints {
-      @media (max-width: $value) {
-        @each $_key, $_value in map-get($properties-value, "values") {
-          .#{map-get($properties-value, "prefix")}-#{$_key}-#{$key} {
-            #{map-get($properties-value, "property")}: #{$_key};
-          }
-        }
-      }
-    }
+  // If property doesn't have a shorthand version
+  @else {
+    @debug No shorthand value for $properties-key
   }
 }
 
