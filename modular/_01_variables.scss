@@ -18,6 +18,49 @@ $breakpoints: (
 
 
 
+/* Properties
+ *============================================================================*/
+
+$properties: (
+        align-content: (
+                property  : 'align-content',
+                prefix    : 'ac',
+                values    : ('stretch', 'center'),
+                responsive: true,
+                hover     : false
+        ),
+        overflow: (
+                property  : 'overflow',
+                prefix    : 'of',
+                values    : ('hidden', 'auto'),
+                responsive: false,
+                hover     : false
+        )
+);
+
+@each $properties-key, $properties-value in $properties {
+
+  // Generate a class with the following syntax:
+  // .[prefix]-[value] { [property]: [value]; }
+  @each $key, $value in map-get($properties-value, "values") {
+    .#{map-get($properties-value, "prefix")}-#{$key} { #{map-get($properties-value, "property")}: #{$key}; }
+  }
+
+  // Generate a responsive class with the following syntax:
+  // .[prefix]-[value]-[breakpoint] { [property]: [value]; }
+  @if map-get($properties-value, "responsive") {
+    @each $key, $value in $breakpoints {
+      @media (max-width: $value) {
+        @each $_key, $_value in map-get($properties-value, "values") {
+          .#{map-get($properties-value, "prefix")}-#{$_key}-#{$key} { #{map-get($properties-value, "property")}: #{$_key}; }
+        }
+      }
+    }
+  }
+}
+
+
+
 /* Colors
  *============================================================================*/
 
