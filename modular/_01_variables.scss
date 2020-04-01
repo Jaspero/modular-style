@@ -22,54 +22,78 @@ $breakpoints: (
  *============================================================================*/
 
 $properties: (
-        align-content: (
-                media: false,
-                hover: false,
-                active: false,
-                values: (
-                        'stretch': 'stretch',
-                        'start': 'flex-start',
-                        'pero': 'flex-end'
-                ),
+        float: (
+                short: fl, // short - Optional
+                values: (left, right),
+                media: false, // media - Optional
+                hover: false, // hover - Optional
+                active: false, // active - Optional
         ),
         test: (
-                short: 'test',
-                values: $breakpoints
-        ),
-        overflow: (
-                short: 'of',
-                values: ('auto', 'hidden'),
+                values: (1: one, 2: two),
         )
 );
 
 
-@each $properties-key, $properties-value in $properties {
 
-  // If property has a shorthand version
-  @if map-get($properties-value, 'short') and map-get($properties-value, 'short') != '' {
-
-    // Values can be maps or lists
-    @if type-of(map-get($properties-value, 'values')) == map == true {
-      @debug $properties-key is a map;
-    } @else {
-      @debug $properties-key is a list;
-    }
-
-    @debug map-get($properties-value, 'values');
-
-    // Hover & Focus style
-    @if map-get($properties-value, 'hover') == true {
-      @debug hover is true;
-    }
-
-    // Responsive style
-    @if map-get($properties-value, 'media') == true {
-      @debug responsive is true;
-    }
+@function get-property-name($key, $value) {
+  // If property has a shorthand name
+  @if map-get($value, short) and map-get($value, short) != '' {
+    @return map-get($value, short);
   }
-  // If property doesn't have a shorthand version
+  // If property doesn't have a shorthand name
   @else {
-    @debug No shorthand value for $properties-key
+    @return $key;
+  }
+}
+
+
+
+@function get-value($key, $value) {
+  @if 1 {}
+  @else {}
+}
+
+
+
+@each $properties-key, $properties-value in $properties {
+  $property-name: get-property-name($properties-key, $properties-value);
+  $values: map-get($properties-value, 'values');
+  $media: map-get($properties-value, 'media');
+  $hover: map-get($properties-value, 'hover');
+  $active: map-get($properties-value, 'active');
+
+  @each $key, $value in $values {
+    @debug $key $value;
+  };
+
+  @each $value in $values {
+    .#{$property-name}-#{$value} { #{$properties-key}: $value; }
+  };
+
+  // Values are in a list format
+  @if type-of($values) == list == true {
+    /*@debug $properties-key is a list ($values);*/
+  }
+
+  // Values are in a map format
+  @if type-of($values) == map == true {
+    /*@debug $properties-key is a map ($values);*/
+  }
+
+  // Hover & Focus style
+  @if $hover == true {
+    /*@debug hover is true;*/
+  }
+
+  // Responsive style
+  @if $media == true {
+    /*@debug responsive is true;*/
+  }
+
+  // Active class style
+  @if $active == true {
+    /*@debug active is true;*/
   }
 }
 
