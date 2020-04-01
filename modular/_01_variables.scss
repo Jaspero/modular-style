@@ -23,15 +23,21 @@ $breakpoints: (
 
 $properties: (
         align-content: (
-                shorthand: 'ac',
-                responsive: false,
+                media: false,
                 hover: false,
+                active: false,
                 values: (
                         'stretch': 'stretch',
-                        'start': 'flex-start'
+                        'start': 'flex-start',
+                        'pero': 'flex-end'
                 ),
         ),
+        test: (
+                short: 'test',
+                values: $breakpoints
+        ),
         overflow: (
+                short: 'of',
                 values: ('auto', 'hidden'),
         )
 );
@@ -40,19 +46,24 @@ $properties: (
 @each $properties-key, $properties-value in $properties {
 
   // If property has a shorthand version
-  @if map-get($properties-value, 'shorthand') and map-get($properties-value, 'shorthand') != '' {
-    @debug map-get($properties-value, 'values');
+  @if map-get($properties-value, 'short') and map-get($properties-value, 'short') != '' {
 
     // Values can be maps or lists
-    @debug type-of(map-get($properties-value, 'values')) == map;
+    @if type-of(map-get($properties-value, 'values')) == map == true {
+      @debug $properties-key is a map;
+    } @else {
+      @debug $properties-key is a list;
+    }
+
+    @debug map-get($properties-value, 'values');
 
     // Hover & Focus style
-    @if map-get($properties-value, 'hover') {
+    @if map-get($properties-value, 'hover') == true {
       @debug hover is true;
     }
 
     // Responsive style
-    @if map-get($properties-value, 'responsive') {
+    @if map-get($properties-value, 'media') == true {
       @debug responsive is true;
     }
   }
