@@ -24,6 +24,11 @@ $breakpoints: (
 $overflow-y: (hidden, auto);
 
 $properties: (
+        color: (
+                values: (main red, accent blue),
+                short: c,
+                custom: true,
+        ),
         float: (
                 values: (left, right),
                 short: fl,
@@ -65,6 +70,21 @@ $properties: (
 }
 
 
+:root {
+  @each $properties-key, $properties-value in $properties {
+    $prefix: get-prefix($properties-key, $properties-value);
+    $values: map-get($properties-value, 'values');
+    $custom: map-get($properties-value, 'custom');
+
+    @if $custom == true {
+      @each $_key, $_value in $values {
+        $suffix: $_key;
+        $value: get-value($_key, $_value);
+        --#{$prefix}-#{$suffix}: #{$value};
+      }
+    }
+  }
+}
 
 @each $properties-key, $properties-value in $properties {
   $prefix: get-prefix($properties-key, $properties-value);

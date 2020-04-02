@@ -1,10 +1,144 @@
-@import '01_variables';
-@import '02_settings';
-@import '03_box-model';
-@import '04_flexbox';
-@import '05_positioning';
-@import '06_background';
-@import '07_typography';
-@import '08_transitions';
-@import '09_other';
+// @import '01_variables';
+// @import '02_settings';
+// @import '03_box-model';
+// @import '04_flexbox';
+// @import '05_positioning';
+// @import '06_background';
+// @import '07_typography';
+// @import '08_transitions';
+// @import '09_other';
 
+
+
+/* I need this for stuff to work
+ *============================================================================*/
+
+$breakpoints: (
+        md: 1200px,
+        sm: 900px,
+        xs: 600px
+);
+
+
+
+/* Any custom maps
+ *============================================================================*/
+
+$overflow: (hidden, auto);
+
+
+
+/* Properties map
+ *============================================================================*/
+
+$properties: (
+        /*example: (
+                values: (one, two),
+                short: ex,
+                variables: true,
+                media: true,
+                hover: true,
+                active: true
+        ),*/
+        color: (
+                values: (main red, accent blue, main-rev blue, accent-rev blue),
+                short: c,
+                variables: true,
+        ),
+        background: (
+                values: (red, blue),
+                short: bg,
+                variables: true,
+        ),
+        overflow: (
+                values: $overflow,
+                short: of
+        ),
+        overflow-x: (
+                values: $overflow,
+                short: of-x
+        ),
+        overflow-y: (
+                values: (1: hidden, 2: auto),
+                short: of-y
+        )
+);
+
+
+
+/* Helper Functions
+ *============================================================================*/
+
+@function get-prefix($property, $short) {
+  @if $short == null {
+    @return $property;
+  } @else {
+    @return $short;
+  }
+}
+
+@function get-suffix($key) {
+  @return -$key;
+}
+
+@function get-value($key, $value) {
+  @if $value == null {
+    @return $key;
+  } @else {
+    @return $value;
+  }
+}
+
+@function get-value-type($key, $value, $prefix, $suffix, $variables) {
+  @if $variables == true {
+    @return var(--#{$prefix}#{$suffix});
+  } @else {
+    @return get-value($key, $value);
+  }
+}
+
+
+
+/* Generate css custom properties
+ *============================================================================*/
+
+:root {
+  @each $prop-key, $prop-value in $properties {
+    $property: $prop-key;
+    $values: map-get($prop-value, 'values');
+    $short: map-get($prop-value, 'short');
+    $variables: map-get($prop-value, 'variables');
+
+    @if $variables == true {
+      @each $value-key, $value-value in $values {
+        $prefix: get-prefix($property, $short);
+        $suffix: get-suffix($value-key);
+        $value: get-value($value-key, $value-value);
+        --#{$prefix}#{$suffix}: #{$value};
+      }
+    }
+  }
+}
+
+
+
+/* Generate classes
+ *============================================================================*/
+
+@each $prop-key, $prop-value in $properties {
+  $property: $prop-key;
+  $values: map-get($prop-value, 'values');
+  $short: map-get($prop-value, 'short');
+  $variables: map-get($prop-value, 'variables');
+  $media: map-get($prop-value, 'media');
+  $hover: map-get($prop-value, 'hover');
+  $active: map-get($prop-value, 'active');
+
+  @each $value-key, $value-value in $values {
+    $prefix: get-prefix($property, $short);
+    $suffix: get-suffix($value-key);
+    $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
+
+    .#{$prefix}#{$suffix} { #{$property}: #{$value}; };
+  }
+}
