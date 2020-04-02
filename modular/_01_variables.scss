@@ -21,22 +21,31 @@ $breakpoints: (
 /* Properties
  *============================================================================*/
 
+$overflow-y: (hidden, auto);
+
 $properties: (
         float: (
-                short: fl, // short - Optional
                 values: (left, right),
-                media: false, // media - Optional
-                hover: false, // hover - Optional
-                active: false, // active - Optional
+                short: fl,
+                media: true,
+                hover: true,
+                active: true,
         ),
-        test: (
-                values: (1: one, 2: two),
+        overflow: (
+                values: (a: auto, h: hidden),
+        ),
+        overflow-x: (
+                values: (a auto, h hidden),
+                short: of-x,
+        ),
+        overflow-y: (
+                values: $overflow-y,
         )
 );
 
 
 
-@function get-property-name($key, $value) {
+@function get-prefix($key, $value) {
   // If property has a shorthand name
   @if map-get($value, short) and map-get($value, short) != '' {
     @return map-get($value, short);
@@ -47,53 +56,61 @@ $properties: (
   }
 }
 
-
-
 @function get-value($key, $value) {
-  @if 1 {}
-  @else {}
+  @if $value == null {
+    @return $key;
+  } @else {
+    @return $value;
+  }
 }
 
 
 
 @each $properties-key, $properties-value in $properties {
-  $property-name: get-property-name($properties-key, $properties-value);
+  $prefix: get-prefix($properties-key, $properties-value);
   $values: map-get($properties-value, 'values');
-  $media: map-get($properties-value, 'media');
-  $hover: map-get($properties-value, 'hover');
-  $active: map-get($properties-value, 'active');
 
-  @each $key, $value in $values {
-    @debug $key $value;
-  };
-
-  @each $value in $values {
-    .#{$property-name}-#{$value} { #{$properties-key}: $value; }
-  };
-
-  // Values are in a list format
-  @if type-of($values) == list == true {
-    /*@debug $properties-key is a list ($values);*/
+  @each $_key, $_value in $values {
+    $suffix: $_key;
+    $value: get-value($_key, $_value);
+    .#{$prefix}-#{$suffix} {
+      #{$properties-key}: $value;
+    }
   }
 
-  // Values are in a map format
-  @if type-of($values) == map == true {
-    /*@debug $properties-key is a map ($values);*/
+  @if map-get($properties-value, 'media') == true {
+    @each $breakpoint-key, $breakpoint-value in $breakpoints {
+      @media (max-width: $breakpoint-value) {
+        @each $_key, $_value in $values {
+          $suffix: $_key;
+          $value: get-value($_key, $_value);
+          .#{$prefix}-#{$suffix}-#{$breakpoint-key} {
+            #{$properties-key}: $value;
+          }
+        }
+      }
+    }
   }
 
-  // Hover & Focus style
-  @if $hover == true {
-    /*@debug hover is true;*/
+  @if map-get($properties-value, 'hover') == true {
+    @each $_key, $_value in $values {
+      $suffix: $_key;
+      $value: get-value($_key, $_value);
+      .#{$prefix}-#{$suffix}-hover:hover,
+      .#{$prefix}-#{$suffix}-hover:focus {
+        #{$properties-key}: $value;
+      }
+    }
   }
 
-  // Responsive style
-  @if $media == true {
-    /*@debug responsive is true;*/
-  }
-
-  // Active class style
-  @if $active == true {
-    /*@debug active is true;*/
+  @if map-get($properties-value, 'active') == true {
+    @each $_key, $_value in $values {
+      $suffix: $_key;
+      $value: get-value($_key, $_value);
+      .#{$prefix}-#{$suffix}.active {
+        #{$properties-key}: $value;
+      }
+    }
   }
 }
 
