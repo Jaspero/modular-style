@@ -59,7 +59,7 @@ $properties: (
                 short: of-x
         ),
         overflow-y: (
-                values: (1: hidden, 2: auto),
+                values: $overflow,
                 short: of-y
         )
 );
