@@ -19,7 +19,7 @@
 }
 
 @function get-suffix($key) {
-  @return -$key;
+  @return $key;
 }
 
 @function get-value($key, $value) {
@@ -32,7 +32,7 @@
 
 @function get-value-type($key, $value, $prefix, $suffix, $variables) {
   @if $variables == true {
-    @return var(--#{$prefix}#{$suffix});
+    @return var(--#{$prefix}-#{$suffix});
   } @else {
     @return get-value($key, $value);
   }
@@ -55,7 +55,7 @@
         $prefix: get-prefix($property, $short);
         $suffix: get-suffix($value-key);
         $value: get-value($value-key, $value-value);
-        --#{$prefix}#{$suffix}: #{$value};
+        --#{$prefix}-#{$suffix}: #{$value};
       }
     }
   }
@@ -81,7 +81,7 @@
     $suffix: get-suffix($value-key);
     $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
 
-    .#{$prefix}#{$suffix} {
+    .#{$prefix}-#{$suffix} {
       #{$property}: #{$value};
     };
   }
@@ -95,7 +95,7 @@
           $suffix: get-suffix($value-key);
           $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
 
-          .#{$prefix}#{$suffix}-#{$breakpoint-key} {
+          .#{$prefix}-#{$suffix}-#{$breakpoint-key} {
             #{$property}: #{$value};
           };
         }
@@ -110,8 +110,8 @@
       $suffix: get-suffix($value-key);
       $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
 
-      .#{$prefix}#{$suffix}-hover:hover,
-      .#{$prefix}#{$suffix}-hover:focus {
+      .#{$prefix}-#{$suffix}-hover:hover,
+      .#{$prefix}-#{$suffix}-hover:focus {
         #{$property}: #{$value};
       };
     }
@@ -124,7 +124,7 @@
       $suffix: get-suffix($value-key);
       $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
 
-      .#{$prefix}#{$suffix}.active {
+      .#{$prefix}-#{$suffix}.active {
         #{$property}: #{$value};
       };
     }

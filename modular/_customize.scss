@@ -13,6 +13,16 @@
 
 $overflow: (hidden, auto);
 
+$spacing: (
+        0: 0,
+        1: .25rem,
+        2: .5rem,
+        3: .75rem,
+        4: 1rem,
+        5: 1.5rem,
+        6: 2rem
+);
+
 
 
 // Properties
@@ -28,24 +38,82 @@ $overflow: (hidden, auto);
 //   active: [boolean]
 // )
 
+// I sort my properties alphabetically for better compression and overview
 $properties: (
-        // align-content: (),
-        // align-items: (),
-        // align-self: (),
+        align-content: (
+                short: ac,
+                values: (
+                        stretch: stretch,
+                        center: center,
+                        start: flex-start,
+                        end: flex-end,
+                        base: baseline,
+                        between: space-between,
+                        around: space-around,
+                        evenly: space-evenly
+                )
+        ),
+        align-items: (
+                short: ai,
+                values: (
+                        stretch: stretch,
+                        center: center,
+                        start: flex-start,
+                        end: flex-end,
+                        base: baseline
+                )
+        ),
+        align-self: (
+                short: as,
+                values: (
+                        auto: auto,
+                        center: center,
+                        start: flex-start,
+                        end: flex-end,
+                        base: baseline
+                )
+        ),
         // background-color: (),
         // border: (),
         // border-radius: (),
         // bottom: (),
         // box-shadow: (),
         // color: (),
-        // cursor: (),
-        // display: (),
+        cursor: (
+                values: (pointer, auto)
+        ),
+        display: (
+                short: d,
+                values: (
+                        none: none,
+                        block: block,
+                        flex: flex,
+                        iblock: inline-block,
+                        iflex: inline-flex,
+                        inline: inline
+                )
+        ),
         // float: (),
         // flex-basis: (),
-        // flex-direction: (),
+        flex-direction: (
+                short: fd,
+                values: (
+                        row: row,
+                        col: column,
+                        row-rev: row-reverse,
+                        col-rev: column-reverse
+                )
+        ),
         // flex-grow: (),
         // flex-shrink: (),
-        // flex-wrap: (),
+        flex-wrap: (
+                short: fw,
+                values: (
+                        wrap: wrap,
+                        nowrap: nowrap,
+                        wrap-rev: wrap-reverse
+                )
+        ),
         // font-family: (),
         // font-size: (),
         // font-style: (),
@@ -55,23 +123,85 @@ $properties: (
         // left: (),
         // letter-spacing: (),
         // line-height: (),
-        // margin: (),
+        margin: (
+                short: m-a,
+                values: map-merge($spacing, (auto: auto))
+        ),
+        margin-top: (
+                short: m-t,
+                values: map-merge($spacing, (auto: auto))
+        ),
+        margin-bottom: (
+                short: m-b,
+                values: map-merge($spacing, (auto: auto))
+        ),
+        margin-left: (
+                short: m-l,
+                values: map-merge($spacing, (auto: auto))
+        ),
+        margin-right: (
+                short: m-r,
+                values: map-merge($spacing, (auto: auto))
+        ),
         // opacity: (),
         // order: (),
         // outline: (),
-        // overflow: (),
+        overflow: (
+                short: of,
+                values: $overflow
+        ),
+        overflow-x: (
+                short: of-x,
+                values: $overflow
+        ),
+        overflow-y: (
+                short: of-y,
+                values: $overflow
+        ),
         // pointer-events: (),
         // width: (),
-        // padding: (),
-        // position: (),
+        padding: (
+                short: p-a,
+                values: $spacing
+        ),
+        padding-top: (
+                short: p-t,
+                values: $spacing
+        ),
+        padding-bottom: (
+                short: p-b,
+                values: $spacing
+        ),
+        padding-left: (
+                short: p-l,
+                values: $spacing
+        ),
+        padding-right: (
+                short: p-r,
+                values: $spacing
+        ),
+        position: (
+                short: pos,
+                values: (
+                        rel: relative,
+                        abs: absolute,
+                        fixed: fixed,
+                        sticky: sticky,
+                        static: static,
+                )
+        ),
         // right: (),
-        // text-align: (),
+        text-align: (
+                short: ta,
+                values: (left, right, center, justify)
+        ),
         // text-decoration: (),
         // text-shadow: (),
         // text-transform: (),
         // top: (),
         // transition: (),
         // vertical-align: (),
+        // visibility: (),
         // white-space: (),
         // word-break: (),
         // z-index: (),
