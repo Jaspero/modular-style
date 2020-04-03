@@ -52,7 +52,7 @@ $properties: (
         ),
         overflow: (
                 values: $overflow,
-                short: of
+                short: of,
         ),
         overflow-x: (
                 values: $overflow,
@@ -139,6 +139,52 @@ $properties: (
     $suffix: get-suffix($value-key);
     $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
 
-    .#{$prefix}#{$suffix} { #{$property}: #{$value}; };
+    .#{$prefix}#{$suffix} {
+      #{$property}: #{$value};
+    };
+  }
+
+  // media
+  @if $media == true {
+    @each $breakpoint-key, $breakpoint-value in $breakpoints {
+      @media (max-width: $breakpoint-value) {
+        @each $value-key, $value-value in $values {
+          $prefix: get-prefix($property, $short);
+          $suffix: get-suffix($value-key);
+          $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
+
+          .#{$prefix}#{$suffix}-#{$breakpoint-key} {
+            #{$property}: #{$value};
+          };
+        }
+      }
+    }
+  }
+
+  // hover & focus
+  @if $hover == true {
+    @each $value-key, $value-value in $values {
+      $prefix: get-prefix($property, $short);
+      $suffix: get-suffix($value-key);
+      $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
+
+      .#{$prefix}#{$suffix}-hover:hover,
+      .#{$prefix}#{$suffix}-hover:focus {
+        #{$property}: #{$value};
+      };
+    }
+  }
+
+  // active
+  @if $active == true {
+    @each $value-key, $value-value in $values {
+      $prefix: get-prefix($property, $short);
+      $suffix: get-suffix($value-key);
+      $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
+
+      .#{$prefix}#{$suffix}.active {
+        #{$property}: #{$value};
+      };
+    }
   }
 }
