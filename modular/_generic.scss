@@ -1,0 +1,48 @@
+//
+// Generic
+//
+// Low spec selectors and general layout tools.
+//
+// =============================================================================
+
+
+
+// Document
+// =============================================================================
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font: 16px / 1.5 sans-serif;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+// Special states
+// =============================================================================
+
+:focus {
+  /**/
+}
+
+:active {
+  /**/
+}
+
+[disabled] {
+  cursor: default;
+}
+
+
+
+// Elements
+// =============================================================================
+
+button, a {
+  cursor: pointer;
+}

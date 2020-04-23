@@ -1,7 +1,7 @@
 //
-// Customize
+// Utilities
 //
-// Customize your own workflow.
+// Create and customize your own utility classes.
 //
 // =============================================================================
 
@@ -21,6 +21,34 @@ $spacing: (
         4: 1rem,
         5: 1.5rem,
         6: 2rem
+);
+
+$grid-column: (
+        0:  span 0,
+        1:  span 1,
+        2:  span 2,
+        3:  span 3,
+        4:  span 4,
+        5:  span 5,
+        6:  span 6,
+        7:  span 7,
+        8:  span 8,
+        9:  span 9,
+        10: span 10,
+        11: span 11,
+        12: span 12
+);
+
+
+
+// Breakpoints
+// =============================================================================
+// Don't rename this map, but feel free to change or add new breakpoints
+
+$breakpoints: (
+        md: 1200px,
+        sm: 900px,
+        xs: 600px
 );
 
 
@@ -90,7 +118,8 @@ $properties: (
                         flex: flex,
                         iblock: inline-block,
                         iflex: inline-flex,
-                        inline: inline
+                        inline: inline,
+                        grid: grid
                 )
         ),
         // float: (),
@@ -118,6 +147,19 @@ $properties: (
         // font-size: (),
         // font-style: (),
         // font-weight: (),
+        grid-column: (
+                short: gc,
+                values: $grid-column,
+                media: true
+        ),
+        grid-gap: (
+                short: gg,
+                values: $spacing
+        ),
+        grid-template-columns: (
+                short: gtc,
+                values: (12: repeat(12, 1fr))
+        ),
         // height: (),
         // justify-content: (),
         // left: (),
@@ -205,16 +247,4 @@ $properties: (
         // white-space: (),
         // word-break: (),
         // z-index: (),
-);
-
-
-
-// Breakpoints
-// =============================================================================
-// Don't rename this map, but feel free to change or add new breakpoints
-
-$breakpoints: (
-        md: 1200px,
-        sm: 900px,
-        xs: 600px
 );
