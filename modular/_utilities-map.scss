@@ -1,7 +1,7 @@
 //
 // Utilities
 //
-// Create and customize your own utility classes.
+// A map of utility classes.
 //
 // =============================================================================
 
@@ -60,13 +60,12 @@ $breakpoints: (
 // property: (
 //   values: [map or list],
 //   short: [string],
-//   variables: [boolean],
 //   media: [boolean],
 //   hover: [boolean],
 //   active: [boolean]
 // )
 
-// I sort my properties alphabetically for better compression and overview
+// Sorted alphabetically for better compression and overview.
 $properties: (
         align-content: (
                 short: ac,
@@ -101,12 +100,33 @@ $properties: (
                         base: baseline
                 )
         ),
-        // background-color: (),
+        background-color: (
+                short: bg,
+                values: (
+                        accent: var(--accent),
+                        accent-c: var(--accent-contrast),
+                        success: var(--success),
+                        success-c: var(--success-contrast),
+                        error: var(--error),
+                        error-c: var(--error-contrast)
+                )
+        ),
         // border: (),
         // border-radius: (),
         // bottom: (),
         // box-shadow: (),
         // color: (),
+        color: (
+                short: c,
+                values: (
+                        accent: var(--accent),
+                        accent-c: var(--accent-contrast),
+                        success: var(--success),
+                        success-c: var(--success-contrast),
+                        error: var(--error),
+                        error-c: var(--error-contrast)
+                )
+        ),
         cursor: (
                 values: (pointer, auto)
         ),

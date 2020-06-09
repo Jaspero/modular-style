@@ -1,7 +1,7 @@
 //
 // Utilities generator
 //
-// A look under the hood. This is what generates all the utility classes.
+// Functions that generate utility classes.
 //
 // =============================================================================
 
@@ -30,14 +30,6 @@
   }
 }
 
-@function get-value-type($key, $value, $prefix, $suffix, $variables) {
-  @if $variables == true {
-    @return var(--#{$prefix}-#{$suffix});
-  } @else {
-    @return get-value($key, $value);
-  }
-}
-
 
 
 // Generate css custom properties
@@ -48,16 +40,6 @@
     $property: $prop-key;
     $values: map-get($prop-value, 'values');
     $short: map-get($prop-value, 'short');
-    $variables: map-get($prop-value, 'variables');
-
-    @if $variables == true {
-      @each $value-key, $value-value in $values {
-        $prefix: get-prefix($property, $short);
-        $suffix: get-suffix($value-key);
-        $value: get-value($value-key, $value-value);
-        --#{$prefix}-#{$suffix}: #{$value};
-      }
-    }
   }
 }
 
@@ -70,7 +52,6 @@
   $property: $prop-key;
   $values: map-get($prop-value, 'values');
   $short: map-get($prop-value, 'short');
-  $variables: map-get($prop-value, 'variables');
   $media: map-get($prop-value, 'media');
   $hover: map-get($prop-value, 'hover');
   $active: map-get($prop-value, 'active');
@@ -79,7 +60,7 @@
   @each $value-key, $value-value in $values {
     $prefix: get-prefix($property, $short);
     $suffix: get-suffix($value-key);
-    $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
+    $value: get-value($value-key, $value-value);
 
     .#{$prefix}-#{$suffix} {
       #{$property}: #{$value};
@@ -93,7 +74,7 @@
         @each $value-key, $value-value in $values {
           $prefix: get-prefix($property, $short);
           $suffix: get-suffix($value-key);
-          $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
+          $value: get-value($value-key, $value-value);
 
           .#{$prefix}-#{$suffix}-#{$breakpoint-key} {
             #{$property}: #{$value};
@@ -108,7 +89,7 @@
     @each $value-key, $value-value in $values {
       $prefix: get-prefix($property, $short);
       $suffix: get-suffix($value-key);
-      $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
+      $value: get-value($value-key, $value-value);
 
       .#{$prefix}-#{$suffix}-hover:hover,
       .#{$prefix}-#{$suffix}-hover:focus {
@@ -122,7 +103,7 @@
     @each $value-key, $value-value in $values {
       $prefix: get-prefix($property, $short);
       $suffix: get-suffix($value-key);
-      $value: get-value-type($value-key, $value-value, $prefix, $suffix, $variables);
+      $value: get-value($value-key, $value-value);
 
       .#{$prefix}-#{$suffix}.active {
         #{$property}: #{$value};
