@@ -11,12 +11,15 @@
 // =============================================================================
 
 :root {
+  --main: #fafcfe;
+  --main-contrast: #203040;
+  --main-border: #20304030;
+  --panel: #fff;
+  --panel-contrast: #203040;
+  --panel-border: #20304030;
   --accent: #3f51b5;
   --accent-contrast: #fff;
-  --success: #009688;
-  --success-contrast: #fff;
-  --error: #f44336;
-  --error-contrast: #fff;
+  --accent-border: #3f51b530;
 }
 
 

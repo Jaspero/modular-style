@@ -23,6 +23,19 @@ $spacing: (
         6: 2rem
 );
 
+$colors: (
+        inherit:  inherit,
+        main:     var(--main),
+        main-c:   var(--main-contrast),
+        main-b:   var(--main-border),
+        panel:    var(--panel),
+        panel-c:  var(--panel-contrast),
+        panel-b:  var(--panel-border),
+        accent:   var(--accent),
+        accent-c: var(--accent-contrast),
+        accent-b: var(--accent-border),
+);
+
 $grid-column: (
         0:  span 0,
         1:  span 1,
@@ -102,30 +115,46 @@ $properties: (
         ),
         background-color: (
                 short: bg,
-                values: (
-                        accent: var(--accent),
-                        accent-c: var(--accent-contrast),
-                        success: var(--success),
-                        success-c: var(--success-contrast),
-                        error: var(--error),
-                        error-c: var(--error-contrast)
-                )
+                values: $colors
         ),
-        // border: (),
-        // border-radius: (),
+        border: (
+                short: b-a,
+                values: ( 1: 1px solid )
+        ),
+        border-top: (
+                short: b-t,
+                values: ( 1: 1px solid )
+        ),
+        border-bottom: (
+                short: b-b,
+                values: ( 1: 1px solid )
+        ),
+        border-left: (
+                short: b-l,
+                values: ( 1: 1px solid )
+        ),
+        border-right: (
+                short: b-r,
+                values: ( 1: 1px solid )
+        ),
+        border-color: (
+                short: bc,
+                values: $colors
+        ),
+        border-radius: (
+                short: br,
+                values: $spacing
+        ),
         // bottom: (),
-        // box-shadow: (),
+        box-shadow: (
+                short: shadow,
+                hover: true,
+                values: (1: 0 4px 8px rgba(0,0,0,.24))
+        ),
         // color: (),
         color: (
                 short: c,
-                values: (
-                        accent: var(--accent),
-                        accent-c: var(--accent-contrast),
-                        success: var(--success),
-                        success-c: var(--success-contrast),
-                        error: var(--error),
-                        error-c: var(--error-contrast)
-                )
+                values: $colors
         ),
         cursor: (
                 values: (pointer, auto)
@@ -164,9 +193,18 @@ $properties: (
                 )
         ),
         // font-family: (),
-        // font-size: (),
+        font-size: (
+                short: fs,
+                values: map-merge($spacing, (inherit: inherit))
+        ),
         // font-style: (),
-        // font-weight: (),
+        font-weight: (
+                short: fw,
+                values: (
+                        bold: bold,
+                        normal: normal
+                )
+        ),
         grid-column: (
                 short: gc,
                 values: $grid-column,
@@ -204,6 +242,14 @@ $properties: (
         margin-right: (
                 short: m-r,
                 values: map-merge($spacing, (auto: auto))
+        ),
+        max-width: (
+                short: mw,
+                values: (
+                        s: 40rem,
+                        m: 60rem,
+                        l: 80rem
+                )
         ),
         // opacity: (),
         // order: (),
@@ -257,7 +303,11 @@ $properties: (
                 short: ta,
                 values: (left, right, center, justify)
         ),
-        // text-decoration: (),
+        text-decoration: (
+                short: td,
+                hover: true,
+                values: (none, underline)
+        ),
         // text-shadow: (),
         // text-transform: (),
         // top: (),
