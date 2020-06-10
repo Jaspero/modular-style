@@ -14,11 +14,14 @@
   --main: #fafcfe;
   --main-contrast: #203040;
   --main-border: #20304030;
-  --panel: #fff;
+  --dark: #203040;
+  --dark-contrast: #ffffff;
+  --dark-border: #ffffff30;
+  --panel: #ffffff;
   --panel-contrast: #203040;
   --panel-border: #20304030;
   --accent: #3f51b5;
-  --accent-contrast: #fff;
+  --accent-contrast: #ffffff;
   --accent-border: #3f51b530;
 }
 
@@ -62,4 +65,8 @@ html {
 
 button, a {
   cursor: pointer;
+}
+
+img {
+  max-width: 100%;
 }

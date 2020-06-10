@@ -20,7 +20,11 @@ $spacing: (
         3: .75rem,
         4: 1rem,
         5: 1.5rem,
-        6: 2rem
+        6: 2rem,
+        7: 3rem,
+        8: 4rem,
+        9: 6rem,
+        10: 12rem
 );
 
 $colors: (
@@ -28,6 +32,9 @@ $colors: (
         main:     var(--main),
         main-c:   var(--main-contrast),
         main-b:   var(--main-border),
+        dark:     var(--dark),
+        dark-c:   var(--dark-contrast),
+        dark-b:   var(--dark-border),
         panel:    var(--panel),
         panel-c:  var(--panel-contrast),
         panel-b:  var(--panel-border),
@@ -50,6 +57,11 @@ $grid-column: (
         10: span 10,
         11: span 11,
         12: span 12
+);
+
+$position: (
+        0:   0%,
+        100: 100%
 );
 
 
@@ -117,6 +129,18 @@ $properties: (
                 short: bg,
                 values: $colors
         ),
+        background-image: (
+                short: bgi,
+                values: (football: url("https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3564&q=80"))
+        ),
+        background-position: (
+                short: bgp,
+                values: (center)
+        ),
+        background-size: (
+                short: bgs,
+                values: (cover)
+        ),
         border: (
                 short: b-a,
                 values: ( 1: 1px solid )
@@ -145,10 +169,12 @@ $properties: (
                 short: br,
                 values: $spacing
         ),
-        // bottom: (),
+        bottom: (
+                short: bottom,
+                values: $position
+        ),
         box-shadow: (
-                short: shadow,
-                hover: true,
+                short: bs,
                 values: (1: 0 4px 8px rgba(0,0,0,.24))
         ),
         // color: (),
@@ -220,9 +246,16 @@ $properties: (
         ),
         // height: (),
         // justify-content: (),
-        // left: (),
+        left: (
+                short: left,
+                values: $position
+        ),
         // letter-spacing: (),
         // line-height: (),
+        list-style: (
+                short: ls,
+                values: (none)
+        ),
         margin: (
                 short: m-a,
                 values: map-merge($spacing, (auto: auto))
@@ -248,7 +281,8 @@ $properties: (
                 values: (
                         s: 40rem,
                         m: 60rem,
-                        l: 80rem
+                        l: 80rem,
+                        100: 100%
                 )
         ),
         // opacity: (),
@@ -267,7 +301,10 @@ $properties: (
                 values: $overflow
         ),
         // pointer-events: (),
-        // width: (),
+        width: (
+                short: w,
+                values: (100: 100%)
+        ),
         padding: (
                 short: p-a,
                 values: $spacing
@@ -298,7 +335,10 @@ $properties: (
                         static: static,
                 )
         ),
-        // right: (),
+        right: (
+                short: right,
+                values: $position
+        ),
         text-align: (
                 short: ta,
                 values: (left, right, center, justify)
@@ -308,9 +348,15 @@ $properties: (
                 hover: true,
                 values: (none, underline)
         ),
-        // text-shadow: (),
+        text-shadow: (
+                short: ts,
+                values: (1: 0 0 2px rgba(0,0,0,.5))
+        ),
         // text-transform: (),
-        // top: (),
+        top: (
+                short: top,
+                values: $position
+        ),
         // transition: (),
         // vertical-align: (),
         // visibility: (),
