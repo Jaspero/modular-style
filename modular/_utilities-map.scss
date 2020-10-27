@@ -15,16 +15,12 @@ $overflow: (hidden, auto);
 
 $spacing: (
         0: 0,
-        1: .25rem,
-        2: .5rem,
-        3: .75rem,
-        4: 1rem,
-        5: 1.5rem,
-        6: 2rem,
-        7: 3rem,
-        8: 4rem,
-        9: 6rem,
-        10: 12rem
+        1: 1rem,
+        2: 2rem,
+        3: 3rem,
+        4: 4rem,
+        5: 5rem,
+        6: 6rem,
 );
 
 $colors: (
@@ -142,23 +138,23 @@ $properties: (
                 values: (cover)
         ),
         border: (
-                short: b-a,
+                short: ba,
                 values: ( 1: 1px solid )
         ),
         border-top: (
-                short: b-t,
+                short: bt,
                 values: ( 1: 1px solid )
         ),
         border-bottom: (
-                short: b-b,
+                short: bb,
                 values: ( 1: 1px solid )
         ),
         border-left: (
-                short: b-l,
+                short: bl,
                 values: ( 1: 1px solid )
         ),
         border-right: (
-                short: b-r,
+                short: br,
                 values: ( 1: 1px solid )
         ),
         border-color: (
@@ -166,7 +162,7 @@ $properties: (
                 values: $colors
         ),
         border-radius: (
-                short: br,
+                short: brad,
                 values: $spacing
         ),
         bottom: (
@@ -177,7 +173,6 @@ $properties: (
                 short: bs,
                 values: (1: 0 4px 8px rgba(0,0,0,.24))
         ),
-        // color: (),
         color: (
                 short: c,
                 values: $colors
@@ -200,7 +195,7 @@ $properties: (
         // float: (),
         // flex-basis: (),
         flex-direction: (
-                short: fd,
+                short: flexd,
                 values: (
                         row: row,
                         col: column,
@@ -208,10 +203,16 @@ $properties: (
                         col-rev: column-reverse
                 )
         ),
-        // flex-grow: (),
-        // flex-shrink: (),
+        flex-grow: (
+                short: flexg,
+                values: (0, 1, auto)
+        ),
+        flex-shrink: (
+                short: flexs,
+                values: (0, 1, auto)
+        ),
         flex-wrap: (
-                short: fw,
+                short: flexw,
                 values: (
                         wrap: wrap,
                         nowrap: nowrap,
@@ -257,27 +258,27 @@ $properties: (
                 values: (none)
         ),
         margin: (
-                short: m-a,
+                short: ma,
                 values: map-merge($spacing, (auto: auto))
         ),
         margin-top: (
-                short: m-t,
+                short: mt,
                 values: map-merge($spacing, (auto: auto))
         ),
         margin-bottom: (
-                short: m-b,
+                short: mb,
                 values: map-merge($spacing, (auto: auto))
         ),
         margin-left: (
-                short: m-l,
+                short: ml,
                 values: map-merge($spacing, (auto: auto))
         ),
         margin-right: (
-                short: m-r,
+                short: mr,
                 values: map-merge($spacing, (auto: auto))
         ),
         max-width: (
-                short: mw,
+                short: maxw,
                 values: (
                         s: 40rem,
                         m: 60rem,
@@ -293,11 +294,11 @@ $properties: (
                 values: $overflow
         ),
         overflow-x: (
-                short: of-x,
+                short: ofx,
                 values: $overflow
         ),
         overflow-y: (
-                short: of-y,
+                short: ofy,
                 values: $overflow
         ),
         // pointer-events: (),
@@ -306,23 +307,23 @@ $properties: (
                 values: (100: 100%)
         ),
         padding: (
-                short: p-a,
+                short: pa,
                 values: $spacing
         ),
         padding-top: (
-                short: p-t,
+                short: pt,
                 values: $spacing
         ),
         padding-bottom: (
-                short: p-b,
+                short: pb,
                 values: $spacing
         ),
         padding-left: (
-                short: p-l,
+                short: pl,
                 values: $spacing
         ),
         padding-right: (
-                short: p-r,
+                short: pr,
                 values: $spacing
         ),
         position: (
