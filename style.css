@@ -1,0 +1,50 @@
+
+/* Document */
+/* ========================================================================== */
+
+ :root {
+  --bg: #fafcfe;
+  --fg: #203040;
+  --font: sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font: 16px / 1.5 var(--font);
+  background: var(--bg);
+  color: var(--fg);
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+/* Special states */
+/* ========================================================================== */
+
+:focus {
+  outline: 1px solid;
+  outline-offset: 2px;
+}
+
+[disabled] {
+  cursor: default;
+}
+
+
+
+/* Elements */
+/* ========================================================================== */
+
+button, a {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
