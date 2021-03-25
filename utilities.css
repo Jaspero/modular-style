@@ -834,16 +834,23 @@
 /* overflow-x */
 /* ========================================================================== */
 
-.of-auto { overflow: auto; }
-.of-hidden { overflow: hidden; }
+.of-x-auto { overflow: auto; }
+.of-x-hidden { overflow: hidden; }
+
+
+
+/* overflow-y */
+/* ========================================================================== */
+
+.of-y-auto { overflow: auto; }
+.of-y-hidden { overflow: hidden; }
 
 
 
 /* padding */
 /* ========================================================================== */
 
-.of-auto { overflow: auto; }
-.of-hidden { overflow: hidden; }
+/* undefined */
 
 
 
