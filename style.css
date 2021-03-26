@@ -1,12 +1,46 @@
 
-/* Document */
+/* Variables */
 /* ========================================================================== */
 
  :root {
-  --example-bg: #fafcfe;
-  --example-fg: #203040;
-  --example-font: sans-serif;
+  --bg-1: white;
+  --bg-2: whitesmoke;
+  --fg-1: darkslategray;
+  --fg-2: lightslategray;
+  --bo-1: 1px solid darkgray;
+  --bo-2: 1px solid lightgray;
+  --sh-1: 0 .25rem .5rem rgba(0,0,0,.1);
+  --sh-2: 0 .5rem 1rem rgba(0,0,0,.2);
+  --ff-1: sans-serif;
+  --ff-2: serif;
+  --ct-1: min(90vw, 40rem);
+  --ct-2: min(90vw, 60rem);
+  --ct-3: min(90vw, 480rem);
+  --an-l: .7s loading linear infinite;
 }
+
+
+
+/* Fonts */
+/* ========================================================================== */
+
+/* undefined */
+
+
+
+/* Keyframes */
+/* ========================================================================== */
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* Document */
+/* ========================================================================== */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -14,33 +48,15 @@
 }
 
 html {
-  font: 16px / 1.5 var(--example-font);
-  background: var(--example-bg);
-  color: var(--example-fg);
+  font: 16px / 1.5 var(--ff-1);
+  background: var(--bg-1);
+  color: var(--fg-1);
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
 
-
-
-/* Special states */
-/* ========================================================================== */
-
 :focus {
   outline: 1px solid;
   outline-offset: 2px;
-}
-
-
-
-/* Elements */
-/* ========================================================================== */
-
-button, a {
-  cursor: pointer;
-}
-
-img {
-  max-width: 100%;
 }
