@@ -3,9 +3,9 @@
 /* ========================================================================== */
 
  :root {
-  --bg: #fafcfe;
-  --fg: #203040;
-  --font: sans-serif;
+  --example-bg: #fafcfe;
+  --example-fg: #203040;
+  --example-font: sans-serif;
 }
 
 *, *::before, *::after {
@@ -14,9 +14,9 @@
 }
 
 html {
-  font: 16px / 1.5 var(--font);
-  background: var(--bg);
-  color: var(--fg);
+  font: 16px / 1.5 var(--example-font);
+  background: var(--example-bg);
+  color: var(--example-fg);
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -30,10 +30,6 @@ html {
 :focus {
   outline: 1px solid;
   outline-offset: 2px;
-}
-
-[disabled] {
-  cursor: default;
 }
 
 
