@@ -1,6 +1,6 @@
-# My CSS framework
+# Modular 2.0
 
-This is my CSS framework. I use it on **medium** and **large** scale projects. It consists of a bunch of **shorthand utility classes**.
+This is my (@Siclol) CSS framework. I use it on **medium** and **large** scale projects. It consists of a bunch of **shorthand utility classes**.
 
 ## Example of what my classes look like
 
@@ -25,11 +25,11 @@ Every time you write `display: flex;` you write 14 characters which have to some
 ```css
 .some-class { /* 11 characters */
     display: flex; /* 14 characters */
-    …
+    /* … */
 }
 .some-other-class { /* 17 characters */
     display: flex; /* 14 characters */
-    …
+    /* … */
 }
 ```
 
@@ -86,9 +86,9 @@ I had no idea how I would turn something like `max-width: min(80vw, 60rem);` (ex
 
 ```css
 :root {
-  …
+  /* … */
   --ex-ct-1: min(80vw, 60rem); /* example container 1 */
-  …
+  /* … */
 }
 
 .mx-w\:ex-ct-1 { max-width: var(--ex-ct-1); }
