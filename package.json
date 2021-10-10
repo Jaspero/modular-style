@@ -1,0 +1,12 @@
+{
+  "name": "modular-style",
+  "version": "2.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}
